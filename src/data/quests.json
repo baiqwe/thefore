@@ -1,0 +1,141 @@
+[
+  {
+    "id": "quest-001",
+    "title": "First Night",
+    "type": "Main Quest",
+    "difficulty": "Easy",
+    "description": "Survive your first night in the mega store. This is the tutorial quest that introduces you to the basic mechanics.",
+    "objectives": [
+      "Find a flashlight",
+      "Locate the emergency exit",
+      "Survive until 6:00 AM"
+    ],
+    "rewards": {
+      "coins": 500,
+      "items": ["Basic Backpack", "Water Bottle"]
+    },
+    "location": "Starting Area"
+  },
+  {
+    "id": "quest-002",
+    "title": "Security Breach",
+    "type": "Main Quest",
+    "difficulty": "Medium",
+    "description": "Infiltrate the security office and retrieve the master key. Watch out for security cameras!",
+    "objectives": [
+      "Disable security cameras",
+      "Access security office",
+      "Obtain master key"
+    ],
+    "rewards": {
+      "coins": 1000,
+      "items": ["Master Key", "Security Badge"]
+    },
+    "location": "Security Office, Second Floor"
+  },
+  {
+    "id": "quest-003",
+    "title": "Pharmacy Run",
+    "type": "Side Quest",
+    "difficulty": "Easy",
+    "description": "Collect medical supplies from the pharmacy section. Essential for long-term survival.",
+    "objectives": [
+      "Find 3 First Aid Kits",
+      "Locate painkillers",
+      "Return to safe zone"
+    ],
+    "rewards": {
+      "coins": 300,
+      "items": ["First Aid Kit x3"]
+    },
+    "location": "Pharmacy Section"
+  },
+  {
+    "id": "quest-004",
+    "title": "Power Restoration",
+    "type": "Main Quest",
+    "difficulty": "Hard",
+    "description": "Restore power to the store by finding and activating the backup generator. This will make navigation much easier.",
+    "objectives": [
+      "Find generator fuel",
+      "Locate backup generator room",
+      "Activate generator",
+      "Survive the power surge event"
+    ],
+    "rewards": {
+      "coins": 2000,
+      "items": ["Generator Access Card", "Emergency Radio"]
+    },
+    "location": "Basement, Generator Room"
+  },
+  {
+    "id": "quest-005",
+    "title": "Night Vision",
+    "type": "Side Quest",
+    "difficulty": "Hard",
+    "description": "Find the legendary night vision goggles hidden in the electronics section. Extremely rare and valuable!",
+    "objectives": [
+      "Search electronics section",
+      "Solve the hidden puzzle",
+      "Obtain night vision goggles"
+    ],
+    "rewards": {
+      "coins": 1500,
+      "items": ["Night Vision Goggles"]
+    },
+    "location": "Electronics Section"
+  },
+  {
+    "id": "quest-006",
+    "title": "Escape Route",
+    "type": "Main Quest",
+    "difficulty": "Medium",
+    "description": "Find all emergency exit keys and plan your escape route. Time is running out!",
+    "objectives": [
+      "Find emergency exit key",
+      "Locate all 4 emergency exits",
+      "Test escape route"
+    ],
+    "rewards": {
+      "coins": 1200,
+      "items": ["Emergency Exit Key", "Store Map"]
+    },
+    "location": "Multiple Locations"
+  },
+  {
+    "id": "quest-007",
+    "title": "Weapon Master",
+    "type": "Side Quest",
+    "difficulty": "Medium",
+    "description": "Collect various weapons from different sections of the store. Prepare for the worst.",
+    "objectives": [
+      "Find crowbar",
+      "Obtain baseball bat",
+      "Locate fire extinguisher"
+    ],
+    "rewards": {
+      "coins": 800,
+      "items": ["Weapon Upgrade Kit"]
+    },
+    "location": "Hardware, Sports, Various"
+  },
+  {
+    "id": "quest-008",
+    "title": "The Final Night",
+    "type": "Main Quest",
+    "difficulty": "Extreme",
+    "description": "Survive the final night with all challenges active. This is the ultimate test of your survival skills.",
+    "objectives": [
+      "Survive until 6:00 AM",
+      "Avoid all enemies",
+      "Complete without dying",
+      "Escape successfully"
+    ],
+    "rewards": {
+      "coins": 5000,
+      "items": ["Legendary Survival Badge", "Exclusive Skin"]
+    },
+    "location": "Entire Store"
+  }
+]
+

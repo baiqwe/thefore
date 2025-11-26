@@ -1,0 +1,255 @@
+[
+  {
+    "slug": "master-key",
+    "name": "Master Key",
+    "location": "Security Office, Second Floor",
+    "type": "Key Item",
+    "description": "The master key unlocks all employee-only areas in the store. Found in the security office on the second floor, hidden inside a locked drawer. Essential for accessing restricted zones and finding better loot.",
+    "stats": {
+      "rarity": "Legendary",
+      "uses": "Unlimited",
+      "access": "All Restricted Areas"
+    }
+  },
+  {
+    "slug": "flashlight",
+    "name": "Heavy-Duty Flashlight",
+    "location": "Electronics Section, Aisle 12",
+    "type": "Tool",
+    "description": "A powerful flashlight that illuminates dark areas and can temporarily blind enemies. Essential for navigating the store after the lights go out. Batteries last for 6 hours of continuous use.",
+    "stats": {
+      "rarity": "Common",
+      "durability": "6 hours",
+      "effect": "Illuminates dark areas"
+    }
+  },
+  {
+    "slug": "first-aid-kit",
+    "name": "First Aid Kit",
+    "location": "Pharmacy Section, Behind Counter",
+    "type": "Consumable",
+    "description": "Restores 50 HP and removes bleeding status. Can be found in the pharmacy section, usually behind the counter. Limited supply, use wisely.",
+    "stats": {
+      "rarity": "Rare",
+      "healing": "50 HP",
+      "stack": "3"
+    }
+  },
+  {
+    "slug": "energy-drink",
+    "name": "Energy Drink",
+    "location": "Beverage Aisle, Various Locations",
+    "type": "Consumable",
+    "description": "Temporarily increases stamina regeneration by 50% for 10 minutes. Found scattered throughout the beverage aisles. Useful for extended exploration sessions.",
+    "stats": {
+      "rarity": "Common",
+      "duration": "10 minutes",
+      "effect": "+50% Stamina Regen"
+    }
+  },
+  {
+    "slug": "crowbar",
+    "name": "Crowbar",
+    "location": "Hardware Section, Tool Aisle",
+    "type": "Weapon",
+    "description": "A versatile tool that can be used as a weapon or to pry open locked doors and crates. Deals moderate damage and has a chance to stun enemies. Found in the hardware section.",
+    "stats": {
+      "rarity": "Uncommon",
+      "damage": "25",
+      "durability": "100"
+    }
+  },
+  {
+    "slug": "security-badge",
+    "name": "Security Badge",
+    "location": "Lost & Found, Customer Service",
+    "type": "Key Item",
+    "description": "Grants access to the security room and surveillance system. Found in the lost & found box at customer service. Allows you to view camera feeds and disable alarms.",
+    "stats": {
+      "rarity": "Rare",
+      "access": "Security Room",
+      "function": "Camera Access"
+    }
+  },
+  {
+    "slug": "walkie-talkie",
+    "name": "Walkie-Talkie",
+    "location": "Electronics Section, Communication Devices",
+    "type": "Tool",
+    "description": "Allows communication with other survivors (if multiplayer) or receives emergency broadcasts. Can also be used to distract enemies by playing static noise.",
+    "stats": {
+      "rarity": "Uncommon",
+      "range": "500m",
+      "battery": "8 hours"
+    }
+  },
+  {
+    "slug": "backpack",
+    "name": "Tactical Backpack",
+    "location": "Outdoor Section, Camping Aisle",
+    "type": "Equipment",
+    "description": "Increases inventory capacity by 20 slots. Essential for hoarding supplies and items. Found in the outdoor/camping section.",
+    "stats": {
+      "rarity": "Rare",
+      "capacity": "+20 slots",
+      "weight": "2kg"
+    }
+  },
+  {
+    "slug": "lockpick-set",
+    "name": "Lockpick Set",
+    "location": "Hardware Section, Security Tools",
+    "type": "Tool",
+    "description": "Allows you to pick locks on doors and containers. Has limited uses but can be found in multiple locations. Skill-based minigame determines success rate.",
+    "stats": {
+      "rarity": "Uncommon",
+      "uses": "10",
+      "success-rate": "60-80%"
+    }
+  },
+  {
+    "slug": "night-vision-goggles",
+    "name": "Night Vision Goggles",
+    "location": "Electronics Section, Special Items",
+    "type": "Equipment",
+    "description": "Provides clear vision in complete darkness. Extremely rare item found in the electronics section. Battery lasts 4 hours. Game-changing for night exploration.",
+    "stats": {
+      "rarity": "Legendary",
+      "duration": "4 hours",
+      "effect": "Full night vision"
+    }
+  },
+  {
+    "slug": "canned-food",
+    "name": "Canned Food",
+    "location": "Grocery Section, Canned Goods Aisle",
+    "type": "Consumable",
+    "description": "Restores 30 HP and 20 hunger. Found in abundance in the grocery section. Basic survival food that doesn't expire.",
+    "stats": {
+      "rarity": "Common",
+      "healing": "30 HP",
+      "hunger": "+20"
+    }
+  },
+  {
+    "slug": "duct-tape",
+    "name": "Duct Tape",
+    "location": "Hardware Section, Various Locations",
+    "type": "Crafting Material",
+    "description": "Versatile crafting material. Can be used to repair items, create makeshift weapons, or seal doors temporarily. Found throughout the hardware section.",
+    "stats": {
+      "rarity": "Common",
+      "uses": "Multiple",
+      "crafting": "Yes"
+    }
+  },
+  {
+    "slug": "generator-fuel",
+    "name": "Generator Fuel",
+    "location": "Automotive Section, Gas Cans",
+    "type": "Resource",
+    "description": "Fuel for the backup generator. Restores power to sections of the store for 30 minutes. Found in the automotive section. Limited quantity.",
+    "stats": {
+      "rarity": "Rare",
+      "duration": "30 minutes",
+      "area": "One Section"
+    }
+  },
+  {
+    "slug": "security-camera-code",
+    "name": "Security Camera Access Code",
+    "location": "Manager's Office, Desk Drawer",
+    "type": "Key Item",
+    "description": "A code written on a sticky note found in the manager's office. Grants access to the security camera system when combined with the security badge.",
+    "stats": {
+      "rarity": "Rare",
+      "function": "Camera System Access",
+      "location": "Manager's Office"
+    }
+  },
+  {
+    "slug": "emergency-radio",
+    "name": "Emergency Radio",
+    "location": "Electronics Section, Communication",
+    "type": "Tool",
+    "description": "Receives emergency broadcasts and weather updates. Can also be used to call for help (if that's an option). Found in electronics, requires batteries.",
+    "stats": {
+      "rarity": "Uncommon",
+      "range": "Long Range",
+      "battery": "12 hours"
+    }
+  },
+  {
+    "slug": "baseball-bat",
+    "name": "Aluminum Baseball Bat",
+    "location": "Sports Section, Baseball Aisle",
+    "type": "Weapon",
+    "description": "A sturdy baseball bat that deals good damage and has a chance to knock enemies back. Found in the sports section. Reliable melee weapon.",
+    "stats": {
+      "rarity": "Common",
+      "damage": "30",
+      "knockback": "Yes"
+    }
+  },
+  {
+    "slug": "water-bottle",
+    "name": "Water Bottle",
+    "location": "Beverage Aisle, Various Locations",
+    "type": "Consumable",
+    "description": "Restores 40 thirst. Essential for survival. Found throughout the beverage aisles. Can be refilled at water fountains.",
+    "stats": {
+      "rarity": "Common",
+      "thirst": "+40",
+      "refillable": "Yes"
+    }
+  },
+  {
+    "slug": "rope",
+    "name": "Climbing Rope",
+    "location": "Outdoor Section, Camping Gear",
+    "type": "Tool",
+    "description": "Can be used to climb to higher floors, create escape routes, or tie down objects. Found in the outdoor/camping section. 50 feet long.",
+    "stats": {
+      "rarity": "Uncommon",
+      "length": "50 feet",
+      "uses": "Multiple"
+    }
+  },
+  {
+    "slug": "fire-extinguisher",
+    "name": "Fire Extinguisher",
+    "location": "Various Locations, Wall Mounts",
+    "type": "Tool",
+    "description": "Can be used to put out fires or as an improvised weapon. Found mounted on walls throughout the store. Limited uses but effective.",
+    "stats": {
+      "rarity": "Common",
+      "uses": "1",
+      "damage": "20 (as weapon)"
+    }
+  },
+  {
+    "slug": "store-map",
+    "name": "Store Layout Map",
+    "location": "Customer Service, Information Desk",
+    "type": "Key Item",
+    "description": "A detailed map of the entire store showing all sections, exits, and key locations. Essential for navigation. Found at customer service or information desks.",
+    "stats": {
+      "rarity": "Uncommon",
+      "function": "Navigation",
+      "coverage": "Full Store"
+    }
+  },
+  {
+    "slug": "emergency-exit-key",
+    "name": "Emergency Exit Key",
+    "location": "Security Office, Key Cabinet",
+    "type": "Key Item",
+    "description": "Unlocks all emergency exits. Found in the security office key cabinet. Critical for escaping the store when needed.",
+    "stats": {
+      "rarity": "Rare",
+      "access": "All Emergency Exits",
+      "location": "Security Office"
+    }
+  }
+]
+
