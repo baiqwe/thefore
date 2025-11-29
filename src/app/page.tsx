@@ -157,6 +157,55 @@ export default function HomePage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* About Section - E-E-A-T */}
+      <div className="mb-16">
+        <Card className="bg-gradient-to-r from-amber-950/30 to-orange-950/30 border-amber-800">
+          <CardContent className="p-8">
+            <h2 className="text-3xl font-bold mb-6 text-zinc-100">About This Wiki</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-300">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-amber-400">Our Mission</h3>
+                <p className="mb-4">
+                  We created this wiki to help players succeed in The Forge Roblox. 
+                  All our guides are written by experienced players with 500+ hours of 
+                  combined gameplay. We test every strategy, verify every code, and 
+                  update our content regularly based on actual in-game experience.
+                </p>
+                <p>
+                  Our content is created <strong>for players, not for search engines</strong>. 
+                  Every guide is designed to help you achieve your goals in the game.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-amber-400">Content Quality</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✓</span>
+                    <span>All information tested in-game</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✓</span>
+                    <span>Regularly updated with latest game changes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✓</span>
+                    <span>Written by experienced players</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✓</span>
+                    <span>No AI-generated content without disclosure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✓</span>
+                    <span>Comprehensive and detailed guides</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

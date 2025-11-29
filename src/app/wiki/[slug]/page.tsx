@@ -8,6 +8,7 @@ import guidesData from "@/data/guides.json"
 import racesData from "@/data/races.json"
 import { TierList } from "@/components/TierList"
 import { OreChart } from "@/components/OreChart"
+import { AuthorInfo } from "@/components/AuthorInfo"
 
 interface PageProps {
   params: Promise<{
@@ -167,6 +168,11 @@ export default async function GuidePage({ params }: PageProps) {
                 </div>
               </div>
               {content}
+              <AuthorInfo
+                author={guide.author}
+                authorBio={(guide as any).authorBio}
+                lastUpdated={(guide as any).lastUpdated}
+              />
             </CardContent>
           </Card>
         </div>
