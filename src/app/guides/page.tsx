@@ -25,7 +25,7 @@ export default function GuidesPage() {
         <h1 className="text-4xl font-extrabold mb-4">Guides & Strategies</h1>
         <p className="text-gray-600 text-lg">
           Master the game with our comprehensive guides. From beginner tips to advanced strategies,
-          we've got you covered.
+          we&apos;ve got you covered.
         </p>
       </div>
 
@@ -77,17 +77,6 @@ export default function GuidesPage() {
             <p className="text-gray-600 text-sm mb-4 line-clamp-2">{guide.description}</p>
             <div className="flex items-center justify-between text-xs text-gray-500">
               <span>By {guide.author}</span>
-              <span>Updated {guide.lastUpdated}</span>
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {guide.tags.slice(0, 3).map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
-                >
-                  #{tag}
-                </span>
-              ))}
             </div>
           </Link>
         ))}

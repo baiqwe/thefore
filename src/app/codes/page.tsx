@@ -1,111 +1,179 @@
-import { Metadata } from 'next'
-import { siteConfig } from '@/config/site'
-import codesData from '@/data/codes.json'
+import { Metadata } from "next"
+import { siteConfig } from "@/config/site"
+import codesData from "@/data/codes.json"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { CopyButton } from "@/components/CopyButton"
+import { Badge } from "@/components/ui/badge"
 
 export const metadata: Metadata = {
-  title: 'Redeem Codes',
-  description: `Latest redeem codes for ${siteConfig.name}. Get free coins, items, and rewards!`,
+  title: `The Forge Codes - ${new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  })}`,
+  description: `Latest active codes for The Forge Roblox game. Get free gems, rerolls, and rewards!`,
+  keywords: [
+    "The Forge Codes",
+    "The Forge Codes 2024",
+    "Roblox The Forge Codes",
+    "The Forge Redeem Codes",
+    "The Forge Wiki",
+    "The Forge Roblox",
+  ],
 }
 
 export default function CodesPage() {
-  const activeCodes = codesData.filter((code) => code.status === 'Active')
-  const expiredCodes = codesData.filter((code) => code.status === 'Expired')
+  const activeCodes = codesData.filter((code) => code.status === "Active")
+  const expiredCodes = codesData.filter((code) => code.status === "Expired")
+
+  // Schema markup for FAQ
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I redeem codes in The Forge?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Open the game and click on the 'Codes' button in the main menu. Enter the code exactly as shown (case-sensitive) and click 'Redeem' to claim your rewards.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are The Forge codes case-sensitive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, codes are case-sensitive. Make sure to enter them exactly as shown on this page.",
+        },
+      },
+    ],
+  }
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <div className="mb-8">
-        <h1 className="text-4xl font-extrabold mb-4">Redeem Codes</h1>
-        <p className="text-gray-600 text-lg">
-          Use these codes in-game to get free rewards! Codes are updated regularly, so check back often.
-        </p>
-      </div>
-
-      {/* How to Redeem */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold mb-3 text-blue-900">How to Redeem Codes</h2>
-        <ol className="list-decimal list-inside space-y-2 text-blue-800">
-          <li>Open the game and click on the "Codes" button in the main menu</li>
-          <li>Enter the code exactly as shown below (case-sensitive)</li>
-          <li>Click "Redeem" to claim your rewards</li>
-          <li>Check your inventory for the items and coins</li>
-        </ol>
-      </div>
-
-      {/* Active Codes */}
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Active Codes ({activeCodes.length})</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeCodes.map((code, index) => (
-            <div
-              key={index}
-              className="bg-white border-2 border-green-500 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
-                  ACTIVE
-                </span>
-                {code.expires !== 'Never' && (
-                  <span className="text-xs text-gray-500">Expires: {code.expires}</span>
-                )}
-              </div>
-              <div className="mb-4">
-                <label className="text-sm font-semibold text-gray-600 mb-1 block">Code:</label>
-                <div className="bg-gray-100 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300">
-                  {code.code}
-                </div>
-              </div>
-              <div className="mb-4">
-                <label className="text-sm font-semibold text-gray-600 mb-1 block">Reward:</label>
-                <p className="text-blue-600 font-semibold">{code.reward}</p>
-              </div>
-              <p className="text-sm text-gray-600">{code.description}</p>
-            </div>
-          ))}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="container mx-auto px-4 py-10">
+        <div className="mb-8">
+          <h1 className="text-4xl font-extrabold mb-4 text-zinc-100">
+            The Forge Codes -{" "}
+            {new Date().toLocaleDateString("en-US", {
+              month: "long",
+              year: "numeric",
+            })}
+          </h1>
+          <p className="text-zinc-400 text-lg">
+            Use these codes in-game to get free rewards! Codes are updated
+            regularly, so check back often.
+          </p>
         </div>
-      </div>
 
-      {/* Expired Codes (if any) */}
-      {expiredCodes.length > 0 && (
-        <div>
-          <h2 className="text-3xl font-bold mb-6 text-gray-400">Expired Codes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {expiredCodes.map((code, index) => (
-              <div
-                key={index}
-                className="bg-gray-100 border-2 border-gray-300 rounded-lg p-6 opacity-60"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 bg-gray-300 text-gray-600 text-xs font-bold rounded-full">
-                    EXPIRED
-                  </span>
-                </div>
-                <div className="mb-4">
-                  <label className="text-sm font-semibold text-gray-600 mb-1 block">Code:</label>
-                  <div className="bg-gray-200 p-3 rounded font-mono text-lg font-bold text-center">
-                    {code.code}
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label className="text-sm font-semibold text-gray-600 mb-1 block">Reward:</label>
-                  <p className="text-gray-500 font-semibold">{code.reward}</p>
-                </div>
-              </div>
-            ))}
+        {/* How to Redeem */}
+        <div className="bg-amber-950/30 border border-amber-800 rounded-lg p-6 mb-8">
+          <h2 className="text-xl font-bold mb-3 text-amber-400">
+            How to Redeem Codes
+          </h2>
+          <ol className="list-decimal list-inside space-y-2 text-amber-200">
+            <li>Open The Forge game on Roblox</li>
+            <li>Click on the &quot;Codes&quot; button in the main menu</li>
+            <li>Enter the code exactly as shown below (case-sensitive)</li>
+            <li>Click &quot;Redeem&quot; to claim your rewards</li>
+            <li>Check your inventory for the items and gems</li>
+          </ol>
+        </div>
+
+        {/* Active Codes Table */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-zinc-100">
+            Active Codes ({activeCodes.length})
+          </h2>
+          <div className="bg-zinc-900 rounded-lg border border-zinc-800 overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Code</TableHead>
+                  <TableHead>Reward</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead className="text-right">Action</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {activeCodes.map((code, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-mono font-bold text-amber-500">
+                      {code.code}
+                    </TableCell>
+                    <TableCell className="text-zinc-300">
+                      {code.reward}
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant="active">Active</Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <CopyButton text={code.code} />
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
-      )}
 
-      {/* Tips */}
-      <div className="mt-12 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-        <h3 className="text-lg font-bold mb-2 text-yellow-900">💡 Tips</h3>
-        <ul className="list-disc list-inside space-y-1 text-yellow-800">
-          <li>Codes are case-sensitive - enter them exactly as shown</li>
-          <li>Each code can only be redeemed once per account</li>
-          <li>Check back regularly for new codes</li>
-          <li>Follow our social media for exclusive codes</li>
-        </ul>
+        {/* Expired Codes */}
+        {expiredCodes.length > 0 && (
+          <div>
+            <h2 className="text-3xl font-bold mb-6 text-zinc-400">
+              Expired Codes
+            </h2>
+            <div className="bg-zinc-900 rounded-lg border border-zinc-800 overflow-hidden opacity-60">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Code</TableHead>
+                    <TableHead>Reward</TableHead>
+                    <TableHead>Status</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {expiredCodes.map((code, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-mono text-zinc-500">
+                        {code.code}
+                      </TableCell>
+                      <TableCell className="text-zinc-500">
+                        {code.reward}
+                      </TableCell>
+                      <TableCell>
+                        <Badge variant="expired">Expired</Badge>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        )}
+
+        {/* Tips */}
+        <div className="mt-12 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+          <h3 className="text-lg font-bold mb-2 text-amber-400">💡 Tips</h3>
+          <ul className="list-disc list-inside space-y-1 text-zinc-300">
+            <li>Codes are case-sensitive - enter them exactly as shown</li>
+            <li>Each code can only be redeemed once per account</li>
+            <li>Check back regularly for new codes</li>
+            <li>Follow our social media for exclusive codes</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
-

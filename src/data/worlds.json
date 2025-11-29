@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Stonewake's Cross",
+    "world": "World 1",
+    "type": "Starting Island",
+    "description": "The initial area where all players start. Contains the main city, mining cave, and smithy.",
+    "unlockRequirement": "Starting Area",
+    "features": [
+      "Main City",
+      "The Cave (Mining Area)",
+      "Smithy (Forging Area)",
+      "All Basic NPCs",
+      "Tutorial Area"
+    ],
+    "ores": ["Copper", "Iron", "Basic Ores"],
+    "enemies": ["Basic Monsters", "Cave Creatures"]
+  },
+  {
+    "name": "Forgotten Kingdom",
+    "world": "World 2",
+    "type": "Advanced Area",
+    "description": "Unlocked after reaching Level 10 and completing Sensei Moro's questline. Contains higher tier ores and stronger enemies.",
+    "unlockRequirement": "Level 10 + Complete Sensei Moro Questline",
+    "features": [
+      "Advanced Mining Areas",
+      "Stronger Enemies",
+      "Rare Ores",
+      "Boss Encounters",
+      "Advanced NPCs"
+    ],
+    "ores": ["Rare Ores", "Legendary Materials"],
+    "enemies": ["Advanced Monsters", "Bosses"]
+  }
+]
+

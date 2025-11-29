@@ -10,13 +10,22 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ['survive overnight', 'mega store', 'survival game', 'game wiki', 'items guide'],
+  keywords: [
+    'The Forge Codes',
+    'Roblox The Forge Races',
+    'The Forge Trello',
+    'Lost Cat Guide',
+    'The Forge Wiki',
+    'The Forge Tier List',
+    'The Forge Roblox',
+    'The Forge Codes 2024',
+  ],
   authors: [
     {
-      name: 'Survive Overnight Wiki',
+      name: 'The Forge Wiki Team',
     },
   ],
   openGraph: {
@@ -34,15 +43,19 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport = {
+  themeColor: '#d97706',
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen bg-zinc-950">
           <Navbar />
           <main className="flex-grow">
             {children}
@@ -53,4 +66,3 @@ export default function RootLayout({
     </html>
   )
 }
-

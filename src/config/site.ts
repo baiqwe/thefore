@@ -1,21 +1,20 @@
 export const siteConfig = {
-  name: "Survive Overnight Wiki",
-  description: "Ultimate database for locations, keys, items, codes, and survival strategies in the mega store.",
-  url: "https://survive-overnight-wiki.com",
-  ogImage: "https://survive-overnight-wiki.com/og.jpg",
-  themeColor: "blue",
+  name: "The Forge Wiki",
+  description: "The Ultimate The Forge Roblox Wiki & Codes - Complete guides for Races, Tier Lists, Codes, and more!",
+  url: "https://the-forge-wiki.com",
+  ogImage: "https://the-forge-wiki.com/og.jpg",
+  themeColor: "amber",
   links: {
-    twitter: "https://twitter.com/yourname",
-    github: "https://github.com/yourname",
+    twitter: "https://twitter.com/theforgewiki",
+    github: "https://github.com/theforgewiki",
+    trello: "https://trello.com/theforge",
   },
-  // 导航菜单
   mainNav: [
     { title: "Home", href: "/" },
-    { title: "Items", href: "/items" },
-    { title: "Locations", href: "/locations" },
     { title: "Codes", href: "/codes" },
-    { title: "Guides", href: "/guides" },
-    { title: "Quests", href: "/quests" },
+    { title: "Races", href: "/wiki/races" },
+    { title: "Tier List", href: "/wiki/race-tier-list" },
+    { title: "Guides", href: "/wiki" },
+    { title: "Trello", href: "https://trello.com/theforge", external: true },
   ],
 }
-

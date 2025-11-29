@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Miner Fred",
+    "location": "World 1 - Main Square",
+    "function": "Sells Pickaxes",
+    "description": "Located in the main square. Sells various pickaxes that allow you to mine higher tier rocks. Essential for progression.",
+    "items": ["Basic Pickaxe", "Iron Pickaxe", "Steel Pickaxe", "Advanced Pickaxes"]
+  },
+  {
+    "name": "Greedy Cey",
+    "location": "Shop Area",
+    "function": "Buys Ores, Runes, Essences",
+    "description": "Trades your collected ores, runes, and essences for gold. Main source of income from mining.",
+    "items": ["Buys: Ores", "Buys: Runes", "Buys: Essences"]
+  },
+  {
+    "name": "Maria",
+    "location": "Potion Shop",
+    "function": "Sells Potions",
+    "description": "Runs the potion shop. Essential for healing during combat and exploration.",
+    "items": ["Health Potions", "Mana Potions", "Buff Potions"]
+  },
+  {
+    "name": "Bard",
+    "location": "Various Locations",
+    "function": "Sells Lanterns",
+    "description": "Sells lanterns needed for lighting in The Cave. Essential for deeper mining expeditions.",
+    "items": ["Basic Lantern", "Upgraded Lanterns"]
+  },
+  {
+    "name": "Marbles",
+    "location": "Shop Area",
+    "function": "Buys Finished Equipment",
+    "description": "Purchases your crafted weapons and equipment. Good way to earn gold from your forging work.",
+    "items": ["Buys: Weapons", "Buys: Equipment"]
+  },
+  {
+    "name": "Wizard",
+    "location": "Wizard Tower",
+    "function": "Race Reroll / Unlock New Worlds",
+    "description": "The most important NPC. Allows you to reroll your race and unlock new worlds like Forgotten Kingdom.",
+    "items": ["Race Reroll Service", "World Unlock Service"]
+  },
+  {
+    "name": "Sensei Moro",
+    "location": "World 1 / World 2",
+    "function": "Quest Giver",
+    "description": "Provides advanced quests and guides. Complete his questline to unlock World 2 (Forgotten Kingdom).",
+    "items": ["Quest: Unlock World 2", "Requires: Level 10"]
+  },
+  {
+    "name": "Enhancer",
+    "location": "Smithy Area",
+    "function": "Opens Equipment Slots",
+    "description": "Consumes resources to add enhancement slots to your equipment. Required before adding runes.",
+    "items": ["Slot Enhancement Service"]
+  },
+  {
+    "name": "Runemaker",
+    "location": "Smithy Area",
+    "function": "Attaches Runes to Equipment",
+    "description": "Embeds runes into your enhanced equipment. Runes provide special effects like burn, poison, lifesteal.",
+    "items": ["Rune Attachment Service", "Runes: Burn", "Runes: Poison", "Runes: Lifesteal"]
+  }
+]
+

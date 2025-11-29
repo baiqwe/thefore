@@ -1,167 +1,29 @@
 [
   {
-    "slug": "beginner-survival-guide",
-    "title": "Beginner's Survival Guide",
-    "category": "Basics",
+    "slug": "race-tier-list",
+    "title": "Race Tier List - Best Races in The Forge",
+    "description": "Complete tier list ranking all races from S to C tier with detailed analysis.",
+    "category": "Races",
+    "author": "The Forge Wiki Team",
     "difficulty": "Beginner",
-    "author": "Wiki Team",
-    "lastUpdated": "2024-03-15",
-    "description": "Essential tips and strategies for new players. Learn the basics of surviving your first night.",
-    "content": [
-      {
-        "section": "Getting Started",
-        "text": "When you first spawn in the mega store, your priority should be finding a light source. The store is pitch black after closing, and you'll need to see where you're going."
-      },
-      {
-        "section": "Essential Items",
-        "text": "Always prioritize finding these items: Flashlight, First Aid Kit, Water Bottle, and a Weapon. These are your basic survival tools."
-      },
-      {
-        "section": "Resource Management",
-        "text": "Don't waste consumables on minor injuries. Save your First Aid Kits for emergencies. Energy Drinks should be used strategically when you need to run or explore quickly."
-      },
-      {
-        "section": "Enemy Avoidance",
-        "text": "If you hear footsteps or see movement, hide immediately. Use shelves and displays as cover. Running should be your last resort as it makes noise and attracts attention."
-      },
-      {
-        "section": "Time Management",
-        "text": "The night lasts from 10:00 PM to 6:00 AM (8 hours in-game). Plan your activities accordingly. Don't spend too much time in one area."
-      }
-    ],
-    "tags": ["beginner", "survival", "tips", "basics"]
+    "content": "# Race Tier List\n\n## S Tier\n\n### Dragonborn\n- **Abilities**: Fire Immunity, +50% Damage, Flight\n- **Best For**: End-game content, boss fights\n- **Why S Tier**: Unmatched damage output and survivability\n\n## A Tier\n\n### Elf\n- **Abilities**: +30% Speed, Magic Affinity, Night Vision\n- **Best For**: Speed runs, magic builds\n\n### Dwarf\n- **Abilities**: +40% Mining Speed, Crafting Bonus, Poison Resistance\n- **Best For**: Mining, crafting, resource gathering\n\n## B Tier\n\n### Human\n- **Abilities**: Balanced Stats, Versatile\n- **Best For**: New players, balanced gameplay\n\n### Orc\n- **Abilities**: +25% Health, +20% Melee Damage, Berserker Rage\n- **Best For**: Tank builds, melee combat\n\n## C Tier\n\n### Goblin\n- **Abilities**: +15% Speed, Small Size, Stealth\n- **Best For**: Early game, exploration"
   },
   {
-    "slug": "advanced-strategies",
-    "title": "Advanced Survival Strategies",
-    "category": "Advanced",
-    "difficulty": "Expert",
-    "author": "Pro Player",
-    "lastUpdated": "2024-03-20",
-    "description": "Master-level strategies for experienced players. Optimize your survival rate and maximize rewards.",
-    "content": [
-      {
-        "section": "Route Optimization",
-        "text": "Plan your route before starting. The most efficient path is: Security Office → Pharmacy → Electronics → Generator Room. This minimizes backtracking."
-      },
-      {
-        "section": "Item Prioritization",
-        "text": "Legendary items should always be your first priority. Master Key and Night Vision Goggles are game-changers. Don't waste time on common items unless you need them immediately."
-      },
-      {
-        "section": "Enemy Patterns",
-        "text": "Enemies follow predictable patrol routes. Learn these patterns and time your movements accordingly. Most enemies have a 2-minute patrol cycle."
-      },
-      {
-        "section": "Resource Hoarding",
-        "text": "Collect everything you can early on, but don't carry too much. Use the Tactical Backpack to increase capacity. Drop common items if you find better ones."
-      },
-      {
-        "section": "Speed Running",
-        "text": "For speed runs, focus only on main quest items. Skip side quests unless they're on your path. Use Energy Drinks to maintain sprint speed."
-      }
-    ],
-    "tags": ["advanced", "strategy", "optimization", "expert"]
-  },
-  {
-    "slug": "item-location-guide",
-    "title": "Complete Item Location Guide",
-    "category": "Reference",
-    "difficulty": "All Levels",
-    "author": "Wiki Team",
-    "lastUpdated": "2024-03-18",
-    "description": "Comprehensive guide to finding every item in the mega store. Organized by location for easy reference.",
-    "content": [
-      {
-        "section": "Security Office",
-        "text": "Contains: Master Key, Security Badge, Emergency Exit Key, Security Camera Code. Access requires lockpicking or finding the security badge first."
-      },
-      {
-        "section": "Pharmacy Section",
-        "text": "Contains: First Aid Kits (behind counter), Painkillers, Medical Supplies. Usually guarded, approach carefully."
-      },
-      {
-        "section": "Electronics Section",
-        "text": "Contains: Flashlight, Walkie-Talkie, Emergency Radio, Night Vision Goggles (hidden). Check all shelves and displays."
-      },
-      {
-        "section": "Hardware Section",
-        "text": "Contains: Crowbar, Lockpick Set, Duct Tape, Rope. Essential tools for progression."
-      },
-      {
-        "section": "Grocery Section",
-        "text": "Contains: Canned Food, Water Bottles, Energy Drinks. Abundant resources for survival."
-      },
-      {
-        "section": "Basement",
-        "text": "Contains: Generator Fuel, Backup Generator. Critical for power restoration quest."
-      }
-    ],
-    "tags": ["items", "locations", "reference", "guide"]
-  },
-  {
-    "slug": "enemy-encounter-guide",
-    "title": "Enemy Encounter Guide",
-    "category": "Combat",
+    "slug": "ore-depths-guide",
+    "title": "Ore Depths Guide - Where to Find Every Ore",
+    "description": "Complete guide to ore locations at different depth levels from 0-1000m.",
+    "category": "Ores",
+    "author": "The Forge Wiki Team",
     "difficulty": "Intermediate",
-    "author": "Survivor Expert",
-    "lastUpdated": "2024-03-22",
-    "description": "Learn how to deal with different enemy types and avoid dangerous encounters.",
-    "content": [
-      {
-        "section": "Security Guards",
-        "text": "Patrol in pairs, have flashlights. Hide when you see their light. They can be distracted with noise from walkie-talkies."
-      },
-      {
-        "section": "Shadow Entities",
-        "text": "Only appear in complete darkness. Always carry a light source. They're weak to bright light from flashlights."
-      },
-      {
-        "section": "Store Manager",
-        "text": "Boss enemy that appears after 2:00 AM. Extremely dangerous. Best strategy is to avoid entirely or use all your resources to defeat."
-      },
-      {
-        "section": "Avoidance Tactics",
-        "text": "Use shelves as cover, crouch to reduce noise, use distractions (throw items), and always have an escape route planned."
-      },
-      {
-        "section": "Combat Tips",
-        "text": "If combat is unavoidable, use weapons with knockback (baseball bat). Fire extinguisher can blind enemies temporarily. Always have a First Aid Kit ready."
-      }
-    ],
-    "tags": ["enemies", "combat", "survival", "tactics"]
+    "content": "# Ore Depths Guide\n\n## Depth Levels\n\n### 0-100m\n- **Copper Ore**: Common, found everywhere\n- **Iron Ore**: Common, basic crafting material\n\n### 100-300m\n- **Silver Ore**: Uncommon, valuable\n- **Gold Ore**: Rare, high value\n\n### 300-600m\n- **Platinum Ore**: Rare, premium crafting\n- **Mithril Ore**: Very Rare, powerful equipment\n\n### 600-1000m\n- **Adamantite Ore**: Legendary, end-game material\n- **Dragon Scale Ore**: Mythical, ultimate tier\n\n## Tips\n- Deeper ores require better equipment\n- Bring plenty of torches\n- Watch out for cave-ins"
   },
   {
-    "slug": "quest-walkthrough",
-    "title": "Complete Quest Walkthrough",
-    "category": "Walkthrough",
-    "difficulty": "All Levels",
-    "author": "Wiki Team",
-    "lastUpdated": "2024-03-25",
-    "description": "Step-by-step walkthrough for all main and side quests. Never get stuck again!",
-    "content": [
-      {
-        "section": "Quest Order Recommendation",
-        "text": "Recommended order: First Night → Pharmacy Run → Security Breach → Weapon Master → Power Restoration → Escape Route → The Final Night"
-      },
-      {
-        "section": "First Night Quest",
-        "text": "Start by heading to Electronics (Aisle 12) for flashlight. Then go to Customer Service for store map. Finally, locate emergency exit near main entrance."
-      },
-      {
-        "section": "Security Breach Quest",
-        "text": "First, get Security Badge from Lost & Found. Use it to access security room. Disable cameras using the code from Manager's Office. Then grab Master Key."
-      },
-      {
-        "section": "Power Restoration Quest",
-        "text": "Find Generator Fuel in Automotive Section. Go to Basement (use Master Key). Activate generator. Survive the 30-second power surge event with enemies spawning."
-      },
-      {
-        "section": "Tips for Final Night",
-        "text": "Stock up on all consumables. Have Master Key, Night Vision Goggles, and all weapons. Plan your route and stick to it. Don't explore unnecessarily."
-      }
-    ],
-    "tags": ["quests", "walkthrough", "guide", "tutorial"]
+    "slug": "lost-cat-quest",
+    "title": "Lost Cat Quest Walkthrough",
+    "description": "Step-by-step guide to complete the Lost Cat quest and claim your rewards.",
+    "category": "Quests",
+    "author": "The Forge Wiki Team",
+    "difficulty": "Beginner",
+    "content": "# Lost Cat Quest Walkthrough\n\n## Starting the Quest\n\n1. Talk to the NPC in the starting village\n2. Accept the quest \"Find the Lost Cat\"\n3. The cat was last seen near the old mine\n\n## Quest Steps\n\n1. **Search the Old Mine** (0-50m depth)\n   - Look for cat footprints\n   - Check behind barrels\n\n2. **Follow the Clues**\n   - Find the cat's collar in the mine\n   - Talk to the miner who found it\n\n3. **Rescue the Cat**\n   - Cat is trapped in a cave at 100m depth\n   - Bring a rope to rescue it\n\n## Rewards\n- 500 Gems\n- Cat Companion Pet\n- Quest Completion Badge"
   }
 ]
-

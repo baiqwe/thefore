@@ -72,32 +72,15 @@ export default function GuidePage({ params }: PageProps) {
         <div className="flex items-center gap-4 text-sm text-gray-500">
           <span>By {guide.author}</span>
           <span>•</span>
-          <span>Last updated: {guide.lastUpdated}</span>
         </div>
       </div>
 
       {/* Content */}
       <div className="prose max-w-none mb-8">
-        {guide.content.map((section, index) => (
-          <div key={index} className="mb-8 bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">{section.section}</h2>
-            <p className="text-gray-700 leading-relaxed">{section.text}</p>
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+            {typeof guide.content === 'string' ? guide.content : JSON.stringify(guide.content)}
           </div>
-        ))}
-      </div>
-
-      {/* Tags */}
-      <div className="mb-8">
-        <h3 className="font-semibold mb-3">Tags:</h3>
-        <div className="flex flex-wrap gap-2">
-          {guide.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-            >
-              #{tag}
-            </span>
-          ))}
         </div>
       </div>
 
@@ -106,12 +89,7 @@ export default function GuidePage({ params }: PageProps) {
         <h3 className="text-lg font-bold mb-4 text-blue-900">Related Guides</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {guidesData
-            .filter(
-              (g) =>
-                g.slug !== guide.slug &&
-                (g.category === guide.category ||
-                  g.tags.some((tag) => guide.tags.includes(tag)))
-            )
+            .filter((g) => g.slug !== guide.slug && g.category === guide.category)
             .slice(0, 2)
             .map((relatedGuide) => (
               <Link

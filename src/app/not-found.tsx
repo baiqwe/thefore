@@ -6,7 +6,7 @@ export default function NotFound() {
       <h1 className="text-6xl font-bold mb-4">404</h1>
       <h2 className="text-3xl font-semibold mb-4">Item Not Found</h2>
       <p className="text-gray-600 mb-8">
-        The item you're looking for doesn't exist in our database.
+        The item you&apos;re looking for doesn&apos;t exist in our database.
       </p>
       <Link
         href="/"

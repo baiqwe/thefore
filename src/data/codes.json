@@ -1,59 +1,10 @@
 [
-  {
-    "code": "SURVIVE2024",
-    "reward": "500 Coins + Rare Item Box",
-    "status": "Active",
-    "expires": "2024-12-31",
-    "description": "New Year celebration code! Redeem for coins and a rare item box."
-  },
-  {
-    "code": "MEGASTORE",
-    "reward": "1000 Coins",
-    "status": "Active",
-    "expires": "Never",
-    "description": "Permanent code for new players. Get started with some extra coins."
-  },
-  {
-    "code": "NIGHTMODE",
-    "reward": "Flashlight + 200 Coins",
-    "status": "Active",
-    "expires": "2024-06-30",
-    "description": "Perfect for surviving the night! Get a free flashlight and coins."
-  },
-  {
-    "code": "LEGENDARY",
-    "reward": "Legendary Item Box",
-    "status": "Active",
-    "expires": "2024-05-31",
-    "description": "Limited time code! Get a chance to receive legendary items."
-  },
-  {
-    "code": "UPDATE1",
-    "reward": "300 Coins + Energy Drink x3",
-    "status": "Active",
-    "expires": "2024-04-30",
-    "description": "Celebrate the latest game update with free rewards."
-  },
-  {
-    "code": "STORE50K",
-    "reward": "500 Coins",
-    "status": "Active",
-    "expires": "2024-07-31",
-    "description": "Milestone celebration code for reaching 50K players!"
-  },
-  {
-    "code": "SURVIVOR",
-    "reward": "First Aid Kit + 150 Coins",
-    "status": "Active",
-    "expires": "2024-08-31",
-    "description": "For all the survivors out there! Get healing items and coins."
-  },
-  {
-    "code": "WIKI2024",
-    "reward": "250 Coins",
-    "status": "Active",
-    "expires": "2024-12-31",
-    "description": "Special code for wiki visitors. Thanks for using our guide!"
-  }
+  { "code": "100K!", "reward": "3x Race Reroll", "status": "Active" },
+  { "code": "40KLIKES", "reward": "Rewards", "status": "Active" },
+  { "code": "20KLIKES", "reward": "Rewards", "status": "Active" },
+  { "code": "10KLIKES", "reward": "Luck Totem", "status": "Active" },
+  { "code": "5KLIKES", "reward": "Miner Totem", "status": "Active" },
+  { "code": "BETARELEASE!", "reward": "Beta Rewards", "status": "Active" },
+  { "code": "POSTRELEASEQNA", "reward": "Release Rewards", "status": "Active" },
+  { "code": "RELEASE", "reward": "500 Gems", "status": "Expired" }
 ]
-
