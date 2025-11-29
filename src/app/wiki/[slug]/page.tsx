@@ -10,9 +10,9 @@ import { TierList } from "@/components/TierList"
 import { OreChart } from "@/components/OreChart"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 function extractHeadings(content: string): string[] {
@@ -30,7 +30,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const guide = guidesData.find((g) => g.slug === params.slug)
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
   if (!guide) {
     return {
       title: "Guide Not Found",
@@ -44,10 +45,10 @@ export async function generateMetadata({
   ]
 
   // Add specific keywords based on guide slug
-  if (params.slug === "lost-cat-quest") {
+  if (slug === "lost-cat-quest") {
     baseKeywords.push("Lost Cat Guide", "Lost Cat Quest")
   }
-  if (params.slug === "race-tier-list") {
+  if (slug === "race-tier-list") {
     baseKeywords.push("The Forge Tier List", "Roblox The Forge Races")
   }
 
@@ -58,8 +59,9 @@ export async function generateMetadata({
   }
 }
 
-export default function GuidePage({ params }: PageProps) {
-  const guide = guidesData.find((g) => g.slug === params.slug)
+export default async function GuidePage({ params }: PageProps) {
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
 
   if (!guide) {
     notFound()
@@ -69,9 +71,9 @@ export default function GuidePage({ params }: PageProps) {
 
   // Render content based on slug
   let content = null
-  if (params.slug === "race-tier-list") {
+  if (slug === "race-tier-list") {
     content = <TierList races={racesData} />
-  } else if (params.slug === "ore-depths-guide") {
+  } else if (slug === "ore-depths-guide") {
     content = <OreChart />
   } else {
     // Render markdown-like content

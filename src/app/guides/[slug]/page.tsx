@@ -5,13 +5,14 @@ import guidesData from '@/data/guides.json'
 import { siteConfig } from '@/config/site'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const guide = guidesData.find((g) => g.slug === params.slug)
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
   if (!guide) return {}
 
   return {
@@ -26,8 +27,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function GuidePage({ params }: PageProps) {
-  const guide = guidesData.find((g) => g.slug === params.slug)
+export default async function GuidePage({ params }: PageProps) {
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
 
   if (!guide) {
     notFound()
