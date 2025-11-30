@@ -25,7 +25,7 @@ export default function GuidesPage() {
         <h1 className="text-4xl font-extrabold mb-4">Guides & Strategies</h1>
         <p className="text-gray-600 text-lg">
           Master the game with our comprehensive guides. From beginner tips to advanced strategies,
-          we've got you covered.
+          we&apos;ve got you covered.
         </p>
       </div>
 

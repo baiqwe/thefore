@@ -161,7 +161,7 @@ export default function QuestsPage() {
         <h3 className="text-lg font-bold mb-2 text-blue-900">💡 Quest Tips</h3>
         <ul className="list-disc list-inside space-y-1 text-blue-800">
           <li>Complete main quests first to unlock new areas and items</li>
-          <li>Side quests provide valuable resources - don't skip them</li>
+          <li>Side quests provide valuable resources - don&apos;t skip them</li>
           <li>Check the quest location before starting to plan your route</li>
           <li>Some quests have time limits - manage your time wisely</li>
           <li>

@@ -24,9 +24,9 @@ export default function CodesPage() {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
         <h2 className="text-xl font-bold mb-3 text-blue-900">How to Redeem Codes</h2>
         <ol className="list-decimal list-inside space-y-2 text-blue-800">
-          <li>Open the game and click on the "Codes" button in the main menu</li>
+          <li>Open the game and click on the &quot;Codes&quot; button in the main menu</li>
           <li>Enter the code exactly as shown below (case-sensitive)</li>
-          <li>Click "Redeem" to claim your rewards</li>
+          <li>Click &quot;Redeem&quot; to claim your rewards</li>
           <li>Check your inventory for the items and coins</li>
         </ol>
       </div>
