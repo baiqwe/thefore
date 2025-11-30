@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "The Forge Wiki",
   description: "The Ultimate The Forge Roblox Wiki & Codes - Complete guides for Races, Tier Lists, Codes, and more!",
-  url: "https://the-forge-wiki.com",
-  ogImage: "https://the-forge-wiki.com/og.jpg",
+  url: "https://www.theforgewiki.com",
+  ogImage: "https://www.theforgewiki.com/og.jpg",
   themeColor: "amber",
   links: {
     twitter: "https://twitter.com/theforgewiki",

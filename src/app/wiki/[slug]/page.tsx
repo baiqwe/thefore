@@ -9,6 +9,8 @@ import racesData from "@/data/races.json"
 import { TierList } from "@/components/TierList"
 import { OreChart } from "@/components/OreChart"
 import { AuthorInfo } from "@/components/AuthorInfo"
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+import SEOHead from '@/components/SEOHead'
 
 interface PageProps {
   params: Promise<{
@@ -48,11 +50,13 @@ export async function generateMetadata({
     baseKeywords.push("The Forge Tier List", "Roblox The Forge Races")
   }
 
-  return {
+  return generateSEOMetadata({
     title: guide.title,
     description: guide.description,
     keywords: [guide.title, ...baseKeywords],
-  }
+    canonicalUrl: `${siteConfig.url}/wiki/${slug}`,
+    type: 'article',
+  })
 }
 
 export default async function GuidePage({ params }: PageProps) {
@@ -102,6 +106,20 @@ export default async function GuidePage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto px-4 py-10">
+      {/* SEO Head with Schema */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: guide.title, url: `/wiki/${slug}` },
+        ]}
+        article={{
+          title: guide.title,
+          description: guide.description,
+          url: `/wiki/${slug}`,
+          author: 'The Forge Wiki',
+        }}
+      />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-zinc-400 mb-6">
         <Link href="/" className="hover:text-amber-500 transition-colors flex items-center gap-1">

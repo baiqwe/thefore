@@ -4,18 +4,29 @@ import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 import codesData from '@/data/codes.json'
 import Link from 'next/link'
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+import SEOHead from '@/components/SEOHead'
 
 // 1. Dynamic Date Logic for SEO Titles
 const date = new Date();
 const currentMonth = date.toLocaleString('default', { month: 'long' });
 const currentYear = date.getFullYear();
-const nextMonth = new Date(date.setMonth(date.getMonth() + 1)).toLocaleString('default', { month: 'long' });
 
-export const metadata: Metadata = {
-  // SEO Optimized Title: "The Forge Codes (November 2025) - Free Gems | Wiki"
+// 2. 使用 SEO 工具函数生成 Metadata
+export const metadata: Metadata = generateSEOMetadata({
   title: `The Forge Codes (${currentMonth} ${currentYear}) - Free Gems & Rerolls`,
   description: `[Updated] Active The Forge codes for ${currentMonth} ${currentYear}. Redeem these OP codes for Free Gems, Race Rerolls, and Totems. No expired codes listed.`,
-}
+  keywords: [
+    'The Forge Codes',
+    'The Forge Roblox Codes',
+    'The Forge Free Codes',
+    'The Forge Redeem Codes',
+    'The Forge Wiki',
+    'Roblox The Forge',
+  ],
+  canonicalUrl: `${siteConfig.url}/codes`,
+  type: 'website',
+})
 
 export default function CodesPage() {
   const activeCodes = codesData.filter((code) => code.status === 'Active')
@@ -47,10 +58,22 @@ export default function CodesPage() {
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-4xl">
-      {/* Inject Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      {/* SEO Head Component with Schema */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Codes', url: '/codes' },
+        ]}
+        faq={[
+          {
+            question: 'How do I redeem codes in The Forge?',
+            answer: 'Open The Forge in Roblox, click the Gear icon (Settings) at the top-left, scroll down to the "Codes" section, enter the code and click Claim.',
+          },
+          {
+            question: 'What are the latest active codes for The Forge?',
+            answer: `Currently, there are ${activeCodes.length} active codes available, including rewards like Free Rerolls and Gems. Check our updated list for details.`,
+          },
+        ]}
       />
 
       {/* SEO Intro Content (Keyword Rich) */}

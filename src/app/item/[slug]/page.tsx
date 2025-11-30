@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import itemsData from '@/data/items.json'
 import { siteConfig } from '@/config/site'
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+import SEOHead from '@/components/SEOHead'
 
 // Type 定义
 interface Item {
@@ -25,14 +27,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const item = itemsData.find((i) => i.slug === params.slug)
   if (!item) return {}
   
-  return {
-    title: `${item.name} Location & Guide - ${siteConfig.name}`,
+  return generateSEOMetadata({
+    title: `${item.name} Location & Guide`,
     description: `Find ${item.name} in ${siteConfig.name}. Location: ${item.location}. ${item.description}`,
-    openGraph: {
-      title: `${item.name} - ${siteConfig.name}`,
-      description: `Location: ${item.location}. ${item.description}`,
-    },
-  }
+    keywords: [
+      item.name,
+      `${item.name} location`,
+      `${item.name} guide`,
+      'The Forge Wiki',
+      'Roblox The Forge',
+      item.type,
+    ],
+    canonicalUrl: `${siteConfig.url}/item/${item.slug}`,
+    type: 'article',
+  })
 }
 
 // 2. [SSG] 告诉 Next.js 在构建时生成哪些页面
@@ -61,8 +69,23 @@ export default function ItemPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-10">
+      {/* SEO Head with Schema */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Items', url: '/items' },
+          { name: item.name, url: `/item/${item.slug}` },
+        ]}
+        article={{
+          title: `${item.name} Location & Guide`,
+          description: `Find ${item.name} in ${siteConfig.name}. Location: ${item.location}. ${item.description}`,
+          url: `/item/${item.slug}`,
+          author: 'The Forge Wiki',
+        }}
+      />
+
       {/* 面包屑导航 */}
-      <nav className="mb-6 text-sm text-gray-500">
+      <nav className="mb-6 text-sm text-gray-500" aria-label="Breadcrumb">
         <Link href="/" className="hover:underline">Home</Link>
         <span className="mx-2">/</span>
         <Link href="/items" className="hover:underline">Items</Link>
