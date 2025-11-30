@@ -1,7 +1,6 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ChevronRight, Home } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { siteConfig } from "@/config/site"
 import guidesData from "@/data/guides.json"
@@ -11,6 +10,7 @@ import { OreChart } from "@/components/OreChart"
 import { AuthorInfo } from "@/components/AuthorInfo"
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 interface PageProps {
   params: Promise<{
@@ -121,18 +121,13 @@ export default async function GuidePage({ params }: PageProps) {
         }}
       />
       {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-sm text-zinc-400 mb-6">
-        <Link href="/" className="hover:text-amber-500 transition-colors flex items-center gap-1">
-          <Home className="h-4 w-4" />
-          Home
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <Link href="/wiki" className="hover:text-amber-500 transition-colors">
-          Wiki
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <span className="text-zinc-300">{guide.title}</span>
-      </nav>
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: guide.title, url: `/wiki/${slug}` },
+        ]}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Main Content */}

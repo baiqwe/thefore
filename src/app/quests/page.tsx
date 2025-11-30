@@ -3,6 +3,8 @@ import { siteConfig } from '@/config/site'
 import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Scroll, Key, Crown, Cat } from 'lucide-react'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import SEOHead from '@/components/SEOHead'
 
 const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
@@ -26,6 +28,22 @@ export const metadata: Metadata = {
 export default function QuestsPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-6xl">
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Quests', url: '/quests' },
+        ]}
+      />
+
+      {/* SEO Head */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Quests', url: '/quests' },
+        ]}
+      />
+
       {/* SEO Intro Content */}
       <div className="mb-10 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">

@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { siteConfig } from "@/config/site"
 import guidesData from "@/data/guides.json"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import SEOHead from "@/components/SEOHead"
 
 export const metadata: Metadata = {
   title: "Wiki Hub",
@@ -52,6 +54,22 @@ const categories = [
 export default function WikiPage() {
   return (
     <div className="container mx-auto px-4 py-10">
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+        ]}
+      />
+
+      {/* SEO Head */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+        ]}
+      />
+
       <div className="mb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
           Wiki Hub

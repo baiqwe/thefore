@@ -5,6 +5,7 @@ import itemsData from '@/data/items.json'
 import { siteConfig } from '@/config/site'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 // Type 定义
 interface Item {
@@ -84,14 +85,14 @@ export default function ItemPage({ params }: PageProps) {
         }}
       />
 
-      {/* 面包屑导航 */}
-      <nav className="mb-6 text-sm text-gray-500" aria-label="Breadcrumb">
-        <Link href="/" className="hover:underline">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/items" className="hover:underline">Items</Link>
-        <span className="mx-2">/</span>
-        <span className="font-semibold text-gray-700">{item.name}</span>
-      </nav>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Items', url: '/items' },
+          { name: item.name, url: `/item/${item.slug}` },
+        ]}
+      />
 
       {/* 标题和稀有度 */}
       <div className="mb-8">

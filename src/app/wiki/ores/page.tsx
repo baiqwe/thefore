@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site'
 import oresData from '@/data/ores.json'
 import Link from 'next/link'
 import SEOHead from '@/components/SEOHead'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 interface Ore {
   name: string
@@ -76,6 +77,15 @@ export default function OresPage() {
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-6xl">
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: 'Ores Database', url: '/wiki/ores' },
+        ]}
+      />
+
       {/* SEO Head with Schema */}
       <SEOHead
         breadcrumbs={[

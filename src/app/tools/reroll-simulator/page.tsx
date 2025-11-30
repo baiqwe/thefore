@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge"
 import { Dice6, RotateCcw } from "lucide-react"
 import Link from "next/link"
 import racesData from "@/data/races.json"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import SEOHead from "@/components/SEOHead"
 
 // Race probabilities (example - adjust based on actual game data)
 const raceProbabilities = {
@@ -65,44 +67,41 @@ export default function RerollSimulatorPage() {
   const currentMonth = date.toLocaleString('default', { month: 'long' })
   const currentYear = date.getFullYear()
 
-  // FAQ Schema for SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'How do I get free rerolls in The Forge?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'You can get free rerolls by redeeming codes like "100K!", "40KLIKES", or "20KLIKES" from our codes page. You can also earn rerolls by completing daily quests and finding hidden chests in the Volcanic Depths.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What are the best races to reroll for in The Forge?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'The best races are S-tier Legendary races like Angel and Demon, which have the highest stats. A-tier races like Dragonborn are also excellent for end-game content. Check our Race Tier List guide for complete rankings.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What are the reroll probabilities in The Forge?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Based on community data, S-tier races have approximately 2% chance, A-tier 15%, B-tier 50%, and C-tier 33%. Use this simulator to understand your chances before spending reroll tokens.',
-        },
-      },
-    ],
-  }
+  // FAQ data for SEO
+  const faqData = [
+    {
+      question: 'How do I get free rerolls in The Forge?',
+      answer: 'You can get free rerolls by redeeming codes like "100K!", "40KLIKES", or "20KLIKES" from our codes page. You can also earn rerolls by completing daily quests and finding hidden chests in the Volcanic Depths.',
+    },
+    {
+      question: 'What are the best races to reroll for in The Forge?',
+      answer: 'The best races are S-tier Legendary races like Angel and Demon, which have the highest stats. A-tier races like Dragonborn are also excellent for end-game content. Check our Race Tier List guide for complete rankings.',
+    },
+    {
+      question: 'What are the reroll probabilities in The Forge?',
+      answer: 'Based on community data, S-tier races have approximately 2% chance, A-tier 15%, B-tier 50%, and C-tier 33%. Use this simulator to understand your chances before spending reroll tokens.',
+    },
+  ]
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-6xl">
-      {/* Inject Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Tools', url: '/tools' },
+          { name: 'Reroll Simulator', url: '/tools/reroll-simulator' },
+        ]}
+      />
+
+      {/* SEO Head */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tools', url: '/tools' },
+          { name: 'Reroll Simulator', url: '/tools/reroll-simulator' },
+        ]}
+        faq={faqData}
       />
 
       {/* SEO Intro Content */}

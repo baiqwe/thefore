@@ -2,6 +2,8 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Hammer, Flame, Target } from "lucide-react"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import SEOHead from "@/components/SEOHead"
 
 const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
@@ -49,10 +51,23 @@ const howToSchema = {
 export default function ForgingPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-5xl">
-      {/* Inject HowTo Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: 'Forging Guide', url: '/wiki/forging' },
+        ]}
+      />
+
+      {/* SEO Head with HowTo Schema */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: 'Forging Guide', url: '/wiki/forging' },
+        ]}
+        schema={howToSchema}
       />
 
       {/* SEO Intro Content */}

@@ -6,6 +6,7 @@ import codesData from '@/data/codes.json'
 import Link from 'next/link'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 // 1. Dynamic Date Logic for SEO Titles
 const date = new Date();
@@ -58,6 +59,14 @@ export default function CodesPage() {
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-4xl">
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Codes', url: '/codes' },
+        ]}
+      />
+
       {/* SEO Head Component with Schema */}
       <SEOHead
         breadcrumbs={[

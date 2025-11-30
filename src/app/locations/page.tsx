@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 import itemsData from '@/data/items.json'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import SEOHead from '@/components/SEOHead'
 
 export const metadata: Metadata = {
   title: 'Locations',
@@ -31,6 +33,22 @@ export default function LocationsPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Locations', url: '/locations' },
+        ]}
+      />
+
+      {/* SEO Head */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Locations', url: '/locations' },
+        ]}
+      />
+
       <div className="mb-8">
         <h1 className="text-4xl font-extrabold mb-4">Store Locations</h1>
         <p className="text-gray-600 text-lg">

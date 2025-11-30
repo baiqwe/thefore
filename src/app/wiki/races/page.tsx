@@ -3,6 +3,8 @@ import Link from "next/link"
 import { TierList } from "@/components/TierList"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import racesData from "@/data/races.json"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import SEOHead from "@/components/SEOHead"
 
 const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
@@ -34,10 +36,23 @@ const tableSchema = {
 export default function RacesPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-6xl">
-      {/* Inject Table Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(tableSchema) }}
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: 'Races', url: '/wiki/races' },
+        ]}
+      />
+
+      {/* SEO Head with Table Schema */}
+      <SEOHead
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Wiki', url: '/wiki' },
+          { name: 'Races', url: '/wiki/races' },
+        ]}
+        schema={tableSchema}
       />
 
       {/* SEO Intro Content */}
