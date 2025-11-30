@@ -22,26 +22,76 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h4 className="font-semibold mb-4">Official Links</h4>
             <div className="space-y-2 text-sm">
-              {siteConfig.links.twitter && (
+              {siteConfig.links.game && (
                 <a
-                  href={siteConfig.links.twitter}
+                  href={siteConfig.links.game}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 block"
+                  className="text-gray-600 hover:text-amber-600 block flex items-center gap-2"
                 >
-                  Twitter
+                  <span>🎮</span>
+                  <span>Play The Forge</span>
                 </a>
               )}
-              {siteConfig.links.github && (
+              {siteConfig.links.youtube && (
                 <a
-                  href={siteConfig.links.github}
+                  href={siteConfig.links.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-red-600 block flex items-center gap-2"
+                >
+                  <span>📺</span>
+                  <span>YouTube</span>
+                </a>
+              )}
+              {siteConfig.links.x && (
+                <a
+                  href={siteConfig.links.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-400 block flex items-center gap-2"
+                >
+                  <span>𝕏</span>
+                  <span>X (Twitter)</span>
+                </a>
+              )}
+              {siteConfig.links.robloxGroup && (
+                <a
+                  href={siteConfig.links.robloxGroup}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 block flex items-center gap-2"
+                >
+                  <span>👥</span>
+                  <span>Roblox Group</span>
+                </a>
+              )}
+              {siteConfig.links.discord && (
+                <a
+                  href={siteConfig.links.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-indigo-600 block flex items-center gap-2"
+                >
+                  <span>💬</span>
+                  <span>Discord</span>
+                </a>
+              )}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Wiki Links</h4>
+            <div className="space-y-2 text-sm">
+              {siteConfig.links.trello && (
+                <a
+                  href={siteConfig.links.trello}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-600 block"
                 >
-                  GitHub
+                  Trello
                 </a>
               )}
             </div>
