@@ -65,7 +65,9 @@ export default function RacesPage() {
           The drop rates are: <strong>Mythical 0.5%</strong>, <strong>Legendary 1.25%</strong>, <strong>Epic 6-7%</strong>, <strong>Rare ~8%</strong>.
         </p>
         <p className="text-gray-700">
-          Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</Link> like &quot;200K!&quot; or &quot;100K!&quot;.
+          Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</Link> like &quot;200K!&quot; or &quot;100K!&quot;. 
+          Test your luck with our <Link href="/tools/reroll-simulator" className="text-amber-600 hover:underline font-semibold">Reroll Simulator</Link> before spending your rerolls, 
+          or check out our <Link href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">Forging Guide</Link> to craft powerful weapons for your chosen race.
         </p>
       </div>
 

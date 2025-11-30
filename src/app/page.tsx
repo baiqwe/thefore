@@ -5,7 +5,8 @@ import itemsData from '@/data/items.json'
 import codesData from '@/data/codes.json'
 import guidesData from '@/data/guides.json'
 import questsData from '@/data/quests.json'
-import { Sword, Hammer, Scroll, Key, Shield } from 'lucide-react'
+import { Sword, Hammer, Scroll, Key, Shield, Play } from 'lucide-react'
+import YouTubeVideo from '@/components/YouTubeVideo'
 
 export default function HomePage() {
   const featuredItems = itemsData.slice(0, 6)
@@ -25,21 +26,27 @@ export default function HomePage() {
         <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
           {siteConfig.name}
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 px-4">
           {siteConfig.description}
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
           <Link
             href="/codes"
-            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-colors"
+            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-colors text-center"
           >
             Get Free Codes
           </Link>
           <Link
             href="/wiki"
-            className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+            className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-center"
           >
             Browse Guides
+          </Link>
+          <Link
+            href="/tools/reroll-simulator"
+            className="bg-amber-100 text-amber-800 px-6 py-3 rounded-lg font-semibold hover:bg-amber-200 transition-colors text-center border border-amber-300"
+          >
+            Reroll Simulator
           </Link>
         </div>
       </div>
@@ -342,33 +349,75 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* YouTube Videos Section */}
+      <div className="mb-16">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Play className="h-8 w-8 text-amber-600" />
+            <h2 className="text-3xl font-bold text-gray-800">Watch The Forge Gameplay Videos</h2>
+          </div>
+          <p className="text-gray-600 max-w-2xl mx-auto px-4">
+            Learn from the best players! Watch these gameplay videos to master <strong>The Forge Roblox</strong> game.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800">The Forge Gameplay Guide</h3>
+            <YouTubeVideo
+              videoId="GpJRxMgP99Q"
+              title="The Forge Gameplay Guide - Complete Walkthrough"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800">Race Tier List Explained</h3>
+            <YouTubeVideo
+              videoId="pVrVDWXXrAw"
+              title="The Forge Race Tier List - Best Races Explained"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800">Forging Masterclass</h3>
+            <YouTubeVideo
+              videoId="knZYt5e7BW8"
+              title="The Forge Forging Masterclass - Craft Masterwork Weapons"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800">Quest Walkthrough</h3>
+            <YouTubeVideo
+              videoId="2ouRRBSlGNk"
+              title="The Forge Quest Walkthrough - Complete All Quests"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Game Info Section */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg mb-8">
-        <h2 className="text-2xl font-bold mb-4">About Survive Overnight in a Mega Store</h2>
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-lg mb-8">
+        <h2 className="text-2xl font-bold mb-4">About The Forge Roblox</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          Survive Overnight in a Mega Store is a survival horror game where players must navigate
-          through a massive retail store after dark. With limited resources, dangerous enemies, and
-          mysterious events, players must find keys, items, and tools to survive until morning.
-          This wiki provides a comprehensive database of all items, locations, and strategies to
-          help you make it through the night.
+          <strong>The Forge</strong> is a popular Roblox RPG game by Fireatacck featuring manual forging minigames, 
+          race systems, and hardcore RPG mechanics. Players mine ores, forge weapons, and battle enemies in this 
+          action-packed adventure. This wiki provides a comprehensive database of all codes, races, guides, and strategies 
+          to help you master the game.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div>
             <h3 className="font-semibold mb-2">Game Features:</h3>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
-              <li>Explore a massive mega store with multiple floors</li>
-              <li>Find and collect various items and tools</li>
-              <li>Complete quests and challenges</li>
-              <li>Survive against dangerous enemies</li>
+              <li>Manual forging minigame with 3 steps</li>
+              <li>Race system with Mythical, Legendary, and Epic tiers</li>
+              <li>Mining and crafting mechanics</li>
+              <li>Quest system with unique rewards</li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-2">Wiki Features:</h3>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
-              <li>Complete item database with locations</li>
-              <li>Comprehensive guides and strategies</li>
+              <li>Complete race tier list with stats</li>
               <li>Latest redeem codes and rewards</li>
-              <li>Quest walkthroughs and tips</li>
+              <li>Forging and quest guides</li>
+              <li>Reroll simulator tool</li>
             </ul>
           </div>
         </div>

@@ -142,10 +142,10 @@ export default function ItemPage({ params }: PageProps) {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">{item.description}</p>
           </div>
           
-          {/* 图片占位符 */}
-          <div className="mt-6 aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center text-gray-400 border border-gray-200">
+          {/* 图片占位符 - 使用语义化 alt 属性 */}
+          <div className="mt-6 aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center text-gray-400 border border-gray-200" role="img" aria-label={`${item.name} item visualization`}>
             <div className="text-center">
-              <div className="text-4xl mb-2">📦</div>
+              <div className="text-4xl mb-2" aria-hidden="true">📦</div>
               <div className="text-sm font-medium">Image of {item.name}</div>
             </div>
           </div>

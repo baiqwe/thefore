@@ -124,7 +124,8 @@ export default function CodesPage() {
           If you are looking to get a Legendary race like the <strong>Dragonborn</strong> or <strong>Angel</strong>, make sure to save up your Gems.
         </p>
         <p>
-          Don&apos;t forget to check our <Link href="/wiki/race-tier-list" className="text-amber-600 hover:underline">Race Tier List</Link> to see which race you should aim for before using your rerolls!
+          Don&apos;t forget to check our <Link href="/wiki/race-tier-list" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which race you should aim for before using your rerolls! 
+          You can also visit our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Races Guide</Link> for detailed stats, or use our <Link href="/tools/reroll-simulator" className="text-amber-600 hover:underline font-semibold">Reroll Simulator</Link> to test your luck.
         </p>
 
         <h3 className="text-xl font-bold text-gray-800 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>

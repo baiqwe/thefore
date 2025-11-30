@@ -63,6 +63,8 @@ export default function ForgingPage() {
         <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
           Master the <strong>manual forging minigame</strong> in <strong>The Forge Roblox</strong> and craft powerful weapons. 
           This complete guide covers all three steps: <strong>Heating</strong>, <strong>Casting</strong>, and <strong>Hammering</strong>.
+          Check out our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which race is best for forging, 
+          or visit our <Link href="/codes" className="text-amber-600 hover:underline font-semibold">Codes page</Link> to get free rerolls for better races.
         </p>
       </div>
 
