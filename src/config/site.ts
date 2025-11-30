@@ -13,6 +13,7 @@ export const siteConfig = {
     { title: "Home", href: "/" },
     { title: "Guides", href: "/wiki" },
     { title: "Codes", href: "/codes" },
+    { title: "Reroll Simulator", href: "/tools/reroll-simulator" },
     { title: "Races", href: "/wiki/races" },
     { title: "Tier List", href: "/wiki/race-tier-list" },
     { title: "Trello", href: "https://trello.com/theforge", external: true },
