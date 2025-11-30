@@ -11,13 +11,20 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ['survive overnight', 'mega store', 'survival game', 'game wiki', 'items guide'],
+  keywords: [
+    'The Forge Roblox',
+    'The Forge Codes',
+    'The Forge Wiki',
+    'Roblox RPG',
+    'Race Tier List',
+    'The Forge Trello',
+  ],
   authors: [
     {
-      name: 'Survive Overnight Wiki',
+      name: 'The Forge Wiki',
     },
   ],
   openGraph: {
