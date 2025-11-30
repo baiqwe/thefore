@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Stone",
+    "value": 1,
+    "rarity": "Common",
+    "color": "text-gray-400",
+    "depth": "0m - 1000m"
+  },
+  {
+    "name": "Coal",
+    "value": 4,
+    "rarity": "Common",
+    "color": "text-gray-600",
+    "depth": "10m - 1000m"
+  },
+  {
+    "name": "Copper",
+    "value": 8,
+    "rarity": "Common",
+    "color": "text-orange-400",
+    "depth": "25m - 1000m"
+  },
+  {
+    "name": "Iron",
+    "value": 15,
+    "rarity": "Uncommon",
+    "color": "text-slate-300",
+    "depth": "50m - 1000m"
+  },
+  {
+    "name": "Silver",
+    "value": 30,
+    "rarity": "Uncommon",
+    "color": "text-slate-200",
+    "depth": "100m - 1000m"
+  },
+  {
+    "name": "Gold",
+    "value": 60,
+    "rarity": "Rare",
+    "color": "text-yellow-400",
+    "depth": "150m - 1000m"
+  },
+  {
+    "name": "Platinum",
+    "value": 100,
+    "rarity": "Rare",
+    "color": "text-cyan-200",
+    "depth": "250m - 1000m"
+  },
+  {
+    "name": "Mithril",
+    "value": 200,
+    "rarity": "Epic",
+    "color": "text-blue-400",
+    "depth": "400m - 1000m"
+  },
+  {
+    "name": "Demonite",
+    "value": 400,
+    "rarity": "Legendary",
+    "color": "text-red-600",
+    "depth": "600m - 1000m"
+  },
+  {
+    "name": "Titanium",
+    "value": 700,
+    "rarity": "Legendary",
+    "color": "text-gray-200",
+    "depth": "800m - 1000m"
+  },
+  {
+    "name": "Adamantite",
+    "value": 1200,
+    "rarity": "Mythical",
+    "color": "text-green-400",
+    "depth": "900m - 1000m"
+  },
+  {
+    "name": "Luminite",
+    "value": 2500,
+    "rarity": "Godly",
+    "color": "text-purple-400",
+    "depth": "1000m+"
+  }
+]
+

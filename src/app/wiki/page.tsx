@@ -42,8 +42,8 @@ const categories = [
   },
   {
     name: "Ores",
-    href: "/wiki/ore-depths-guide",
-    description: "Ore locations and depth levels",
+    href: "/wiki/ores",
+    description: "Complete ores database with prices and depth locations",
     icon: "⛏️",
     count: 1,
   },
