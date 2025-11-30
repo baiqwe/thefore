@@ -89,7 +89,6 @@ export default function RerollSimulatorPage() {
       <Breadcrumbs
         items={[
           { name: 'Home', url: '/' },
-          { name: 'Tools', url: '/tools' },
           { name: 'Reroll Simulator', url: '/tools/reroll-simulator' },
         ]}
       />
@@ -98,7 +97,6 @@ export default function RerollSimulatorPage() {
       <SEOHead
         breadcrumbs={[
           { name: 'Home', url: '/' },
-          { name: 'Tools', url: '/tools' },
           { name: 'Reroll Simulator', url: '/tools/reroll-simulator' },
         ]}
         faq={faqData}
