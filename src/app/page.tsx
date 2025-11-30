@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
           {siteConfig.name}
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
@@ -30,34 +30,34 @@ export default function HomePage() {
         </p>
         <div className="flex gap-4 justify-center">
           <Link
-            href="/items"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            href="/codes"
+            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-colors"
           >
-            Browse All Items
+            Get Free Codes
           </Link>
           <Link
-            href="/locations"
+            href="/wiki"
             className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
           >
-            View Locations
+            Browse Guides
           </Link>
         </div>
       </div>
 
       {/* Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div className="bg-blue-50 p-6 rounded-lg text-center">
-          <div className="text-4xl font-bold text-blue-600 mb-2">{totalItems}</div>
+        <div className="bg-amber-50 p-6 rounded-lg text-center border border-amber-200">
+          <div className="text-4xl font-bold text-amber-600 mb-2">{totalItems}</div>
           <div className="text-gray-600">Total Items</div>
         </div>
-        <div className="bg-purple-50 p-6 rounded-lg text-center">
-          <div className="text-4xl font-bold text-purple-600 mb-2">
+        <div className="bg-orange-50 p-6 rounded-lg text-center border border-orange-200">
+          <div className="text-4xl font-bold text-orange-600 mb-2">
             {itemsData.filter((item) => item.stats.rarity === 'Legendary').length}
           </div>
           <div className="text-gray-600">Legendary Items</div>
         </div>
-        <div className="bg-green-50 p-6 rounded-lg text-center">
-          <div className="text-4xl font-bold text-green-600 mb-2">
+        <div className="bg-amber-50 p-6 rounded-lg text-center border border-amber-200">
+          <div className="text-4xl font-bold text-amber-600 mb-2">
             {new Set(itemsData.map((item) => item.location)).size}
           </div>
           <div className="text-gray-600">Unique Locations</div>
@@ -92,7 +92,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold">Featured Items</h2>
           <Link
             href="/items"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
+            className="text-amber-600 hover:text-amber-700 font-semibold"
           >
             View All →
           </Link>
@@ -106,7 +106,7 @@ export default function HomePage() {
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-bold">{item.name}</h3>
-                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">
                   {item.stats.rarity || 'Common'}
                 </span>
               </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold">Latest The Forge Codes</h2>
           <Link
             href="/codes"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
+            className="text-amber-600 hover:text-amber-700 font-semibold"
           >
             View All Codes →
           </Link>
@@ -137,10 +137,10 @@ export default function HomePage() {
           {latestCodes.map((code, index) => (
             <div
               key={index}
-              className="bg-white border-2 border-green-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white border-2 border-amber-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
+                <span className="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">
                   ACTIVE
                 </span>
                 {index === 0 && (
@@ -154,7 +154,7 @@ export default function HomePage() {
                   {code.code}
                 </div>
               </div>
-              <p className="text-blue-600 font-semibold mb-2">{code.reward}</p>
+              <p className="text-amber-700 font-semibold mb-2">{code.reward}</p>
               <p className="text-sm text-gray-600">{code.description}</p>
             </div>
           ))}
@@ -167,11 +167,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link
             href="/wiki/races"
-            className="bg-white rounded-lg border-2 border-blue-200 shadow-md hover:shadow-xl transition-all p-6 group"
+            className="bg-white rounded-lg border-2 border-amber-200 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                <Shield className="h-6 w-6 text-blue-600" />
+              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
+                <Shield className="h-6 w-6 text-amber-600" />
               </div>
               <h3 className="text-xl font-bold">Race Tier List</h3>
             </div>
@@ -185,8 +185,8 @@ export default function HomePage() {
             className="bg-white rounded-lg border-2 border-orange-200 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-orange-100 rounded-lg group-hover:bg-orange-200 transition-colors">
-                <Hammer className="h-6 w-6 text-orange-600" />
+              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
+                <Hammer className="h-6 w-6 text-amber-600" />
               </div>
               <h3 className="text-xl font-bold">Forging Guide</h3>
             </div>
@@ -197,11 +197,11 @@ export default function HomePage() {
 
           <Link
             href="/quests"
-            className="bg-white rounded-lg border-2 border-purple-200 shadow-md hover:shadow-xl transition-all p-6 group"
+            className="bg-white rounded-lg border-2 border-amber-200 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
-                <Scroll className="h-6 w-6 text-purple-600" />
+              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
+                <Scroll className="h-6 w-6 text-amber-600" />
               </div>
               <h3 className="text-xl font-bold">Quest Walkthroughs</h3>
             </div>
@@ -262,7 +262,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold">Popular Guides</h2>
           <Link
             href="/guides"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
+            className="text-amber-600 hover:text-amber-700 font-semibold"
           >
             View All Guides →
           </Link>
@@ -275,16 +275,16 @@ export default function HomePage() {
               className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-xl transition-all p-6"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-800">
+                <span className="px-2 py-1 text-xs font-semibold rounded bg-amber-100 text-amber-800">
                   {guide.category}
                 </span>
                 <span
                   className={`px-2 py-1 text-xs font-semibold rounded ${
                     guide.difficulty === 'Beginner'
-                      ? 'bg-green-100 text-green-800'
+                      ? 'bg-amber-100 text-amber-800'
                       : guide.difficulty === 'Expert'
                       ? 'bg-red-100 text-red-800'
-                      : 'bg-yellow-100 text-yellow-800'
+                      : 'bg-orange-100 text-orange-800'
                   }`}
                 >
                   {guide.difficulty}
@@ -304,7 +304,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold">Main Quests</h2>
           <Link
             href="/quests"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
+            className="text-amber-600 hover:text-amber-700 font-semibold"
           >
             View All Quests →
           </Link>
@@ -314,18 +314,18 @@ export default function HomePage() {
             <Link
               key={quest.id}
               href="/quests"
-              className="bg-white border-l-4 border-blue-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white border-l-4 border-amber-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center gap-2 mb-3">
                 <h3 className="text-xl font-bold">{quest.title}</h3>
                 <span
                   className={`px-2 py-1 text-xs font-bold rounded-full ${
                     quest.difficulty === 'Easy'
-                      ? 'bg-green-100 text-green-800'
+                      ? 'bg-amber-100 text-amber-800'
                       : quest.difficulty === 'Medium'
-                      ? 'bg-yellow-100 text-yellow-800'
-                      : quest.difficulty === 'Hard'
                       ? 'bg-orange-100 text-orange-800'
+                      : quest.difficulty === 'Hard'
+                      ? 'bg-orange-200 text-orange-900'
                       : 'bg-red-100 text-red-800'
                   }`}
                 >

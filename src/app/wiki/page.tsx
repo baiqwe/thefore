@@ -52,10 +52,12 @@ const categories = [
 export default function WikiPage() {
   return (
     <div className="container mx-auto px-4 py-10">
-      <div className="mb-8">
-        <h1 className="text-4xl font-extrabold mb-4 text-zinc-100">Wiki Hub</h1>
-        <p className="text-zinc-400 text-lg">
-          Complete guides and information for The Forge Roblox game
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
+          Wiki Hub
+        </h1>
+        <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          Complete guides and information for <strong>The Forge Roblox</strong> game
         </p>
       </div>
 
@@ -69,7 +71,7 @@ export default function WikiPage() {
                 <CardTitle className="text-xl">{category.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-zinc-400 text-sm mb-2">{category.description}</p>
+                <p className="text-gray-600 text-sm mb-2">{category.description}</p>
                 <Badge variant="secondary">{category.count} guides</Badge>
               </CardContent>
             </Card>
@@ -79,7 +81,7 @@ export default function WikiPage() {
 
       {/* Featured Guides */}
       <div>
-        <h2 className="text-3xl font-bold mb-6 text-zinc-100">Featured Guides</h2>
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">Featured Guides</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {guidesData.map((guide) => (
             <Link key={guide.slug} href={`/wiki/${guide.slug}`}>
@@ -102,7 +104,7 @@ export default function WikiPage() {
                   <CardTitle className="text-xl">{guide.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-zinc-400 text-sm line-clamp-3">
+                  <p className="text-gray-600 text-sm line-clamp-3">
                     {guide.description}
                   </p>
                 </CardContent>

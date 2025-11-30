@@ -59,35 +59,35 @@ export default function CodesPage() {
           The Forge Codes ({currentMonth} {currentYear})
         </h1>
         <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Looking for the latest <strong>The Forge codes</strong> to get free <span className="font-semibold text-amber-700">Race Rerolls</span> and <span className="font-semibold text-blue-700">Gems</span>? You are in the right place. 
+          Looking for the latest <strong>The Forge codes</strong> to get free <span className="font-semibold text-amber-700">Race Rerolls</span> and <span className="font-semibold text-amber-700">Gems</span>? You are in the right place. 
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
         <p className="text-sm text-gray-500 mt-2">
-          Last checked: <span className="font-medium text-green-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
+          Last checked: <span className="font-medium text-amber-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
 
       {/* Active Codes Grid */}
       <div className="mb-16">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+            <span className="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
             Active Codes
           </h2>
-          <span className="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">
+          <span className="text-sm bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">
             {activeCodes.length} Working
           </span>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {activeCodes.map((code, index) => (
-            <div key={index} className="bg-white border-l-4 border-green-500 shadow-md rounded-r-lg p-5 hover:shadow-lg transition-all">
+            <div key={index} className="bg-white border-l-4 border-amber-500 shadow-md rounded-lg p-5 hover:shadow-lg transition-all hover:border-amber-600">
               <div className="flex justify-between items-start mb-2">
                 <span className="font-mono text-xl font-bold text-gray-800 tracking-wide">{code.code}</span>
-                <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded uppercase">Active</span>
+                <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full uppercase">Active</span>
               </div>
-              <p className="text-blue-600 font-medium mb-1">🎁 {code.reward}</p>
-              <p className="text-xs text-gray-500">{code.description}</p>
+              <p className="text-amber-700 font-medium mb-1">🎁 {code.reward}</p>
+              <p className="text-sm text-gray-600">{code.description}</p>
             </div>
           ))}
         </div>

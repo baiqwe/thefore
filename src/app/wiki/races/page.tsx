@@ -57,7 +57,7 @@ export default function RacesPage() {
       </div>
 
       {/* How to Reroll Section */}
-      <div className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 mb-10">
+      <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-10">
         <h2 className="text-2xl font-bold text-gray-800 mb-3">How to Reroll Your Race in The Forge</h2>
         <p className="text-gray-700 mb-3">
           To change your race in <strong>The Forge Roblox</strong>, visit the <strong>Wizard NPC</strong> located in 
@@ -65,7 +65,7 @@ export default function RacesPage() {
           The drop rates are: <strong>Mythical 0.5%</strong>, <strong>Legendary 1.25%</strong>, <strong>Epic 6-7%</strong>, <strong>Rare ~8%</strong>.
         </p>
         <p className="text-gray-700">
-          Get free rerolls by redeeming <Link href="/codes" className="text-blue-600 hover:underline font-semibold">The Forge codes</Link> like &quot;200K!&quot; or &quot;100K!&quot;.
+          Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</Link> like &quot;200K!&quot; or &quot;100K!&quot;.
         </p>
       </div>
 
