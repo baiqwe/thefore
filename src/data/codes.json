@@ -1,59 +1,44 @@
 [
   {
-    "code": "SURVIVE2024",
-    "reward": "500 Coins + Rare Item Box",
+    "code": "100K!",
+    "reward": "3x Free Rerolls",
     "status": "Active",
-    "expires": "2024-12-31",
-    "description": "New Year celebration code! Redeem for coins and a rare item box."
+    "description": "Celebration code for 100k likes. Grants free race rerolls."
   },
   {
-    "code": "MEGASTORE",
-    "reward": "1000 Coins",
+    "code": "40KLIKES",
+    "reward": "5x Free Rerolls",
     "status": "Active",
-    "expires": "Never",
-    "description": "Permanent code for new players. Get started with some extra coins."
+    "description": "Major milestone reward. Best code for new players."
   },
   {
-    "code": "NIGHTMODE",
-    "reward": "Flashlight + 200 Coins",
+    "code": "20KLIKES",
+    "reward": "2x Free Rerolls",
     "status": "Active",
-    "expires": "2024-06-30",
-    "description": "Perfect for surviving the night! Get a free flashlight and coins."
+    "description": "Grants additional chances to get a Legendary race."
   },
   {
-    "code": "LEGENDARY",
-    "reward": "Legendary Item Box",
+    "code": "10KLIKES",
+    "reward": "1x Luck Totem + 2x Rerolls",
     "status": "Active",
-    "expires": "2024-05-31",
-    "description": "Limited time code! Get a chance to receive legendary items."
+    "description": "Boost your luck for mining and crafting."
   },
   {
-    "code": "UPDATE1",
-    "reward": "300 Coins + Energy Drink x3",
+    "code": "5KLIKES",
+    "reward": "1x Miner Totem + 2x Rerolls",
     "status": "Active",
-    "expires": "2024-04-30",
-    "description": "Celebrate the latest game update with free rewards."
+    "description": "Increases mining speed."
   },
   {
-    "code": "STORE50K",
-    "reward": "500 Coins",
+    "code": "BETARELEASE!",
+    "reward": "2x Free Rerolls",
     "status": "Active",
-    "expires": "2024-07-31",
-    "description": "Milestone celebration code for reaching 50K players!"
+    "description": "Welcome reward for the beta launch."
   },
   {
-    "code": "SURVIVOR",
-    "reward": "First Aid Kit + 150 Coins",
-    "status": "Active",
-    "expires": "2024-08-31",
-    "description": "For all the survivors out there! Get healing items and coins."
-  },
-  {
-    "code": "WIKI2024",
-    "reward": "250 Coins",
-    "status": "Active",
-    "expires": "2024-12-31",
-    "description": "Special code for wiki visitors. Thanks for using our guide!"
+    "code": "RELEASE",
+    "reward": "500 Gems",
+    "status": "Expired",
+    "description": "Original release code."
   }
 ]
-

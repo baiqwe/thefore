@@ -138,8 +138,8 @@ export default function HomePage() {
                 <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
                   ACTIVE
                 </span>
-                {code.expires !== 'Never' && (
-                  <span className="text-xs text-gray-500">Expires: {code.expires}</span>
+                {(code as any).expires && (code as any).expires !== 'Never' && (
+                  <span className="text-xs text-gray-500">Expires: {(code as any).expires}</span>
                 )}
               </div>
               <div className="mb-3">
