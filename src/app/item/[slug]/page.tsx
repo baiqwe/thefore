@@ -15,15 +15,14 @@ interface Item {
 }
 
 interface PageProps {
-  params: Promise<{
+  params: {
     slug: string
-  }>
+  }
 }
 
 // 1. [SEO] 动态生成 Meta 标签
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params
-  const item = itemsData.find((i) => i.slug === slug)
+  const item = itemsData.find((i) => i.slug === params.slug)
   if (!item) return {}
   
   return {
@@ -45,9 +44,8 @@ export async function generateStaticParams() {
 }
 
 // 3. 页面渲染逻辑
-export default async function ItemPage({ params }: PageProps) {
-  const { slug } = await params
-  const item = itemsData.find((i) => i.slug === slug)
+export default function ItemPage({ params }: PageProps) {
+  const item = itemsData.find((i) => i.slug === params.slug)
 
   if (!item) {
     notFound()

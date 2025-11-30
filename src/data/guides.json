@@ -1,35 +1,169 @@
 [
   {
     "slug": "race-tier-list",
-    "title": "Complete Race Tier List - Best Races in The Forge Roblox (2024)",
-    "description": "Comprehensive tier list ranking all 13 races in The Forge based on 500+ hours of gameplay testing. Includes detailed analysis, ability breakdowns, and recommendations for different playstyles.",
+    "title": "Race Tier List - Best Races in The Forge",
+    "description": "Complete tier list ranking all races from S to C tier with detailed analysis.",
     "category": "Races",
     "author": "The Forge Wiki Team",
-    "authorBio": "500+ hours of combined gameplay experience, tested all races across multiple playthroughs",
     "difficulty": "Beginner",
-    "lastUpdated": "2024-11-29",
-    "content": "# Complete Race Tier List - The Forge Roblox\n\n## Methodology\n\nThis tier list is based on extensive in-game testing across 500+ hours of gameplay. Each race was tested in multiple scenarios: early game progression, mining efficiency, combat performance, and end-game content. Rankings consider overall versatility, power level, and ease of use.\n\n## Tier Rankings Explained\n\n- **S Tier (T0)**: Game-changing races that significantly impact gameplay. Best overall choices.\n- **A Tier (T1)**: Excellent races with strong specialization. Great for specific builds.\n- **B Tier**: Solid choices with good balance. Reliable but not exceptional.\n- **C Tier**: Basic races suitable for learning the game.\n\n## S Tier (T0) - God Tier\n\n### Angel\n**Why S Tier**: The most balanced race in the game. Perfect for any playstyle.\n\n- **Abilities**:\n  - +Movement Speed (significant boost)\n  - +Damage (moderate increase)\n  - +Mining Luck (rare ore discovery)\n  - Balanced stats across the board\n\n- **Best For**: All playstyles, especially new players\n- **Testing Results**: Consistently performed well in all scenarios. No weaknesses.\n- **Recommendation**: If you get Angel, keep it. It's the most versatile race.\n\n### Demon\n**Why S Tier**: Exceptional offensive capabilities with high damage output.\n\n- **Abilities**:\n  - +High Damage (substantial increase)\n  - Fire Resistance\n  - Combat bonuses\n\n- **Best For**: Combat-focused builds, boss fights\n- **Testing Results**: Highest DPS potential among all races.\n- **Recommendation**: Excellent for players who prioritize combat.\n\n## A Tier (T1) - Excellent\n\n### Dragonborn\n**Why A Tier**: Powerful but requires specific playstyle.\n\n- **Abilities**:\n  - Fire Immunity (complete immunity to fire damage)\n  - +50% Damage (massive boost)\n  - Flight (unique mobility)\n\n- **Best For**: End-game content, boss fights, fire-heavy areas\n- **Testing Results**: Exceptional in combat but less versatile than Angel.\n- **Recommendation**: Great for experienced players focusing on combat.\n\n### Undead\n**Why A Tier**: Unique tank build with interesting mechanics.\n\n- **Abilities**:\n  - -12% Max HP (trade-off)\n  - +10% Damage Reflection (unique)\n  - Low HP Regeneration (survivability)\n  - PVP Tank specialization\n\n- **Best For**: Tank builds, PVP, players who enjoy high-risk gameplay\n- **Testing Results**: Excellent survivability despite lower HP. Damage reflection is powerful.\n- **Recommendation**: Perfect for players who want a unique tank experience.\n\n### Golem\n**Why A Tier**: Ultimate tank race with extreme defense.\n\n- **Abilities**:\n  - +Extreme Defense (highest in game)\n  - -Movement Speed (significant penalty)\n  - High HP pool\n  - Damage Reduction\n\n- **Best For**: Tank builds, players who don't mind slow movement\n- **Testing Results**: Nearly unkillable but movement penalty is noticeable.\n- **Recommendation**: Best choice for pure tank builds.\n\n## B Tier - Good\n\n### Elf\n- **Abilities**: +30% Speed, Magic Affinity, Night Vision\n- **Best For**: Speed runs, magic builds\n- **Note**: Good mobility but lacks combat power\n\n### Dwarf\n- **Abilities**: +40% Mining Speed, Crafting Bonus, Poison Resistance\n- **Best For**: Mining, crafting, resource gathering\n- **Note**: Excellent for players focused on resource collection\n\n## C Tier - Basic\n\n### Human\n- **Abilities**: Balanced Stats, Versatile, No Penalties\n- **Best For**: New players, learning the game\n- **Note**: Default race with no special abilities. Good starting point.\n\n### Orc\n- **Abilities**: +25% Health, +20% Melee Damage, Berserker Rage\n- **Best For**: Tank builds, melee combat\n\n### Goblin\n- **Abilities**: +15% Speed, Small Size, Stealth\n- **Best For**: Early game, exploration\n\n## How to Reroll Your Race\n\n1. Find the **Wizard NPC** in the Wizard Tower (World 1)\n2. Interact and select \"Reroll Race\"\n3. Costs: Race Reroll Token (obtainable from codes or Robux)\n4. You can reroll as many times as you want\n\n## Testing Methodology\n\nAll races were tested with:\n- Multiple playthroughs (minimum 3 per race)\n- Different weapon types\n- Various playstyles (mining, combat, exploration)\n- End-game content completion\n- PVP scenarios (where applicable)\n\n## Conclusion\n\n**For New Players**: Start with Human or Angel if you get lucky. Both are forgiving and versatile.\n\n**For Experienced Players**: Angel and Demon offer the best overall performance. Dragonborn is excellent for combat-focused builds.\n\n**For Specialized Builds**: Golem (tank), Dwarf (mining), Undead (PVP tank) are excellent choices.\n\nRemember: The best race is the one that fits your playstyle. This tier list is a guide, not a rule."
+    "author": "Wiki Team",
+    "lastUpdated": "2024-03-15",
+    "description": "Essential tips and strategies for new players. Learn the basics of surviving your first night.",
+    "content": [
+      {
+        "section": "Getting Started",
+        "text": "When you first spawn in the mega store, your priority should be finding a light source. The store is pitch black after closing, and you'll need to see where you're going."
+      },
+      {
+        "section": "Essential Items",
+        "text": "Always prioritize finding these items: Flashlight, First Aid Kit, Water Bottle, and a Weapon. These are your basic survival tools."
+      },
+      {
+        "section": "Resource Management",
+        "text": "Don't waste consumables on minor injuries. Save your First Aid Kits for emergencies. Energy Drinks should be used strategically when you need to run or explore quickly."
+      },
+      {
+        "section": "Enemy Avoidance",
+        "text": "If you hear footsteps or see movement, hide immediately. Use shelves and displays as cover. Running should be your last resort as it makes noise and attracts attention."
+      },
+      {
+        "section": "Time Management",
+        "text": "The night lasts from 10:00 PM to 6:00 AM (8 hours in-game). Plan your activities accordingly. Don't spend too much time in one area."
+      }
+    ],
+    "tags": ["beginner", "survival", "tips", "basics"]
   },
   {
-    "slug": "ore-depths-guide",
-    "title": "Complete Ore Depths Guide - Mining Locations & Strategies (2024)",
-    "description": "Comprehensive guide to all ore locations in The Forge, tested across 60+ ore types. Includes depth levels, spawn rates, equipment requirements, and proven mining strategies.",
-    "category": "Ores",
-    "author": "The Forge Wiki Team",
-    "authorBio": "Extensive mining experience with 200+ hours dedicated to ore collection and testing",
+    "slug": "advanced-strategies",
+    "title": "Advanced Survival Strategies",
+    "category": "Advanced",
+    "difficulty": "Expert",
+    "author": "Pro Player",
+    "lastUpdated": "2024-03-20",
+    "description": "Master-level strategies for experienced players. Optimize your survival rate and maximize rewards.",
+    "content": [
+      {
+        "section": "Route Optimization",
+        "text": "Plan your route before starting. The most efficient path is: Security Office → Pharmacy → Electronics → Generator Room. This minimizes backtracking."
+      },
+      {
+        "section": "Item Prioritization",
+        "text": "Legendary items should always be your first priority. Master Key and Night Vision Goggles are game-changers. Don't waste time on common items unless you need them immediately."
+      },
+      {
+        "section": "Enemy Patterns",
+        "text": "Enemies follow predictable patrol routes. Learn these patterns and time your movements accordingly. Most enemies have a 2-minute patrol cycle."
+      },
+      {
+        "section": "Resource Hoarding",
+        "text": "Collect everything you can early on, but don't carry too much. Use the Tactical Backpack to increase capacity. Drop common items if you find better ones."
+      },
+      {
+        "section": "Speed Running",
+        "text": "For speed runs, focus only on main quest items. Skip side quests unless they're on your path. Use Energy Drinks to maintain sprint speed."
+      }
+    ],
+    "tags": ["advanced", "strategy", "optimization", "expert"]
+  },
+  {
+    "slug": "item-location-guide",
+    "title": "Complete Item Location Guide",
+    "category": "Reference",
+    "difficulty": "All Levels",
+    "author": "Wiki Team",
+    "lastUpdated": "2024-03-18",
+    "description": "Comprehensive guide to finding every item in the mega store. Organized by location for easy reference.",
+    "content": [
+      {
+        "section": "Security Office",
+        "text": "Contains: Master Key, Security Badge, Emergency Exit Key, Security Camera Code. Access requires lockpicking or finding the security badge first."
+      },
+      {
+        "section": "Pharmacy Section",
+        "text": "Contains: First Aid Kits (behind counter), Painkillers, Medical Supplies. Usually guarded, approach carefully."
+      },
+      {
+        "section": "Electronics Section",
+        "text": "Contains: Flashlight, Walkie-Talkie, Emergency Radio, Night Vision Goggles (hidden). Check all shelves and displays."
+      },
+      {
+        "section": "Hardware Section",
+        "text": "Contains: Crowbar, Lockpick Set, Duct Tape, Rope. Essential tools for progression."
+      },
+      {
+        "section": "Grocery Section",
+        "text": "Contains: Canned Food, Water Bottles, Energy Drinks. Abundant resources for survival."
+      },
+      {
+        "section": "Basement",
+        "text": "Contains: Generator Fuel, Backup Generator. Critical for power restoration quest."
+      }
+    ],
+    "tags": ["items", "locations", "reference", "guide"]
+  },
+  {
+    "slug": "enemy-encounter-guide",
+    "title": "Enemy Encounter Guide",
+    "category": "Combat",
     "difficulty": "Intermediate",
-    "lastUpdated": "2024-11-29",
-    "content": "# Complete Ore Depths Guide - The Forge Mining\n\n## Introduction\n\nThis guide is based on extensive in-game testing across 200+ hours of dedicated mining. We've documented over 60 different ore types, their exact spawn locations, and optimal mining strategies.\n\n## How Mining Works\n\n- **Mine Power**: Determines which rocks you can break\n- **Luck Stat**: Affects rare ore drop rates\n- **Pickaxe Quality**: Higher tier pickaxes = better ore chances\n- **Depth Level**: Deeper = rarer ores (but more dangerous)\n\n## Ore Spawn Rates by Depth\n\n### 0-100m (Surface Level)\n**Difficulty**: Easy\n**Equipment Needed**: Basic Pickaxe\n\n- **Copper Ore** (Common - 40% spawn rate)\n  - Found: Everywhere\n  - Use: Basic crafting\n  - Value: Low\n\n- **Iron Ore** (Common - 35% spawn rate)\n  - Found: Throughout the cave\n  - Use: Basic equipment\n  - Value: Low-Medium\n\n**Strategy**: Perfect for beginners. Focus on collecting these for early game progression.\n\n### 100-300m (Intermediate Depth)\n**Difficulty**: Medium\n**Equipment Needed**: Iron Pickaxe or better\n\n- **Silver Ore** (Uncommon - 20% spawn rate)\n  - Found: Mid-level cave areas\n  - Use: Intermediate crafting\n  - Value: Medium\n  - **Tip**: Bring a lantern - visibility decreases at this depth\n\n- **Gold Ore** (Rare - 8% spawn rate)\n  - Found: Specific cave chambers\n  - Use: High-value crafting\n  - Value: High\n  - **Tip**: Use Luck Totem to increase spawn rate\n\n**Strategy**: This is where mining becomes profitable. Focus on finding Gold Ore veins.\n\n### 300-600m (Deep Mining)\n**Difficulty**: Hard\n**Equipment Needed**: Steel Pickaxe minimum\n\n- **Platinum Ore** (Rare - 5% spawn rate)\n  - Found: Deep cave systems\n  - Use: Premium equipment crafting\n  - Value: Very High\n  - **Warning**: Stronger enemies spawn at this depth\n\n- **Mithril Ore** (Very Rare - 2% spawn rate)\n  - Found: Rare deep chambers\n  - Use: Legendary equipment\n  - Value: Extremely High\n  - **Tip**: Requires high Luck stat + Luck Totem\n\n**Strategy**: Only attempt with proper equipment. Bring healing items and good weapons.\n\n### 600-1000m (End-Game Depth)\n**Difficulty**: Extreme\n**Equipment Needed**: Advanced Pickaxe + Full Combat Gear\n\n- **Adamantite Ore** (Legendary - 1% spawn rate)\n  - Found: Extreme depth chambers\n  - Use: End-game equipment\n  - Value: Maximum\n  - **Requirement**: Level 15+ recommended\n\n- **Dragon Scale Ore** (Mythical - 0.5% spawn rate)\n  - Found: Boss chambers\n  - Use: Ultimate tier equipment\n  - Value: Priceless\n  - **Note**: Extremely rare, requires defeating cave bosses\n\n**Strategy**: This is end-game content. Only attempt with a fully equipped character.\n\n## Mining Tips & Strategies\n\n### Equipment Checklist\n- **Pickaxe**: Match your target depth (check with Miner Fred)\n- **Lantern**: Essential for depths 100m+\n- **Weapons**: Protect yourself from cave enemies\n- **Healing Items**: Always bring potions\n- **Luck Totem**: Increases rare ore spawn rates\n\n### Proven Strategies\n\n1. **Early Game (0-100m)**:\n   - Focus on Copper and Iron\n   - Build up basic equipment\n   - Don't venture too deep yet\n\n2. **Mid Game (100-300m)**:\n   - Upgrade to Iron Pickaxe\n   - Target Gold Ore for profit\n   - Start using Luck Totem\n\n3. **Late Game (300-600m)**:\n   - Steel Pickaxe required\n   - Focus on Platinum and Mithril\n   - Bring full combat loadout\n\n4. **End Game (600-1000m)**:\n   - Advanced Pickaxe mandatory\n   - Team up or be extremely well-equipped\n   - Target Adamantite and Dragon Scale\n\n### Maximizing Ore Drops\n\n- **Luck Stat**: Higher luck = better rare ore rates\n- **Race Choice**: Dwarf gets +40% mining speed\n- **Totems**: Luck Totem and Miner Totem stack\n- **Depth**: Deeper = rarer ores (but more dangerous)\n\n## NPC: Miner Fred\n\n**Location**: World 1 - Main Square\n**Function**: Sells Pickaxes\n\n**Available Pickaxes**:\n- Basic Pickaxe (0-100m)\n- Iron Pickaxe (0-300m)\n- Steel Pickaxe (0-600m)\n- Advanced Pickaxes (0-1000m+)\n\n**Tip**: Always upgrade your pickaxe before attempting deeper mining.\n\n## Common Mistakes to Avoid\n\n1. **Going too deep too early**: You'll die and lose progress\n2. **Not bringing lanterns**: Can't see = can't mine effectively\n3. **Ignoring enemies**: They'll kill you while mining\n4. **Not upgrading pickaxe**: Can't break higher tier rocks\n5. **Selling rare ores too early**: Save them for crafting\n\n## Testing Notes\n\nAll spawn rates were tested over 50+ mining sessions per depth level. Results may vary slightly based on:\n- Server population\n- Luck stat\n- Totem usage\n- Recent game updates\n\n## Conclusion\n\nMining in The Forge is a core gameplay loop. Start shallow, upgrade equipment, and gradually go deeper. The rarest ores require patience, proper equipment, and sometimes a bit of luck.\n\n**Remember**: Mining is safer than combat, but deeper depths require combat readiness."
+    "author": "Survivor Expert",
+    "lastUpdated": "2024-03-22",
+    "description": "Learn how to deal with different enemy types and avoid dangerous encounters.",
+    "content": [
+      {
+        "section": "Security Guards",
+        "text": "Patrol in pairs, have flashlights. Hide when you see their light. They can be distracted with noise from walkie-talkies."
+      },
+      {
+        "section": "Shadow Entities",
+        "text": "Only appear in complete darkness. Always carry a light source. They're weak to bright light from flashlights."
+      },
+      {
+        "section": "Store Manager",
+        "text": "Boss enemy that appears after 2:00 AM. Extremely dangerous. Best strategy is to avoid entirely or use all your resources to defeat."
+      },
+      {
+        "section": "Avoidance Tactics",
+        "text": "Use shelves as cover, crouch to reduce noise, use distractions (throw items), and always have an escape route planned."
+      },
+      {
+        "section": "Combat Tips",
+        "text": "If combat is unavoidable, use weapons with knockback (baseball bat). Fire extinguisher can blind enemies temporarily. Always have a First Aid Kit ready."
+      }
+    ],
+    "tags": ["enemies", "combat", "survival", "tactics"]
   },
   {
-    "slug": "lost-cat-quest",
-    "title": "Lost Cat Quest Complete Walkthrough - Step-by-Step Guide",
-    "description": "Detailed walkthrough for the Lost Cat quest in The Forge. Includes exact locations, NPC interactions, required items, and reward information. Tested and verified.",
-    "category": "Quests",
-    "author": "The Forge Wiki Team",
-    "authorBio": "Completed all quests multiple times to verify accuracy",
-    "difficulty": "Beginner",
-    "lastUpdated": "2024-11-29",
-    "content": "# Lost Cat Quest - Complete Walkthrough\n\n## Quest Overview\n\n**Quest Name**: Find the Lost Cat\n**Starting NPC**: Village Elder (World 1 - Starting Village)\n**Difficulty**: Beginner\n**Recommended Level**: 1-5\n**Estimated Time**: 10-15 minutes\n\n## Prerequisites\n\n- Must have completed the tutorial\n- Must be in World 1 (Stonewake's Cross)\n- No special items required initially\n\n## Step-by-Step Guide\n\n### Step 1: Starting the Quest\n\n1. **Location**: Starting Village (World 1)\n2. **Find**: Village Elder NPC (marked with quest icon)\n3. **Interact**: Click on the NPC\n4. **Dialogue**: \"A cat has gone missing. Can you help find it?\"\n5. **Accept**: Click \"Accept Quest\"\n\n**Quest Log Update**: \"Find the lost cat. Last seen near the old mine.\"\n\n### Step 2: Search the Old Mine (0-50m depth)\n\n1. **Location**: The Cave entrance (World 1)\n2. **Go to**: Old Mine section (first area, 0-50m depth)\n3. **Look for**:\n   - Cat footprints (small paw prints on ground)\n   - Check behind barrels and crates\n   - Search corners and hidden areas\n\n**Tip**: The cat footprints are subtle. Look carefully on the ground.\n\n**What to Find**:\n- Cat footprints leading deeper into the mine\n- A torn piece of fabric (cat's collar fragment)\n\n### Step 3: Follow the Clues\n\n1. **Find**: Cat's collar fragment (in Old Mine, behind a barrel)\n2. **Interact**: Pick up the collar\n3. **Quest Update**: \"Found the cat's collar. Talk to the miner who might have seen it.\"\n4. **Find Miner NPC**: Located in the mine (near the entrance)\n5. **Dialogue**: Miner says \"I saw a cat heading deeper into the cave. It looked scared.\"\n\n**New Objective**: \"The cat is deeper in the cave. Bring a rope to rescue it.\"\n\n### Step 4: Get a Rope (Optional but Recommended)\n\n**Option 1**: Buy from shop (50 gold)\n**Option 2**: Find in the mine (random drop)\n**Option 3**: Skip if you're confident (not required but helpful)\n\n### Step 5: Rescue the Cat\n\n1. **Location**: Deep Cave (100m depth)\n2. **Go to**: The trapped area (marked on minimap after Step 3)\n3. **Find**: Cat trapped in a small cave\n4. **Interact**: Use rope (if you have it) or just interact with the cat\n5. **Dialogue**: \"You found the lost cat! It's safe now.\"\n\n**Note**: The cat is in a small alcove. You might need to crouch or use specific camera angle.\n\n### Step 6: Return to Village Elder\n\n1. **Return to**: Starting Village\n2. **Find**: Village Elder NPC\n3. **Interact**: \"I found the cat!\"\n4. **Complete**: Quest completion dialogue\n\n## Rewards\n\nUpon completion, you receive:\n\n- **500 Gems** (currency)\n- **Cat Companion Pet** (cosmetic pet that follows you)\n- **Quest Completion Badge** (achievement)\n- **Experience Points** (helps with leveling)\n\n## Troubleshooting\n\n### \"I can't find the cat footprints\"\n- Make sure you're in the Old Mine section (0-50m)\n- Check behind all barrels and crates\n- Look on the ground, not walls\n- Try relogging if still not found\n\n### \"The miner NPC isn't there\"\n- Make sure you've picked up the collar first\n- The miner spawns after you find the collar\n- Check near the mine entrance\n\n### \"I can't reach the cat\"\n- Make sure you're at 100m depth\n- Try different camera angles\n- The interaction prompt should appear when close enough\n\n## Quest Tips\n\n1. **Bring a lantern**: The cave can be dark\n2. **No combat required**: This is a peaceful quest\n3. **Take your time**: Don't rush, explore thoroughly\n4. **Save progress**: Complete in one session if possible\n\n## Testing Notes\n\nThis walkthrough was tested and verified across:\n- 10+ quest completions\n- Different character levels\n- Various server conditions\n- Multiple game sessions\n\nAll steps have been confirmed to work as described.\n\n## Related Quests\n\nAfter completing Lost Cat Quest, you unlock:\n- \"Mine Exploration\" quest\n- \"Pet Collection\" achievement line\n- Access to pet-related NPCs\n\n## Conclusion\n\nThe Lost Cat Quest is a perfect introduction to The Forge's quest system. It teaches you:\n- How to follow quest markers\n- NPC interaction\n- Exploration mechanics\n- Reward collection\n\n**Enjoy your new cat companion!**"
+    "slug": "quest-walkthrough",
+    "title": "Complete Quest Walkthrough",
+    "category": "Walkthrough",
+    "difficulty": "All Levels",
+    "author": "Wiki Team",
+    "lastUpdated": "2024-03-25",
+    "description": "Step-by-step walkthrough for all main and side quests. Never get stuck again!",
+    "content": [
+      {
+        "section": "Quest Order Recommendation",
+        "text": "Recommended order: First Night → Pharmacy Run → Security Breach → Weapon Master → Power Restoration → Escape Route → The Final Night"
+      },
+      {
+        "section": "First Night Quest",
+        "text": "Start by heading to Electronics (Aisle 12) for flashlight. Then go to Customer Service for store map. Finally, locate emergency exit near main entrance."
+      },
+      {
+        "section": "Security Breach Quest",
+        "text": "First, get Security Badge from Lost & Found. Use it to access security room. Disable cameras using the code from Manager's Office. Then grab Master Key."
+      },
+      {
+        "section": "Power Restoration Quest",
+        "text": "Find Generator Fuel in Automotive Section. Go to Basement (use Master Key). Activate generator. Survive the 30-second power surge event with enemies spawning."
+      },
+      {
+        "section": "Tips for Final Night",
+        "text": "Stock up on all consumables. Have Master Key, Night Vision Goggles, and all weapons. Plan your route and stick to it. Don't explore unnecessarily."
+      }
+    ],
+    "tags": ["quests", "walkthrough", "guide", "tutorial"]
   }
 ]
+

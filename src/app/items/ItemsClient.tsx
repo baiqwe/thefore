@@ -34,7 +34,7 @@ export default function ItemsClient() {
 
     // Rarity filter
     if (filters.rarity !== 'all') {
-      filtered = filtered.filter((item) => (item.stats?.rarity || 'Common') === filters.rarity)
+      filtered = filtered.filter((item) => item.stats.rarity === filters.rarity)
     }
 
     // Sort by rarity
@@ -46,10 +46,10 @@ export default function ItemsClient() {
     }
 
     return filtered.sort((a, b) => {
-      const aRarity = (a.stats?.rarity as string) || 'Common'
-      const bRarity = (b.stats?.rarity as string) || 'Common'
+      const aRarity = a.stats.rarity || 'Common'
+      const bRarity = b.stats.rarity || 'Common'
       return (rarityOrder[aRarity] ?? 99) - (rarityOrder[bRarity] ?? 99)
-    }).filter((item): item is typeof itemsData[0] => item !== undefined)
+    })
   }, [filters])
 
   return (

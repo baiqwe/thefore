@@ -6,7 +6,7 @@ interface Item {
   location: string
   type: string
   description: string
-  stats: Record<string, string | undefined>
+  stats: Record<string, string>
 }
 
 interface ItemTableProps {

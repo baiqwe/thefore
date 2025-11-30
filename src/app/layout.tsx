@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,22 +11,13 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    'The Forge Codes',
-    'Roblox The Forge Races',
-    'The Forge Trello',
-    'Lost Cat Guide',
-    'The Forge Wiki',
-    'The Forge Tier List',
-    'The Forge Roblox',
-    'The Forge Codes 2024',
-  ],
+  keywords: ['survive overnight', 'mega store', 'survival game', 'game wiki', 'items guide'],
   authors: [
     {
-      name: 'The Forge Wiki Team',
+      name: 'Survive Overnight Wiki',
     },
   ],
   openGraph: {
@@ -43,19 +35,27 @@ export const metadata: Metadata = {
   },
 }
 
-export const viewport = {
-  themeColor: '#d97706',
-}
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen bg-zinc-950">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TDKJYTNZYH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TDKJYTNZYH');
+          `}
+        </Script>
+        <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">
             {children}
@@ -66,3 +66,4 @@ export default function RootLayout({
     </html>
   )
 }
+
