@@ -11,10 +11,10 @@ export const siteConfig = {
   },
   mainNav: [
     { title: "Home", href: "/" },
+    { title: "Guides", href: "/wiki" },
     { title: "Codes", href: "/codes" },
     { title: "Races", href: "/wiki/races" },
     { title: "Tier List", href: "/wiki/race-tier-list" },
-    { title: "Guides", href: "/wiki" },
     { title: "Trello", href: "https://trello.com/theforge", external: true },
   ],
 }
