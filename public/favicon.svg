@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EA580C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hammerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FCD34D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGradient)" stroke="#92400E" stroke-width="2"/>
+  
+  <!-- Hammer head (top) -->
+  <rect x="35" y="25" width="30" height="12" rx="2" fill="url(#hammerGradient)" stroke="#78350F" stroke-width="1.5"/>
+  
+  <!-- Hammer handle -->
+  <rect x="48" y="37" width="4" height="35" rx="2" fill="#92400E" stroke="#78350F" stroke-width="1"/>
+  
+  <!-- Anvil base -->
+  <ellipse cx="50" cy="75" rx="20" ry="8" fill="#374151" stroke="#1F2937" stroke-width="1.5"/>
+  
+  <!-- Spark effect -->
+  <circle cx="25" cy="30" r="2" fill="#FCD34D" opacity="0.8"/>
+  <circle cx="75" cy="30" r="2" fill="#FCD34D" opacity="0.8"/>
+  <circle cx="30" cy="35" r="1.5" fill="#FEF3C7" opacity="0.6"/>
+  <circle cx="70" cy="35" r="1.5" fill="#FEF3C7" opacity="0.6"/>
+</svg>
+

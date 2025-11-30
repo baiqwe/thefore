@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /search
+
+Sitemap: https://www.theforgewiki.com/sitemap.xml
+
