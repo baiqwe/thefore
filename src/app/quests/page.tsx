@@ -1,177 +1,225 @@
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 import Link from 'next/link'
-import questsData from '@/data/quests.json'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Scroll, Key, Crown, Cat } from 'lucide-react'
+
+const date = new Date()
+const currentMonth = date.toLocaleString('default', { month: 'long' })
+const currentYear = date.getFullYear()
 
 export const metadata: Metadata = {
-  title: 'Quests & Challenges',
-  description: `Complete list of all quests and challenges in ${siteConfig.name}`,
+  title: `The Forge Quest Guides: Bard's Guitar & Goblin King (${currentMonth} ${currentYear})`,
+  description: `Complete The Forge Roblox quest walkthroughs. Learn how to complete Bard's Lost Guitar quest for the Unknown Key, defeat the Goblin King, and find the Lost Cat. Get the Arcane Pickaxe!`,
+  keywords: [
+    'The Forge Quests',
+    'The Forge Quest Guide',
+    'The Forge Bard Quest',
+    'The Forge Goblin King',
+    'The Forge Arcane Pickaxe',
+    'The Forge Lost Cat',
+    'The Forge Roblox Quests',
+    'The Forge Wiki',
+  ],
 }
 
 export default function QuestsPage() {
-  const mainQuests = questsData.filter((q) => q.type === 'Main Quest')
-  const sideQuests = questsData.filter((q) => q.type === 'Side Quest')
-
-  const difficultyColors: Record<string, string> = {
-    Easy: 'bg-green-100 text-green-800',
-    Medium: 'bg-yellow-100 text-yellow-800',
-    Hard: 'bg-orange-100 text-orange-800',
-    Extreme: 'bg-red-100 text-red-800',
-  }
-
   return (
-    <div className="container mx-auto px-4 py-10">
-      <div className="mb-8">
-        <h1 className="text-4xl font-extrabold mb-4">Quests & Challenges</h1>
-        <p className="text-gray-600 text-lg">
-          Complete all quests to unlock rewards and progress through the game. Main quests advance
-          the story, while side quests provide additional rewards.
+    <div className="container mx-auto px-4 py-10 max-w-6xl">
+      {/* SEO Intro Content */}
+      <div className="mb-10 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
+          The Forge Quest Guides: Bard&apos;s Guitar & Goblin King
+        </h1>
+        <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          Complete walkthroughs for all major <strong>The Forge Roblox quests</strong>. Learn how to get the 
+          <strong> Unknown Key</strong> from Bard&apos;s quest, unlock the <strong>Arcane Pickaxe</strong>, and defeat the <strong>Goblin King</strong>.
         </p>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-        <div className="bg-blue-50 p-4 rounded-lg text-center">
-          <div className="text-3xl font-bold text-blue-600 mb-1">{questsData.length}</div>
-          <div className="text-sm text-gray-600">Total Quests</div>
-        </div>
-        <div className="bg-purple-50 p-4 rounded-lg text-center">
-          <div className="text-3xl font-bold text-purple-600 mb-1">{mainQuests.length}</div>
-          <div className="text-sm text-gray-600">Main Quests</div>
-        </div>
-        <div className="bg-green-50 p-4 rounded-lg text-center">
-          <div className="text-3xl font-bold text-green-600 mb-1">{sideQuests.length}</div>
-          <div className="text-sm text-gray-600">Side Quests</div>
-        </div>
-        <div className="bg-orange-50 p-4 rounded-lg text-center">
-          <div className="text-3xl font-bold text-orange-600 mb-1">
-            {questsData.reduce((sum, q) => sum + q.rewards.coins, 0).toLocaleString()}
+      {/* Quest 1: Bard's Lost Guitar */}
+      <Card className="mb-8">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <Scroll className="h-6 w-6 text-blue-600" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl">Quest 1: Bard&apos;s Lost Guitar</CardTitle>
+              <p className="text-sm text-gray-600 mt-1">Essential quest for the Arcane Pickaxe</p>
+            </div>
           </div>
-          <div className="text-sm text-gray-600">Total Coins</div>
-        </div>
-      </div>
-
-      {/* Main Quests */}
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Main Quests</h2>
-        <div className="space-y-6">
-          {mainQuests.map((quest) => (
-            <div
-              key={quest.id}
-              className="bg-white border-l-4 border-blue-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-2xl font-bold">{quest.title}</h3>
-                    <span
-                      className={`px-3 py-1 text-xs font-bold rounded-full ${difficultyColors[quest.difficulty]}`}
-                    >
-                      {quest.difficulty}
-                    </span>
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
-                      {quest.type}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mb-4">{quest.description}</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-2 text-gray-700">Objectives:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600">
-                    {quest.objectives.map((obj, idx) => (
-                      <li key={idx}>{obj}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-gray-700">Rewards:</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-yellow-600 font-bold">💰</span>
-                      <span className="font-semibold">{quest.rewards.coins.toLocaleString()} Coins</span>
-                    </div>
-                    <div>
-                      <span className="text-blue-600 font-bold">📦</span>
-                      <span className="ml-2">
-                        {Array.isArray(quest.rewards.items)
-                          ? quest.rewards.items.join(', ')
-                          : quest.rewards.items}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <span className="text-sm text-gray-500">
-                      <span className="font-semibold">Location:</span> {quest.location}
-                    </span>
-                  </div>
-                </div>
-              </div>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">NPC Location</h3>
+            <p className="text-gray-700">
+              Find the <strong>Bard NPC</strong> at the <strong>spawn campfire</strong> in <strong>The Forge Roblox</strong>.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Quest Objective</h3>
+            <p className="text-gray-700">
+              The Bard has lost his guitar and needs your help finding it. This quest is crucial because the reward is the 
+              <strong> Unknown Key</strong>, which is used to open the <strong>Fallen Angel&apos;s Cave</strong>.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Guitar Location</h3>
+            <p className="text-gray-700 mb-2">
+              The guitar is hidden in a <strong>hidden hole in a bush</strong> near the NPC <strong>&quot;Umut the Brave&quot;</strong> inside the 
+              <strong> Stonewake Mine</strong>.
+            </p>
+            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+              <p className="text-sm text-gray-700">
+                <strong>Important:</strong> Look carefully around Umut the Brave. The hole is in a bush, so it&apos;s easy to miss. 
+                Once you find it, return to the Bard to complete the quest.
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Reward: Unknown Key</h3>
+            <p className="text-gray-700">
+              The <strong>Unknown Key</strong> is used to open the <strong>Fallen Angel&apos;s Cave</strong>, where you can obtain the 
+              <strong> Arcane Pickaxe</strong> - one of the best mining tools in <strong>The Forge Roblox</strong>!
+            </p>
+          </div>
+        </CardContent>
+      </Card>
 
-      {/* Side Quests */}
-      <div>
-        <h2 className="text-3xl font-bold mb-6">Side Quests</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {sideQuests.map((quest) => (
-            <div
-              key={quest.id}
-              className="bg-white border-l-4 border-green-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <h3 className="text-xl font-bold">{quest.title}</h3>
-                <span
-                  className={`px-3 py-1 text-xs font-bold rounded-full ${difficultyColors[quest.difficulty]}`}
-                >
-                  {quest.difficulty}
-                </span>
-              </div>
-              <p className="text-gray-600 mb-4 text-sm">{quest.description}</p>
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2 text-sm text-gray-700">Objectives:</h4>
-                <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
-                  {quest.objectives.map((obj, idx) => (
-                    <li key={idx}>{obj}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="flex items-center justify-between pt-4 border-t">
-                <div>
-                  <div className="text-yellow-600 font-bold text-sm">
-                    💰 {quest.rewards.coins.toLocaleString()} Coins
-                  </div>
-                  <div className="text-blue-600 text-sm mt-1">
-                    📦 {Array.isArray(quest.rewards.items) ? quest.rewards.items.join(', ') : quest.rewards.items}
-                  </div>
-                </div>
-                <span className="text-xs text-gray-500">{quest.location}</span>
-              </div>
+      {/* Quest 2: Goblin King */}
+      <Card className="mb-8">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <Crown className="h-6 w-6 text-purple-600" />
             </div>
-          ))}
-        </div>
+            <div>
+              <CardTitle className="text-2xl">Quest 2: Goblin King (Forgotten Kingdom)</CardTitle>
+              <p className="text-sm text-gray-600 mt-1">Advanced quest with escalating tributes</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Quest Location</h3>
+            <p className="text-gray-700">
+              This quest takes place in the <strong>Forgotten Kingdom</strong> area of <strong>The Forge Roblox</strong>.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Requirements: Escalating Tributes</h3>
+            <p className="text-gray-700 mb-3">
+              To challenge the <strong>Goblin King</strong>, you need to provide <strong>5 escalating tributes</strong>:
+            </p>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>First Tribute:</strong> Gold</li>
+              <li><strong>Second Tribute:</strong> Gold + Topaz</li>
+              <li><strong>Third Tribute:</strong> Gold + Topaz + [Next tier gem]</li>
+              <li><strong>Fourth Tribute:</strong> Gold + Topaz + [Higher tier gem]</li>
+              <li><strong>Fifth Tribute:</strong> Gold + Rubies (Final tribute)</li>
+            </ol>
+          </div>
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+            <p className="text-sm text-gray-700">
+              <strong>Strategy:</strong> Make sure you have enough resources before starting this quest. The tributes get progressively more expensive, 
+              so plan your mining and resource gathering accordingly.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Reward</h3>
+            <p className="text-gray-700">
+              Defeating the <strong>Goblin King</strong> grants significant rewards and is essential for progressing through 
+              <strong> The Forge Roblox</strong> end-game content.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Quest 3: Lost Cat */}
+      <Card className="mb-8">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-orange-100 rounded-lg">
+              <Cat className="h-6 w-6 text-orange-600" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl">Quest 3: Lost Cat</CardTitle>
+              <p className="text-sm text-gray-600 mt-1">Hidden location quest</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">NPC Location</h3>
+            <p className="text-gray-700">
+              Find <strong>Tomo</strong> (the quest giver) in <strong>The Forge Roblox</strong>. He needs help finding his lost cat.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Cat Location</h3>
+            <p className="text-gray-700 mb-2">
+              The lost cat is located <strong>behind a waterfall wall</strong> in the <strong>Goblin Cave</strong>.
+            </p>
+            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+              <p className="text-sm text-gray-700">
+                <strong>How to Find:</strong> Look for a waterfall in the Goblin Cave area. The cat is hidden behind the waterfall wall - 
+                you may need to walk through the waterfall to find it.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Reward</h3>
+            <p className="text-gray-700">
+              Complete this quest to receive rewards and help Tomo reunite with his cat.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Arcane Pickaxe Guide */}
+      <div className="prose prose-lg max-w-none bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-xl border-2 border-amber-200 mb-12">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">How to Get the Arcane Pickaxe in The Forge</h2>
+        <p className="text-gray-700 mb-4">
+          The <strong>Arcane Pickaxe</strong> is one of the best mining tools in <strong>The Forge Roblox</strong>. Here&apos;s how to get it:
+        </p>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-4">
+          <li>Complete the <strong>Bard&apos;s Lost Guitar</strong> quest to obtain the <strong>Unknown Key</strong>.</li>
+          <li>Use the <strong>Unknown Key</strong> to open the <strong>Fallen Angel&apos;s Cave</strong>.</li>
+          <li>Inside the cave, you&apos;ll find the <strong>Arcane Pickaxe</strong>.</li>
+        </ol>
+        <p className="text-gray-700 mt-4">
+          The <strong>Arcane Pickaxe</strong> significantly improves your mining speed and efficiency, making it essential for 
+          gathering resources in <strong>The Forge Roblox</strong>.
+        </p>
       </div>
 
-      {/* Tips */}
-      <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-lg font-bold mb-2 text-blue-900">💡 Quest Tips</h3>
-        <ul className="list-disc list-inside space-y-1 text-blue-800">
-          <li>Complete main quests first to unlock new areas and items</li>
-          <li>Side quests provide valuable resources - don&apos;t skip them</li>
-          <li>Check the quest location before starting to plan your route</li>
-          <li>Some quests have time limits - manage your time wisely</li>
-          <li>
-            <Link href="/guides/quest-walkthrough" className="underline font-semibold">
-              View complete quest walkthrough guide
-            </Link>
-          </li>
+      {/* Quest Tips */}
+      <div className="prose prose-lg max-w-none bg-gray-50 p-8 rounded-xl border border-gray-200 mb-12">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">The Forge Quest Tips</h2>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700">
+          <li><strong>Read quest descriptions carefully:</strong> NPCs often give hints about item locations.</li>
+          <li><strong>Explore thoroughly:</strong> Many quest items are hidden in bushes, behind waterfalls, or in caves.</li>
+          <li><strong>Save your resources:</strong> The Goblin King quest requires significant resources - plan ahead.</li>
+          <li><strong>Complete Bard&apos;s quest first:</strong> The Arcane Pickaxe from this quest will help with all other activities.</li>
         </ul>
+      </div>
+
+      {/* Related Links */}
+      <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Related The Forge Wiki Guides</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/wiki/forging" className="text-blue-600 hover:underline font-semibold">
+            → Forging Guide
+          </Link>
+          <Link href="/wiki/races" className="text-blue-600 hover:underline font-semibold">
+            → Race Tier List
+          </Link>
+          <Link href="/codes" className="text-blue-600 hover:underline font-semibold">
+            → Get Free Codes
+          </Link>
+        </div>
       </div>
     </div>
   )
 }
-

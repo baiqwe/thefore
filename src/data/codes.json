@@ -1,44 +1,62 @@
 [
   {
+    "code": "200K!",
+    "reward": "5 Race Rerolls",
+    "status": "Active",
+    "description": "Latest milestone celebration code. Grants 5 free race rerolls."
+  },
+  {
     "code": "100K!",
-    "reward": "3x Free Rerolls",
+    "reward": "3 Race Rerolls",
     "status": "Active",
     "description": "Celebration code for 100k likes. Grants free race rerolls."
   },
   {
     "code": "40KLIKES",
-    "reward": "5x Free Rerolls",
+    "reward": "5 Race Rerolls",
     "status": "Active",
     "description": "Major milestone reward. Best code for new players."
   },
   {
     "code": "20KLIKES",
-    "reward": "2x Free Rerolls",
+    "reward": "2 Race Rerolls",
     "status": "Active",
     "description": "Grants additional chances to get a Legendary race."
   },
   {
+    "code": "15KLIKES",
+    "reward": "2 Race Rerolls",
+    "status": "Active",
+    "description": "Milestone reward for race rerolls."
+  },
+  {
     "code": "10KLIKES",
-    "reward": "1x Luck Totem + 2x Rerolls",
+    "reward": "2 Race Rerolls + 1 Luck Totem",
     "status": "Active",
     "description": "Boost your luck for mining and crafting."
   },
   {
     "code": "5KLIKES",
-    "reward": "1x Miner Totem + 2x Rerolls",
+    "reward": "2 Race Rerolls + 1 Miner Totem",
     "status": "Active",
     "description": "Increases mining speed."
-  },
-  {
-    "code": "BETARELEASE!",
-    "reward": "2x Free Rerolls",
-    "status": "Active",
-    "description": "Welcome reward for the beta launch."
   },
   {
     "code": "RELEASE",
     "reward": "500 Gems",
     "status": "Expired",
     "description": "Original release code."
+  },
+  {
+    "code": "BETARELEASE!",
+    "reward": "2 Race Rerolls",
+    "status": "Expired",
+    "description": "Welcome reward for the beta launch."
+  },
+  {
+    "code": "POSTRELEASEQNA",
+    "reward": "Unknown",
+    "status": "Expired",
+    "description": "Post-release Q&A event code."
   }
 ]

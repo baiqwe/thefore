@@ -5,11 +5,16 @@ import itemsData from '@/data/items.json'
 import codesData from '@/data/codes.json'
 import guidesData from '@/data/guides.json'
 import questsData from '@/data/quests.json'
+import { Sword, Hammer, Scroll, Key, Shield } from 'lucide-react'
 
 export default function HomePage() {
   const featuredItems = itemsData.slice(0, 6)
   const totalItems = itemsData.length
-  const activeCodes = codesData.filter((c) => c.status === 'Active').slice(0, 3)
+  // Get top 3 latest codes: 200K!, 100K!, 40KLIKES
+  const latestCodes = codesData
+    .filter((c) => c.status === 'Active')
+    .filter((c) => ['200K!', '100K!', '40KLIKES'].includes(c.code))
+    .slice(0, 3)
   const featuredGuides = guidesData.slice(0, 3)
   const mainQuests = questsData.filter((q) => q.type === 'Main Quest').slice(0, 3)
 
@@ -120,7 +125,7 @@ export default function HomePage() {
       {/* Latest Codes Section */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">Latest Redeem Codes</h2>
+          <h2 className="text-3xl font-bold">Latest The Forge Codes</h2>
           <Link
             href="/codes"
             className="text-blue-600 hover:text-blue-800 font-semibold"
@@ -129,7 +134,7 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {activeCodes.map((code, index) => (
+          {latestCodes.map((code, index) => (
             <div
               key={index}
               className="bg-white border-2 border-green-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
@@ -138,8 +143,10 @@ export default function HomePage() {
                 <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
                   ACTIVE
                 </span>
-                {(code as any).expires && (code as any).expires !== 'Never' && (
-                  <span className="text-xs text-gray-500">Expires: {(code as any).expires}</span>
+                {index === 0 && (
+                  <span className="px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">
+                    NEW
+                  </span>
                 )}
               </div>
               <div className="mb-3">
@@ -151,6 +158,101 @@ export default function HomePage() {
               <p className="text-sm text-gray-600">{code.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Quick Links Section */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-6 text-center">Quick Links</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Link
+            href="/wiki/races"
+            className="bg-white rounded-lg border-2 border-blue-200 shadow-md hover:shadow-xl transition-all p-6 group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                <Shield className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold">Race Tier List</h3>
+            </div>
+            <p className="text-gray-600 text-sm">
+              Complete guide to all races in The Forge Roblox. Learn stats, abilities, and drop rates.
+            </p>
+          </Link>
+
+          <Link
+            href="/wiki/forging"
+            className="bg-white rounded-lg border-2 border-orange-200 shadow-md hover:shadow-xl transition-all p-6 group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-orange-100 rounded-lg group-hover:bg-orange-200 transition-colors">
+                <Hammer className="h-6 w-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold">Forging Guide</h3>
+            </div>
+            <p className="text-gray-600 text-sm">
+              Master the manual forging minigame. Learn how to craft Masterwork weapons and Colossal Swords.
+            </p>
+          </Link>
+
+          <Link
+            href="/quests"
+            className="bg-white rounded-lg border-2 border-purple-200 shadow-md hover:shadow-xl transition-all p-6 group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
+                <Scroll className="h-6 w-6 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold">Quest Walkthroughs</h3>
+            </div>
+            <p className="text-gray-600 text-sm">
+              Complete quest guides including Bard&apos;s Guitar, Goblin King, and Lost Cat quests.
+            </p>
+          </Link>
+        </div>
+      </div>
+
+      {/* Current Hot Topics */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-6 text-center">Current Hot Topics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Link
+            href="/wiki/quests"
+            className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border-2 border-amber-200 shadow-md hover:shadow-lg transition-all p-6 group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
+                <Key className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold">How to Get Arcane Pickaxe</h3>
+            </div>
+            <p className="text-gray-700 text-sm mb-2">
+              Complete Bard&apos;s Lost Guitar quest to get the Unknown Key, then unlock the Fallen Angel&apos;s Cave 
+              to obtain the best mining tool in The Forge Roblox.
+            </p>
+            <span className="text-amber-600 font-semibold text-sm group-hover:underline">
+              Read Guide →
+            </span>
+          </Link>
+
+          <Link
+            href="/wiki/races"
+            className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 shadow-md hover:shadow-lg transition-all p-6 group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-red-100 rounded-lg group-hover:bg-red-200 transition-colors">
+                <Sword className="h-6 w-6 text-red-600" />
+              </div>
+              <h3 className="text-xl font-bold">Best Race for PVP</h3>
+            </div>
+            <p className="text-gray-700 text-sm mb-2">
+              Shadow (A-tier) is the PVP meta with dodge chance. Demon (S-tier Mythical) is also excellent for high damage output. 
+              Learn all race stats and abilities.
+            </p>
+            <span className="text-red-600 font-semibold text-sm group-hover:underline">
+              View Tier List →
+            </span>
+          </Link>
         </div>
       </div>
 

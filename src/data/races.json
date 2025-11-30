@@ -2,78 +2,91 @@
   {
     "name": "Angel",
     "tier": "S",
-    "description": "The most balanced race with excellent all-around stats. Perfect for any playstyle.",
-    "abilities": ["+Movement Speed", "+Damage", "+Mining Luck", "Balanced Stats"],
-    "rarity": "Legendary",
+    "rarity": "Mythical",
+    "dropRate": "0.5%",
+    "description": "The ultimate balanced race with exceptional stats. Perfect for any playstyle.",
+    "abilities": ["+20% Speed", "+25% Jump", "+25% Luck"],
+    "passive": "Infinite Stamina at low HP, Smite chance",
     "special": "Best overall race, great for beginners and veterans"
   },
   {
     "name": "Demon",
     "tier": "S",
-    "description": "Powerful offensive race with high damage potential.",
-    "abilities": ["+High Damage", "Fire Resistance", "Combat Bonuses"],
-    "rarity": "Legendary",
+    "rarity": "Mythical",
+    "dropRate": "0.5%",
+    "description": "Powerful offensive race with massive damage potential.",
+    "abilities": ["+20% Speed", "+20% Attack Speed", "+20% Physical Damage", "+20% Fire Damage"],
+    "passive": "AOE Burn damage",
     "special": "Top tier for combat-focused builds"
   },
   {
     "name": "Dragonborn",
     "tier": "A",
-    "description": "The most powerful race with incredible fire resistance and damage bonuses.",
-    "abilities": ["Fire Immunity", "+50% Damage", "Flight"],
     "rarity": "Legendary",
+    "dropRate": "1.25%",
+    "description": "Tanky race with fire breath attack. Excellent for end-game content.",
+    "abilities": ["+20% HP", "+12% Physical Damage"],
+    "passive": "Fire breath attack",
     "special": "Excellent for end-game content"
-  },
-  {
-    "name": "Undead",
-    "tier": "A",
-    "description": "Unique tank race. Reduces max HP but gains damage reflection and regeneration.",
-    "abilities": ["-12% Max HP", "+10% Damage Reflection", "Low HP Regeneration", "PVP Tank"],
-    "rarity": "Rare",
-    "special": "Perfect for tank builds and PVP"
   },
   {
     "name": "Golem",
     "tier": "A",
-    "description": "Extremely tanky race with slow movement but massive defense.",
-    "abilities": ["+Extreme Defense", "-Movement Speed", "High HP", "Damage Reduction"],
-    "rarity": "Rare",
+    "rarity": "Legendary",
+    "dropRate": "1.25%",
+    "description": "Extremely tanky race with massive defense but slower movement.",
+    "abilities": ["+40% HP", "+20% Size", "-10% Speed"],
+    "passive": "Tanky, high defense",
     "special": "Best tank race, slow but nearly unkillable"
   },
   {
-    "name": "Elf",
-    "tier": "B",
-    "description": "Agile and magical, perfect for speed and spellcasting.",
-    "abilities": ["+30% Speed", "Magic Affinity", "Night Vision"],
-    "rarity": "Rare"
+    "name": "Shadow",
+    "tier": "A",
+    "rarity": "Epic",
+    "dropRate": "6-7%",
+    "description": "Agile race perfect for PVP with dodge chance.",
+    "abilities": ["+15% Speed", "+10% Attack Speed"],
+    "passive": "Dodge chance (PVP meta)",
+    "special": "Best for PVP combat"
   },
   {
     "name": "Dwarf",
     "tier": "B",
-    "description": "Masters of mining and crafting with exceptional durability.",
-    "abilities": ["+40% Mining Speed", "Crafting Bonus", "Poison Resistance"],
-    "rarity": "Rare"
-  },
-  {
-    "name": "Human",
-    "tier": "C",
-    "description": "Balanced race with no special bonuses or weaknesses. Perfect starting point.",
-    "abilities": ["Balanced Stats", "Versatile", "No Penalties"],
-    "rarity": "Common",
-    "special": "Default race, no special abilities"
+    "rarity": "Epic",
+    "dropRate": "6-7%",
+    "description": "Masters of mining and crafting. Best choice for miners.",
+    "abilities": ["+20% Mining Speed"],
+    "passive": "Mining bonuses",
+    "special": "Best for mining and resource gathering"
   },
   {
     "name": "Orc",
-    "tier": "C",
+    "tier": "B",
+    "rarity": "Rare",
+    "dropRate": "~8%",
     "description": "Brutal warriors with high health and melee damage.",
-    "abilities": ["+25% Health", "+20% Melee Damage", "Berserker Rage"],
-    "rarity": "Common"
+    "abilities": ["+15% HP", "+10% Physical Damage"],
+    "passive": "Combat bonuses",
+    "special": "Good for combat builds"
   },
   {
     "name": "Goblin",
     "tier": "C",
-    "description": "Small and quick, but weaker in combat.",
-    "abilities": ["+15% Speed", "Small Size", "Stealth"],
-    "rarity": "Common"
+    "rarity": "Common",
+    "dropRate": "High",
+    "description": "Small and quick with shop discount benefits.",
+    "abilities": ["Shop discount"],
+    "passive": "Economic benefits",
+    "special": "Useful for saving money"
+  },
+  {
+    "name": "Human",
+    "tier": "D",
+    "rarity": "Common",
+    "dropRate": "Default",
+    "description": "Balanced race with no special bonuses or weaknesses. Starting race.",
+    "abilities": ["No buffs"],
+    "passive": "None",
+    "special": "Default race, no special abilities"
   }
 ]
-

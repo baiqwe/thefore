@@ -9,6 +9,9 @@ interface Race {
   description: string
   abilities: string[]
   rarity: string
+  dropRate?: string
+  passive?: string
+  special?: string
 }
 
 interface TierListProps {
@@ -65,8 +68,15 @@ export function TierList({ races }: TierListProps) {
                     </div>
                   </CardHeader>
                   <CardContent>
+                    {race.dropRate && (
+                      <div className="mb-2">
+                        <Badge variant="outline" className="text-xs">
+                          {race.dropRate} Drop Rate
+                        </Badge>
+                      </div>
+                    )}
                     <p className="text-zinc-400 mb-4 text-sm">{race.description}</p>
-                    <div>
+                    <div className="mb-3">
                       <h4 className="text-sm font-semibold text-zinc-300 mb-2">
                         Abilities:
                       </h4>
@@ -82,6 +92,14 @@ export function TierList({ races }: TierListProps) {
                         ))}
                       </ul>
                     </div>
+                    {race.passive && (
+                      <div className="mt-3 pt-3 border-t border-zinc-700">
+                        <h4 className="text-sm font-semibold text-zinc-300 mb-1">
+                          Passive:
+                        </h4>
+                        <p className="text-xs text-zinc-400">{race.passive}</p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
