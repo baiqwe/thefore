@@ -220,7 +220,8 @@ export default function OresPage() {
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Best Mining Races</h3>
             <p className="text-gray-700">
               The <strong>Dwarf</strong> race provides +20% mining speed, making it the best choice for dedicated miners. 
-              Check our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> for more details.
+              Check our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> for more details. 
+              For combat-focused mining, consider <strong>Demon</strong> or <strong>Dragonborn</strong> races.
             </p>
           </div>
           <div>
@@ -239,6 +240,22 @@ export default function OresPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Related Links */}
+      <div className="mt-8 bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Forging Guide (Craft Weapons from Ores)
+          </Link>
+          <Link href="/wiki/races" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Best Races for Mining (Dwarf +20% Speed)
+          </Link>
+          <Link href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Pickaxes & Mining Tools
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

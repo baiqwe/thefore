@@ -1,4 +1,4 @@
-import { generateBreadcrumbSchema, generateArticleSchema } from '@/lib/seo'
+import { generateBreadcrumbSchema, generateArticleSchema, generateVideoSchema } from '@/lib/seo'
 import { siteConfig } from '@/config/site'
 
 interface SEOHeadProps {
@@ -13,6 +13,15 @@ interface SEOHeadProps {
     url: string
   }
   faq?: Array<{ question: string; answer: string }>
+  video?: {
+    name: string
+    description: string
+    thumbnailUrl: string
+    uploadDate: string
+    duration?: string
+    contentUrl: string
+    embedUrl: string
+  }
   schema?: object
 }
 
@@ -20,7 +29,7 @@ interface SEOHeadProps {
  * SEO Head 组件
  * 用于注入结构化数据 (JSON-LD Schema)
  */
-export default function SEOHead({ breadcrumbs, article, faq, schema }: SEOHeadProps) {
+export default function SEOHead({ breadcrumbs, article, faq, video, schema }: SEOHeadProps) {
   const schemas: object[] = []
 
   // 添加面包屑导航 Schema
@@ -47,6 +56,11 @@ export default function SEOHead({ breadcrumbs, article, faq, schema }: SEOHeadPr
         },
       })),
     })
+  }
+
+  // 添加视频 Schema
+  if (video) {
+    schemas.push(generateVideoSchema(video))
   }
 
   // 添加自定义 Schema

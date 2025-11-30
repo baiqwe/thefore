@@ -9,6 +9,21 @@ import { Sword, Hammer, Scroll, Key, Shield, Play } from 'lucide-react'
 import YouTubeVideo from '@/components/YouTubeVideo'
 
 export default function HomePage() {
+  // 视频结构化数据
+  const videos = [
+    {
+      name: "The Forge Gameplay Guide - Complete Walkthrough",
+      description: "Complete gameplay guide for The Forge Roblox game. Learn how to play, mine ores, forge weapons, and master the game mechanics.",
+      videoId: "GpJRxMgP99Q",
+      uploadDate: "2024-11-01",
+    },
+    {
+      name: "The Forge Race Tier List - Best Races Explained",
+      description: "Complete race tier list for The Forge Roblox. Learn which races are the best, including S-tier Mythical races like Angel and Demon.",
+      videoId: "pVrVDWXXrAw",
+      uploadDate: "2024-11-01",
+    },
+  ]
   const featuredItems = itemsData.slice(0, 6)
   const totalItems = itemsData.length
   // Get top 3 latest codes: 200K!, 100K!, 40KLIKES

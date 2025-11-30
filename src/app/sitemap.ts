@@ -80,7 +80,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 动态页面：Items
   const itemPages: MetadataRoute.Sitemap = itemsData.map((item) => ({
     url: `${baseUrl}/item/${item.slug}`,
-    lastModified: now,
+    lastModified: (item as any).lastUpdated 
+      ? new Date((item as any).lastUpdated).toISOString()
+      : now,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
@@ -88,7 +90,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 动态页面：Guides
   const guidePages: MetadataRoute.Sitemap = guidesData.map((guide) => ({
     url: `${baseUrl}/wiki/${guide.slug}`,
-    lastModified: now,
+    lastModified: (guide as any).lastUpdated 
+      ? new Date((guide as any).lastUpdated).toISOString()
+      : now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))

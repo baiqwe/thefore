@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import itemsData from '@/data/items.json'
 import { siteConfig } from '@/config/site'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
@@ -143,15 +144,70 @@ export default function ItemPage({ params }: PageProps) {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">{item.description}</p>
           </div>
           
-          {/* 图片占位符 - 使用语义化 alt 属性 */}
-          <div className="mt-6 aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center text-gray-400 border border-gray-200" role="img" aria-label={`${item.name} item visualization`}>
-            <div className="text-center">
-              <div className="text-4xl mb-2" aria-hidden="true">📦</div>
-              <div className="text-sm font-medium">Image of {item.name}</div>
-            </div>
+          {/* 物品图片 - 使用 Next.js Image 组件优化 */}
+          <div className="mt-6 aspect-video relative bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-200">
+            {/* 如果有真实图片 URL，使用 Image 组件；否则显示占位符 */}
+            {(item as any).imageUrl ? (
+              <Image
+                src={(item as any).imageUrl}
+                alt={`${item.name} in The Forge Roblox - ${item.type}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-4xl mb-2" aria-hidden="true">📦</div>
+                  <div className="text-sm font-medium text-gray-600">Image of {item.name}</div>
+                  <p className="text-xs text-gray-500 mt-2">Screenshot coming soon</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* 如何获取 (How to Obtain) */}
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
+        <h3 className="text-xl font-bold mb-3 text-amber-900">📍 How to Obtain {item.name}</h3>
+        <p className="text-amber-800 mb-2">
+          <strong>Location:</strong> {item.location}
+        </p>
+        <p className="text-amber-800">
+          {(item as any).obtainMethod || `Find ${item.name} at ${item.location}. ${item.type === 'Key Item' ? 'This is essential for progression and unlocking new areas.' : item.type === 'Weapon' ? 'Make sure to equip this weapon for better combat effectiveness.' : 'Keep an eye out for this item when exploring.'}`}
+        </p>
+      </div>
+
+      {/* 用途 (Usage) */}
+      <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+        <h3 className="text-xl font-bold mb-3 text-green-900">⚙️ Usage & Purpose</h3>
+        <p className="text-green-800 mb-2">
+          {(item as any).usage || (item.type === 'Key Item' 
+            ? `${item.name} is used to unlock restricted areas and access new locations in The Forge. Essential for progression.`
+            : item.type === 'Weapon'
+            ? `${item.name} can be used for combat and defense. Equip it to increase your combat effectiveness.`
+            : item.type === 'Consumable'
+            ? `${item.name} can be consumed to restore health, stamina, or provide temporary buffs. Use strategically.`
+            : `${item.name} is useful for various purposes in The Forge. Make sure to keep it in your inventory.`)}
+        </p>
+        {(item as any).sellPrice && (
+          <p className="text-green-800">
+            <strong>Sell Price:</strong> {(item as any).sellPrice} coins
+          </p>
+        )}
+      </div>
+
+      {/* 相关配方 (Crafting Recipes) */}
+      {(item as any).craftingRecipe && (
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
+          <h3 className="text-xl font-bold mb-3 text-purple-900">🔨 Crafting Recipe</h3>
+          <p className="text-purple-800">
+            {(item as any).craftingRecipe}
+          </p>
+        </div>
+      )}
 
       {/* 使用提示 */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

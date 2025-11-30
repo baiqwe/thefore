@@ -190,6 +190,15 @@ export function generateArticleSchema(options: {
       '@type': 'WebPage',
       '@id': `${siteConfig.url}${options.url}`,
     },
+    about: {
+      '@type': 'VideoGame',
+      name: 'The Forge',
+      gamePlatform: 'Roblox',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fireatacck',
+      },
+    },
   }
 }
 
@@ -230,6 +239,40 @@ export function generateFAQSchema(questions: Array<{ question: string; answer: s
         text: q.answer,
       },
     })),
+  }
+}
+
+/**
+ * 生成视频的 JSON-LD Schema (VideoObject)
+ * 用于 YouTube 视频的富文本搜索结果
+ */
+export function generateVideoSchema(options: {
+  name: string
+  description: string
+  thumbnailUrl: string
+  uploadDate: string
+  duration?: string
+  contentUrl: string
+  embedUrl: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: options.name,
+    description: options.description,
+    thumbnailUrl: options.thumbnailUrl,
+    uploadDate: options.uploadDate,
+    duration: options.duration,
+    contentUrl: options.contentUrl,
+    embedUrl: options.embedUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/logo.png`,
+      },
+    },
   }
 }
 

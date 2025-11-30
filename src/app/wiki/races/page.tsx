@@ -240,16 +240,25 @@ export default function RacesPage() {
 
       {/* Related Links */}
       <div className="mt-12 bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link href="/tools/reroll-simulator" className="text-blue-600 hover:underline font-semibold">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides & Resources</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link href="/tools/reroll-simulator" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Race Reroll Simulator
           </Link>
-          <Link href="/codes" className="text-blue-600 hover:underline font-semibold">
+          <Link href="/codes" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Get Free Reroll Codes
           </Link>
-          <Link href="/wiki/race-tier-list" className="text-blue-600 hover:underline font-semibold">
-            → Complete Race Tier List
+          <Link href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Forging Guide (Best Weapons)
+          </Link>
+          <Link href="/wiki/ores" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Ores Database (Mining Guide)
+          </Link>
+          <Link href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → All Items & Locations
+          </Link>
+          <Link href="/quests" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+            → Quest Walkthroughs
           </Link>
         </div>
       </div>
