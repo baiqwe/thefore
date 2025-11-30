@@ -22,6 +22,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 确保暗黑模式下容器背景适配 */
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: #ededed;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

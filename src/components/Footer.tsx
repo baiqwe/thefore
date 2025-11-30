@@ -2,19 +2,19 @@ import { siteConfig } from '@/config/site'
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-gray-50 mt-auto">
+    <footer className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 mt-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-bold text-lg mb-4">{siteConfig.name}</h3>
-            <p className="text-sm text-gray-600">{siteConfig.description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{siteConfig.description}</p>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               {siteConfig.mainNav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-gray-600 hover:text-blue-600">
+                  <a href={item.href} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
                     {item.title}
                   </a>
                 </li>
@@ -29,7 +29,7 @@ export default function Footer() {
                   href={siteConfig.links.game}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-amber-600 block flex items-center gap-2"
+                  className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 block flex items-center gap-2"
                 >
                   <span>🎮</span>
                   <span>Play The Forge</span>
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={siteConfig.links.officialWiki}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-amber-600 block flex items-center gap-2"
+                  className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 block flex items-center gap-2"
                 >
                   <span>📚</span>
                   <span>Official Wiki</span>
@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <p className="text-gray-500 dark:text-gray-400">&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

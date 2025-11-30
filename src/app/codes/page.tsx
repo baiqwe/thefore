@@ -90,20 +90,20 @@ export default function CodesPage() {
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
           The Forge Codes ({currentMonth} {currentYear})
         </h1>
-        <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Looking for the latest <strong>The Forge codes</strong> to get free <span className="font-semibold text-amber-700">Race Rerolls</span> and <span className="font-semibold text-amber-700">Gems</span>? You are in the right place. 
+        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place. 
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
-        <p className="text-sm text-gray-600 mt-2">
-          Last checked: <span className="font-medium text-amber-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Last checked: <span className="font-medium text-amber-600 dark:text-amber-400">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
 
       {/* Active Codes Grid */}
       <div className="mb-16">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800">
-            <span className="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800 dark:text-gray-100">
+            <span className="w-3 h-3 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse"></span>
             Active Codes
           </h2>
           <span className="text-sm bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">
@@ -113,46 +113,46 @@ export default function CodesPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {activeCodes.map((code, index) => (
-            <div key={index} className="bg-white border-l-4 border-amber-500 shadow-md rounded-lg p-5 hover:shadow-lg transition-all hover:border-amber-600">
+            <div key={index} className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 shadow-md rounded-lg p-5 hover:shadow-lg transition-all hover:border-amber-600 dark:hover:border-amber-300">
               <div className="flex justify-between items-start mb-2">
-                <span className="font-mono text-xl font-bold text-gray-800 tracking-wide">{code.code}</span>
-                <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full uppercase">Active</span>
+                <span className="font-mono text-xl font-bold text-gray-800 dark:text-gray-100 tracking-wide">{code.code}</span>
+                <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full uppercase">Active</span>
               </div>
-              <p className="text-amber-700 font-medium mb-1">🎁 {code.reward}</p>
-              <p className="text-sm text-gray-600">{code.description}</p>
+              <p className="text-amber-700 dark:text-amber-400 font-medium mb-1">🎁 {code.reward}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* SEO Guide Section (Text Heavy for Google) */}
-      <div className="prose prose-lg max-w-none bg-gray-50 p-8 rounded-xl border border-gray-200 mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">How to Get More Free Rerolls in The Forge</h2>
-        <p>
-          Besides using the codes listed above, players can earn free race rerolls by completing daily quests and finding hidden chests in the <strong>Volcanic Depths</strong>. 
-          If you are looking to get a Legendary race like the <strong>Dragonborn</strong> or <strong>Angel</strong>, make sure to save up your Gems.
+      <div className="prose prose-lg max-w-none bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 mb-12">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">How to Get More Free Rerolls in The Forge</h2>
+        <p className="text-gray-700 dark:text-gray-300">
+          Besides using the codes listed above, players can earn free race rerolls by completing daily quests and finding hidden chests in the <strong className="text-gray-900 dark:text-gray-100">Volcanic Depths</strong>. 
+          If you are looking to get a Legendary race like the <strong className="text-gray-900 dark:text-gray-100">Dragonborn</strong> or <strong className="text-gray-900 dark:text-gray-100">Angel</strong>, make sure to save up your Gems.
         </p>
-        <p>
-          Don&apos;t forget to check our <Link href="/wiki/race-tier-list" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which race you should aim for before using your rerolls! 
-          You can also visit our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Races Guide</Link> for detailed stats, or use our <Link href="/tools/reroll-simulator" className="text-amber-600 hover:underline font-semibold">Reroll Simulator</Link> to test your luck.
+        <p className="text-gray-700 dark:text-gray-300">
+          Don&apos;t forget to check our <Link href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</Link> to see which race you should aim for before using your rerolls! 
+          You can also visit our <Link href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</Link> for detailed stats, or use our <Link href="/tools/reroll-simulator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Reroll Simulator</Link> to test your luck.
         </p>
 
-        <h3 className="text-xl font-bold text-gray-800 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>
-        <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Case Sensitivity:</strong> Roblox codes are often case-sensitive. Make sure &apos;BETA&apos; is capitalized.</li>
-          <li><strong>Expired:</strong> Codes like &apos;RELEASE&apos; have expired as of {currentMonth} {currentYear}.</li>
-          <li><strong>Typo:</strong> Ensure there are no spaces before or after the code.</li>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+          <li><strong className="text-gray-900 dark:text-gray-100">Case Sensitivity:</strong> Roblox codes are often case-sensitive. Make sure &apos;BETA&apos; is capitalized.</li>
+          <li><strong className="text-gray-900 dark:text-gray-100">Expired:</strong> Codes like &apos;RELEASE&apos; have expired as of {currentMonth} {currentYear}.</li>
+          <li><strong className="text-gray-900 dark:text-gray-100">Typo:</strong> Ensure there are no spaces before or after the code.</li>
         </ul>
       </div>
 
       {/* Expired Codes (SEO Food - Keep them but visually muted) */}
       {expiredCodes.length > 0 && (
         <div className="opacity-70">
-          <h2 className="text-xl font-bold mb-4 text-gray-600">Expired Codes (Archive)</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-600 dark:text-gray-400">Expired Codes (Archive)</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {expiredCodes.map((code, index) => (
-              <div key={index} className="bg-gray-100 p-3 rounded border border-gray-200">
-                <span className="font-mono font-semibold text-gray-600 line-through block">{code.code}</span>
+              <div key={index} className="bg-gray-100 dark:bg-gray-800 p-3 rounded border border-gray-200 dark:border-gray-700">
+                <span className="font-mono font-semibold text-gray-600 dark:text-gray-400 line-through block">{code.code}</span>
               </div>
             ))}
           </div>
