@@ -84,14 +84,15 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Wiki Links</h4>
             <div className="space-y-2 text-sm">
-              {siteConfig.links.trello && (
+              {siteConfig.links.officialWiki && (
                 <a
-                  href={siteConfig.links.trello}
+                  href={siteConfig.links.officialWiki}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 block"
+                  className="text-gray-600 hover:text-amber-600 block flex items-center gap-2"
                 >
-                  Trello
+                  <span>📚</span>
+                  <span>Official Wiki</span>
                 </a>
               )}
             </div>

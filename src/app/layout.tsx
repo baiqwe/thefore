@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     'The Forge Wiki',
     'Roblox RPG',
     'Race Tier List',
-    'The Forge Trello',
   ],
   authors: [
     {

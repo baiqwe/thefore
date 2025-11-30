@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     "The Forge Wiki",
     "The Forge Guides",
     "Roblox The Forge",
-    "The Forge Trello",
     "Lost Cat Guide",
     "The Forge Tier List",
   ],

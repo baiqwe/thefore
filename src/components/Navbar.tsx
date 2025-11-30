@@ -19,8 +19,8 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
+                target={(item as any).external ? "_blank" : undefined}
+                rel={(item as any).external ? "noopener noreferrer" : undefined}
                 className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors hidden lg:block"
               >
                 {item.title}
