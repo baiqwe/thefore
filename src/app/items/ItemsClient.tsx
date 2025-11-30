@@ -61,8 +61,8 @@ export default function ItemsClient() {
       <ItemTable items={filteredItems} />
       {filteredItems.length === 0 && (
         <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-500 text-lg">No items found matching your filters.</p>
-          <p className="text-gray-400 text-sm mt-2">Try adjusting your search or filters.</p>
+          <p className="text-gray-700 text-lg">No items found matching your filters.</p>
+          <p className="text-gray-600 text-sm mt-2">Try adjusting your search or filters.</p>
         </div>
       )}
     </>

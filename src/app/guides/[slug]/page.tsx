@@ -43,7 +43,7 @@ export default function GuidePage({ params }: PageProps) {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-10">
       {/* Breadcrumb */}
-      <nav className="mb-6 text-sm text-gray-500">
+      <nav className="mb-6 text-sm text-gray-600">
         <Link href="/" className="hover:underline">
           Home
         </Link>
@@ -69,7 +69,7 @@ export default function GuidePage({ params }: PageProps) {
         </div>
         <h1 className="text-4xl font-extrabold mb-4">{guide.title}</h1>
         <p className="text-xl text-gray-600 mb-4">{guide.description}</p>
-        <div className="flex items-center gap-4 text-sm text-gray-500">
+        <div className="flex items-center gap-4 text-sm text-gray-600">
           <span>By {guide.author}</span>
           <span>•</span>
           <span>Last updated: {guide.lastUpdated}</span>

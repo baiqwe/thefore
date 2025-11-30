@@ -19,10 +19,10 @@ interface TierListProps {
 }
 
 const tierColors = {
-  S: "from-red-600 to-orange-600",
-  A: "from-amber-600 to-yellow-600",
-  B: "from-blue-600 to-cyan-600",
-  C: "from-green-600 to-emerald-600",
+  S: "from-red-100 to-orange-100 border-red-300",
+  A: "from-amber-100 to-yellow-100 border-amber-300",
+  B: "from-blue-100 to-cyan-100 border-blue-300",
+  C: "from-green-100 to-emerald-100 border-green-300",
 }
 
 const tierLabels = {
@@ -52,9 +52,9 @@ export function TierList({ races }: TierListProps) {
         return (
           <div key={tier} className="space-y-4">
             <div
-              className={`bg-gradient-to-r ${tierColors[tier as keyof typeof tierColors]} p-4 rounded-lg`}
+              className={`bg-gradient-to-r ${tierColors[tier as keyof typeof tierColors]} p-4 rounded-lg border-2`}
             >
-              <h2 className="text-2xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-gray-800">
                 {tierLabels[tier as keyof typeof tierLabels]}
               </h2>
             </div>
@@ -69,35 +69,35 @@ export function TierList({ races }: TierListProps) {
                   </CardHeader>
                   <CardContent>
                     {race.dropRate && (
-                      <div className="mb-2">
-                        <Badge variant="outline" className="text-xs">
+                      <div className="mb-3">
+                        <Badge variant="outline" className="text-xs font-semibold text-gray-700 border-gray-300">
                           {race.dropRate} Drop Rate
                         </Badge>
                       </div>
                     )}
-                    <p className="text-zinc-400 mb-4 text-sm">{race.description}</p>
+                    <p className="text-gray-700 mb-4 text-sm leading-relaxed">{race.description}</p>
                     <div className="mb-3">
-                      <h4 className="text-sm font-semibold text-zinc-300 mb-2">
+                      <h4 className="text-sm font-semibold text-gray-800 mb-2">
                         Abilities:
                       </h4>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1.5">
                         {race.abilities.map((ability, idx) => (
                           <li
                             key={idx}
-                            className="text-sm text-zinc-400 flex items-center gap-2"
+                            className="text-sm text-gray-700 flex items-center gap-2"
                           >
-                            <span className="text-amber-500">•</span>
+                            <span className="text-amber-600 font-bold">•</span>
                             {ability}
                           </li>
                         ))}
                       </ul>
                     </div>
                     {race.passive && (
-                      <div className="mt-3 pt-3 border-t border-zinc-700">
-                        <h4 className="text-sm font-semibold text-zinc-300 mb-1">
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <h4 className="text-sm font-semibold text-gray-800 mb-1">
                           Passive:
                         </h4>
-                        <p className="text-xs text-zinc-400">{race.passive}</p>
+                        <p className="text-sm text-gray-700 leading-relaxed">{race.passive}</p>
                       </div>
                     )}
                   </CardContent>

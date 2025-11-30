@@ -94,7 +94,7 @@ export default function CodesPage() {
           Looking for the latest <strong>The Forge codes</strong> to get free <span className="font-semibold text-amber-700">Race Rerolls</span> and <span className="font-semibold text-amber-700">Gems</span>? You are in the right place. 
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
-        <p className="text-sm text-gray-500 mt-2">
+        <p className="text-sm text-gray-600 mt-2">
           Last checked: <span className="font-medium text-amber-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
@@ -152,7 +152,7 @@ export default function CodesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {expiredCodes.map((code, index) => (
               <div key={index} className="bg-gray-100 p-3 rounded border border-gray-200">
-                <span className="font-mono font-semibold text-gray-500 line-through block">{code.code}</span>
+                <span className="font-mono font-semibold text-gray-600 line-through block">{code.code}</span>
               </div>
             ))}
           </div>

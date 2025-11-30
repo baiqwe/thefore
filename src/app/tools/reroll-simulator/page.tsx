@@ -110,8 +110,8 @@ export default function RerollSimulatorPage() {
         <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           Test your luck with our <strong>The Forge reroll simulator</strong>! Simulate rolling for races to see your chances of getting <span className="font-semibold text-amber-700">Legendary races</span> like <strong>Angel</strong> or <strong>Demon</strong> before spending your reroll tokens.
         </p>
-        <p className="text-sm text-gray-500 mt-2">
-          Updated: <span className="font-medium text-green-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
+        <p className="text-sm text-gray-600 mt-2">
+          Updated: <span className="font-medium text-amber-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
 
@@ -211,7 +211,7 @@ export default function RerollSimulatorPage() {
                           {race.name}
                         </span>
                       </div>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-gray-700 font-medium">
                         {race.rarity}
                       </span>
                     </div>

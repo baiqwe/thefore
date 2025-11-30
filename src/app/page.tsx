@@ -299,7 +299,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
               <p className="text-gray-600 text-sm line-clamp-2 mb-3">{guide.description}</p>
-              <div className="text-xs text-gray-500">By {guide.author}</div>
+              <div className="text-xs text-gray-600">By {guide.author}</div>
             </Link>
           ))}
         </div>
@@ -342,7 +342,7 @@ export default function HomePage() {
               <p className="text-gray-600 text-sm mb-4 line-clamp-2">{quest.description}</p>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-yellow-600 font-bold">💰 {quest.rewards.coins.toLocaleString()} Coins</span>
-                <span className="text-gray-500">{quest.location}</span>
+                <span className="text-gray-600">{quest.location}</span>
               </div>
             </Link>
           ))}

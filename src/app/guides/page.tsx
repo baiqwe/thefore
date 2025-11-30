@@ -75,7 +75,7 @@ export default function GuidesPage() {
             </div>
             <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
             <p className="text-gray-600 text-sm mb-4 line-clamp-2">{guide.description}</p>
-            <div className="flex items-center justify-between text-xs text-gray-500">
+            <div className="flex items-center justify-between text-xs text-gray-600">
               <span>By {guide.author}</span>
               <span>Updated {guide.lastUpdated}</span>
             </div>
