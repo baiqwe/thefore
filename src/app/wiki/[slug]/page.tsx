@@ -1,0 +1,178 @@
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import Link from "next/link"
+import { ChevronRight, Home } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { siteConfig } from "@/config/site"
+import guidesData from "@/data/guides.json"
+import racesData from "@/data/races.json"
+import { TierList } from "@/components/TierList"
+import { OreChart } from "@/components/OreChart"
+import { AuthorInfo } from "@/components/AuthorInfo"
+
+interface PageProps {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+
+export async function generateStaticParams() {
+  return guidesData.map((guide) => ({
+    slug: guide.slug,
+  }))
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
+  if (!guide) {
+    return {
+      title: "Guide Not Found",
+    }
+  }
+  const baseKeywords = [
+    "The Forge",
+    "Roblox The Forge",
+    "The Forge Wiki",
+    guide.category,
+  ]
+
+  // Add specific keywords based on guide slug
+  if (slug === "lost-cat-quest") {
+    baseKeywords.push("Lost Cat Guide", "Lost Cat Quest")
+  }
+  if (slug === "race-tier-list") {
+    baseKeywords.push("The Forge Tier List", "Roblox The Forge Races")
+  }
+
+  return {
+    title: guide.title,
+    description: guide.description,
+    keywords: [guide.title, ...baseKeywords],
+  }
+}
+
+export default async function GuidePage({ params }: PageProps) {
+  const { slug } = await params
+  const guide = guidesData.find((g) => g.slug === slug)
+
+  if (!guide) {
+    notFound()
+  }
+
+  // Render content based on slug
+  let content = null
+  let headings: string[] = []
+  
+  if (slug === "race-tier-list") {
+    content = <TierList races={racesData} />
+  } else if (slug === "ore-depths-guide") {
+    content = <OreChart />
+  } else {
+    // Render content array
+    const contentArray = Array.isArray(guide.content) ? guide.content : []
+    headings = contentArray.map((item: any) => item.section).filter(Boolean)
+    
+    content = (
+      <div className="prose prose-invert max-w-none">
+        {contentArray.map((item: any, index: number) => {
+          if (item.section) {
+            return (
+              <div key={index} className="mb-6">
+                <h2
+                  id={item.section.toLowerCase().replace(/\s+/g, "-")}
+                  className="text-3xl font-bold mt-8 mb-4 text-zinc-100 scroll-mt-20"
+                >
+                  {item.section}
+                </h2>
+                <p className="text-zinc-300 mb-4 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            )
+          }
+          return null
+        })}
+      </div>
+    )
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-10">
+      {/* Breadcrumbs */}
+      <nav className="flex items-center gap-2 text-sm text-zinc-400 mb-6">
+        <Link href="/" className="hover:text-amber-500 transition-colors flex items-center gap-1">
+          <Home className="h-4 w-4" />
+          Home
+        </Link>
+        <ChevronRight className="h-4 w-4" />
+        <Link href="/wiki" className="hover:text-amber-500 transition-colors">
+          Wiki
+        </Link>
+        <ChevronRight className="h-4 w-4" />
+        <span className="text-zinc-300">{guide.title}</span>
+      </nav>
+
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* Main Content */}
+        <div className="lg:col-span-3">
+          <Card>
+            <CardContent className="p-8">
+              <div className="mb-6">
+                <h1 className="text-4xl font-extrabold mb-4 text-zinc-100">
+                  {guide.title}
+                </h1>
+                <div className="flex items-center gap-4 text-sm text-zinc-400">
+                  <span>By {guide.author}</span>
+                  <span>•</span>
+                  <span>{guide.category}</span>
+                  <span>•</span>
+                  <span>{guide.difficulty}</span>
+                </div>
+              </div>
+              {content}
+              <AuthorInfo
+                author={guide.author}
+                authorBio={(guide as any).authorBio}
+                lastUpdated={(guide as any).lastUpdated}
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Table of Contents Sidebar */}
+        {headings.length > 0 && (
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-4 text-zinc-100">
+                    Table of Contents
+                  </h3>
+                  <nav className="space-y-2">
+                    {headings.map((heading, index) => {
+                      const id = heading.toLowerCase().replace(/\s+/g, "-")
+                      return (
+                        <a
+                          key={index}
+                          href={`#${id}`}
+                          className="block text-sm text-zinc-400 hover:text-amber-500 transition-colors py-1"
+                        >
+                          {heading}
+                        </a>
+                      )
+                    })}
+                  </nav>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
