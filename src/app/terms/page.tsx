@@ -123,17 +123,17 @@ export default function TermsPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">7. Advertising</h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Our website uses Google AdSense to display advertisements. These advertisements are provided by Google and are subject to Google's advertising policies. We do not control the content of these advertisements.
+            Our website uses Google AdSense to display advertisements. These advertisements are provided by Google and are subject to Google&apos;s advertising policies. We do not control the content of these advertisements.
           </p>
           <p className="text-gray-700 dark:text-gray-300">
-            By using our website, you acknowledge that you may see advertisements and that we may receive compensation for displaying these ads. You can opt out of personalized advertising through <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Google's Ad Settings</a>.
+            By using our website, you acknowledge that you may see advertisements and that we may receive compensation for displaying these ads. You can opt out of personalized advertising through <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Google&apos;s Ad Settings</a>.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">8. Disclaimer of Warranties</h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            THE WEBSITE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+            THE WEBSITE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
             <li>Warranties of merchantability</li>
@@ -168,7 +168,7 @@ export default function TermsPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">12. Changes to Terms</h2>
           <p className="text-gray-700 dark:text-gray-300">
-            We reserve the right to modify these Terms of Service at any time. We will notify users of any material changes by updating the "Last Updated" date. Your continued use of the website after changes are posted constitutes acceptance of the modified terms.
+            We reserve the right to modify these Terms of Service at any time. We will notify users of any material changes by updating the &quot;Last Updated&quot; date. Your continued use of the website after changes are posted constitutes acceptance of the modified terms.
           </p>
         </section>
 

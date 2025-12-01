@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface YouTubeVideoProps {
   videoId: string
@@ -29,13 +30,13 @@ export default function YouTubeVideo({ videoId, title, thumbnail }: YouTubeVideo
     <div className="relative w-full aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg">
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-          <img
+          <Image
             src={thumbnailUrl}
             alt={`${title} - Click to play video`}
             className="w-full h-full object-cover opacity-50"
-            loading="lazy"
             width={1280}
             height={720}
+            unoptimized
           />
           <button
             onClick={() => setIsLoaded(true)}
