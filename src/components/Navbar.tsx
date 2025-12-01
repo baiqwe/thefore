@@ -5,10 +5,10 @@ import { Play } from 'lucide-react'
 
 export default function Navbar() {
   return (
-    <nav className="border-b bg-white shadow-sm sticky top-0 z-40">
+    <nav className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-40">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Link href="/" className="text-xl font-bold text-amber-600 hover:text-amber-700 flex-shrink-0">
+          <Link href="/" className="text-xl font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 flex-shrink-0">
             {siteConfig.name}
           </Link>
           <div className="flex-1 max-w-md hidden md:block">
@@ -39,7 +39,7 @@ export default function Navbar() {
             </a>
             {/* Mobile menu button */}
             <div className="lg:hidden">
-              <button className="text-gray-700 hover:text-blue-600">
+              <button className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>

@@ -41,7 +41,7 @@ export default function HomePage() {
         <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
           {siteConfig.name}
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 px-4">
+        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 px-4">
           {siteConfig.description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
@@ -53,13 +53,13 @@ export default function HomePage() {
           </Link>
           <Link
             href="/wiki"
-            className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-center"
+            className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-center"
           >
             Browse Guides
           </Link>
           <Link
             href="/tools/reroll-simulator"
-            className="bg-amber-100 text-amber-800 px-6 py-3 rounded-lg font-semibold hover:bg-amber-200 transition-colors text-center border border-amber-300"
+            className="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-6 py-3 rounded-lg font-semibold hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors text-center border border-amber-300 dark:border-amber-700"
           >
             Reroll Simulator
           </Link>
@@ -68,27 +68,27 @@ export default function HomePage() {
 
       {/* Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div className="bg-amber-50 p-6 rounded-lg text-center border border-amber-200">
-          <div className="text-4xl font-bold text-amber-600 mb-2">{totalItems}</div>
-          <div className="text-gray-600">Total Items</div>
+        <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-lg text-center border border-amber-200 dark:border-amber-800">
+          <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">{totalItems}</div>
+          <div className="text-gray-600 dark:text-gray-300">Total Items</div>
         </div>
-        <div className="bg-orange-50 p-6 rounded-lg text-center border border-orange-200">
-          <div className="text-4xl font-bold text-orange-600 mb-2">
+        <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg text-center border border-orange-200 dark:border-orange-800">
+          <div className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">
             {itemsData.filter((item) => item.stats.rarity === 'Legendary').length}
           </div>
-          <div className="text-gray-600">Legendary Items</div>
+          <div className="text-gray-600 dark:text-gray-300">Legendary Items</div>
         </div>
-        <div className="bg-amber-50 p-6 rounded-lg text-center border border-amber-200">
-          <div className="text-4xl font-bold text-amber-600 mb-2">
+        <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-lg text-center border border-amber-200 dark:border-amber-800">
+          <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">
             {new Set(itemsData.map((item) => item.location)).size}
           </div>
-          <div className="text-gray-600">Unique Locations</div>
+          <div className="text-gray-600 dark:text-gray-300">Unique Locations</div>
         </div>
       </div>
 
       {/* Features Section */}
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">Why Use This Wiki?</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">Why Use This Wiki?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FeatureCard
             title="Complete Item Database"
@@ -124,21 +124,21 @@ export default function HomePage() {
             <Link
               key={item.slug}
               href={`/item/${item.slug}`}
-              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold">{item.name}</h3>
-                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{item.name}</h3>
+                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300">
                   {item.stats.rarity || 'Common'}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                 <span className="font-semibold">Type:</span> {item.type}
               </p>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                 <span className="font-semibold">Location:</span> {item.location}
               </p>
-              <p className="text-gray-700 text-sm line-clamp-2">{item.description}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2">{item.description}</p>
             </Link>
           ))}
         </div>
@@ -147,10 +147,10 @@ export default function HomePage() {
       {/* Latest Codes Section */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">Latest The Forge Codes</h2>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Latest The Forge Codes</h2>
           <Link
             href="/codes"
-            className="text-amber-600 hover:text-amber-700 font-semibold"
+            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
             View All Codes →
           </Link>
@@ -159,25 +159,25 @@ export default function HomePage() {
           {latestCodes.map((code, index) => (
             <div
               key={index}
-              className="bg-white border-2 border-amber-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-400 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">
+                <span className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">
                   ACTIVE
                 </span>
                 {index === 0 && (
-                  <span className="px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">
+                  <span className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-xs font-bold rounded-full">
                     NEW
                   </span>
                 )}
               </div>
               <div className="mb-3">
-                <div className="bg-gray-100 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300">
+                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                   {code.code}
                 </div>
               </div>
-              <p className="text-amber-700 font-semibold mb-2">{code.reward}</p>
-              <p className="text-sm text-gray-600">{code.description}</p>
+              <p className="text-amber-700 dark:text-amber-400 font-semibold mb-2">{code.reward}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
             </div>
           ))}
         </div>
@@ -185,49 +185,49 @@ export default function HomePage() {
 
       {/* Quick Links Section */}
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">Quick Links</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-100">Quick Links</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link
             href="/wiki/races"
-            className="bg-white rounded-lg border-2 border-amber-200 shadow-md hover:shadow-xl transition-all p-6 group"
+            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-amber-200 dark:border-amber-800 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
-                <Shield className="h-6 w-6 text-amber-600" />
+              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+                <Shield className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="text-xl font-bold">Race Tier List</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Race Tier List</h3>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
               Complete guide to all races in The Forge Roblox. Learn stats, abilities, and drop rates.
             </p>
           </Link>
 
           <Link
             href="/wiki/forging"
-            className="bg-white rounded-lg border-2 border-orange-200 shadow-md hover:shadow-xl transition-all p-6 group"
+            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-orange-200 dark:border-orange-800 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
-                <Hammer className="h-6 w-6 text-amber-600" />
+              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+                <Hammer className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="text-xl font-bold">Forging Guide</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Forging Guide</h3>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
               Master the manual forging minigame. Learn how to craft Masterwork weapons and Colossal Swords.
             </p>
           </Link>
 
           <Link
             href="/quests"
-            className="bg-white rounded-lg border-2 border-amber-200 shadow-md hover:shadow-xl transition-all p-6 group"
+            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-amber-200 dark:border-amber-800 shadow-md hover:shadow-xl transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
-                <Scroll className="h-6 w-6 text-amber-600" />
+              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+                <Scroll className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="text-xl font-bold">Quest Walkthroughs</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Quest Walkthroughs</h3>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
               Complete quest guides including Bard&apos;s Guitar, Goblin King, and Lost Cat quests.
             </p>
           </Link>
@@ -236,42 +236,42 @@ export default function HomePage() {
 
       {/* Current Hot Topics */}
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">Current Hot Topics</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-100">Current Hot Topics</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             href="/wiki/quests"
             className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border-2 border-amber-200 shadow-md hover:shadow-lg transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 rounded-lg group-hover:bg-amber-200 transition-colors">
-                <Key className="h-6 w-6 text-amber-600" />
+              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+                <Key className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="text-xl font-bold">How to Get Arcane Pickaxe</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">How to Get Arcane Pickaxe</h3>
             </div>
-            <p className="text-gray-700 text-sm mb-2">
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
               Complete Bard&apos;s Lost Guitar quest to get the Unknown Key, then unlock the Fallen Angel&apos;s Cave 
               to obtain the best mining tool in The Forge Roblox.
             </p>
-            <span className="text-amber-600 font-semibold text-sm group-hover:underline">
+            <span className="text-amber-600 dark:text-amber-400 font-semibold text-sm group-hover:underline">
               Read Guide →
             </span>
           </Link>
 
           <Link
             href="/wiki/races"
-            className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 shadow-md hover:shadow-lg transition-all p-6 group"
+            className="bg-gradient-to-r from-red-50 dark:from-red-900/20 to-orange-50 dark:to-orange-900/20 rounded-lg border-2 border-red-200 dark:border-red-800 shadow-md hover:shadow-lg transition-all p-6 group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-red-100 rounded-lg group-hover:bg-red-200 transition-colors">
-                <Sword className="h-6 w-6 text-red-600" />
+              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg group-hover:bg-red-200 dark:group-hover:bg-red-900/50 transition-colors">
+                <Sword className="h-6 w-6 text-red-600 dark:text-red-400" />
               </div>
-              <h3 className="text-xl font-bold">Best Race for PVP</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Best Race for PVP</h3>
             </div>
-            <p className="text-gray-700 text-sm mb-2">
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
               Shadow (A-tier) is the PVP meta with dodge chance. Demon (S-tier Mythical) is also excellent for high damage output. 
               Learn all race stats and abilities.
             </p>
-            <span className="text-red-600 font-semibold text-sm group-hover:underline">
+            <span className="text-red-600 dark:text-red-400 font-semibold text-sm group-hover:underline">
               View Tier List →
             </span>
           </Link>
@@ -281,10 +281,10 @@ export default function HomePage() {
       {/* Popular Guides Section */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">Popular Guides</h2>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Popular Guides</h2>
           <Link
             href="/guides"
-            className="text-amber-600 hover:text-amber-700 font-semibold"
+            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
             View All Guides →
           </Link>
@@ -294,27 +294,27 @@ export default function HomePage() {
             <Link
               key={guide.slug}
               href={`/guides/${guide.slug}`}
-              className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-xl transition-all p-6"
+              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all p-6"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-2 py-1 text-xs font-semibold rounded bg-amber-100 text-amber-800">
+                <span className="px-2 py-1 text-xs font-semibold rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300">
                   {guide.category}
                 </span>
                 <span
                   className={`px-2 py-1 text-xs font-semibold rounded ${
                     guide.difficulty === 'Beginner'
-                      ? 'bg-amber-100 text-amber-800'
+                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
                       : guide.difficulty === 'Expert'
-                      ? 'bg-red-100 text-red-800'
-                      : 'bg-orange-100 text-orange-800'
+                      ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
+                      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
                   }`}
                 >
                   {guide.difficulty}
                 </span>
               </div>
-              <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
-              <p className="text-gray-600 text-sm line-clamp-2 mb-3">{guide.description}</p>
-              <div className="text-xs text-gray-600">By {guide.author}</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{guide.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-3">{guide.description}</p>
+              <div className="text-xs text-gray-600 dark:text-gray-400">By {guide.author}</div>
             </Link>
           ))}
         </div>
@@ -336,28 +336,28 @@ export default function HomePage() {
             <Link
               key={quest.id}
               href="/quests"
-              className="bg-white border-l-4 border-amber-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center gap-2 mb-3">
-                <h3 className="text-xl font-bold">{quest.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{quest.title}</h3>
                 <span
                   className={`px-2 py-1 text-xs font-bold rounded-full ${
                     quest.difficulty === 'Easy'
-                      ? 'bg-amber-100 text-amber-800'
+                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
                       : quest.difficulty === 'Medium'
-                      ? 'bg-orange-100 text-orange-800'
+                      ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
                       : quest.difficulty === 'Hard'
-                      ? 'bg-orange-200 text-orange-900'
-                      : 'bg-red-100 text-red-800'
+                      ? 'bg-orange-200 dark:bg-orange-900/40 text-orange-900 dark:text-orange-200'
+                      : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
                   }`}
                 >
                   {quest.difficulty}
                 </span>
               </div>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-2">{quest.description}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">{quest.description}</p>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-yellow-600 font-bold">💰 {quest.rewards.coins.toLocaleString()} Coins</span>
-                <span className="text-gray-600">{quest.location}</span>
+                <span className="text-yellow-600 dark:text-yellow-400 font-bold">💰 {quest.rewards.coins.toLocaleString()} Coins</span>
+                <span className="text-gray-600 dark:text-gray-400">{quest.location}</span>
               </div>
             </Link>
           ))}
@@ -369,15 +369,15 @@ export default function HomePage() {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Play className="h-8 w-8 text-amber-600" />
-            <h2 className="text-3xl font-bold text-gray-800">Watch The Forge Gameplay Videos</h2>
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Watch The Forge Gameplay Videos</h2>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto px-4">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Learn from the best players! Watch these gameplay videos to master <strong>The Forge Roblox</strong> game.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800">The Forge Gameplay Guide</h3>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">The Forge Gameplay Guide</h3>
             <YouTubeVideo
               videoId="GpJRxMgP99Q"
               title="The Forge Gameplay Guide - Complete Walkthrough"
