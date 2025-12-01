@@ -98,8 +98,42 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t text-center text-sm text-gray-500">
-          <p className="text-gray-500 dark:text-gray-400">&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-sm">
+            <div>
+              <h5 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Legal</h5>
+              <ul className="space-y-1">
+                <li>
+                  <a href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400">
+                    Terms of Service
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">About</h5>
+              <ul className="space-y-1">
+                <li>
+                  <a href="/about" className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
