@@ -2,168 +2,161 @@
   {
     "slug": "race-tier-list",
     "title": "Race Tier List - Best Races in The Forge",
-    "description": "Complete tier list ranking all races from S to C tier with detailed analysis.",
+    "description": "Complete tier list ranking all races from S to C tier with detailed analysis. Learn which races are best for PVP, mining, and forging in The Forge Roblox.",
     "category": "Races",
     "author": "The Forge Wiki Team",
     "difficulty": "Beginner",
-    "author": "Wiki Team",
     "lastUpdated": "2024-03-15",
-    "description": "Essential tips and strategies for new players. Learn the basics of surviving your first night.",
     "content": [
       {
-        "section": "Getting Started",
-        "text": "When you first spawn in the mega store, your priority should be finding a light source. The store is pitch black after closing, and you'll need to see where you're going."
+        "section": "Introduction to Races",
+        "text": "In The Forge Roblox, your race determines your character's abilities, stats, and playstyle. Races range from Common to Mythical rarity, with Mythical races having only a 0.5% drop rate when rerolling at the Wizard NPC in Stonewake's Cross."
       },
       {
-        "section": "Essential Items",
-        "text": "Always prioritize finding these items: Flashlight, First Aid Kit, Water Bottle, and a Weapon. These are your basic survival tools."
+        "section": "S-Tier Races",
+        "text": "The S-tier races are the most powerful in The Forge. Demon (Mythical) offers incredible damage output and is perfect for end-game content. These races excel in both PVP and PVE scenarios, making them highly sought after by competitive players."
       },
       {
-        "section": "Resource Management",
-        "text": "Don't waste consumables on minor injuries. Save your First Aid Kits for emergencies. Energy Drinks should be used strategically when you need to run or explore quickly."
+        "section": "A-Tier Races",
+        "text": "A-tier races like Shadow provide excellent abilities such as dodge chance, making them the PVP meta choice. These races offer great balance between offense and defense, suitable for most playstyles."
       },
       {
-        "section": "Enemy Avoidance",
-        "text": "If you hear footsteps or see movement, hide immediately. Use shelves and displays as cover. Running should be your last resort as it makes noise and attracts attention."
+        "section": "B-Tier and C-Tier Races",
+        "text": "Lower tier races are still viable for beginners and casual players. While they may not have the raw power of S-tier races, they often have unique abilities that can be useful in specific situations or for learning the game mechanics."
       },
       {
-        "section": "Time Management",
-        "text": "The night lasts from 10:00 PM to 6:00 AM (8 hours in-game). Plan your activities accordingly. Don't spend too much time in one area."
+        "section": "How to Reroll Your Race",
+        "text": "Visit the Wizard NPC at Stonewake's Cross to reroll your race. You can use codes or in-game currency to reroll. Remember that Mythical races are extremely rare (0.5% chance), so be prepared for multiple rerolls if you're aiming for a specific Mythical race."
       }
     ],
-    "tags": ["beginner", "survival", "tips", "basics"]
+    "tags": ["races", "tier-list", "reroll", "beginner", "stats"]
   },
   {
     "slug": "advanced-strategies",
-    "title": "Advanced Survival Strategies",
+    "title": "Advanced Strategies for The Forge",
     "category": "Advanced",
     "difficulty": "Expert",
     "author": "Pro Player",
     "lastUpdated": "2024-03-20",
-    "description": "Master-level strategies for experienced players. Optimize your survival rate and maximize rewards.",
+    "description": "Master-level strategies for experienced players. Learn optimal mining routes, forging techniques, and quest completion strategies to maximize efficiency in The Forge Roblox.",
     "content": [
       {
-        "section": "Route Optimization",
-        "text": "Plan your route before starting. The most efficient path is: Security Office → Pharmacy → Electronics → Generator Room. This minimizes backtracking."
+        "section": "Optimal Mining Strategy",
+        "text": "To maximize ore gathering in The Forge, focus on getting the Arcane Pickaxe first by completing Bard's Lost Guitar quest. The Arcane Pickaxe provides +200% mining speed, making it essential for efficient resource gathering. Plan your mining depth based on the ores you need for your current crafting goals."
       },
       {
-        "section": "Item Prioritization",
-        "text": "Legendary items should always be your first priority. Master Key and Night Vision Goggles are game-changers. Don't waste time on common items unless you need them immediately."
+        "section": "Forging Mastery",
+        "text": "Master the 3-step manual forging minigame to consistently create high-quality items. Normal quality is the baseline, but aiming for Masterwork quality significantly increases item stats. Practice the timing and pattern recognition to achieve consistent Masterwork results for your most important gear."
       },
       {
-        "section": "Enemy Patterns",
-        "text": "Enemies follow predictable patrol routes. Learn these patterns and time your movements accordingly. Most enemies have a 2-minute patrol cycle."
+        "section": "Quest Prioritization",
+        "text": "Prioritize Bard's Lost Guitar quest early to unlock the Arcane Pickaxe. This tool accelerates all subsequent mining activities. Complete the Goblin King quest only after accumulating sufficient resources for all five escalating tributes. Save rare gems like Rubies for the final tribute."
       },
       {
-        "section": "Resource Hoarding",
-        "text": "Collect everything you can early on, but don't carry too much. Use the Tactical Backpack to increase capacity. Drop common items if you find better ones."
+        "section": "Resource Management",
+        "text": "Don't waste rare ores on low-tier crafting. Save Mithril, Demonite, and Adamantite for end-game equipment. Use common ores (Iron, Copper, Silver) for practice and basic gear. Always maintain a stockpile of Gold for quest tributes and essential upgrades."
       },
       {
-        "section": "Speed Running",
-        "text": "For speed runs, focus only on main quest items. Skip side quests unless they're on your path. Use Energy Drinks to maintain sprint speed."
+        "section": "Race Selection Strategy",
+        "text": "Choose your race based on your playstyle. For PVP-focused players, Shadow (A-tier) with dodge chance is the meta. For end-game content, Demon (S-tier Mythical) provides unmatched damage. Use race reroll codes from the wiki to maximize your chances of getting your desired race."
       }
     ],
-    "tags": ["advanced", "strategy", "optimization", "expert"]
+    "tags": ["advanced", "strategy", "mining", "forging", "expert", "optimization"]
   },
   {
     "slug": "item-location-guide",
-    "title": "Complete Item Location Guide",
+    "title": "Complete Item Location Guide - The Forge",
     "category": "Reference",
     "difficulty": "All Levels",
     "author": "Wiki Team",
     "lastUpdated": "2024-03-18",
-    "description": "Comprehensive guide to finding every item in the mega store. Organized by location for easy reference.",
+    "description": "Comprehensive guide to finding every important item in The Forge Roblox. Learn where to find quest items, rare ores, and legendary equipment.",
     "content": [
       {
-        "section": "Security Office",
-        "text": "Contains: Master Key, Security Badge, Emergency Exit Key, Security Camera Code. Access requires lockpicking or finding the security badge first."
+        "section": "Quest Items",
+        "text": "The Unknown Key is obtained by completing Bard's Lost Guitar quest. Find the guitar in a hidden hole near Umut the Brave in Stonewake Mine. The Arcane Pickaxe is located in Fallen Angel's Cave, unlocked with the Unknown Key. Tomo's Lost Cat can be found behind a waterfall wall in the Goblin Cave."
       },
       {
-        "section": "Pharmacy Section",
-        "text": "Contains: First Aid Kits (behind counter), Painkillers, Medical Supplies. Usually guarded, approach carefully."
+        "section": "Ore Locations by Depth",
+        "text": "Ores in The Forge are found at specific depth ranges. Stone and Coal start at 0-10m. Copper appears at 25m+. Iron at 50m+, Silver at 100m+, Gold at 150m+, Platinum at 250m+. Rare ores like Mithril (400m+), Demonite (600m+), Titanium (800m+), Adamantite (900m+), and Luminite (1000m+) require deeper mining with powerful pickaxes."
       },
       {
-        "section": "Electronics Section",
-        "text": "Contains: Flashlight, Walkie-Talkie, Emergency Radio, Night Vision Goggles (hidden). Check all shelves and displays."
+        "section": "Forging Locations",
+        "text": "Visit the Anvil to access the manual forging minigame. Here you can craft weapons, tools, and equipment from ore ingots. The forging location is accessible from the main spawn area and is essential for upgrading your gear throughout the game."
       },
       {
-        "section": "Hardware Section",
-        "text": "Contains: Crowbar, Lockpick Set, Duct Tape, Rope. Essential tools for progression."
+        "section": "Race Reroll Location",
+        "text": "Find the Wizard NPC at Stonewake's Cross to reroll your race. This location is easily accessible from spawn and is where you'll spend codes or currency for race rerolls. Remember that Mythical races have only a 0.5% drop rate."
       },
       {
-        "section": "Grocery Section",
-        "text": "Contains: Canned Food, Water Bottles, Energy Drinks. Abundant resources for survival."
-      },
-      {
-        "section": "Basement",
-        "text": "Contains: Generator Fuel, Backup Generator. Critical for power restoration quest."
+        "section": "Quest NPCs",
+        "text": "The Bard is located at the spawn campfire, offering the Lost Guitar quest. Tomo can be found in the main area, requesting help finding his lost cat. The Goblin King resides in the Forgotten Kingdom, requiring escalating tributes to challenge."
       }
     ],
-    "tags": ["items", "locations", "reference", "guide"]
+    "tags": ["items", "locations", "reference", "guide", "ore-locations"]
   },
   {
-    "slug": "enemy-encounter-guide",
-    "title": "Enemy Encounter Guide",
-    "category": "Combat",
+    "slug": "forging-guide",
+    "title": "Complete Forging Guide - Master the Crafting System",
+    "category": "Forging",
     "difficulty": "Intermediate",
-    "author": "Survivor Expert",
+    "author": "Master Smith",
     "lastUpdated": "2024-03-22",
-    "description": "Learn how to deal with different enemy types and avoid dangerous encounters.",
+    "description": "Learn everything about the manual forging minigame in The Forge. Master the 3-step process to create Normal, Masterwork, and Legendary quality items.",
     "content": [
       {
-        "section": "Security Guards",
-        "text": "Patrol in pairs, have flashlights. Hide when you see their light. They can be distracted with noise from walkie-talkies."
+        "section": "Introduction to Forging",
+        "text": "The Forge features a unique manual forging minigame where you craft weapons and tools yourself. This 3-step process requires timing and skill to achieve higher quality results. The quality levels are: Normal (baseline), Masterwork (superior stats), and Legendary (maximum power)."
       },
       {
-        "section": "Shadow Entities",
-        "text": "Only appear in complete darkness. Always carry a light source. They're weak to bright light from flashlights."
+        "section": "The 3-Step Forging Process",
+        "text": "Step 1: Heat the metal to the correct temperature. Watch the temperature gauge and stop at the optimal point. Step 2: Strike the metal at the right moment to shape it. Timing is crucial here. Step 3: Quench the weapon at the perfect time to temper it. Master all three steps for Masterwork quality."
       },
       {
-        "section": "Store Manager",
-        "text": "Boss enemy that appears after 2:00 AM. Extremely dangerous. Best strategy is to avoid entirely or use all your resources to defeat."
+        "section": "Materials Needed",
+        "text": "You need ore ingots to forge items. Smelt raw ores using Coal at the furnace to create ingots. Different items require different materials: Iron for basic weapons, Gold for mid-tier, Mithril for Epic gear, and Demonite/Adamantite for Legendary and Mythical equipment."
       },
       {
-        "section": "Avoidance Tactics",
-        "text": "Use shelves as cover, crouch to reduce noise, use distractions (throw items), and always have an escape route planned."
+        "section": "Quality System",
+        "text": "Normal quality items have baseline stats. Masterwork quality significantly increases damage, durability, and effectiveness. Legendary quality (very rare) provides maximum power. Practice with common materials before attempting rare ores to perfect your technique."
       },
       {
-        "section": "Combat Tips",
-        "text": "If combat is unavoidable, use weapons with knockback (baseball bat). Fire extinguisher can blind enemies temporarily. Always have a First Aid Kit ready."
+        "section": "Essential Crafted Items",
+        "text": "Key items to forge include: Iron Pickaxe for early mining upgrades, Golden Sword for combat, Mithril Blade for Epic-tier power, Demonite Axe for Legendary damage, and the Colossal Sword for the ultimate end-game weapon. Each requires mastering the forging minigame."
       }
     ],
-    "tags": ["enemies", "combat", "survival", "tactics"]
+    "tags": ["forging", "crafting", "minigame", "guide", "intermediate"]
   },
   {
     "slug": "quest-walkthrough",
-    "title": "Complete Quest Walkthrough",
+    "title": "Complete Quest Walkthrough - The Forge",
     "category": "Walkthrough",
     "difficulty": "All Levels",
     "author": "Wiki Team",
     "lastUpdated": "2024-03-25",
-    "description": "Step-by-step walkthrough for all main and side quests. Never get stuck again!",
+    "description": "Step-by-step walkthrough for all main and side quests in The Forge Roblox. Never get stuck on a quest again!",
     "content": [
       {
         "section": "Quest Order Recommendation",
-        "text": "Recommended order: First Night → Pharmacy Run → Security Breach → Weapon Master → Power Restoration → Escape Route → The Final Night"
+        "text": "Recommended order: Start with Bard's Lost Guitar → Arcane Pickaxe Quest → Mining Master → Forging Apprentice → Lost Cat → Race Reroll → Goblin King (after gathering resources) → The Forge Master (end-game)."
       },
       {
-        "section": "First Night Quest",
-        "text": "Start by heading to Electronics (Aisle 12) for flashlight. Then go to Customer Service for store map. Finally, locate emergency exit near main entrance."
+        "section": "Bard's Lost Guitar Quest",
+        "text": "Find the Bard NPC at the spawn campfire. Accept the quest to find his lost guitar. Travel to Stonewake Mine and locate Umut the Brave. Search for a hidden hole in a bush near this NPC. The guitar is inside. Return it to the Bard to receive the Unknown Key."
       },
       {
-        "section": "Security Breach Quest",
-        "text": "First, get Security Badge from Lost & Found. Use it to access security room. Disable cameras using the code from Manager's Office. Then grab Master Key."
+        "section": "Arcane Pickaxe Quest",
+        "text": "With the Unknown Key from Bard's quest, locate the Fallen Angel's Cave. Use the key to unlock the cave entrance. Inside, you'll find the legendary Arcane Pickaxe, which dramatically increases mining speed and efficiency. This is essential for all future mining activities."
       },
       {
-        "section": "Power Restoration Quest",
-        "text": "Find Generator Fuel in Automotive Section. Go to Basement (use Master Key). Activate generator. Survive the 30-second power surge event with enemies spawning."
+        "section": "Goblin King Quest Strategy",
+        "text": "This quest requires significant resource preparation. Gather Gold, Topaz, and progressively rarer gems for the five escalating tributes. Start with Gold for tribute 1, then add Topaz for tribute 2. Continue escalating until tribute 5 requires Gold + Rubies. Only attempt this quest after accumulating all required materials."
       },
       {
-        "section": "Tips for Final Night",
-        "text": "Stock up on all consumables. Have Master Key, Night Vision Goggles, and all weapons. Plan your route and stick to it. Don't explore unnecessarily."
+        "section": "Tips for End-Game",
+        "text": "For The Forge Master quest, you need to: Reach maximum mining depth (1000m+), collect all rare ores including Luminite, forge a Masterwork quality weapon, complete all main quests including Goblin King, and craft the Colossal Sword. This is the ultimate challenge requiring mastery of all game systems."
       }
     ],
-    "tags": ["quests", "walkthrough", "guide", "tutorial"]
+    "tags": ["quests", "walkthrough", "guide", "tutorial", "step-by-step"]
   }
 ]
-

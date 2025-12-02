@@ -1,255 +1,254 @@
 [
   {
-    "slug": "master-key",
-    "name": "Master Key",
-    "location": "Security Office, Second Floor",
-    "type": "Key Item",
-    "description": "The master key unlocks all employee-only areas in the store. Found in the security office on the second floor, hidden inside a locked drawer. Essential for accessing restricted zones and finding better loot.",
+    "slug": "arcane-pickaxe",
+    "name": "Arcane Pickaxe",
+    "location": "Fallen Angel's Cave",
+    "type": "Tool",
+    "description": "The best mining tool in The Forge Roblox. This legendary pickaxe significantly increases mining speed and efficiency. Obtained by completing Bard's Lost Guitar quest to get the Unknown Key, then using it to unlock the Fallen Angel's Cave. Essential for gathering rare ores and progressing through the game.",
     "stats": {
       "rarity": "Legendary",
-      "uses": "Unlimited",
-      "access": "All Restricted Areas"
+      "mining-speed": "+200%",
+      "depth": "All depths"
     }
   },
   {
-    "slug": "flashlight",
-    "name": "Heavy-Duty Flashlight",
-    "location": "Electronics Section, Aisle 12",
+    "slug": "unknown-key",
+    "name": "Unknown Key",
+    "location": "Quest Reward - Bard's Lost Guitar",
+    "type": "Key Item",
+    "description": "A mysterious key obtained by completing the Bard's Lost Guitar quest. This key is used to unlock the Fallen Angel's Cave, where you can find the powerful Arcane Pickaxe. The quest involves finding the Bard's guitar in Stonewake Mine near Umut the Brave.",
+    "stats": {
+      "rarity": "Legendary",
+      "use": "Unlocks Fallen Angel's Cave",
+      "quest": "Bard's Lost Guitar"
+    }
+  },
+  {
+    "slug": "stone-pickaxe",
+    "name": "Stone Pickaxe",
+    "location": "Starting Equipment",
     "type": "Tool",
-    "description": "A powerful flashlight that illuminates dark areas and can temporarily blind enemies. Essential for navigating the store after the lights go out. Batteries last for 6 hours of continuous use.",
+    "description": "Basic mining pickaxe available at the start of The Forge. Can mine common ores like Stone and Coal. Upgrade to better pickaxes as you progress to mine deeper and rarer materials.",
     "stats": {
       "rarity": "Common",
-      "durability": "6 hours",
-      "effect": "Illuminates dark areas"
+      "mining-speed": "Base",
+      "max-depth": "100m"
     }
   },
   {
-    "slug": "first-aid-kit",
-    "name": "First Aid Kit",
-    "location": "Pharmacy Section, Behind Counter",
-    "type": "Consumable",
-    "description": "Restores 50 HP and removes bleeding status. Can be found in the pharmacy section, usually behind the counter. Limited supply, use wisely.",
+    "slug": "iron-pickaxe",
+    "name": "Iron Pickaxe",
+    "location": "Forged at Anvil",
+    "type": "Tool",
+    "description": "Upgraded pickaxe forged from Iron ore. Increases mining speed and allows access to deeper mining areas. Crafted using the manual forging minigame at the anvil using Iron ingots.",
     "stats": {
-      "rarity": "Rare",
-      "healing": "50 HP",
-      "stack": "3"
+      "rarity": "Uncommon",
+      "mining-speed": "+50%",
+      "max-depth": "500m"
     }
   },
   {
-    "slug": "energy-drink",
-    "name": "Energy Drink",
-    "location": "Beverage Aisle, Various Locations",
-    "type": "Consumable",
-    "description": "Temporarily increases stamina regeneration by 50% for 10 minutes. Found scattered throughout the beverage aisles. Useful for extended exploration sessions.",
-    "stats": {
-      "rarity": "Common",
-      "duration": "10 minutes",
-      "effect": "+50% Stamina Regen"
-    }
-  },
-  {
-    "slug": "crowbar",
-    "name": "Crowbar",
-    "location": "Hardware Section, Tool Aisle",
+    "slug": "golden-sword",
+    "name": "Golden Sword",
+    "location": "Forged at Anvil",
     "type": "Weapon",
-    "description": "A versatile tool that can be used as a weapon or to pry open locked doors and crates. Deals moderate damage and has a chance to stun enemies. Found in the hardware section.",
-    "stats": {
-      "rarity": "Uncommon",
-      "damage": "25",
-      "durability": "100"
-    }
-  },
-  {
-    "slug": "security-badge",
-    "name": "Security Badge",
-    "location": "Lost & Found, Customer Service",
-    "type": "Key Item",
-    "description": "Grants access to the security room and surveillance system. Found in the lost & found box at customer service. Allows you to view camera feeds and disable alarms.",
+    "description": "A powerful sword forged from Gold ore in The Forge. Provides excellent damage for combat encounters. Requires mastering the 3-step manual forging minigame to craft. Essential for defeating enemies and progressing through quests.",
     "stats": {
       "rarity": "Rare",
-      "access": "Security Room",
-      "function": "Camera Access"
+      "damage": "High",
+      "crafting": "Gold Ingot"
     }
   },
   {
-    "slug": "walkie-talkie",
-    "name": "Walkie-Talkie",
-    "location": "Electronics Section, Communication Devices",
-    "type": "Tool",
-    "description": "Allows communication with other survivors (if multiplayer) or receives emergency broadcasts. Can also be used to distract enemies by playing static noise.",
+    "slug": "mithril-blade",
+    "name": "Mithril Blade",
+    "location": "Forged at Anvil",
+    "type": "Weapon",
+    "description": "Epic-tier weapon forged from Mithril ore. One of the strongest weapons available in The Forge. Requires advanced forging skills and rare materials. Highly sought after for end-game content.",
     "stats": {
-      "rarity": "Uncommon",
-      "range": "500m",
-      "battery": "8 hours"
+      "rarity": "Epic",
+      "damage": "Very High",
+      "crafting": "Mithril Ingot"
     }
   },
   {
-    "slug": "backpack",
-    "name": "Tactical Backpack",
-    "location": "Outdoor Section, Camping Aisle",
-    "type": "Equipment",
-    "description": "Increases inventory capacity by 20 slots. Essential for hoarding supplies and items. Found in the outdoor/camping section.",
-    "stats": {
-      "rarity": "Rare",
-      "capacity": "+20 slots",
-      "weight": "2kg"
-    }
-  },
-  {
-    "slug": "lockpick-set",
-    "name": "Lockpick Set",
-    "location": "Hardware Section, Security Tools",
-    "type": "Tool",
-    "description": "Allows you to pick locks on doors and containers. Has limited uses but can be found in multiple locations. Skill-based minigame determines success rate.",
-    "stats": {
-      "rarity": "Uncommon",
-      "uses": "10",
-      "success-rate": "60-80%"
-    }
-  },
-  {
-    "slug": "night-vision-goggles",
-    "name": "Night Vision Goggles",
-    "location": "Electronics Section, Special Items",
-    "type": "Equipment",
-    "description": "Provides clear vision in complete darkness. Extremely rare item found in the electronics section. Battery lasts 4 hours. Game-changing for night exploration.",
+    "slug": "demonite-axe",
+    "name": "Demonite Axe",
+    "location": "Forged at Anvil",
+    "type": "Weapon",
+    "description": "Legendary weapon crafted from Demonite ore. Extremely powerful weapon with devastating damage. Requires rare Demonite ore found at depths of 600m+. Perfect for challenging the Goblin King and other end-game bosses.",
     "stats": {
       "rarity": "Legendary",
-      "duration": "4 hours",
-      "effect": "Full night vision"
+      "damage": "Extreme",
+      "crafting": "Demonite Ingot"
     }
   },
   {
-    "slug": "canned-food",
-    "name": "Canned Food",
-    "location": "Grocery Section, Canned Goods Aisle",
-    "type": "Consumable",
-    "description": "Restores 30 HP and 20 hunger. Found in abundance in the grocery section. Basic survival food that doesn't expire.",
+    "slug": "colossal-sword",
+    "name": "Colossal Sword",
+    "location": "Forged at Anvil - Masterwork",
+    "type": "Weapon",
+    "description": "The ultimate weapon in The Forge. A massive sword that requires Masterwork quality forging to create. Only the most skilled players can craft this legendary weapon. Requires rare materials and perfect execution of the forging minigame.",
     "stats": {
-      "rarity": "Common",
-      "healing": "30 HP",
-      "hunger": "+20"
+      "rarity": "Mythical",
+      "damage": "Maximum",
+      "quality": "Masterwork"
     }
   },
   {
-    "slug": "duct-tape",
-    "name": "Duct Tape",
-    "location": "Hardware Section, Various Locations",
-    "type": "Crafting Material",
-    "description": "Versatile crafting material. Can be used to repair items, create makeshift weapons, or seal doors temporarily. Found throughout the hardware section.",
-    "stats": {
-      "rarity": "Common",
-      "uses": "Multiple",
-      "crafting": "Yes"
-    }
-  },
-  {
-    "slug": "generator-fuel",
-    "name": "Generator Fuel",
-    "location": "Automotive Section, Gas Cans",
+    "slug": "gold-ore",
+    "name": "Gold Ore",
+    "location": "Mines - 150m to 1000m depth",
     "type": "Resource",
-    "description": "Fuel for the backup generator. Restores power to sections of the store for 30 minutes. Found in the automotive section. Limited quantity.",
+    "description": "Valuable ore found in The Forge mines. Gold is a rare material used for crafting powerful weapons and equipment. Found at depths starting from 150 meters. Essential for progression and trading.",
     "stats": {
       "rarity": "Rare",
-      "duration": "30 minutes",
-      "area": "One Section"
+      "value": "60 coins",
+      "depth": "150m-1000m"
     }
   },
   {
-    "slug": "security-camera-code",
-    "name": "Security Camera Access Code",
-    "location": "Manager's Office, Desk Drawer",
-    "type": "Key Item",
-    "description": "A code written on a sticky note found in the manager's office. Grants access to the security camera system when combined with the security badge.",
+    "slug": "topaz",
+    "name": "Topaz",
+    "location": "Mines - Various Depths",
+    "type": "Resource",
+    "description": "Precious gemstone used for quest tributes and crafting. Required for the Goblin King quest escalating tributes. Can be found while mining at various depths. Essential for accessing end-game content.",
     "stats": {
       "rarity": "Rare",
-      "function": "Camera System Access",
-      "location": "Manager's Office"
+      "use": "Quest Tributes",
+      "quest": "Goblin King"
     }
   },
   {
-    "slug": "emergency-radio",
-    "name": "Emergency Radio",
-    "location": "Electronics Section, Communication",
-    "type": "Tool",
-    "description": "Receives emergency broadcasts and weather updates. Can also be used to call for help (if that's an option). Found in electronics, requires batteries.",
+    "slug": "ruby",
+    "name": "Ruby",
+    "location": "Mines - Deep Depths",
+    "type": "Resource",
+    "description": "Rare gemstone required for the final Goblin King tribute. One of the most valuable materials in The Forge. Found in deep mining areas. Essential for completing the Goblin King quest in the Forgotten Kingdom.",
     "stats": {
-      "rarity": "Uncommon",
-      "range": "Long Range",
-      "battery": "12 hours"
+      "rarity": "Legendary",
+      "use": "Final Goblin King Tribute",
+      "location": "Deep Mines"
     }
   },
   {
-    "slug": "baseball-bat",
-    "name": "Aluminum Baseball Bat",
-    "location": "Sports Section, Baseball Aisle",
-    "type": "Weapon",
-    "description": "A sturdy baseball bat that deals good damage and has a chance to knock enemies back. Found in the sports section. Reliable melee weapon.",
-    "stats": {
-      "rarity": "Common",
-      "damage": "30",
-      "knockback": "Yes"
-    }
-  },
-  {
-    "slug": "water-bottle",
-    "name": "Water Bottle",
-    "location": "Beverage Aisle, Various Locations",
-    "type": "Consumable",
-    "description": "Restores 40 thirst. Essential for survival. Found throughout the beverage aisles. Can be refilled at water fountains.",
-    "stats": {
-      "rarity": "Common",
-      "thirst": "+40",
-      "refillable": "Yes"
-    }
-  },
-  {
-    "slug": "rope",
-    "name": "Climbing Rope",
-    "location": "Outdoor Section, Camping Gear",
-    "type": "Tool",
-    "description": "Can be used to climb to higher floors, create escape routes, or tie down objects. Found in the outdoor/camping section. 50 feet long.",
-    "stats": {
-      "rarity": "Uncommon",
-      "length": "50 feet",
-      "uses": "Multiple"
-    }
-  },
-  {
-    "slug": "fire-extinguisher",
-    "name": "Fire Extinguisher",
-    "location": "Various Locations, Wall Mounts",
-    "type": "Tool",
-    "description": "Can be used to put out fires or as an improvised weapon. Found mounted on walls throughout the store. Limited uses but effective.",
-    "stats": {
-      "rarity": "Common",
-      "uses": "1",
-      "damage": "20 (as weapon)"
-    }
-  },
-  {
-    "slug": "store-map",
-    "name": "Store Layout Map",
-    "location": "Customer Service, Information Desk",
-    "type": "Key Item",
-    "description": "A detailed map of the entire store showing all sections, exits, and key locations. Essential for navigation. Found at customer service or information desks.",
-    "stats": {
-      "rarity": "Uncommon",
-      "function": "Navigation",
-      "coverage": "Full Store"
-    }
-  },
-  {
-    "slug": "emergency-exit-key",
-    "name": "Emergency Exit Key",
-    "location": "Security Office, Key Cabinet",
-    "type": "Key Item",
-    "description": "Unlocks all emergency exits. Found in the security office key cabinet. Critical for escaping the store when needed.",
+    "slug": "platinum-ore",
+    "name": "Platinum Ore",
+    "location": "Mines - 250m to 1000m depth",
+    "type": "Resource",
+    "description": "Rare ore found at deeper mining levels. Platinum is valuable for crafting high-tier equipment and weapons. Requires a good pickaxe and mining skills to obtain. Used in advanced forging recipes.",
     "stats": {
       "rarity": "Rare",
-      "access": "All Emergency Exits",
-      "location": "Security Office"
+      "value": "100 coins",
+      "depth": "250m-1000m"
+    }
+  },
+  {
+    "slug": "mithril-ore",
+    "name": "Mithril Ore",
+    "location": "Mines - 400m to 1000m depth",
+    "type": "Resource",
+    "description": "Epic-tier ore found at very deep mining levels. Mithril is essential for crafting powerful Epic weapons and armor. Requires advanced mining tools like the Arcane Pickaxe to efficiently extract. One of the most valuable crafting materials.",
+    "stats": {
+      "rarity": "Epic",
+      "value": "200 coins",
+      "depth": "400m-1000m"
+    }
+  },
+  {
+    "slug": "demonite-ore",
+    "name": "Demonite Ore",
+    "location": "Mines - 600m to 1000m depth",
+    "type": "Resource",
+    "description": "Legendary dark ore found at extreme depths. Demonite is one of the rarest materials in The Forge, used for crafting the most powerful Legendary weapons. Requires the Arcane Pickaxe for efficient mining. Essential for end-game progression.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "400 coins",
+      "depth": "600m-1000m"
+    }
+  },
+  {
+    "slug": "titanium-ore",
+    "name": "Titanium Ore",
+    "location": "Mines - 800m to 1000m depth",
+    "type": "Resource",
+    "description": "Extremely rare ore found at maximum depths. Titanium is a Legendary material used for crafting top-tier equipment. Requires maximum mining depth and powerful tools. Highly valuable for trading and crafting.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "700 coins",
+      "depth": "800m-1000m"
+    }
+  },
+  {
+    "slug": "adamantite-ore",
+    "name": "Adamantite Ore",
+    "location": "Mines - 900m to 1000m depth",
+    "type": "Resource",
+    "description": "Mythical ore found at near-maximum depths. Adamantite is one of the rarest materials in The Forge, required for crafting Mythical-tier equipment. Only obtainable with the best mining tools at extreme depths.",
+    "stats": {
+      "rarity": "Mythical",
+      "value": "1200 coins",
+      "depth": "900m-1000m"
+    }
+  },
+  {
+    "slug": "luminite-ore",
+    "name": "Luminite Ore",
+    "location": "Mines - 1000m+ depth",
+    "type": "Resource",
+    "description": "Godly-tier ore found at maximum depth. Luminite is the rarest and most valuable material in The Forge. Used for crafting the ultimate Godly-tier equipment. Requires reaching maximum mining depth with the Arcane Pickaxe.",
+    "stats": {
+      "rarity": "Godly",
+      "value": "2500 coins",
+      "depth": "1000m+"
+    }
+  },
+  {
+    "slug": "iron-ore",
+    "name": "Iron Ore",
+    "location": "Mines - 50m to 1000m depth",
+    "type": "Resource",
+    "description": "Common ore found in The Forge mines. Iron is essential for crafting basic to intermediate weapons and tools. Found at relatively shallow depths, making it accessible early in the game. Used for upgrading equipment and pickaxes.",
+    "stats": {
+      "rarity": "Uncommon",
+      "value": "15 coins",
+      "depth": "50m-1000m"
+    }
+  },
+  {
+    "slug": "copper-ore",
+    "name": "Copper Ore",
+    "location": "Mines - 25m to 1000m depth",
+    "type": "Resource",
+    "description": "Basic ore found early in mining areas. Copper is one of the first ores players encounter in The Forge. Used for basic crafting recipes and as starting materials. Essential for learning the forging mechanics.",
+    "stats": {
+      "rarity": "Common",
+      "value": "8 coins",
+      "depth": "25m-1000m"
+    }
+  },
+  {
+    "slug": "silver-ore",
+    "name": "Silver Ore",
+    "location": "Mines - 100m to 1000m depth",
+    "type": "Resource",
+    "description": "Uncommon ore found at moderate depths. Silver is used for crafting intermediate weapons and equipment. Provides a good balance between value and accessibility. Important for mid-game progression in The Forge.",
+    "stats": {
+      "rarity": "Uncommon",
+      "value": "30 coins",
+      "depth": "100m-1000m"
+    }
+  },
+  {
+    "slug": "coal-ore",
+    "name": "Coal Ore",
+    "location": "Mines - 10m to 1000m depth",
+    "type": "Resource",
+    "description": "Common fuel ore found throughout the mines. Coal is used for smelting operations and can be found at very shallow depths. Essential for the forging process, allowing players to smelt raw ores into ingots for crafting.",
+    "stats": {
+      "rarity": "Common",
+      "value": "4 coins",
+      "depth": "10m-1000m"
     }
   }
 ]
-

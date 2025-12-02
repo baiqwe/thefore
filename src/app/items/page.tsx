@@ -32,7 +32,7 @@ export default function ItemsPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-extrabold mb-4">All Items</h1>
         <p className="text-gray-600 text-lg">
-          Browse through all {itemsData.length} items available in the mega store. Use filters to
+          Browse through all {itemsData.length} items available in The Forge Roblox. Use filters to
           find exactly what you need. Click on any item to view detailed information, location, and
           usage tips.
         </p>

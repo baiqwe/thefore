@@ -95,24 +95,24 @@ export default function GuidesPage() {
 
       {/* Quick Tips */}
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
-        <h2 className="text-2xl font-bold mb-4">Quick Tips</h2>
+        <h2 className="text-2xl font-bold mb-4">Quick Tips for The Forge</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <h3 className="font-semibold mb-2">For Beginners</h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-              <li>Always carry a light source</li>
-              <li>Save consumables for emergencies</li>
-              <li>Learn enemy patrol patterns</li>
-              <li>Plan your route before starting</li>
+              <li>Complete Bard&apos;s Lost Guitar quest early for the Arcane Pickaxe</li>
+              <li>Start mining at shallow depths to learn the mechanics</li>
+              <li>Practice the forging minigame with common ores first</li>
+              <li>Save rare gems (Topaz, Rubies) for the Goblin King quest</li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-2">For Experts</h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-              <li>Optimize your item collection route</li>
-              <li>Master the timing for enemy avoidance</li>
-              <li>Use legendary items strategically</li>
-              <li>Complete quests in optimal order</li>
+              <li>Optimize mining routes based on ore depth requirements</li>
+              <li>Master the 3-step forging minigame for Masterwork quality</li>
+              <li>Use race reroll codes to get your ideal race (Shadow for PVP)</li>
+              <li>Plan Goblin King tributes before starting the quest</li>
             </ul>
           </div>
         </div>

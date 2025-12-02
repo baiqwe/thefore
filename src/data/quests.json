@@ -1,141 +1,156 @@
 [
   {
     "id": "quest-001",
-    "title": "First Night",
+    "title": "Bard's Lost Guitar",
     "type": "Main Quest",
     "difficulty": "Easy",
-    "description": "Survive your first night in the mega store. This is the tutorial quest that introduces you to the basic mechanics.",
+    "description": "The Bard at the spawn campfire has lost his guitar and needs your help. This essential quest rewards the Unknown Key, which unlocks the Fallen Angel's Cave where you can obtain the powerful Arcane Pickaxe.",
     "objectives": [
-      "Find a flashlight",
-      "Locate the emergency exit",
-      "Survive until 6:00 AM"
+      "Find the Bard NPC at the spawn campfire",
+      "Locate the guitar in Stonewake Mine",
+      "Find the hidden hole in a bush near Umut the Brave",
+      "Retrieve the guitar and return to the Bard"
     ],
     "rewards": {
       "coins": 500,
-      "items": ["Basic Backpack", "Water Bottle"]
+      "items": ["Unknown Key"]
     },
-    "location": "Starting Area"
+    "location": "Spawn Campfire / Stonewake Mine"
   },
   {
     "id": "quest-002",
-    "title": "Security Breach",
-    "type": "Main Quest",
-    "difficulty": "Medium",
-    "description": "Infiltrate the security office and retrieve the master key. Watch out for security cameras!",
-    "objectives": [
-      "Disable security cameras",
-      "Access security office",
-      "Obtain master key"
-    ],
-    "rewards": {
-      "coins": 1000,
-      "items": ["Master Key", "Security Badge"]
-    },
-    "location": "Security Office, Second Floor"
-  },
-  {
-    "id": "quest-003",
-    "title": "Pharmacy Run",
-    "type": "Side Quest",
-    "difficulty": "Easy",
-    "description": "Collect medical supplies from the pharmacy section. Essential for long-term survival.",
-    "objectives": [
-      "Find 3 First Aid Kits",
-      "Locate painkillers",
-      "Return to safe zone"
-    ],
-    "rewards": {
-      "coins": 300,
-      "items": ["First Aid Kit x3"]
-    },
-    "location": "Pharmacy Section"
-  },
-  {
-    "id": "quest-004",
-    "title": "Power Restoration",
+    "title": "Goblin King (Forgotten Kingdom)",
     "type": "Main Quest",
     "difficulty": "Hard",
-    "description": "Restore power to the store by finding and activating the backup generator. This will make navigation much easier.",
+    "description": "Challenge the Goblin King in the Forgotten Kingdom by providing escalating tributes. This advanced quest requires significant resources but grants major rewards essential for end-game progression.",
     "objectives": [
-      "Find generator fuel",
-      "Locate backup generator room",
-      "Activate generator",
-      "Survive the power surge event"
-    ],
-    "rewards": {
-      "coins": 2000,
-      "items": ["Generator Access Card", "Emergency Radio"]
-    },
-    "location": "Basement, Generator Room"
-  },
-  {
-    "id": "quest-005",
-    "title": "Night Vision",
-    "type": "Side Quest",
-    "difficulty": "Hard",
-    "description": "Find the legendary night vision goggles hidden in the electronics section. Extremely rare and valuable!",
-    "objectives": [
-      "Search electronics section",
-      "Solve the hidden puzzle",
-      "Obtain night vision goggles"
-    ],
-    "rewards": {
-      "coins": 1500,
-      "items": ["Night Vision Goggles"]
-    },
-    "location": "Electronics Section"
-  },
-  {
-    "id": "quest-006",
-    "title": "Escape Route",
-    "type": "Main Quest",
-    "difficulty": "Medium",
-    "description": "Find all emergency exit keys and plan your escape route. Time is running out!",
-    "objectives": [
-      "Find emergency exit key",
-      "Locate all 4 emergency exits",
-      "Test escape route"
-    ],
-    "rewards": {
-      "coins": 1200,
-      "items": ["Emergency Exit Key", "Store Map"]
-    },
-    "location": "Multiple Locations"
-  },
-  {
-    "id": "quest-007",
-    "title": "Weapon Master",
-    "type": "Side Quest",
-    "difficulty": "Medium",
-    "description": "Collect various weapons from different sections of the store. Prepare for the worst.",
-    "objectives": [
-      "Find crowbar",
-      "Obtain baseball bat",
-      "Locate fire extinguisher"
-    ],
-    "rewards": {
-      "coins": 800,
-      "items": ["Weapon Upgrade Kit"]
-    },
-    "location": "Hardware, Sports, Various"
-  },
-  {
-    "id": "quest-008",
-    "title": "The Final Night",
-    "type": "Main Quest",
-    "difficulty": "Extreme",
-    "description": "Survive the final night with all challenges active. This is the ultimate test of your survival skills.",
-    "objectives": [
-      "Survive until 6:00 AM",
-      "Avoid all enemies",
-      "Complete without dying",
-      "Escape successfully"
+      "Travel to the Forgotten Kingdom",
+      "Provide First Tribute: Gold",
+      "Provide Second Tribute: Gold + Topaz",
+      "Provide Third Tribute: Gold + Topaz + [Next tier gem]",
+      "Provide Fourth Tribute: Gold + Topaz + [Higher tier gem]",
+      "Provide Fifth Tribute: Gold + Rubies (Final)",
+      "Defeat the Goblin King"
     ],
     "rewards": {
       "coins": 5000,
-      "items": ["Legendary Survival Badge", "Exclusive Skin"]
+      "items": ["Legendary Rewards", "End-game Progress"]
     },
-    "location": "Entire Store"
+    "location": "Forgotten Kingdom"
+  },
+  {
+    "id": "quest-003",
+    "title": "Lost Cat",
+    "type": "Side Quest",
+    "difficulty": "Easy",
+    "description": "Help Tomo find his lost cat. The cat is hidden behind a waterfall wall in the Goblin Cave. This quest teaches players to explore hidden locations and rewards valuable items.",
+    "objectives": [
+      "Find Tomo (quest giver)",
+      "Locate the Goblin Cave",
+      "Find the waterfall",
+      "Search behind the waterfall wall",
+      "Return the cat to Tomo"
+    ],
+    "rewards": {
+      "coins": 300,
+      "items": ["Quest Rewards"]
+    },
+    "location": "Goblin Cave"
+  },
+  {
+    "id": "quest-004",
+    "title": "Arcane Pickaxe Quest",
+    "type": "Main Quest",
+    "difficulty": "Medium",
+    "description": "Obtain the legendary Arcane Pickaxe from the Fallen Angel's Cave. First complete Bard's Lost Guitar quest to get the Unknown Key, then use it to unlock the cave and claim this powerful mining tool.",
+    "objectives": [
+      "Complete Bard's Lost Guitar quest",
+      "Obtain the Unknown Key",
+      "Locate the Fallen Angel's Cave",
+      "Use the Unknown Key to unlock the cave",
+      "Retrieve the Arcane Pickaxe"
+    ],
+    "rewards": {
+      "coins": 1000,
+      "items": ["Arcane Pickaxe"]
+    },
+    "location": "Fallen Angel's Cave"
+  },
+  {
+    "id": "quest-005",
+    "title": "Mining Master",
+    "type": "Side Quest",
+    "difficulty": "Medium",
+    "description": "Master the art of mining in The Forge. Learn to extract ores efficiently and reach deeper mining depths. Essential for gathering resources needed for forging and quests.",
+    "objectives": [
+      "Mine your first ore (Stone or Coal)",
+      "Reach 100m mining depth",
+      "Obtain 10 different ore types",
+      "Reach 500m mining depth",
+      "Extract a rare ore (Gold or higher)"
+    ],
+    "rewards": {
+      "coins": 1500,
+      "items": ["Mining Bonus", "Resource Multiplier"]
+    },
+    "location": "Stonewake Mine"
+  },
+  {
+    "id": "quest-006",
+    "title": "Forging Apprentice",
+    "type": "Side Quest",
+    "difficulty": "Easy",
+    "description": "Learn the manual forging minigame in The Forge. Master the 3-step process to craft weapons and tools from ore ingots. Essential skill for creating better equipment.",
+    "objectives": [
+      "Visit the Anvil",
+      "Learn the forging minigame",
+      "Craft your first Iron item",
+      "Craft a weapon (any type)",
+      "Achieve Normal quality or higher"
+    ],
+    "rewards": {
+      "coins": 800,
+      "items": ["Forging Bonus", "Recipe Unlocks"]
+    },
+    "location": "Anvil / Forge Location"
+  },
+  {
+    "id": "quest-007",
+    "title": "Race Reroll Quest",
+    "type": "Side Quest",
+    "difficulty": "Easy",
+    "description": "Learn how to reroll your race at the Wizard NPC in Stonewake's Cross. Understand the race system and find your ideal race for your playstyle. Mythical races have a 0.5% drop rate.",
+    "objectives": [
+      "Find the Wizard NPC",
+      "Locate Stonewake's Cross",
+      "Learn about race rerolling",
+      "Reroll your race at least once",
+      "Understand race tier rankings"
+    ],
+    "rewards": {
+      "coins": 500,
+      "items": ["Race Reroll Token"]
+    },
+    "location": "Stonewake's Cross"
+  },
+  {
+    "id": "quest-008",
+    "title": "The Forge Master",
+    "type": "Main Quest",
+    "difficulty": "Extreme",
+    "description": "The ultimate challenge in The Forge. Master all aspects of the game including mining, forging, combat, and quests. Create a Masterwork quality weapon and defeat end-game content.",
+    "objectives": [
+      "Reach maximum mining depth (1000m+)",
+      "Obtain all rare ores (Luminite, Adamantite, etc.)",
+      "Forge a Masterwork quality weapon",
+      "Complete all main quests",
+      "Defeat the Goblin King",
+      "Craft the Colossal Sword"
+    ],
+    "rewards": {
+      "coins": 10000,
+      "items": ["Master Title", "Exclusive Rewards", "Godly Equipment"]
+    },
+    "location": "Entire Game World"
   }
 ]
-

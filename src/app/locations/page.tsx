@@ -7,7 +7,7 @@ import SEOHead from '@/components/SEOHead'
 
 export const metadata: Metadata = {
   title: 'Locations',
-  description: `All locations in the mega store where items can be found`,
+  description: `All locations in The Forge Roblox where items can be found`,
 }
 
 export default function LocationsPage() {
@@ -50,9 +50,9 @@ export default function LocationsPage() {
       />
 
       <div className="mb-8">
-        <h1 className="text-4xl font-extrabold mb-4">Store Locations</h1>
+        <h1 className="text-4xl font-extrabold mb-4">Game Locations</h1>
         <p className="text-gray-600 text-lg">
-          Explore all locations in the mega store and discover what items can be found in each area.
+          Explore all locations in The Forge Roblox and discover what items can be found in each area. From mining depths to quest locations, find everything you need.
         </p>
       </div>
 
