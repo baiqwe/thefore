@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Scroll, Key, Crown, Cat } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SEOHead from '@/components/SEOHead'
+import QuestTracker from '@/components/QuestTracker'
 
 const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
@@ -58,14 +59,17 @@ export default function QuestsPage() {
       {/* Quest 1: Bard's Lost Guitar */}
       <Card className="mb-8">
         <CardHeader>
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <Scroll className="h-6 w-6 text-blue-600" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-blue-100 rounded-lg">
+                <Scroll className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Quest 1: Bard&apos;s Lost Guitar</CardTitle>
+                <p className="text-sm text-gray-600 mt-1">Essential quest for the Arcane Pickaxe</p>
+              </div>
             </div>
-            <div>
-              <CardTitle className="text-2xl">Quest 1: Bard&apos;s Lost Guitar</CardTitle>
-              <p className="text-sm text-gray-600 mt-1">Essential quest for the Arcane Pickaxe</p>
-            </div>
+            <QuestTracker questId="bard-guitar" />
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -108,14 +112,17 @@ export default function QuestsPage() {
       {/* Quest 2: Goblin King */}
       <Card className="mb-8">
         <CardHeader>
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <Crown className="h-6 w-6 text-purple-600" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-purple-100 rounded-lg">
+                <Crown className="h-6 w-6 text-purple-600" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Quest 2: Goblin King (Forgotten Kingdom)</CardTitle>
+                <p className="text-sm text-gray-600 mt-1">Advanced quest with escalating tributes</p>
+              </div>
             </div>
-            <div>
-              <CardTitle className="text-2xl">Quest 2: Goblin King (Forgotten Kingdom)</CardTitle>
-              <p className="text-sm text-gray-600 mt-1">Advanced quest with escalating tributes</p>
-            </div>
+            <QuestTracker questId="goblin-king" />
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -157,14 +164,17 @@ export default function QuestsPage() {
       {/* Quest 3: Lost Cat */}
       <Card className="mb-8">
         <CardHeader>
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-orange-100 rounded-lg">
-              <Cat className="h-6 w-6 text-orange-600" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-orange-100 rounded-lg">
+                <Cat className="h-6 w-6 text-orange-600" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Quest 3: Lost Cat</CardTitle>
+                <p className="text-sm text-gray-600 mt-1">Hidden location quest</p>
+              </div>
             </div>
-            <div>
-              <CardTitle className="text-2xl">Quest 3: Lost Cat</CardTitle>
-              <p className="text-sm text-gray-600 mt-1">Hidden location quest</p>
-            </div>
+            <QuestTracker questId="lost-cat" />
           </div>
         </CardHeader>
         <CardContent className="space-y-4">

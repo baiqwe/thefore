@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import itemsData from '@/data/items.json'
+import guidesData from '@/data/guides.json'
 import { siteConfig } from '@/config/site'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
@@ -60,6 +61,20 @@ export default function ItemPage({ params }: PageProps) {
   if (!item) {
     notFound()
   }
+
+  // 核心改动：根据物品类型查找相关指南
+  const relatedGuides = guidesData.filter(guide => {
+    if (item.type === 'Resource' || item.type === 'Crafting Material') {
+      return guide.category === 'Forging' || guide.slug.includes('ore') || guide.title.toLowerCase().includes('forge')
+    }
+    if (item.type === 'Weapon') {
+      return guide.category === 'Combat' || guide.category === 'Forging' || guide.title.toLowerCase().includes('weapon')
+    }
+    if (item.type === 'Key Item') {
+      return guide.category === 'Walkthrough' || guide.title.toLowerCase().includes('quest') || guide.slug.includes('walkthrough')
+    }
+    return false
+  }).slice(0, 2)
 
   const rarity = item.stats.rarity || 'Common'
   const rarityColors: Record<string, string> = {
@@ -210,7 +225,7 @@ export default function ItemPage({ params }: PageProps) {
       )}
 
       {/* 使用提示 */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
         <h3 className="text-xl font-bold mb-3 text-blue-900">💡 Pro Tip</h3>
         <p className="text-blue-800">
           {item.type === 'Key Item' 
@@ -222,6 +237,25 @@ export default function ItemPage({ params }: PageProps) {
             : `This item is valuable for your survival. Make sure to check ${item.location} when you're in that area.`}
         </p>
       </div>
+
+      {/* 新增：在 Pro Tip 之后插入相关指南 */}
+      {relatedGuides.length > 0 && (
+        <div className="bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-500 p-6 mb-6 rounded-r-lg">
+          <h3 className="text-xl font-bold mb-3 text-indigo-900 dark:text-indigo-300">
+            📚 Related Guides
+          </h3>
+          <div className="grid gap-3">
+            {relatedGuides.map(guide => (
+              <Link key={guide.slug} href={`/wiki/${guide.slug}`} className="group block">
+                <div className="font-semibold text-indigo-700 dark:text-indigo-400 group-hover:underline">
+                  {guide.title} →
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{guide.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* 相关物品推荐 */}
       <div className="mt-8">

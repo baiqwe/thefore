@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import FeatureCard from '@/components/FeatureCard'
+import SearchBar from '@/components/SearchBar'
 import itemsData from '@/data/items.json'
 import codesData from '@/data/codes.json'
 import guidesData from '@/data/guides.json'
@@ -35,76 +36,75 @@ export default function HomePage() {
   const mainQuests = questsData.filter((q) => q.type === 'Main Quest').slice(0, 3)
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-          {siteConfig.name}
+    <div className="container mx-auto px-4 py-8">
+      {/* Hero Section 改版：以搜索和核心入口为中心 */}
+      <div className="text-center mb-12 py-10 bg-gradient-to-b from-amber-50 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl border border-amber-100 dark:border-gray-800">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+          The Forge Wiki
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 px-4">
-          {siteConfig.description}
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+          Find items, active codes, and crafting recipes instantly.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+        
+        {/* 核心改动：直接放置搜索栏 */}
+        <div className="max-w-xl mx-auto mb-8 relative z-10">
+          <SearchBar />
+        </div>
+
+        {/* 核心改动：高频快捷入口 (Quick Actions) */}
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/codes" className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30">
+            🎁 Active Codes
+            {/* 显示最新的一个 Code */}
+            {latestCodes[0] && (
+              <span className="bg-white/20 text-xs py-0.5 px-2 rounded ml-1">New: {latestCodes[0].code}</span>
+            )}
+          </Link>
+          <Link href="/wiki/races" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
+            🏆 S-Tier Races
+          </Link>
+          <Link href="/tools/reroll-simulator" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/30">
+            PF Reroll Sim
+          </Link>
+        </div>
+      </div>
+
+      {/* Latest Codes Section - 移到前面 */}
+      <div className="mb-16">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Latest The Forge Codes</h2>
           <Link
             href="/codes"
-            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-amber-700 hover:to-orange-700 transition-colors text-center"
+            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
-            Get Free Codes
-          </Link>
-          <Link
-            href="/wiki"
-            className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-center"
-          >
-            Browse Guides
-          </Link>
-          <Link
-            href="/tools/reroll-simulator"
-            className="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-6 py-3 rounded-lg font-semibold hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors text-center border border-amber-300 dark:border-amber-700"
-          >
-            Reroll Simulator
+            View All Codes →
           </Link>
         </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-lg text-center border border-amber-200 dark:border-amber-800">
-          <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">{totalItems}</div>
-          <div className="text-gray-600 dark:text-gray-300">Total Items</div>
-        </div>
-        <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg text-center border border-orange-200 dark:border-orange-800">
-          <div className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-            {itemsData.filter((item) => item.stats.rarity === 'Legendary').length}
-          </div>
-          <div className="text-gray-600 dark:text-gray-300">Legendary Items</div>
-        </div>
-        <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-lg text-center border border-amber-200 dark:border-amber-800">
-          <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">
-            {new Set(itemsData.map((item) => item.location)).size}
-          </div>
-          <div className="text-gray-600 dark:text-gray-300">Unique Locations</div>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">Why Use This Wiki?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <FeatureCard
-            title="Complete Item Database"
-            description="Find every item, key, and tool in the mega store with detailed locations and descriptions."
-            icon="📦"
-          />
-          <FeatureCard
-            title="Survival Strategies"
-            description="Learn the best strategies to survive the night with our comprehensive guides and tips."
-            icon="🎯"
-          />
-          <FeatureCard
-            title="Updated Regularly"
-            description="Our database is constantly updated with the latest items and locations from the game."
-            icon="🔄"
-          />
+          {latestCodes.map((code, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-400 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">
+                  ACTIVE
+                </span>
+                {index === 0 && (
+                  <span className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-xs font-bold rounded-full">
+                    NEW
+                  </span>
+                )}
+              </div>
+              <div className="mb-3">
+                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                  {code.code}
+                </div>
+              </div>
+              <p className="text-amber-700 dark:text-amber-400 font-semibold mb-2">{code.reward}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -140,45 +140,6 @@ export default function HomePage() {
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2">{item.description}</p>
             </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Latest Codes Section */}
-      <div className="mb-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Latest The Forge Codes</h2>
-          <Link
-            href="/codes"
-            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
-          >
-            View All Codes →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestCodes.map((code, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-400 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">
-                  ACTIVE
-                </span>
-                {index === 0 && (
-                  <span className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-xs font-bold rounded-full">
-                    NEW
-                  </span>
-                )}
-              </div>
-              <div className="mb-3">
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                  {code.code}
-                </div>
-              </div>
-              <p className="text-amber-700 dark:text-amber-400 font-semibold mb-2">{code.reward}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
-            </div>
           ))}
         </div>
       </div>
