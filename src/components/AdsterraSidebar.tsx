@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface AdsterraSidebarProps {
   conf: string // Adsterra 提供的 key
@@ -9,10 +9,19 @@ interface AdsterraSidebarProps {
 
 export default function AdsterraSidebar({ conf, side }: AdsterraSidebarProps) {
   const adRef = useRef<HTMLDivElement>(null)
+  const [loadError, setLoadError] = useState(false)
+  
+  // 如果广告服务持续不可用，可以通过设置环境变量来禁用
+  const adsEnabled = process.env.NEXT_PUBLIC_ADS_ENABLED !== 'false'
 
   useEffect(() => {
+    // 如果广告被禁用或之前已经加载失败，不再尝试
+    if (!adsEnabled || loadError || !adRef.current) return
+
     // 避免重复加载
-    if (adRef.current && !adRef.current.querySelector('script')) {
+    if (adRef.current.querySelector('script')) return
+
+    try {
       // 创建配置脚本
       const confScript = document.createElement('script')
       confScript.type = 'text/javascript'
@@ -31,20 +40,39 @@ export default function AdsterraSidebar({ conf, side }: AdsterraSidebarProps) {
       invokeScript.type = 'text/javascript'
       invokeScript.src = `//www.highperformanceformat.com/${conf}/invoke.js`
       invokeScript.setAttribute('data-adsterra-sidebar', side)
+      invokeScript.setAttribute('crossorigin', 'anonymous')
       
-      // 静默错误处理 - 完全静默，不输出任何警告或错误到控制台
+      // 静默错误处理
       invokeScript.onerror = () => {
-        // 静默处理广告加载失败，自动隐藏广告容器
+        setLoadError(true)
         if (adRef.current) {
           adRef.current.style.display = 'none'
         }
       }
       
+      // 成功加载时清除错误状态
+      invokeScript.onload = () => {
+        setLoadError(false)
+      }
+      
       // 添加到容器
-      adRef.current.appendChild(confScript)
-      adRef.current.appendChild(invokeScript)
+      if (adRef.current) {
+        adRef.current.appendChild(confScript)
+        adRef.current.appendChild(invokeScript)
+      }
+    } catch (error) {
+      // 捕获任何异常，静默处理
+      setLoadError(true)
+      if (adRef.current) {
+        adRef.current.style.display = 'none'
+      }
     }
-  }, [conf, side])
+  }, [conf, side, loadError])
+
+  // 如果广告被禁用或加载失败，不渲染广告容器
+  if (!adsEnabled || loadError) {
+    return null
+  }
 
   // 样式说明：
   // fixed: 固定定位，随页面滚动

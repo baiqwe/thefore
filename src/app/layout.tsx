@@ -110,8 +110,13 @@ export default function RootLayout({
         </Script>
         <div className="flex flex-col min-h-screen relative">
           {/* 侧边栏广告 - 只在宽屏（2xl, 1536px+）显示 */}
-          <AdsterraSidebar conf={ADSTERRA_KEY} side="left" />
-          <AdsterraSidebar conf={ADSTERRA_KEY} side="right" />
+          {/* 暂时禁用广告以避免 403 错误，待广告服务恢复正常后取消注释 */}
+          {/* {process.env.NEXT_PUBLIC_ADS_ENABLED !== 'false' && (
+            <>
+              <AdsterraSidebar conf={ADSTERRA_KEY} side="left" />
+              <AdsterraSidebar conf={ADSTERRA_KEY} side="right" />
+            </>
+          )} */}
           
           <Navbar />
           <main className="flex-grow">
