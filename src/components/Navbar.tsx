@@ -6,7 +6,7 @@ import { Play } from 'lucide-react'
 export default function Navbar() {
   return (
     <nav className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-40">
-      <div className="container mx-auto px-4 2xl:px-[192px]">
+      <div className="container mx-auto px-4 sm:px-6 2xl:max-w-[calc(100%-416px)] 2xl:mx-auto">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="text-xl font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 flex-shrink-0">
             {siteConfig.name}

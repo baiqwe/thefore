@@ -37,7 +37,7 @@ export default function HomePage() {
   const mainQuests = questsData.filter((q) => q.type === 'Main Quest').slice(0, 3)
 
   return (
-    <div className="container mx-auto px-4 py-8 2xl:px-[192px]">
+    <div className="container mx-auto px-4 sm:px-6 py-8 max-w-7xl 2xl:max-w-[calc(100%-416px)] 2xl:mx-auto">
       {/* Hero Section 改版：以搜索和核心入口为中心 */}
       <div className="text-center mb-12 py-10 bg-gradient-to-b from-amber-50 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl border border-amber-100 dark:border-gray-800">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">

@@ -84,7 +84,7 @@ export default function RerollSimulatorPage() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-10 max-w-6xl 2xl:px-[192px]">
+    <div className="container mx-auto px-4 sm:px-6 py-10 max-w-6xl 2xl:max-w-[calc(100%-416px)] 2xl:mx-auto">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

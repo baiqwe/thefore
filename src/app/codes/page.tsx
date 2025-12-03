@@ -59,7 +59,7 @@ export default function CodesPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10 max-w-4xl 2xl:px-[192px]">
+    <div className="container mx-auto px-4 sm:px-6 py-10 max-w-6xl 2xl:max-w-[calc(100%-416px)] 2xl:mx-auto">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -101,27 +101,27 @@ export default function CodesPage() {
       </div>
 
       {/* --- 新增：强引导模块 (在 Active Codes 标题上方插入) --- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-        <Link href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-            <Trophy size={80} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
+        <Link href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Trophy className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
-          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-            Don&apos;t Waste Your Rerolls! <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <h3 className="text-lg sm:text-xl font-bold mb-2 flex items-center gap-2">
+            Don&apos;t Waste Your Rerolls! <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </h3>
-          <p className="text-red-100 text-sm font-medium">
+          <p className="text-red-100 text-xs sm:text-sm font-medium">
             Check the <strong>S-Tier Race List</strong> before you use these codes. See which Mythical race is best.
           </p>
         </Link>
 
-        <Link href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-            <Dice5 size={80} />
+        <Link href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Dice5 className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
-          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-            Test Your Luck First <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <h3 className="text-lg sm:text-xl font-bold mb-2 flex items-center gap-2">
+            Test Your Luck First <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </h3>
-          <p className="text-blue-100 text-sm font-medium">
+          <p className="text-blue-100 text-xs sm:text-sm font-medium">
             Use our <strong>Reroll Simulator</strong> to check your drop chances for Angel &amp; Demon races.
           </p>
         </Link>
@@ -130,25 +130,25 @@ export default function CodesPage() {
 
       {/* Active Codes Grid */}
       <div className="mb-16">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-800 dark:text-gray-100">
+        <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 text-gray-800 dark:text-gray-100">
             <span className="w-3 h-3 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse"></span>
             Active Codes
           </h2>
-          <span className="text-sm bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">
+          <span className="text-xs sm:text-sm bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full font-medium whitespace-nowrap">
             {activeCodes.length} Working
           </span>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {activeCodes.map((code, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 shadow-md rounded-lg p-5 hover:shadow-lg transition-all hover:border-amber-600 dark:hover:border-amber-300">
-              <div className="flex justify-between items-start mb-2">
-                <span className="font-mono text-xl font-bold text-gray-800 dark:text-gray-100 tracking-wide">{code.code}</span>
-                <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full uppercase">Active</span>
+            <div key={index} className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 shadow-md rounded-lg p-4 sm:p-5 hover:shadow-lg transition-all hover:border-amber-600 dark:hover:border-amber-300">
+              <div className="flex justify-between items-start mb-2 gap-2">
+                <span className="font-mono text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 tracking-wide break-all">{code.code}</span>
+                <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full uppercase flex-shrink-0">Active</span>
               </div>
-              <p className="text-amber-700 dark:text-amber-400 font-medium mb-1">🎁 {code.reward}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
+              <p className="text-sm sm:text-base text-amber-700 dark:text-amber-400 font-medium mb-1">🎁 {code.reward}</p>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{code.description}</p>
             </div>
           ))}
         </div>
