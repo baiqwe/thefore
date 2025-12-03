@@ -88,11 +88,11 @@ export default async function GuidePage({ params }: PageProps) {
               <div key={index} className="mb-6">
                 <h2
                   id={item.section.toLowerCase().replace(/\s+/g, "-")}
-                  className="text-3xl font-bold mt-8 mb-4 text-gray-800 scroll-mt-20"
+                  className="text-3xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100 scroll-mt-20"
                 >
                   {item.section}
                 </h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -135,10 +135,10 @@ export default async function GuidePage({ params }: PageProps) {
           <Card>
             <CardContent className="p-8">
               <div className="mb-6">
-                <h1 className="text-4xl font-extrabold mb-4 text-gray-800">
+                <h1 className="text-4xl font-extrabold mb-4 text-gray-800 dark:text-gray-100">
                   {guide.title}
                 </h1>
-                <div className="flex items-center gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                   <span>By {guide.author}</span>
                   <span>•</span>
                   <span>{guide.category}</span>
@@ -163,7 +163,7 @@ export default async function GuidePage({ params }: PageProps) {
             {headings.length > 0 && (
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4 text-gray-800">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">
                     Table of Contents
                   </h3>
                   <nav className="space-y-2">
@@ -173,7 +173,7 @@ export default async function GuidePage({ params }: PageProps) {
                         <a
                           key={index}
                           href={`#${id}`}
-                          className="block text-sm text-gray-700 hover:text-amber-600 transition-colors py-1"
+                          className="block text-sm text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors py-1"
                         >
                           {heading}
                         </a>

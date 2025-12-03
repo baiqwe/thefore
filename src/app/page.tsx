@@ -235,10 +235,10 @@ export default function HomePage() {
       {/* Featured Items Section - 后置 */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">Featured Items</h2>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Featured Items</h2>
           <Link
             href="/items"
-            className="text-amber-600 hover:text-amber-700 font-semibold"
+            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
             View All →
           </Link>
@@ -272,10 +272,10 @@ export default function HomePage() {
       {/* Main Quests Preview */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">Main Quests</h2>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Main Quests</h2>
           <Link
             href="/quests"
-            className="text-amber-600 hover:text-amber-700 font-semibold"
+            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
             View All Quests →
           </Link>
@@ -315,9 +315,9 @@ export default function HomePage() {
 
 
       {/* Game Info Section */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-lg mb-8">
-        <h2 className="text-2xl font-bold mb-4">About The Forge Roblox</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 border dark:border-gray-700 p-8 rounded-lg mb-8">
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">About The Forge Roblox</h2>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
           <strong>The Forge</strong> is a popular Roblox RPG game by Fireatacck featuring manual forging minigames, 
           race systems, and hardcore RPG mechanics. Players mine ores, forge weapons, and battle enemies in this 
           action-packed adventure. This wiki provides a comprehensive database of all codes, races, guides, and strategies 
@@ -325,8 +325,8 @@ export default function HomePage() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div>
-            <h3 className="font-semibold mb-2">Game Features:</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700">
+            <h3 className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Game Features:</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
               <li>Manual forging minigame with 3 steps</li>
               <li>Race system with Mythical, Legendary, and Epic tiers</li>
               <li>Mining and crafting mechanics</li>
@@ -334,8 +334,8 @@ export default function HomePage() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">Wiki Features:</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700">
+            <h3 className="font-semibold mb-2 text-gray-900 dark:text-gray-100">Wiki Features:</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
               <li>Complete race tier list with stats</li>
               <li>Latest redeem codes and rewards</li>
               <li>Forging and quest guides</li>
