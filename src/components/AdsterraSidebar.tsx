@@ -30,11 +30,11 @@ export default function AdsterraSidebar({ conf, side }: AdsterraSidebarProps) {
       const invokeScript = document.createElement('script')
       invokeScript.type = 'text/javascript'
       invokeScript.src = `//www.highperformanceformat.com/${conf}/invoke.js`
+      invokeScript.setAttribute('data-adsterra-sidebar', side)
       
-      // 添加错误处理
+      // 静默错误处理 - 完全静默，不输出任何警告或错误到控制台
       invokeScript.onerror = () => {
-        // 静默处理广告加载失败，不影响页面功能
-        console.warn(`Adsterra ad failed to load for ${side} sidebar`)
+        // 静默处理广告加载失败，自动隐藏广告容器
         if (adRef.current) {
           adRef.current.style.display = 'none'
         }

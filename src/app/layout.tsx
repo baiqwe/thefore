@@ -88,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="mobile-web-app-capable" content="yes" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
