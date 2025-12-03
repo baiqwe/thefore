@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Search, MapPin, ArrowDown } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calculator, Hammer, ArrowRight } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -206,7 +207,7 @@ export default function ForgingCalculatorPage() {
 
                 <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                   <p className="text-sm text-amber-800 dark:text-amber-300">
-                    <strong>Tip:</strong> You'll need to smelt {materials.ores} {materials.ore} ore into ingots at the furnace before forging. 
+                    <strong>Tip:</strong> You&apos;ll need to smelt {materials.ores} {materials.ore} ore into ingots at the furnace before forging. 
                     {materials.rarity === 'Legendary' || materials.rarity === 'Mythical' 
                       ? ' Make sure you have the Arcane Pickaxe for efficient mining at these depths!' 
                       : ''}
