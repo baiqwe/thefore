@@ -8,7 +8,7 @@ export default function NotFound() {
   const popularGuides = guidesData.slice(0, 3)
 
   return (
-    <div className="container mx-auto px-4 py-20 max-w-4xl 2xl:px-[192px]">
+    <div className="container mx-auto px-4 py-20 max-w-4xl">
       <div className="text-center mb-12">
         <h1 className="text-6xl font-bold mb-4">404</h1>
         <h2 className="text-3xl font-semibold mb-4">Page Not Found</h2>

@@ -52,7 +52,7 @@ const categories = [
 
 export default function WikiPage() {
   return (
-    <div className="container mx-auto px-4 py-10 2xl:px-[192px]">
+    <div className="container mx-auto px-4 py-10">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

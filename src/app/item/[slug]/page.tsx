@@ -85,7 +85,7 @@ export default function ItemPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10 2xl:px-[192px]">
+    <div className="container mx-auto max-w-4xl px-4 py-10">
       {/* SEO Head with Schema */}
       <SEOHead
         breadcrumbs={[

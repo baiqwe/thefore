@@ -50,7 +50,7 @@ const howToSchema = {
 
 export default function ForgingPage() {
   return (
-    <div className="container mx-auto px-4 py-10 max-w-5xl 2xl:px-[192px]">
+    <div className="container mx-auto px-4 py-10 max-w-5xl">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
