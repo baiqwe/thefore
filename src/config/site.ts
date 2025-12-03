@@ -19,7 +19,7 @@ export const siteConfig = {
     { title: "Home", href: "/" },
     { title: "Guides", href: "/wiki" },
     { title: "Codes", href: "/codes" },
-    { title: "Reroll Simulator", href: "/tools/reroll-simulator" },
+    { title: "Tools", href: "/tools" },
     { title: "Races", href: "/wiki/races" },
     { title: "Tier List", href: "/wiki/race-tier-list" },
   ],

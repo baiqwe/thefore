@@ -158,5 +158,73 @@
       }
     ],
     "tags": ["quests", "walkthrough", "guide", "tutorial", "step-by-step"]
+  },
+  {
+    "slug": "arcane-pickaxe-guide",
+    "title": "How to Get Arcane Pickaxe - Complete Guide",
+    "category": "Quest",
+    "difficulty": "Beginner",
+    "author": "The Forge Wiki Team",
+    "lastUpdated": "2024-12-01",
+    "description": "Complete step-by-step guide to get the Arcane Pickaxe in The Forge Roblox. Learn how to complete Bard's Lost Guitar quest, find the Unknown Key, and unlock Fallen Angel's Cave to obtain this S+ tier mining tool.",
+    "content": [
+      {
+        "section": "Why You Need the Arcane Pickaxe",
+        "text": "The Arcane Pickaxe is the best mining tool in The Forge Roblox. With 100% luck chance and +200% mining speed, it dramatically improves your ability to find rare ores like Mithril, Demonite, and Luminite. This S+ tier pickaxe is essential for efficient resource gathering and progressing through the game. Without it, mining becomes extremely slow and frustrating."
+      },
+      {
+        "section": "Step 1: Complete Bard's Lost Guitar Quest",
+        "text": "First, you need to find the Bard NPC at the spawn campfire area. Accept his quest to find his lost guitar. The guitar is located in Stonewake Mine near an NPC named Umut the Brave. Look for a hidden hole in a bush near this NPC - the guitar is inside. Return it to the Bard to receive the Unknown Key, which is required for the next step."
+      },
+      {
+        "section": "Step 2: Locate Fallen Angel's Cave",
+        "text": "With the Unknown Key in your inventory, you need to find the Fallen Angel's Cave. This cave is located in a specific area of the map. Look for a locked cave entrance that requires a key to open. The exact location may vary, but it's typically in a secluded area away from the main spawn point."
+      },
+      {
+        "section": "Step 3: Unlock the Cave and Claim Your Reward",
+        "text": "Use the Unknown Key to unlock the Fallen Angel's Cave entrance. Once inside, explore the cave to find the legendary Arcane Pickaxe. It's usually located in a prominent position within the cave. Simply interact with it to add it to your inventory. Congratulations - you now have the best mining tool in the game!"
+      },
+      {
+        "section": "Tips and Tricks",
+        "text": "Complete this quest as early as possible - the Arcane Pickaxe will make all subsequent mining activities much faster. The +200% mining speed bonus means you'll gather resources 3x faster than with basic pickaxes. The 100% luck chance also significantly increases your chances of finding rare ores, making it essential for crafting high-tier equipment."
+      },
+      {
+        "section": "What to Do After Getting the Arcane Pickaxe",
+        "text": "With the Arcane Pickaxe, you can now efficiently mine rare ores at deeper depths. Focus on gathering Mithril (400m+), Demonite (600m+), Titanium (800m+), Adamantite (900m+), and Luminite (1000m+) for end-game crafting. Use these materials to forge powerful weapons and complete advanced quests like the Goblin King challenge."
+      }
+    ],
+    "tags": ["arcane-pickaxe", "quest", "mining", "beginner", "guide", "tool"]
+  },
+  {
+    "slug": "lost-cat-quest-guide",
+    "title": "Lost Cat Quest - Complete Walkthrough",
+    "category": "Quest",
+    "difficulty": "Beginner",
+    "author": "The Forge Wiki Team",
+    "lastUpdated": "2024-12-01",
+    "description": "Step-by-step guide to complete Tomo's Lost Cat quest in The Forge Roblox. Find the cat hidden behind a waterfall wall in the Goblin Cave and claim your rewards.",
+    "content": [
+      {
+        "section": "Quest Overview",
+        "text": "Tomo's Lost Cat is a beginner-friendly side quest that rewards you with coins and experience. The cat is hidden in a specific location that can be tricky to find without guidance. This quest is perfect for new players looking to earn some early-game rewards."
+      },
+      {
+        "section": "How to Start the Quest",
+        "text": "Find Tomo NPC in the main spawn area. He will tell you that his cat is missing and ask for your help finding it. Accept the quest to begin your search. The quest marker will guide you in the general direction, but the exact location requires some exploration."
+      },
+      {
+        "section": "Finding the Lost Cat",
+        "text": "The cat is hidden behind a waterfall wall in the Goblin Cave area. To find it: 1) Travel to the Goblin Cave location, 2) Look for a waterfall feature, 3) Search behind the waterfall - there's a hidden passage, 4) The cat will be inside this hidden area. Interact with it to complete the quest."
+      },
+      {
+        "section": "Quest Rewards",
+        "text": "Completing the Lost Cat quest rewards you with coins and experience points. While not as valuable as the Arcane Pickaxe quest, this is still a worthwhile early-game quest that helps you get familiar with the game's exploration mechanics."
+      },
+      {
+        "section": "Tips for Finding the Cat",
+        "text": "If you're having trouble finding the waterfall, look for water features near cave entrances. The hidden passage behind the waterfall is not immediately obvious - you may need to walk through the waterfall to discover it. Don't give up if you don't find it immediately - exploration is part of the fun!"
+      }
+    ],
+    "tags": ["lost-cat", "quest", "tomo", "beginner", "walkthrough", "guide"]
   }
 ]

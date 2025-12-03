@@ -76,3 +76,5 @@ convert favicon.svg -resize 32x32 favicon.ico
 
 All the configuration in `layout.tsx` is ready - just add the missing image files!
 
+
+

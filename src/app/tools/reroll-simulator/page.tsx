@@ -117,11 +117,11 @@ export default function RerollSimulatorPage() {
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
           The Forge Race Reroll Simulator ({currentMonth} {currentYear})
         </h1>
-        <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Test your luck with our <strong>The Forge reroll simulator</strong>! Simulate rolling for races to see your chances of getting <span className="font-semibold text-amber-700">Legendary races</span> like <strong>Angel</strong> or <strong>Demon</strong> before spending your reroll tokens.
+        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          Test your luck with our <strong>The Forge reroll simulator</strong>! Simulate rolling for races to see your chances of getting <span className="font-semibold text-amber-700 dark:text-amber-400">Legendary races</span> like <strong>Angel</strong> or <strong>Demon</strong> before spending your reroll tokens.
         </p>
-        <p className="text-sm text-gray-600 mt-2">
-          Updated: <span className="font-medium text-amber-600">{currentMonth} {new Date().getDate()}, {currentYear}</span>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+          Updated: <span className="font-medium text-amber-600 dark:text-amber-400">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
 
@@ -158,18 +158,18 @@ export default function RerollSimulatorPage() {
                       {currentRace.tier} Tier - {currentRace.rarity}
                     </Badge>
                   </div>
-                  <p className="text-gray-700 mb-4 font-medium">{currentRace.description}</p>
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                    <h3 className="font-semibold text-gray-800 mb-2">
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 font-medium">{currentRace.description}</p>
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                    <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">
                       Abilities:
                     </h3>
                     <ul className="space-y-1">
                       {(currentRace.abilities || currentRace.passives || []).map((ability: string, idx: number) => (
                         <li
                           key={idx}
-                          className="text-sm text-gray-600 flex items-center justify-center gap-2"
+                          className="text-sm text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2"
                         >
-                          <span className="text-amber-500">•</span>
+                          <span className="text-amber-500 dark:text-amber-400">•</span>
                           {ability}
                         </li>
                       ))}
@@ -184,8 +184,8 @@ export default function RerollSimulatorPage() {
                     <RotateCcw className="mr-2 h-4 w-4" />
                     Reset
                   </Button>
-                  <span className="text-gray-600">
-                    Total Rolls: <strong className="text-amber-600">{rollCount}</strong>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Total Rolls: <strong className="text-amber-600 dark:text-amber-400">{rollCount}</strong>
                   </span>
                 </div>
               )}
@@ -204,7 +204,7 @@ export default function RerollSimulatorPage() {
                     race && (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
+                        className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
                       >
                         <div className="flex items-center gap-3">
                           <Badge
@@ -218,11 +218,11 @@ export default function RerollSimulatorPage() {
                           >
                             {race.tier || "?"}
                           </Badge>
-                          <span className="font-semibold text-gray-800">
+                          <span className="font-semibold text-gray-800 dark:text-gray-100">
                             {race.name}
                           </span>
                         </div>
-                        <span className="text-xs text-gray-700 font-medium">
+                        <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">
                           {race.rarity || "Unknown"}
                         </span>
                       </div>
@@ -247,42 +247,42 @@ export default function RerollSimulatorPage() {
                     <Badge className="bg-gradient-to-r from-red-600 to-orange-600">
                       S
                     </Badge>
-                    <span className="text-sm text-gray-700 font-medium">Tier (Legendary)</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Tier (Legendary)</span>
                   </div>
-                  <span className="font-bold text-red-600">
+                  <span className="font-bold text-red-600 dark:text-red-400">
                     {(raceProbabilities.S * 100).toFixed(1)}%
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg border border-amber-200">
+                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
                   <div className="flex items-center gap-2">
                     <Badge className="bg-gradient-to-r from-amber-600 to-yellow-600">
                       A
                     </Badge>
-                    <span className="text-sm text-gray-700 font-medium">Tier (Rare)</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Tier (Rare)</span>
                   </div>
-                  <span className="font-bold text-amber-600">
+                  <span className="font-bold text-amber-600 dark:text-amber-400">
                     {(raceProbabilities.A * 100).toFixed(1)}%
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200">
+                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                   <div className="flex items-center gap-2">
                     <Badge className="bg-gradient-to-r from-blue-600 to-cyan-600">
                       B
                     </Badge>
-                    <span className="text-sm text-gray-700 font-medium">Tier (Good)</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Tier (Good)</span>
                   </div>
-                  <span className="font-bold text-blue-600">
+                  <span className="font-bold text-blue-600 dark:text-blue-400">
                     {(raceProbabilities.B * 100).toFixed(1)}%
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg border border-gray-200">
+                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800 dark:to-slate-800 rounded-lg border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2">
                     <Badge className="bg-gradient-to-r from-gray-600 to-slate-600">
                       D
                     </Badge>
-                    <span className="text-sm text-gray-700 font-medium">Tier (Common)</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">Tier (Common)</span>
                   </div>
-                  <span className="font-bold text-gray-600">
+                  <span className="font-bold text-gray-600 dark:text-gray-400">
                     {(raceProbabilities.D * 100).toFixed(1)}%
                   </span>
                 </div>
@@ -296,11 +296,11 @@ export default function RerollSimulatorPage() {
               <CardTitle>How to Get Free Rerolls</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-700 leading-relaxed mb-3">
-                Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</Link> like &quot;100K!&quot; or &quot;40KLIKES&quot;. You can also earn rerolls by completing daily quests and finding hidden chests.
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">The Forge codes</Link> like &quot;100K!&quot; or &quot;40KLIKES&quot;. You can also earn rerolls by completing daily quests and finding hidden chests.
               </p>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Before using your rerolls, check our <Link href="/wiki/race-tier-list" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which races are worth aiming for!
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                Before using your rerolls, check our <Link href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</Link> to see which races are worth aiming for!
               </p>
             </CardContent>
           </Card>
@@ -310,7 +310,7 @@ export default function RerollSimulatorPage() {
               <CardTitle>About This Simulator</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 This <strong>The Forge reroll simulator</strong> uses approximate probabilities based on community data. Actual in-game rates may vary. Use this tool to understand your chances of getting <strong>Legendary races</strong> before spending reroll tokens or Gems!
               </p>
             </CardContent>
@@ -318,18 +318,126 @@ export default function RerollSimulatorPage() {
         </div>
       </div>
 
-      {/* SEO Guide Section */}
-      <div className="prose prose-lg max-w-none bg-gray-50 p-8 rounded-xl border border-gray-200 mt-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Best Races to Reroll For in The Forge</h2>
-        <p className="text-gray-700 mb-4">
-          If you&apos;re looking to get the best race in <strong>The Forge</strong>, aim for <strong>S-tier Legendary races</strong> like <strong>Angel</strong> or <strong>Demon</strong>. These races have the highest stats and are perfect for any playstyle.
-        </p>
-        <p className="text-gray-700 mb-4">
-          For end-game content, <strong>Dragonborn</strong> (A-tier) is unmatched with fire immunity and massive damage bonuses. If you prefer mining, <strong>Dwarf</strong> (B-tier) provides +40% mining speed.
-        </p>
-        <p className="text-gray-700">
-          Remember: S-tier races have only a <strong>2% drop rate</strong>, so save up your rerolls and use them wisely! Check our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">complete Races guide</Link> for detailed information on all races.
-        </p>
+      {/* SEO Content: What, How, FAQ */}
+      <div className="mt-12 space-y-8">
+        {/* What Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">What is The Forge Race Reroll Simulator?</CardTitle>
+          </CardHeader>
+          <CardContent className="prose prose-lg max-w-none">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              The <strong>Race Reroll Simulator</strong> is an interactive tool designed to help <strong>The Forge Roblox</strong> players understand their chances of obtaining different races before spending valuable reroll tokens or Gems. This simulator uses probability data collected from the community and game mechanics to provide accurate estimates of race drop rates.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              In <strong>The Forge</strong>, your race determines your character&apos;s abilities, stats, and playstyle. Races range from Common (D-tier) to Mythical (S-tier), with S-tier races like <strong>Angel</strong> and <strong>Demon</strong> having only a 2% drop rate. This makes race selection one of the most important decisions in the game.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Our simulator allows you to test hundreds of rerolls instantly, helping you make informed decisions about when to use your reroll tokens. This tool is based on extensive gameplay data and community research, making it a trusted resource for <strong>The Forge</strong> players worldwide.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* How Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">How to Use The Forge Reroll Simulator</CardTitle>
+          </CardHeader>
+          <CardContent className="prose prose-lg max-w-none">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300">
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 1: Click &quot;Roll Now&quot;</h3>
+                <p className="leading-relaxed">
+                  Simply click the <strong>&quot;Roll Now&quot;</strong> button to simulate a single race reroll. The simulator will randomly select a race based on the actual in-game probability distribution: 2% for S-tier, 15% for A-tier, 50% for B-tier, and 33% for D-tier (Common/Human).
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 2: Review Your Results</h3>
+                <p className="leading-relaxed">
+                  After each roll, you&apos;ll see the race name, tier, rarity, and abilities. The simulator tracks your roll history, showing your last 10 results. This helps you understand the probability distribution and see how many rolls it typically takes to get your desired race.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 3: Analyze Your Chances</h3>
+                <p className="leading-relaxed">
+                  Use the probability panel on the right to understand your odds. For example, if you&apos;re aiming for an S-tier race like <strong>Angel</strong> or <strong>Demon</strong>, you have approximately a 2% chance per roll. This means you might need 50+ rerolls on average to get one.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 4: Plan Your Strategy</h3>
+                <p className="leading-relaxed">
+                  Before spending your reroll tokens in-game, use this simulator to test different scenarios. If you&apos;re satisfied with A-tier or B-tier races, you&apos;ll have much better odds (15% and 50% respectively). Check our <Link href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</Link> to see which races are worth aiming for based on your playstyle.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Frequently Asked Questions (FAQ)</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">How accurate is this reroll simulator?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our simulator is based on probability data collected from thousands of community rerolls and verified against in-game mechanics. The probabilities (2% S-tier, 15% A-tier, 50% B-tier, 33% D-tier) are approximations based on extensive gameplay data. Actual in-game rates may vary slightly, but this simulator provides a reliable estimate for planning purposes.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">How do I get free rerolls in The Forge?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                You can obtain free rerolls through several methods: (1) Redeem active codes like <strong>&quot;100K!&quot;</strong>, <strong>&quot;40KLIKES&quot;</strong>, or <strong>&quot;20KLIKES&quot;</strong> from our <Link href="/codes" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">codes page</Link>, (2) Complete daily quests that reward reroll tokens, (3) Find hidden chests in the Volcanic Depths area, and (4) Purchase rerolls using in-game Gems at the Wizard NPC in Stonewake&apos;s Cross.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What are the best races to reroll for?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                The best races are S-tier Mythical races like <strong>Angel</strong> and <strong>Demon</strong>, which offer the highest stats and unique abilities. However, with only a 2% drop rate, they&apos;re extremely rare. A-tier races like <strong>Dragonborn</strong> (fire immunity, massive damage) and <strong>Shadow</strong> (dodge chance, PVP meta) are excellent alternatives with a 15% drop rate. For mining-focused players, B-tier <strong>Dwarf</strong> (+40% mining speed) is highly valuable. Check our <Link href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">complete Race Tier List</Link> for detailed rankings.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Should I save my rerolls or use them immediately?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                It depends on your current race and goals. If you have a D-tier (Common) race, it&apos;s generally worth rerolling since you have a 50% chance of getting a B-tier race, which is a significant upgrade. However, if you already have a B-tier or A-tier race, consider saving rerolls until you have enough to statistically guarantee an S-tier (approximately 50+ rerolls). Use this simulator to test different scenarios before committing your resources.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Can I get a specific race, or is it completely random?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Race rerolls are completely random within each tier. You cannot choose a specific race, but you can influence your odds by understanding the tier system. For example, if you want an S-tier race, you have a 2% chance per roll, but the specific S-tier race (Angel, Demon, etc.) is randomly selected from the S-tier pool. This simulator helps you understand these probabilities before spending your reroll tokens.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What&apos;s the difference between using codes vs. Gems for rerolls?</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Both methods use the same probability system - there&apos;s no difference in drop rates whether you use free rerolls from codes or paid rerolls purchased with Gems. The advantage of using codes is that they&apos;re free, but they&apos;re limited in quantity. Gems allow unlimited rerolls but cost in-game currency. We recommend using free rerolls from codes first, then deciding if you want to invest Gems based on your results.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Best Races Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Best Races to Reroll For in The Forge</CardTitle>
+          </CardHeader>
+          <CardContent className="prose prose-lg max-w-none">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              If you&apos;re looking to get the best race in <strong>The Forge</strong>, aim for <strong>S-tier Mythical races</strong> like <strong>Angel</strong> or <strong>Demon</strong>. These races have the highest stats and are perfect for any playstyle - PVP, PVE, mining, or forging.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              For end-game content, <strong>Dragonborn</strong> (A-tier) is unmatched with fire immunity and massive damage bonuses, making it ideal for challenging the Goblin King and other difficult bosses. If you prefer PVP combat, <strong>Shadow</strong> (A-tier) provides dodge chance, making it the current PVP meta choice.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              For mining-focused players, <strong>Dwarf</strong> (B-tier) provides +40% mining speed, which is extremely valuable for gathering rare ores efficiently. While not as powerful as S-tier races, B-tier races are much easier to obtain (50% drop rate) and can significantly improve your gameplay experience.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Remember: S-tier races have only a <strong>2% drop rate</strong>, so save up your rerolls and use them wisely! On average, you&apos;ll need 50+ rerolls to get an S-tier race. Use this simulator to test your luck before committing your resources. Check our <Link href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">complete Races guide</Link> for detailed information on all races, their abilities, and optimal playstyles.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

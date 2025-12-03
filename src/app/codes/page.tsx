@@ -7,7 +7,8 @@ import Link from 'next/link'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { ArrowRight, Trophy, Dice5 } from 'lucide-react'
+import { ArrowRight, Trophy, Dice5, Clock, CheckCircle2 } from 'lucide-react'
+import CopyButton from '@/components/CopyButton'
 
 // 1. Dynamic Date Logic for SEO Titles
 const date = new Date();
@@ -95,9 +96,14 @@ export default function CodesPage() {
           Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place. 
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-          Last checked: <span className="font-medium text-amber-600 dark:text-amber-400">{currentMonth} {new Date().getDate()}, {currentYear}</span>
-        </p>
+        <div className="flex items-center justify-center gap-2 mt-4">
+          <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg px-4 py-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400" />
+            <span className="text-sm font-medium text-green-800 dark:text-green-300">
+              Last verified: <span className="font-bold">{currentMonth} {new Date().getDate()}, {currentYear}</span>
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* --- 新增：强引导模块 (在 Active Codes 标题上方插入) --- */}
@@ -143,9 +149,14 @@ export default function CodesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {activeCodes.map((code, index) => (
             <div key={index} className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 shadow-md rounded-lg p-4 sm:p-5 hover:shadow-lg transition-all hover:border-amber-600 dark:hover:border-amber-300">
-              <div className="flex justify-between items-start mb-2 gap-2">
-                <span className="font-mono text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 tracking-wide break-all">{code.code}</span>
-                <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full uppercase flex-shrink-0">Active</span>
+              <div className="flex justify-between items-start mb-3 gap-2">
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <span className="font-mono text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 tracking-wide break-all">{code.code}</span>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <CopyButton text={code.code} size="sm" />
+                  <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full uppercase">Active</span>
+                </div>
               </div>
               <p className="text-sm sm:text-base text-amber-700 dark:text-amber-400 font-medium mb-1">🎁 {code.reward}</p>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{code.description}</p>

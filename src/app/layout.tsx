@@ -4,7 +4,6 @@ import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import AdsterraSidebar from '@/components/AdsterraSidebar'
 import { siteConfig } from '@/config/site'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -66,6 +65,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -82,9 +84,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Adsterra 广告配置 - 左右两侧使用同一个 key
-  const ADSTERRA_KEY = 'd9a4cde3510b2e6ec5918ca7b71788c3'
-
   return (
     <html lang="en">
       <head>
@@ -109,10 +108,6 @@ export default function RootLayout({
           `}
         </Script>
         <div className="flex flex-col min-h-screen relative">
-          {/* 侧边栏广告 - 只在宽屏（2xl, 1536px+）显示 */}
-          <AdsterraSidebar conf={ADSTERRA_KEY} side="left" />
-          <AdsterraSidebar conf={ADSTERRA_KEY} side="right" />
-          
           <Navbar />
           <main className="flex-grow">
             {children}

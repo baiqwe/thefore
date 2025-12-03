@@ -84,7 +84,7 @@ export function generateTitle(title: string): string {
 export function generateMetadata(options: SEOOptions): Metadata {
   const title = generateTitle(options.title)
   const description = generateMetaDescription(options.description)
-  const canonicalUrl = options.canonicalUrl || `${siteConfig.url}${options.canonicalUrl || ''}`
+  const canonicalUrl = options.canonicalUrl || siteConfig.url
   const ogImage = options.image || siteConfig.ogImage
 
   return {
