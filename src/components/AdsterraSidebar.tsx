@@ -31,11 +31,20 @@ export default function AdsterraSidebar({ conf, side }: AdsterraSidebarProps) {
       invokeScript.type = 'text/javascript'
       invokeScript.src = `//www.highperformanceformat.com/${conf}/invoke.js`
       
+      // 添加错误处理
+      invokeScript.onerror = () => {
+        // 静默处理广告加载失败，不影响页面功能
+        console.warn(`Adsterra ad failed to load for ${side} sidebar`)
+        if (adRef.current) {
+          adRef.current.style.display = 'none'
+        }
+      }
+      
       // 添加到容器
       adRef.current.appendChild(confScript)
       adRef.current.appendChild(invokeScript)
     }
-  }, [conf])
+  }, [conf, side])
 
   // 样式说明：
   // fixed: 固定定位，随页面滚动

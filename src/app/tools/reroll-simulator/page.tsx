@@ -10,12 +10,12 @@ import racesData from "@/data/races.json"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import SEOHead from "@/components/SEOHead"
 
-// Race probabilities (example - adjust based on actual game data)
+// Race probabilities (adjusted based on actual game data)
 const raceProbabilities = {
   S: 0.02, // 2% for S tier
   A: 0.15, // 15% for A tier
   B: 0.50, // 50% for B tier
-  C: 0.33, // 33% for C tier
+  D: 0.33, // 33% for D tier (Common/Human)
 }
 
 function getRandomRace() {
@@ -26,13 +26,20 @@ function getRandomRace() {
     cumulative += probability
     if (random <= cumulative) {
       const tierRaces = racesData.filter((race) => race.tier === tier)
-      return tierRaces[Math.floor(Math.random() * tierRaces.length)]
+      if (tierRaces.length > 0) {
+        return tierRaces[Math.floor(Math.random() * tierRaces.length)]
+      }
     }
   }
 
-  // Fallback to C tier
-  const cTierRaces = racesData.filter((race) => race.tier === "C")
-  return cTierRaces[0]
+  // Fallback to D tier (Human) or first available race
+  const dTierRaces = racesData.filter((race) => race.tier === "D")
+  if (dTierRaces.length > 0) {
+    return dTierRaces[0]
+  }
+  
+  // Final fallback - return first race if everything else fails
+  return racesData[0] || null
 }
 
 export default function RerollSimulatorPage() {
@@ -44,9 +51,11 @@ export default function RerollSimulatorPage() {
 
   const handleRoll = () => {
     const newRace = getRandomRace()
-    setCurrentRace(newRace)
-    setRollHistory((prev) => [newRace, ...prev].slice(0, 10)) // Keep last 10
-    setRollCount((prev) => prev + 1)
+    if (newRace) {
+      setCurrentRace(newRace)
+      setRollHistory((prev) => [newRace, ...prev].slice(0, 10)) // Keep last 10
+      setRollCount((prev) => prev + 1)
+    }
   }
 
   const handleReset = () => {
@@ -60,6 +69,7 @@ export default function RerollSimulatorPage() {
     A: "from-amber-600 to-yellow-600",
     B: "from-blue-600 to-cyan-600",
     C: "from-green-600 to-emerald-600",
+    D: "from-gray-600 to-slate-600",
   }
 
   // Dynamic date for SEO
@@ -138,7 +148,7 @@ export default function RerollSimulatorPage() {
                 <div className="text-center">
                   <div
                     className={`bg-gradient-to-r ${
-                      tierColors[currentRace.tier as keyof typeof tierColors]
+                      tierColors[currentRace.tier as keyof typeof tierColors] || tierColors.C
                     } p-6 rounded-lg mb-4`}
                   >
                     <h2 className="text-3xl font-bold text-white mb-2">
@@ -154,7 +164,7 @@ export default function RerollSimulatorPage() {
                       Abilities:
                     </h3>
                     <ul className="space-y-1">
-                      {currentRace.abilities.map((ability, idx) => (
+                      {(currentRace.abilities || currentRace.passives || []).map((ability: string, idx: number) => (
                         <li
                           key={idx}
                           className="text-sm text-gray-600 flex items-center justify-center gap-2"
@@ -191,30 +201,32 @@ export default function RerollSimulatorPage() {
               <CardContent>
                 <div className="space-y-2">
                   {rollHistory.map((race, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Badge
-                          variant={
-                            race.tier === "S"
-                              ? "default"
-                              : race.tier === "A"
-                              ? "secondary"
-                              : "outline"
-                          }
-                        >
-                          {race.tier}
-                        </Badge>
-                        <span className="font-semibold text-gray-800">
-                          {race.name}
+                    race && (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Badge
+                            variant={
+                              race.tier === "S"
+                                ? "default"
+                                : race.tier === "A"
+                                ? "secondary"
+                                : "outline"
+                            }
+                          >
+                            {race.tier || "?"}
+                          </Badge>
+                          <span className="font-semibold text-gray-800">
+                            {race.name}
+                          </span>
+                        </div>
+                        <span className="text-xs text-gray-700 font-medium">
+                          {race.rarity || "Unknown"}
                         </span>
                       </div>
-                      <span className="text-xs text-gray-700 font-medium">
-                        {race.rarity}
-                      </span>
-                    </div>
+                    )
                   ))}
                 </div>
               </CardContent>
@@ -263,15 +275,15 @@ export default function RerollSimulatorPage() {
                     {(raceProbabilities.B * 100).toFixed(1)}%
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
+                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg border border-gray-200">
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-gradient-to-r from-green-600 to-emerald-600">
-                      C
+                    <Badge className="bg-gradient-to-r from-gray-600 to-slate-600">
+                      D
                     </Badge>
                     <span className="text-sm text-gray-700 font-medium">Tier (Common)</span>
                   </div>
-                  <span className="font-bold text-green-600">
-                    {(raceProbabilities.C * 100).toFixed(1)}%
+                  <span className="font-bold text-gray-600">
+                    {(raceProbabilities.D * 100).toFixed(1)}%
                   </span>
                 </div>
               </div>
