@@ -48,9 +48,11 @@ find public -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) -exec
 
 ---
 
-## 3. URL 结尾斜杠配置
+## 3. URL 结尾斜杠配置和重定向
 
 **当前配置：** `trailingSlash: false`（URL 不带斜杠）
+
+**重定向文件：** 已创建 `public/_redirects` 文件用于 Cloudflare Pages 重定向规则
 
 **验证方法：**
 1. 访问 `https://www.theforgewiki.com/codes`（应该正常）
@@ -60,6 +62,7 @@ find public -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) -exec
 - 检查 Google Search Console 的"页面索引"报告
 - 查看是否有大量 404 或重定向错误
 - 确保 Cloudflare 的重定向规则正确配置
+- 检查 `public/_redirects` 文件是否正确部署
 
 ---
 
@@ -136,15 +139,39 @@ git push
 
 ---
 
-## 总结检查清单
+## 8. 性能优化检查清单
 
-- [ ] 关闭 Rocket Loader
+### 代码层面
+- [x] Google Analytics 使用 `strategy="afterInteractive"`（已优化）
+- [x] 使用 Next.js 自动代码分割（已内置）
+- [x] 静态页面预渲染（SSG）
+- [x] Canonical URL 正确配置
+- [x] JSON-LD 结构化数据已实现
+
+### Cloudflare 配置
+- [ ] 关闭 Rocket Loader（**必须执行**）
+- [ ] 启用 Brotli 压缩（默认已启用）
+- [ ] 配置缓存规则（静态资源缓存 1 年）
+- [ ] 启用 HTTP/2 和 HTTP/3
+
+### 内容优化
 - [ ] 压缩所有图片到 100KB 以下
 - [ ] 验证 URL 重定向正常工作
-- [ ] 检查 Sitemap 时间戳是否正确
-- [ ] 确认自动部署流程正常
+- [ ] 检查 Sitemap 时间戳是否正确（已修复）
+- [ ] 确保所有页面都有正确的 meta 标签
+
+### 监控和验证
 - [ ] 运行 PageSpeed Insights 检查性能
 - [ ] 监控 Google Search Console 的索引状态
+- [ ] 检查 Core Web Vitals 指标
+- [ ] 确认自动部署流程正常
+
+### SEO 检查
+- [x] Canonical URL 已修复
+- [x] Sitemap 已优化（避免虚假更新）
+- [x] 结构化数据（JSON-LD）已实现
+- [x] robots.txt 正确配置
+- [ ] 验证所有页面的 meta 描述和标题
 
 ---
 
