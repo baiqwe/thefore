@@ -105,7 +105,7 @@ export default async function GuidePage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto px-4 py-10 2xl:px-[192px]">
       {/* SEO Head with Schema */}
       <SEOHead
         breadcrumbs={[

@@ -14,7 +14,7 @@ export const metadata: Metadata = generateSEOMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-10 max-w-4xl">
+    <div className="container mx-auto px-4 py-10 max-w-4xl 2xl:px-[192px]">
       <SEOHead
         breadcrumbs={[
           { name: 'Home', url: '/' },

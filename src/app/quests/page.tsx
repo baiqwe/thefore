@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function QuestsPage() {
   return (
-    <div className="container mx-auto px-4 py-10 max-w-6xl">
+    <div className="container mx-auto px-4 py-10 max-w-6xl 2xl:px-[192px]">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

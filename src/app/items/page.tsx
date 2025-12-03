@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ItemsPage() {
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto px-4 py-10 2xl:px-[192px]">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

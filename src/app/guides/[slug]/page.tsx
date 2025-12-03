@@ -41,7 +41,7 @@ export default function GuidePage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10">
+    <div className="container mx-auto max-w-4xl px-4 py-10 2xl:px-[192px]">
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-gray-600">
         <Link href="/" className="hover:underline">

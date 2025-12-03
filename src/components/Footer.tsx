@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site'
 export default function Footer() {
   return (
     <footer className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 mt-auto">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 2xl:px-[192px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-bold text-lg mb-4">{siteConfig.name}</h3>
