@@ -10,14 +10,6 @@ import Link from 'next/link'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
-interface Ore {
-  name: string
-  value: number
-  rarity: string
-  color: string
-  depth: string
-}
-
 type SortOrder = 'asc' | 'desc' | null
 
 // Rarity color mapping for badges
@@ -174,12 +166,18 @@ export default function OresPage() {
                     Rarity
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                    Depth Location
+                    Location
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Multiplier
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Trait
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {filteredAndSortedOres.map((ore: Ore) => (
+                {filteredAndSortedOres.map((ore) => (
                   <tr
                     key={ore.name}
                     className="hover:bg-gray-50 transition-colors"
@@ -191,7 +189,7 @@ export default function OresPage() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="text-gray-900 font-semibold">
-                        ${ore.value.toLocaleString()}
+                        ${(ore.value || 0).toLocaleString()}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -200,7 +198,19 @@ export default function OresPage() {
                       </Badge>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                      {ore.depth}
+                      {ore.location || 'Unknown'}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <span className="font-semibold text-amber-600">×{ore.multiplier || 0}</span>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-700">
+                      {ore.trait ? (
+                        <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">
+                          {ore.trait}
+                        </span>
+                      ) : (
+                        <span className="text-gray-400">—</span>
+                      )}
                     </td>
                   </tr>
                 ))}
