@@ -184,10 +184,12 @@ export default function HomePage() {
                 <span
                   className={`px-2 py-1 text-xs font-semibold rounded ${
                     guide.difficulty === 'Beginner'
-                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
+                      ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
                       : guide.difficulty === 'Expert'
                       ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
-                      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
+                      : guide.difficulty === 'Intermediate'
+                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
+                      : 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
                   }`}
                 >
                   {guide.difficulty}

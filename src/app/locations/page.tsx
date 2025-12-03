@@ -76,7 +76,7 @@ export default function LocationsPage() {
                   className="block text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
                   → {item.name}
-                  <span className="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+                  <span className="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                     {item.stats.rarity || 'Common'}
                   </span>
                 </Link>

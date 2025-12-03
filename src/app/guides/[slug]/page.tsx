@@ -34,10 +34,10 @@ export default function GuidePage({ params }: PageProps) {
   }
 
   const difficultyColors: Record<string, string> = {
-    Beginner: 'bg-green-100 text-green-800',
-    Intermediate: 'bg-yellow-100 text-yellow-800',
-    Expert: 'bg-red-100 text-red-800',
-    'All Levels': 'bg-blue-100 text-blue-800',
+    Beginner: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300',
+    Intermediate: 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300',
+    Expert: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300',
+    'All Levels': 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300',
   }
 
   return (
@@ -93,7 +93,7 @@ export default function GuidePage({ params }: PageProps) {
           {guide.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+              className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
             >
               #{tag}
             </span>
