@@ -1,9 +1,21 @@
 [
   {
+    "code": "300K!",
+    "reward": "5x Race Rerolls, 1x Luck Totem",
+    "status": "Active",
+    "description": "Latest milestone celebration code. Grants 5 race rerolls and a luck totem to boost your mining luck."
+  },
+  {
     "code": "200K!",
     "reward": "5 Race Rerolls",
     "status": "Active",
-    "description": "Latest milestone celebration code. Grants 5 free race rerolls."
+    "description": "Milestone celebration code. Grants 5 free race rerolls."
+  },
+  {
+    "code": "100KLIKES",
+    "reward": "10x Race Rerolls",
+    "status": "Active",
+    "description": "Major milestone reward. Grants 10 race rerolls for better chances at getting rare races."
   },
   {
     "code": "100K!",

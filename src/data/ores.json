@@ -1,87 +1,101 @@
 [
   {
     "name": "Stone",
+    "rarity": "Common",
+    "multiplier": 0.2,
+    "trait": null,
+    "location": "World 1 (Pebble)",
     "value": 1,
-    "rarity": "Common",
-    "color": "text-gray-400",
-    "depth": "0m - 1000m"
-  },
-  {
-    "name": "Coal",
-    "value": 4,
-    "rarity": "Common",
-    "color": "text-gray-600",
-    "depth": "10m - 1000m"
+    "color": "text-gray-400"
   },
   {
     "name": "Copper",
+    "rarity": "Uncommon",
+    "multiplier": 0.3,
+    "trait": null,
+    "location": "World 1 (Rock, Boulder)",
     "value": 8,
-    "rarity": "Common",
-    "color": "text-orange-400",
-    "depth": "25m - 1000m"
+    "color": "text-orange-400"
   },
   {
     "name": "Iron",
+    "rarity": "Uncommon",
+    "multiplier": 0.35,
+    "trait": null,
+    "location": "World 1 (Rock, Boulder)",
     "value": 15,
+    "color": "text-slate-300"
+  },
+  {
+    "name": "Tin",
     "rarity": "Uncommon",
-    "color": "text-slate-300",
-    "depth": "50m - 1000m"
+    "multiplier": 0.4,
+    "trait": null,
+    "location": "World 1 (Rock, Boulder)",
+    "value": 20,
+    "color": "text-slate-400"
   },
   {
-    "name": "Silver",
-    "value": 30,
-    "rarity": "Uncommon",
-    "color": "text-slate-200",
-    "depth": "100m - 1000m"
-  },
-  {
-    "name": "Gold",
-    "value": 60,
-    "rarity": "Rare",
-    "color": "text-yellow-400",
-    "depth": "150m - 1000m"
-  },
-  {
-    "name": "Platinum",
-    "value": 100,
-    "rarity": "Rare",
-    "color": "text-cyan-200",
-    "depth": "250m - 1000m"
-  },
-  {
-    "name": "Mithril",
-    "value": 200,
+    "name": "Obsidian",
     "rarity": "Epic",
-    "color": "text-blue-400",
-    "depth": "400m - 1000m"
+    "multiplier": 3.5,
+    "trait": "Armor: +30% HP",
+    "location": "World 2 (Volcanic Rock)",
+    "value": 350,
+    "color": "text-purple-600"
+  },
+  {
+    "name": "Eye Ore",
+    "rarity": "Epic",
+    "multiplier": 4.0,
+    "trait": "Weapon: +15% Physical Dmg, -10% HP",
+    "location": "World 2 (Basalt Vein)",
+    "value": 400,
+    "color": "text-yellow-500"
+  },
+  {
+    "name": "Rivalite",
+    "rarity": "Epic",
+    "multiplier": 3.33,
+    "trait": "Weapon: +20% Crit Chance",
+    "location": "World 2 (Basalt Vein)",
+    "value": 333,
+    "color": "text-blue-500"
+  },
+  {
+    "name": "Fireite",
+    "rarity": "Legendary",
+    "multiplier": 4.5,
+    "trait": "Weapon: 30% chance to burn target for 2s",
+    "location": "World 2 (Volcanic Rock)",
+    "value": 450,
+    "color": "text-red-500"
+  },
+  {
+    "name": "Magmaite",
+    "rarity": "Legendary",
+    "multiplier": 5.0,
+    "trait": "Weapon: 35% chance to cause 50% AoE explosion",
+    "location": "World 2 (Basalt Vein)",
+    "value": 500,
+    "color": "text-orange-600"
   },
   {
     "name": "Demonite",
-    "value": 400,
-    "rarity": "Legendary",
-    "color": "text-red-600",
-    "depth": "600m - 1000m"
-  },
-  {
-    "name": "Titanium",
-    "value": 700,
-    "rarity": "Legendary",
-    "color": "text-gray-200",
-    "depth": "800m - 1000m"
-  },
-  {
-    "name": "Adamantite",
-    "value": 1200,
     "rarity": "Mythical",
-    "color": "text-green-400",
-    "depth": "900m - 1000m"
+    "multiplier": 5.5,
+    "trait": "Armor: Deals 5% max HP/sec to nearby enemies",
+    "location": "World 2 (Volcanic Rock)",
+    "value": 550,
+    "color": "text-red-600"
   },
   {
-    "name": "Luminite",
-    "value": 2500,
-    "rarity": "Godly",
-    "color": "text-purple-400",
-    "depth": "1000m+"
+    "name": "Darkryte",
+    "rarity": "Mythical",
+    "multiplier": 6.3,
+    "trait": "Armor: 15% chance to dodge attacks as shadow",
+    "location": "World 2 (Basalt Vein)",
+    "value": 630,
+    "color": "text-purple-900"
   }
 ]
-

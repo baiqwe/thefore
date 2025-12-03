@@ -4,11 +4,12 @@
     "name": "Arcane Pickaxe",
     "location": "Fallen Angel's Cave",
     "type": "Tool",
-    "description": "The best mining tool in The Forge Roblox. This legendary pickaxe significantly increases mining speed and efficiency. Obtained by completing Bard's Lost Guitar quest to get the Unknown Key, then using it to unlock the Fallen Angel's Cave. Essential for gathering rare ores and progressing through the game.",
+    "description": "The best mining tool in The Forge Roblox. This S+ tier pickaxe provides 100% luck chance, making it perfect for finding rare ores. Obtained by completing Bard's Lost Guitar quest to get the Unknown Key, then using it to unlock the Fallen Angel's Cave. Essential for gathering rare ores and progressing through the game.",
     "stats": {
-      "rarity": "Legendary",
-      "mining-speed": "+200%",
-      "depth": "All depths"
+      "rarity": "S+ Tier",
+      "power": "75",
+      "luck": "100%",
+      "acquisition": "Fallen Angel's Cave (Requires Bard's Guitar Quest)"
     }
   },
   {
@@ -249,6 +250,131 @@
       "rarity": "Common",
       "value": "4 coins",
       "depth": "10m-1000m"
+    }
+  },
+  {
+    "slug": "stonewake-pickaxe",
+    "name": "Stonewake's Pickaxe",
+    "location": "World 1 Inner Cave",
+    "type": "Tool",
+    "description": "A reliable B-tier pickaxe available early in World 1. Perfect for beginners starting their mining journey. Can be purchased from the Inner Cave shop for $3,333.",
+    "stats": {
+      "rarity": "B Tier",
+      "power": "16",
+      "luck": "15%",
+      "acquisition": "World 1 Inner Cave ($3,333)"
+    }
+  },
+  {
+    "slug": "mythril-pickaxe",
+    "name": "Mythril Pickaxe",
+    "location": "Shop",
+    "type": "Tool",
+    "description": "An A-tier pickaxe with excellent power and luck stats. Great mid-game option for serious miners. Provides 55% luck chance for finding rare ores.",
+    "stats": {
+      "rarity": "A Tier",
+      "power": "80",
+      "luck": "55%",
+      "acquisition": "Shop ($67,500)"
+    }
+  },
+  {
+    "slug": "lightite-pickaxe",
+    "name": "Lightite Pickaxe",
+    "location": "Shop",
+    "type": "Tool",
+    "description": "High-tier A-tier pickaxe with excellent luck stats. One of the best pickaxes available from the shop. Provides 62% luck chance, perfect for finding rare World 2 ores.",
+    "stats": {
+      "rarity": "A Tier",
+      "power": "100",
+      "luck": "62%",
+      "acquisition": "Shop ($98,500)"
+    }
+  },
+  {
+    "slug": "magma-pickaxe",
+    "name": "Magma Pickaxe",
+    "location": "Forgotten Kingdom Hidden Area",
+    "type": "Tool",
+    "description": "Powerful A-tier pickaxe with high power rating. Found in the hidden area of the Forgotten Kingdom. Requires exploration and completion of quests to access.",
+    "stats": {
+      "rarity": "A Tier",
+      "power": "135",
+      "luck": "46%",
+      "acquisition": "Forgotten Kingdom Hidden Area ($150,000)"
+    }
+  },
+  {
+    "slug": "demonic-pickaxe",
+    "name": "Demonic Pickaxe",
+    "location": "Volcanic Depths Hidden Room",
+    "type": "Tool",
+    "description": "The ultimate S+ tier pickaxe with the highest power rating. Requires Demon race to acquire. Extremely powerful mining tool for end-game content in World 2.",
+    "stats": {
+      "rarity": "S+ Tier",
+      "power": "175",
+      "luck": "47.5%",
+      "acquisition": "Volcanic Depths Hidden Room (Requires Demon Race)"
+    }
+  },
+  {
+    "slug": "rune-miner-shard",
+    "name": "Miner Shard",
+    "location": "Delver Zombie Drop",
+    "type": "Rune",
+    "description": "Utility rune that increases Luck, Mining Speed, or Mining Power. Essential for optimizing your mining efficiency. Drops from Delver Zombies.",
+    "stats": {
+      "rarity": "Utility",
+      "effect": "Increases Luck, Mining Speed, or Mining Power",
+      "source": "Delver Zombie"
+    }
+  },
+  {
+    "slug": "rune-drain-edge",
+    "name": "Drain Edge",
+    "location": "Brute Zombie Drop",
+    "type": "Rune",
+    "description": "Sustain rune that provides lifesteal, healing you for 5-15% of damage dealt. Perfect for combat builds that need survivability. Drops from Brute Zombies.",
+    "stats": {
+      "rarity": "Sustain",
+      "effect": "Lifesteal: Heals for 5-15% of damage dealt",
+      "source": "Brute Zombie"
+    }
+  },
+  {
+    "slug": "rune-blast-chip",
+    "name": "Blast Chip",
+    "location": "Delver Zombie Drop",
+    "type": "Rune",
+    "description": "Damage rune that provides a chance to deal AoE explosion damage. Great for clearing groups of enemies quickly. Drops from Delver Zombies.",
+    "stats": {
+      "rarity": "Damage",
+      "effect": "Chance to deal AoE explosion damage",
+      "source": "Delver Zombie"
+    }
+  },
+  {
+    "slug": "rune-flame-spark",
+    "name": "Flame Spark",
+    "location": "Elite Zombie Drop",
+    "type": "Rune",
+    "description": "Damage rune that inflicts burn damage over time. Perfect for dealing continuous damage to enemies. Drops from Elite Zombies.",
+    "stats": {
+      "rarity": "Damage",
+      "effect": "Inflicts burn damage over time",
+      "source": "Elite Zombie"
+    }
+  },
+  {
+    "slug": "rune-frost-speck",
+    "name": "Frost Speck",
+    "location": "Elite Zombie Drop",
+    "type": "Rune",
+    "description": "Control rune that provides a chance to freeze enemies. Excellent for crowd control and surviving tough encounters. Drops from Elite Zombies.",
+    "stats": {
+      "rarity": "Control",
+      "effect": "Chance to freeze enemies",
+      "source": "Elite Zombie"
     }
   }
 ]

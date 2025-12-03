@@ -1,92 +1,66 @@
 [
   {
-    "name": "Angel",
-    "tier": "S",
-    "rarity": "Mythical",
-    "dropRate": "0.5%",
-    "description": "The ultimate balanced race with exceptional stats. Perfect for any playstyle.",
-    "abilities": ["+20% Speed", "+25% Jump", "+25% Luck"],
-    "passive": "Infinite Stamina at low HP, Smite chance",
-    "special": "Best overall race, great for beginners and veterans"
-  },
-  {
-    "name": "Demon",
-    "tier": "S",
-    "rarity": "Mythical",
-    "dropRate": "0.5%",
-    "description": "Powerful offensive race with massive damage potential.",
-    "abilities": ["+20% Speed", "+20% Attack Speed", "+20% Physical Damage", "+20% Fire Damage"],
-    "passive": "AOE Burn damage",
-    "special": "Top tier for combat-focused builds"
-  },
-  {
-    "name": "Dragonborn",
-    "tier": "A",
-    "rarity": "Legendary",
-    "dropRate": "1.25%",
-    "description": "Tanky race with fire breath attack. Excellent for end-game content.",
-    "abilities": ["+20% HP", "+12% Physical Damage"],
-    "passive": "Fire breath attack",
-    "special": "Excellent for end-game content"
-  },
-  {
-    "name": "Golem",
-    "tier": "A",
-    "rarity": "Legendary",
-    "dropRate": "1.25%",
-    "description": "Extremely tanky race with massive defense but slower movement.",
-    "abilities": ["+40% HP", "+20% Size", "-10% Speed"],
-    "passive": "Tanky, high defense",
-    "special": "Best tank race, slow but nearly unkillable"
-  },
-  {
-    "name": "Shadow",
-    "tier": "A",
-    "rarity": "Epic",
-    "dropRate": "6-7%",
-    "description": "Agile race perfect for PVP with dodge chance.",
-    "abilities": ["+15% Speed", "+10% Attack Speed"],
-    "passive": "Dodge chance (PVP meta)",
-    "special": "Best for PVP combat"
-  },
-  {
-    "name": "Dwarf",
-    "tier": "B",
-    "rarity": "Epic",
-    "dropRate": "6-7%",
-    "description": "Masters of mining and crafting. Best choice for miners.",
-    "abilities": ["+20% Mining Speed"],
-    "passive": "Mining bonuses",
-    "special": "Best for mining and resource gathering"
-  },
-  {
-    "name": "Orc",
-    "tier": "B",
-    "rarity": "Rare",
-    "dropRate": "~8%",
-    "description": "Brutal warriors with high health and melee damage.",
-    "abilities": ["+15% HP", "+10% Physical Damage"],
-    "passive": "Combat bonuses",
-    "special": "Good for combat builds"
-  },
-  {
-    "name": "Goblin",
-    "tier": "C",
-    "rarity": "Common",
-    "dropRate": "High",
-    "description": "Small and quick with shop discount benefits.",
-    "abilities": ["Shop discount"],
-    "passive": "Economic benefits",
-    "special": "Useful for saving money"
-  },
-  {
     "name": "Human",
     "tier": "D",
     "rarity": "Common",
     "dropRate": "Default",
-    "description": "Balanced race with no special bonuses or weaknesses. Starting race.",
+    "description": "The default race. No special bonuses.",
+    "passives": [],
     "abilities": ["No buffs"],
-    "passive": "None",
-    "special": "Default race, no special abilities"
+    "special": "Starting race, no special abilities"
+  },
+  {
+    "name": "Dwarf",
+    "tier": "B",
+    "rarity": "Rare",
+    "dropRate": "~8%",
+    "description": "Best for dedicated miners.",
+    "passives": [
+      "Gifted Miner: +15% Mining Damage, +5% Forging Quality",
+      "Heavy Short: Smaller size, reduced movement speed"
+    ],
+    "abilities": ["+15% Mining Damage", "+5% Forging Quality"],
+    "special": "Best for mining and resource gathering"
+  },
+  {
+    "name": "Minotaur",
+    "tier": "A",
+    "rarity": "Legendary",
+    "dropRate": "1.25%",
+    "description": "A strong tank class with berserk mechanics.",
+    "passives": [
+      "Tank: +20% HP, Larger Hitbox",
+      "Bull's Fury: Enrage at <50% HP (Increased Dmg/Speed)"
+    ],
+    "abilities": ["+20% HP", "Enrage at <50% HP"],
+    "special": "Excellent tank race with berserk mechanics"
+  },
+  {
+    "name": "Angel",
+    "tier": "S",
+    "rarity": "Mythic",
+    "dropRate": "0.5%",
+    "description": "The best all-rounder race. Great for mobility and combat.",
+    "passives": [
+      "Wings: +50% Dash Distance, -20% Dash CD, +25% Jump Height",
+      "Smite: 50% chance to summon lightning on hit",
+      "Mighty Clover: +25% Luck"
+    ],
+    "abilities": ["+50% Dash Distance", "-20% Dash CD", "+25% Jump Height", "+25% Luck", "Smite chance"],
+    "special": "The ultimate balanced race, perfect for any playstyle"
+  },
+  {
+    "name": "Demon",
+    "tier": "S",
+    "rarity": "Mythic",
+    "dropRate": "0.5%",
+    "description": "The ultimate DPS glass cannon.",
+    "passives": [
+      "Backfire: 25% chance to burn enemies when hit",
+      "Demonic Powers: +20% Speed, Attack Speed, and Damage",
+      "Devil's Finger: Dash leaves a trail of hellfire"
+    ],
+    "abilities": ["+20% Speed", "+20% Attack Speed", "+20% Damage", "Burn on hit", "Hellfire trail"],
+    "special": "Top tier for combat-focused builds, highest DPS potential"
   }
 ]
