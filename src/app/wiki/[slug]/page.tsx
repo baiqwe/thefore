@@ -157,9 +157,10 @@ export default async function GuidePage({ params }: PageProps) {
         </div>
 
         {/* Table of Contents Sidebar */}
-        {headings.length > 0 && (
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
+        <div className="lg:col-span-1">
+          <div className="sticky top-24 space-y-6">
+            {/* Table of Contents */}
+            {headings.length > 0 && (
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4 text-gray-800">
@@ -181,9 +182,41 @@ export default async function GuidePage({ params }: PageProps) {
                   </nav>
                 </CardContent>
               </Card>
-            </div>
+            )}
+
+            {/* --- 新增：侧边栏热门推荐 (增加 PV 的关键) --- */}
+            <Card className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-800">
+              <CardContent className="p-5">
+                <h3 className="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+                  🔥 Popular Now
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/codes" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                      → Latest Redeem Codes
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/wiki/race-tier-list" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                      → S-Tier Race List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/wiki/forging" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                      → How to Forge Masterworks
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tools/reroll-simulator" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                      → Reroll Simulator
+                    </Link>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            {/* ------------------------------------------- */}
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

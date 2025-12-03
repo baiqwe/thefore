@@ -27,6 +27,7 @@ export default function HomePage() {
   ]
   const featuredItems = itemsData.slice(0, 6)
   const totalItems = itemsData.length
+  const activeCodes = codesData.filter((c) => c.status === 'Active')
   // Get top 3 latest codes: 200K!, 100K!, 40KLIKES
   const latestCodes = codesData
     .filter((c) => c.status === 'Active')
@@ -55,10 +56,7 @@ export default function HomePage() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/codes" className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30">
             🎁 Active Codes
-            {/* 显示最新的一个 Code */}
-            {latestCodes[0] && (
-              <span className="bg-white/20 text-xs py-0.5 px-2 rounded ml-1">New: {latestCodes[0].code}</span>
-            )}
+            <span className="bg-white/20 text-xs py-0.5 px-2 rounded ml-1">{activeCodes.length} Available</span>
           </Link>
           <Link href="/wiki/races" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
             🏆 S-Tier Races
@@ -69,46 +67,170 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Latest Codes Section - 移到前面 */}
+      {/* Latest Updates Section - 隐藏代码信息，改为点击查看 */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Latest The Forge Codes</h2>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Latest Updates</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Codes Card - 诱导点击 */}
+          <Link href="/codes" className="bg-white dark:bg-gray-800 border-l-4 border-green-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-3">
+              <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs font-bold rounded-full">CODES</span>
+              <span className="text-xs text-gray-500">Updated Today</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-green-600 transition-colors">
+              New Codes Available!
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+              We found <strong>{activeCodes.length} active codes</strong> for Gems and Rerolls. Click to redeem them now.
+            </p>
+          </Link>
+
+          {/* Tier List Card */}
+          <Link href="/wiki/race-tier-list" className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-3">
+              <span className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">TIER LIST</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-amber-600 transition-colors">
+              Best Races Tier List
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+              Which race is S-Tier? Angel vs Demon? Check the complete stats ranking.
+            </p>
+          </Link>
+
+          {/* Reroll Simulator Card */}
+          <Link href="/tools/reroll-simulator" className="bg-white dark:bg-gray-800 border-l-4 border-purple-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-3">
+              <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs font-bold rounded-full">TOOL</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-purple-600 transition-colors">
+              Reroll Simulator
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+              Simulate 100+ rerolls for free. Test your luck before spending Robux.
+            </p>
+          </Link>
+        </div>
+      </div>
+
+      {/* Current Hot Topics - 前置到热门位置 */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-100">🔥 Current Hot Topics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
-            href="/codes"
+            href="/quests"
+            className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg border-2 border-amber-200 dark:border-amber-800 shadow-md hover:shadow-lg transition-all p-6 group hover:-translate-y-1"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+                <Key className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">How to Get Arcane Pickaxe</h3>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
+              Complete Bard&apos;s Lost Guitar quest to get the Unknown Key, then unlock the Fallen Angel&apos;s Cave 
+              to obtain the best mining tool in The Forge Roblox.
+            </p>
+            <span className="text-amber-600 dark:text-amber-400 font-semibold text-sm group-hover:underline">
+              Read Guide →
+            </span>
+          </Link>
+
+          <Link
+            href="/wiki/race-tier-list"
+            className="bg-gradient-to-r from-red-50 dark:from-red-900/20 to-orange-50 dark:to-orange-900/20 rounded-lg border-2 border-red-200 dark:border-red-800 shadow-md hover:shadow-lg transition-all p-6 group hover:-translate-y-1"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg group-hover:bg-red-200 dark:group-hover:bg-red-900/50 transition-colors">
+                <Sword className="h-6 w-6 text-red-600 dark:text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Best Race for PVP</h3>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
+              Shadow (A-tier) is the PVP meta with dodge chance. Demon (S-tier Mythical) is also excellent for high damage output. 
+              Learn all race stats and abilities.
+            </p>
+            <span className="text-red-600 dark:text-red-400 font-semibold text-sm group-hover:underline">
+              View Tier List →
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Popular Guides Section - 前置 */}
+      <div className="mb-16">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">📚 Popular Guides</h2>
+          <Link
+            href="/wiki"
             className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
           >
-            View All Codes →
+            View All Guides →
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestCodes.map((code, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-amber-400 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+          {featuredGuides.map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/wiki/${guide.slug}`}
+              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all p-6 hover:-translate-y-1"
             >
-              <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">
-                  ACTIVE
+              <div className="flex items-center gap-2 mb-3">
+                <span className="px-2 py-1 text-xs font-semibold rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300">
+                  {guide.category}
                 </span>
-                {index === 0 && (
-                  <span className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-xs font-bold rounded-full">
-                    NEW
-                  </span>
-                )}
-              </div>
-              <div className="mb-3">
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded font-mono text-lg font-bold text-center border-2 border-dashed border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                  {code.code}
-                </div>
-              </div>
-              <p className="text-amber-700 dark:text-amber-400 font-semibold mb-2">{code.reward}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{code.description}</p>
-            </div>
+                <span
+                  className={`px-2 py-1 text-xs font-semibold rounded ${
+                    guide.difficulty === 'Beginner'
+                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
+                      : guide.difficulty === 'Expert'
+                      ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
+                      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
+                  }`}
+                >
+                  {guide.difficulty}
+                </span>
+          </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{guide.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-3">{guide.description}</p>
+              <div className="text-xs text-gray-600 dark:text-gray-400">By {guide.author}</div>
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* Featured Items Section */}
+      {/* YouTube Videos Section - 前置 */}
+      <div className="mb-16">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Play className="h-8 w-8 text-amber-600" />
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">🎥 Watch The Forge Gameplay Videos</h2>
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
+            Learn from the best players! Watch these gameplay videos to master <strong>The Forge Roblox</strong> game.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">The Forge Gameplay Guide</h3>
+            <YouTubeVideo
+              videoId="GpJRxMgP99Q"
+              title="The Forge Gameplay Guide - Complete Walkthrough"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">Race Tier List Explained</h3>
+            <YouTubeVideo
+              videoId="pVrVDWXXrAw"
+              title="The Forge Race Tier List - Best Races Explained"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Items Section - 后置 */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold">Featured Items</h2>
@@ -144,142 +266,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Quick Links Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-100">Quick Links</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link
-            href="/wiki/races"
-            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-amber-200 dark:border-amber-800 shadow-md hover:shadow-xl transition-all p-6 group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-                <Shield className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Race Tier List</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Complete guide to all races in The Forge Roblox. Learn stats, abilities, and drop rates.
-            </p>
-          </Link>
-
-          <Link
-            href="/wiki/forging"
-            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-orange-200 dark:border-orange-800 shadow-md hover:shadow-xl transition-all p-6 group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-                <Hammer className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Forging Guide</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Master the manual forging minigame. Learn how to craft Masterwork weapons and Colossal Swords.
-            </p>
-          </Link>
-
-          <Link
-            href="/quests"
-            className="bg-white dark:bg-gray-800 rounded-lg border-2 border-amber-200 dark:border-amber-800 shadow-md hover:shadow-xl transition-all p-6 group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-                <Scroll className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Quest Walkthroughs</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Complete quest guides including Bard&apos;s Guitar, Goblin King, and Lost Cat quests.
-            </p>
-          </Link>
-        </div>
-      </div>
-
-      {/* Current Hot Topics */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-100">Current Hot Topics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link
-            href="/wiki/quests"
-            className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border-2 border-amber-200 shadow-md hover:shadow-lg transition-all p-6 group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-                <Key className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">How to Get Arcane Pickaxe</h3>
-            </div>
-            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-              Complete Bard&apos;s Lost Guitar quest to get the Unknown Key, then unlock the Fallen Angel&apos;s Cave 
-              to obtain the best mining tool in The Forge Roblox.
-            </p>
-            <span className="text-amber-600 dark:text-amber-400 font-semibold text-sm group-hover:underline">
-              Read Guide →
-            </span>
-          </Link>
-
-          <Link
-            href="/wiki/races"
-            className="bg-gradient-to-r from-red-50 dark:from-red-900/20 to-orange-50 dark:to-orange-900/20 rounded-lg border-2 border-red-200 dark:border-red-800 shadow-md hover:shadow-lg transition-all p-6 group"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg group-hover:bg-red-200 dark:group-hover:bg-red-900/50 transition-colors">
-                <Sword className="h-6 w-6 text-red-600 dark:text-red-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Best Race for PVP</h3>
-            </div>
-            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-              Shadow (A-tier) is the PVP meta with dodge chance. Demon (S-tier Mythical) is also excellent for high damage output. 
-              Learn all race stats and abilities.
-            </p>
-            <span className="text-red-600 dark:text-red-400 font-semibold text-sm group-hover:underline">
-              View Tier List →
-            </span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Popular Guides Section */}
-      <div className="mb-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Popular Guides</h2>
-          <Link
-            href="/guides"
-            className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 font-semibold"
-          >
-            View All Guides →
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featuredGuides.map((guide) => (
-            <Link
-              key={guide.slug}
-              href={`/guides/${guide.slug}`}
-              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all p-6"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="px-2 py-1 text-xs font-semibold rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300">
-                  {guide.category}
-                </span>
-                <span
-                  className={`px-2 py-1 text-xs font-semibold rounded ${
-                    guide.difficulty === 'Beginner'
-                      ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
-                      : guide.difficulty === 'Expert'
-                      ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
-                      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
-                  }`}
-                >
-                  {guide.difficulty}
-                </span>
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{guide.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-3">{guide.description}</p>
-              <div className="text-xs text-gray-600 dark:text-gray-400">By {guide.author}</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Main Quests Preview */}
       <div className="mb-16">
@@ -325,48 +311,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* YouTube Videos Section */}
-      <div className="mb-16">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Play className="h-8 w-8 text-amber-600" />
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Watch The Forge Gameplay Videos</h2>
-          </div>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-            Learn from the best players! Watch these gameplay videos to master <strong>The Forge Roblox</strong> game.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-100">The Forge Gameplay Guide</h3>
-            <YouTubeVideo
-              videoId="GpJRxMgP99Q"
-              title="The Forge Gameplay Guide - Complete Walkthrough"
-            />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800">Race Tier List Explained</h3>
-            <YouTubeVideo
-              videoId="pVrVDWXXrAw"
-              title="The Forge Race Tier List - Best Races Explained"
-            />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800">Forging Masterclass</h3>
-            <YouTubeVideo
-              videoId="knZYt5e7BW8"
-              title="The Forge Forging Masterclass - Craft Masterwork Weapons"
-            />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800">Quest Walkthrough</h3>
-            <YouTubeVideo
-              videoId="2ouRRBSlGNk"
-              title="The Forge Quest Walkthrough - Complete All Quests"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Game Info Section */}
       <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-lg mb-8">

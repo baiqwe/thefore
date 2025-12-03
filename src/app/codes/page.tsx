@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { ArrowRight, Trophy, Dice5 } from 'lucide-react'
 
 // 1. Dynamic Date Logic for SEO Titles
 const date = new Date();
@@ -98,6 +99,34 @@ export default function CodesPage() {
           Last checked: <span className="font-medium text-amber-600 dark:text-amber-400">{currentMonth} {new Date().getDate()}, {currentYear}</span>
         </p>
       </div>
+
+      {/* --- 新增：强引导模块 (在 Active Codes 标题上方插入) --- */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <Link href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Trophy size={80} />
+          </div>
+          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+            Don&apos;t Waste Your Rerolls! <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </h3>
+          <p className="text-red-100 text-sm font-medium">
+            Check the <strong>S-Tier Race List</strong> before you use these codes. See which Mythical race is best.
+          </p>
+        </Link>
+
+        <Link href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Dice5 size={80} />
+          </div>
+          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+            Test Your Luck First <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </h3>
+          <p className="text-blue-100 text-sm font-medium">
+            Use our <strong>Reroll Simulator</strong> to check your drop chances for Angel &amp; Demon races.
+          </p>
+        </Link>
+      </div>
+      {/* ------------------------------------------------------- */}
 
       {/* Active Codes Grid */}
       <div className="mb-16">
