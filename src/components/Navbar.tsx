@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import SearchBar from './SearchBar'
 import { Play } from 'lucide-react'
@@ -8,15 +7,15 @@ export default function Navbar() {
     <nav className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-40">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Link href="/" className="text-xl font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 flex-shrink-0">
+          <a href="/" className="text-xl font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-500 flex-shrink-0">
             {siteConfig.name}
-          </Link>
+          </a>
           <div className="flex-1 max-w-md hidden md:block">
             <SearchBar />
           </div>
           <div className="flex items-center space-x-4 lg:space-x-6 flex-shrink-0">
             {siteConfig.mainNav.slice(0, 5).map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 target={(item as any).external ? "_blank" : undefined}
@@ -24,7 +23,7 @@ export default function Navbar() {
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors hidden lg:block"
               >
                 {item.title}
-              </Link>
+              </a>
             ))}
             {/* Play Now Button */}
             <a

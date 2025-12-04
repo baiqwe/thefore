@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import itemsData from '@/data/items.json'
 
 export default function SearchBar() {
@@ -56,7 +55,7 @@ export default function SearchBar() {
       {showResults && results.length > 0 && (
         <div className="absolute z-50 w-full mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-96 overflow-y-auto">
           {results.map((item) => (
-            <Link
+            <a
               key={item.slug}
               href={`/item/${item.slug}`}
               className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-b-0"
@@ -70,13 +69,13 @@ export default function SearchBar() {
                   {item.stats.rarity || 'Common'}
                 </span>
               </div>
-            </Link>
+            </a>
           ))}
           {results.length === 5 && (
             <div className="px-4 py-2 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
-              <Link href={`/items?search=${query}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+              <a href={`/items?search=${query}`} className="text-blue-600 dark:text-blue-400 hover:underline">
                 View all results →
-              </Link>
+              </a>
             </div>
           )}
         </div>
