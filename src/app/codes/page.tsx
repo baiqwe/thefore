@@ -35,10 +35,20 @@ export default function CodesPage() {
   const activeCodes = codesData.filter((code) => code.status === 'Active')
   const expiredCodes = codesData.filter((code) => code.status === 'Expired')
 
-  // 2. FAQ Schema for Google Rich Snippets
+  // 获取当前日期（用于新鲜度信号）
+  const today = new Date()
+  const lastVerifiedDate = today.toISOString()
+  const lastVerifiedDisplay = today.toLocaleDateString('en-US', { 
+    month: 'long', 
+    day: 'numeric', 
+    year: 'numeric' 
+  })
+
+  // 2. FAQ Schema for Google Rich Snippets with dateModified
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    dateModified: lastVerifiedDate, // 总是使用当前日期，向 Google 发送新鲜度信号
     mainEntity: [
       {
         '@type': 'Question',
@@ -85,6 +95,7 @@ export default function CodesPage() {
             answer: `Currently, there are ${activeCodes.length} active codes available, including rewards like Free Rerolls and Gems. Check our updated list for details.`,
           },
         ]}
+        schema={jsonLd}
       />
 
       {/* SEO Intro Content (Keyword Rich) */}
@@ -96,12 +107,19 @@ export default function CodesPage() {
           Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place. 
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
-        <div className="flex items-center justify-center gap-2 mt-4">
-          <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg px-4 py-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400" />
-            <span className="text-sm font-medium text-green-800 dark:text-green-300">
-              Last verified: <span className="font-bold">{currentMonth} {new Date().getDate()}, {currentYear}</span>
-            </span>
+        {/* 强化显示最后验证时间 - 新鲜度信号 */}
+        <div className="flex items-center justify-center gap-3 mt-6">
+          <div className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-400 dark:border-green-600 rounded-xl px-6 py-3 shadow-md">
+            <Clock className="w-5 h-5 text-green-600 dark:text-green-400" />
+            <div className="text-center">
+              <span className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wide block mb-1">
+                Last Verified
+              </span>
+              <span className="text-lg font-bold text-green-900 dark:text-green-100">
+                Today - {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </span>
+            </div>
+            <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
           </div>
         </div>
       </div>

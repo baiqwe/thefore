@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import racesData from "@/data/races.json"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import SEOHead from "@/components/SEOHead"
+import { Dice5, ArrowRight, Sparkles } from "lucide-react"
 
 const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
@@ -69,6 +70,56 @@ export default function RacesPage() {
           <strong>Important:</strong> <strong>Mythical races</strong> (S-tier) like <strong>Angel</strong> and <strong>Demon</strong> have only a 
           <span className="font-bold text-red-600"> 0.5% drop rate</span>. Save your rerolls and use them wisely!
         </p>
+      </div>
+
+      {/* Reroll Simulator CTA - 降低跳出率，增加工具页面流量 */}
+      <div className="mb-10">
+        <Link 
+          href="/tools/reroll-simulator"
+          className="group relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 rounded-2xl p-8 text-white shadow-2xl hover:shadow-purple-500/50 transition-all hover:-translate-y-2 block"
+        >
+          {/* 背景装饰 */}
+          <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-30 transition-opacity">
+            <Dice5 className="w-32 h-32" />
+          </div>
+          <div className="absolute bottom-0 left-0 p-4 opacity-10">
+            <Sparkles className="w-24 h-24" />
+          </div>
+          
+          {/* 内容 */}
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-white/20 rounded-full p-3 group-hover:bg-white/30 transition-colors">
+                <Dice5 className="w-8 h-8" />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-1">
+                  🎮 Test Your Luck Before Spending Robux!
+                </h2>
+                <p className="text-purple-100 text-sm md:text-base">
+                  Use our Reroll Simulator to see your chances of getting Angel or Demon
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-2 text-purple-100 group-hover:text-white transition-colors">
+              <span className="font-semibold">Try Reroll Simulator Now</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </div>
+            
+            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+              <div className="bg-white/20 rounded-full px-4 py-1.5">
+                <span className="font-semibold">0.5% Mythical Rate</span>
+              </div>
+              <div className="bg-white/20 rounded-full px-4 py-1.5">
+                <span className="font-semibold">Free to Use</span>
+              </div>
+              <div className="bg-white/20 rounded-full px-4 py-1.5">
+                <span className="font-semibold">No Robux Required</span>
+              </div>
+            </div>
+          </div>
+        </Link>
       </div>
 
       {/* How to Reroll Section */}
