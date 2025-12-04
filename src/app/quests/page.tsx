@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import Link from 'next/link'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Scroll, Key, Crown, Cat } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -237,15 +237,15 @@ export default function QuestsPage() {
       <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Related The Forge Wiki Guides</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link href="/wiki/forging" className="text-blue-600 hover:underline font-semibold">
+          <a href="/wiki/forging" className="text-blue-600 hover:underline font-semibold">
             → Forging Guide
-          </Link>
-          <Link href="/wiki/races" className="text-blue-600 hover:underline font-semibold">
+          </a>
+          <a href="/wiki/races" className="text-blue-600 hover:underline font-semibold">
             → Race Tier List
-          </Link>
-          <Link href="/codes" className="text-blue-600 hover:underline font-semibold">
+          </a>
+          <a href="/codes" className="text-blue-600 hover:underline font-semibold">
             → Get Free Codes
-          </Link>
+          </a>
         </div>
       </div>
     </div>

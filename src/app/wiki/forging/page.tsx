@@ -78,8 +78,8 @@ export default function ForgingPage() {
         <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
           Master the <strong>manual forging minigame</strong> in <strong>The Forge Roblox</strong> and craft powerful weapons. 
           This complete guide covers all three steps: <strong>Heating</strong>, <strong>Casting</strong>, and <strong>Hammering</strong>.
-          Check out our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which race is best for forging, 
-          or visit our <Link href="/codes" className="text-amber-600 hover:underline font-semibold">Codes page</Link> to get free rerolls for better races.
+          Check out our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> to see which race is best for forging, 
+          or visit our <a href="/codes" className="text-amber-600 hover:underline font-semibold">Codes page</a> to get free rerolls for better races.
         </p>
       </div>
 
@@ -226,15 +226,15 @@ export default function ForgingPage() {
       <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Related The Forge Wiki Guides</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link href="/wiki/races" className="text-blue-600 hover:underline font-semibold">
+          <a href="/wiki/races" className="text-blue-600 hover:underline font-semibold">
             → Race Tier List Guide
-          </Link>
-          <Link href="/wiki/quests" className="text-blue-600 hover:underline font-semibold">
+          </a>
+          <a href="/wiki/quests" className="text-blue-600 hover:underline font-semibold">
             → Quest Walkthroughs
-          </Link>
-          <Link href="/codes" className="text-blue-600 hover:underline font-semibold">
+          </a>
+          <a href="/codes" className="text-blue-600 hover:underline font-semibold">
             → Get Free Codes
-          </Link>
+          </a>
         </div>
       </div>
     </div>

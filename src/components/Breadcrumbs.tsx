@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { ChevronRight, Home } from 'lucide-react'
 import { generateBreadcrumbSchema } from '@/lib/seo'
 import { siteConfig } from '@/config/site'
@@ -31,32 +30,32 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      
+
       {/* 视觉面包屑导航 */}
-      <nav 
+      <nav
         className={`flex items-center gap-2 text-sm text-gray-600 mb-6 ${className}`}
         aria-label="Breadcrumb"
       >
-        <Link 
-          href="/" 
+        <a
+          href="/"
           className="hover:text-amber-600 transition-colors flex items-center gap-1"
           aria-label="Home"
         >
           <Home className="h-4 w-4" />
           <span className="hidden sm:inline">Home</span>
-        </Link>
+        </a>
         {items.slice(1).map((item, index) => (
           <div key={index} className="flex items-center gap-2">
             <ChevronRight className="h-4 w-4 text-gray-400" />
             {index === items.length - 2 ? (
               <span className="font-semibold text-gray-800">{item.name}</span>
             ) : (
-              <Link 
-                href={item.url} 
+              <a
+                href={item.url}
                 className="hover:text-amber-600 transition-colors"
               >
                 {item.name}
-              </Link>
+              </a>
             )}
           </div>
         ))}

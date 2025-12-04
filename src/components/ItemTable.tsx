@@ -1,4 +1,3 @@
-import Link from 'next/link'
 
 interface Item {
   slug: string
@@ -37,12 +36,12 @@ export default function ItemTable({ items }: ItemTableProps) {
           {items.map((item) => (
             <tr key={item.slug} className="hover:bg-gray-50 transition-colors">
               <td className="px-6 py-4 whitespace-nowrap">
-                <Link
+                <a
                   href={`/item/${item.slug}`}
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
                   {item.name}
-                </Link>
+                </a>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                 {item.type}

@@ -81,7 +81,7 @@ export default function WikiPage() {
       {/* Categories Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {categories.map((category) => (
-          <Link key={category.name} href={category.href}>
+          <a key={category.name} href={category.href}>
             <Card className="hover:border-amber-600 transition-colors cursor-pointer h-full">
               <CardHeader>
                 <div className="text-4xl mb-2">{category.icon}</div>
@@ -92,7 +92,7 @@ export default function WikiPage() {
                 <Badge variant="secondary">{category.count} guides</Badge>
               </CardContent>
             </Card>
-          </Link>
+          </a>
         ))}
       </div>
 
@@ -101,7 +101,7 @@ export default function WikiPage() {
         <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Featured Guides</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {guidesData.map((guide) => (
-            <Link key={guide.slug} href={`/wiki/${guide.slug}`}>
+            <a key={guide.slug} href={`/wiki/${guide.slug}`}>
               <Card className="hover:border-amber-600 transition-colors cursor-pointer h-full">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
@@ -128,7 +128,7 @@ export default function WikiPage() {
                   </p>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

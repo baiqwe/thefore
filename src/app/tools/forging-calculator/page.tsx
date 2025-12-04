@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calculator, Hammer, ArrowRight } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -318,7 +318,7 @@ export default function ForgingCalculatorPage() {
               <div>
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 4: Plan Your Mining Trip</h3>
                 <p className="leading-relaxed">
-                  Use the mining depth information with our <Link href="/tools/ore-depth-finder" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Ore Depth Finder</Link> to plan your mining expedition. For example, if you need 10 Mithril Ingots for a Mithril Blade, you&apos;ll need to mine at 400-700m depth. Make sure you have the appropriate pickaxe (Arcane Pickaxe recommended for depths above 400m).
+                  Use the mining depth information with our <a href="/tools/ore-depth-finder" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Ore Depth Finder</a> to plan your mining expedition. For example, if you need 10 Mithril Ingots for a Mithril Blade, you&apos;ll need to mine at 400-700m depth. Make sure you have the appropriate pickaxe (Arcane Pickaxe recommended for depths above 400m).
                 </p>
               </div>
               <div>
@@ -358,7 +358,7 @@ export default function ForgingCalculatorPage() {
             <div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Can I craft items without the required pickaxe for that depth?</h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Technically yes, but it&apos;s extremely inefficient. For example, you <em>could</em> mine <strong>Demonite</strong> (600-900m) with an Iron Pickaxe, but it would take 10x longer than with the <strong>Arcane Pickaxe</strong>. We strongly recommend obtaining the <Link href="/wiki/arcane-pickaxe-guide" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Arcane Pickaxe</Link> before attempting to craft Epic-tier or higher items, as it provides +200% mining speed and 100% luck chance.
+                Technically yes, but it&apos;s extremely inefficient. For example, you <em>could</em> mine <strong>Demonite</strong> (600-900m) with an Iron Pickaxe, but it would take 10x longer than with the <strong>Arcane Pickaxe</strong>. We strongly recommend obtaining the <a href="/wiki/arcane-pickaxe-guide" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Arcane Pickaxe</a> before attempting to craft Epic-tier or higher items, as it provides +200% mining speed and 100% luck chance.
               </p>
             </div>
             <div>
@@ -376,7 +376,7 @@ export default function ForgingCalculatorPage() {
             <div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Are there any items that can&apos;t be crafted?</h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Yes, some items are obtained through quests rather than crafting. For example, the <strong>Arcane Pickaxe</strong> is obtained by completing Bard&apos;s Lost Guitar quest, not through forging. The <strong>Unknown Key</strong> is also a quest reward. This calculator focuses on items that can be forged at the anvil using the manual forging minigame. Check our <Link href="/items" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Items database</Link> to see which items are craftable vs. quest rewards.
+                Yes, some items are obtained through quests rather than crafting. For example, the <strong>Arcane Pickaxe</strong> is obtained by completing Bard&apos;s Lost Guitar quest, not through forging. The <strong>Unknown Key</strong> is also a quest reward. This calculator focuses on items that can be forged at the anvil using the manual forging minigame. Check our <a href="/items" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Items database</a> to see which items are craftable vs. quest rewards.
               </p>
             </div>
           </CardContent>

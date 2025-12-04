@@ -192,24 +192,24 @@ export default async function GuidePage({ params }: PageProps) {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/codes" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                    <a href="/codes" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
                       → Latest Redeem Codes
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href="/wiki/race-tier-list" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                    <a href="/wiki/race-tier-list" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
                       → S-Tier Race List
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href="/wiki/forging" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                    <a href="/wiki/forging" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
                       → How to Forge Masterworks
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href="/tools/reroll-simulator" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
+                    <a href="/tools/reroll-simulator" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">
                       → Reroll Simulator
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </CardContent>

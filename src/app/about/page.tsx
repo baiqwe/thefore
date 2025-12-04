@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import SEOHead from '@/components/SEOHead'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import { Users, Target, Award, Heart } from 'lucide-react'
-import Link from 'next/link'
+
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'About Us - The Forge Wiki',
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">✅ Trustworthiness</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                We are transparent about our methods, sources, and updates. All information is verified in-game before publication. We clearly identify when content is based on community reports versus our own testing. Our <Link href="/privacy" className="text-amber-600 dark:text-amber-400 hover:underline">Privacy Policy</Link> and <Link href="/terms" className="text-amber-600 dark:text-amber-400 hover:underline">Terms of Service</Link> demonstrate our commitment to user trust and data protection.
+                We are transparent about our methods, sources, and updates. All information is verified in-game before publication. We clearly identify when content is based on community reports versus our own testing. Our <a href="/privacy" className="text-amber-600 dark:text-amber-400 hover:underline">Privacy Policy</a> and <a href="/terms" className="text-amber-600 dark:text-amber-400 hover:underline">Terms of Service</a> demonstrate our commitment to user trust and data protection.
               </p>
             </div>
           </div>
@@ -184,21 +184,21 @@ export default function AboutPage() {
             We&apos;re always looking for community contributions! Found a new code? Discovered a better strategy? Want to help improve our guides?
           </p>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
-            Contact us at <a href="mailto:developwebtheforge@2925.com" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">developwebtheforge@2925.com</a> or visit our <Link href="/contact" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Contact page</Link>.
+            Contact us at <a href="mailto:developwebtheforge@2925.com" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">developwebtheforge@2925.com</a> or visit our <a href="/contact" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Contact page</a>.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
+            <a
               href="/contact"
               className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               Contact Us
-            </Link>
-            <Link
+            </a>
+            <a
               href="/codes"
               className="bg-white dark:bg-gray-800 border border-amber-600 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               View Codes
-            </Link>
+            </a>
           </div>
         </div>
       </section>

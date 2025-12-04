@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Search, MapPin, ArrowDown } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -366,7 +366,7 @@ export default function OreDepthFinderPage() {
             <div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What pickaxe do I need for deeper ores?</h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                For ores at depths above 500m, a basic <strong>Iron Pickaxe</strong> or <strong>Golden Pickaxe</strong> is sufficient. However, for rare ores like <strong>Mithril</strong> (400-700m), <strong>Demonite</strong> (600-900m), and <strong>Luminite</strong> (1000-1200m), we strongly recommend the <strong>Arcane Pickaxe</strong>. The Arcane Pickaxe provides +200% mining speed and 100% luck chance, making it essential for efficiently gathering rare materials. You can obtain it by completing <Link href="/wiki/arcane-pickaxe-guide" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Bard&apos;s Lost Guitar quest</Link>.
+                For ores at depths above 500m, a basic <strong>Iron Pickaxe</strong> or <strong>Golden Pickaxe</strong> is sufficient. However, for rare ores like <strong>Mithril</strong> (400-700m), <strong>Demonite</strong> (600-900m), and <strong>Luminite</strong> (1000-1200m), we strongly recommend the <strong>Arcane Pickaxe</strong>. The Arcane Pickaxe provides +200% mining speed and 100% luck chance, making it essential for efficiently gathering rare materials. You can obtain it by completing <a href="/wiki/arcane-pickaxe-guide" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Bard&apos;s Lost Guitar quest</a>.
               </p>
             </div>
             <div>
@@ -378,7 +378,7 @@ export default function OreDepthFinderPage() {
             <div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What&apos;s the best strategy for mining efficiently?</h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                The most efficient strategy is to <strong>plan your mining route based on your crafting goals</strong>. First, use our <Link href="/tools/forging-calculator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Forging Calculator</Link> to determine which ores you need. Then, use this depth finder to identify the optimal depth ranges. Start with shallower ores (Copper, Iron) to craft basic equipment, then progress deeper for rare materials. Always bring the <strong>Arcane Pickaxe</strong> for depths above 400m to maximize efficiency.
+                The most efficient strategy is to <strong>plan your mining route based on your crafting goals</strong>. First, use our <a href="/tools/forging-calculator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Forging Calculator</a> to determine which ores you need. Then, use this depth finder to identify the optimal depth ranges. Start with shallower ores (Copper, Iron) to craft basic equipment, then progress deeper for rare materials. Always bring the <strong>Arcane Pickaxe</strong> for depths above 400m to maximize efficiency.
               </p>
             </div>
             <div>

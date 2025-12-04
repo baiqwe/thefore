@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import Link from 'next/link'
+
 import guidesData from '@/data/guides.json'
 import { siteConfig } from '@/config/site'
 
@@ -44,13 +44,13 @@ export default function GuidePage({ params }: PageProps) {
     <div className="container mx-auto max-w-4xl px-4 py-10">
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-gray-600">
-        <Link href="/" className="hover:underline">
+        <a href="/" className="hover:underline">
           Home
-        </Link>
+        </a>
         <span className="mx-2">/</span>
-        <Link href="/guides" className="hover:underline">
+        <a href="/guides" className="hover:underline">
           Guides
-        </Link>
+        </a>
         <span className="mx-2">/</span>
         <span className="font-semibold text-gray-700">{guide.title}</span>
       </nav>
@@ -114,14 +114,14 @@ export default function GuidePage({ params }: PageProps) {
             )
             .slice(0, 2)
             .map((relatedGuide) => (
-              <Link
+              <a
                 key={relatedGuide.slug}
                 href={`/guides/${relatedGuide.slug}`}
                 className="bg-white p-4 rounded-lg border border-blue-200 hover:shadow-md transition-shadow"
               >
                 <h4 className="font-bold mb-1">{relatedGuide.title}</h4>
                 <p className="text-sm text-gray-600 line-clamp-2">{relatedGuide.description}</p>
-              </Link>
+              </a>
             ))}
         </div>
       </div>

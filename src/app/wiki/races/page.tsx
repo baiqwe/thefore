@@ -80,9 +80,9 @@ export default function RacesPage() {
           The drop rates are: <strong>Mythical 0.5%</strong>, <strong>Legendary 1.25%</strong>, <strong>Epic 6-7%</strong>, <strong>Rare ~8%</strong>.
         </p>
         <p className="text-gray-700">
-          Get free rerolls by redeeming <Link href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</Link> like &quot;200K!&quot; or &quot;100K!&quot;. 
-          Test your luck with our <Link href="/tools/reroll-simulator" className="text-amber-600 hover:underline font-semibold">Reroll Simulator</Link> before spending your rerolls, 
-          or check out our <Link href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">Forging Guide</Link> to craft powerful weapons for your chosen race.
+          Get free rerolls by redeeming <a href="/codes" className="text-amber-600 hover:underline font-semibold">The Forge codes</a> like &quot;200K!&quot; or &quot;100K!&quot;. 
+          Test your luck with our <a href="/tools/reroll-simulator" className="text-amber-600 hover:underline font-semibold">Reroll Simulator</a> before spending your rerolls, 
+          or check out our <a href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">Forging Guide</a> to craft powerful weapons for your chosen race.
         </p>
       </div>
 
@@ -242,24 +242,24 @@ export default function RacesPage() {
       <div className="mt-12 bg-gray-50 p-6 rounded-xl border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides & Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Link href="/tools/reroll-simulator" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          <a href="/tools/reroll-simulator" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Race Reroll Simulator
-          </Link>
-          <Link href="/codes" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/codes" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Get Free Reroll Codes
-          </Link>
-          <Link href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Forging Guide (Best Weapons)
-          </Link>
-          <Link href="/wiki/ores" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/wiki/ores" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Ores Database (Mining Guide)
-          </Link>
-          <Link href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → All Items & Locations
-          </Link>
-          <Link href="/quests" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/quests" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Quest Walkthroughs
-          </Link>
+          </a>
         </div>
       </div>
     </div>

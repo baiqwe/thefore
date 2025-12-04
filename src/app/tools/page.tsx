@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Dice5, Calculator, MapPin, Hammer } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -82,7 +82,7 @@ export default function ToolsPage() {
         {tools.map((tool) => {
           const Icon = tool.icon
           return (
-            <Link
+            <a
               key={tool.href}
               href={tool.href}
               className="group"
@@ -109,7 +109,7 @@ export default function ToolsPage() {
                   </p>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
           )
         })}
       </div>

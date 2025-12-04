@@ -3,7 +3,7 @@
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 import codesData from '@/data/codes.json'
-import Link from 'next/link'
+
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -108,7 +108,7 @@ export default function CodesPage() {
 
       {/* --- 新增：强引导模块 (在 Active Codes 标题上方插入) --- */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
-        <Link href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        <a href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
             <Trophy className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
@@ -118,9 +118,9 @@ export default function CodesPage() {
           <p className="text-red-100 text-xs sm:text-sm font-medium">
             Check the <strong>S-Tier Race List</strong> before you use these codes. See which Mythical race is best.
           </p>
-        </Link>
+        </a>
 
-        <Link href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        <a href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
             <Dice5 className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
@@ -130,7 +130,7 @@ export default function CodesPage() {
           <p className="text-blue-100 text-xs sm:text-sm font-medium">
             Use our <strong>Reroll Simulator</strong> to check your drop chances for Angel &amp; Demon races.
           </p>
-        </Link>
+        </a>
       </div>
       {/* ------------------------------------------------------- */}
 
@@ -173,8 +173,8 @@ export default function CodesPage() {
           If you are looking to get a Legendary race like the <strong className="text-gray-900 dark:text-gray-100">Dragonborn</strong> or <strong className="text-gray-900 dark:text-gray-100">Angel</strong>, make sure to save up your Gems.
         </p>
         <p className="text-gray-700 dark:text-gray-300">
-          Don&apos;t forget to check our <Link href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</Link> to see which race you should aim for before using your rerolls! 
-          You can also visit our <Link href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</Link> for detailed stats, or use our <Link href="/tools/reroll-simulator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Reroll Simulator</Link> to test your luck.
+          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race you should aim for before using your rerolls! 
+          You can also visit our <a href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</a> for detailed stats, or use our <a href="/tools/reroll-simulator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Reroll Simulator</a> to test your luck.
         </p>
 
         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>

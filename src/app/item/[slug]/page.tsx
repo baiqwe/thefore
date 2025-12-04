@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import Link from 'next/link'
+
 import Image from 'next/image'
 import itemsData from '@/data/items.json'
 import guidesData from '@/data/guides.json'
@@ -246,12 +246,12 @@ export default function ItemPage({ params }: PageProps) {
           </h3>
           <div className="grid gap-3">
             {relatedGuides.map(guide => (
-              <Link key={guide.slug} href={`/wiki/${guide.slug}`} className="group block">
+              <a key={guide.slug} href={`/wiki/${guide.slug}`} className="group block">
                 <div className="font-semibold text-indigo-700 dark:text-indigo-400 group-hover:underline">
                   {guide.title} →
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{guide.description}</p>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -265,7 +265,7 @@ export default function ItemPage({ params }: PageProps) {
             .filter((i) => i.slug !== item.slug && (i.type === item.type || i.location === item.location))
             .slice(0, 3)
             .map((relatedItem) => (
-              <Link
+              <a
                 key={relatedItem.slug}
                 href={`/item/${relatedItem.slug}`}
                 className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
@@ -277,7 +277,7 @@ export default function ItemPage({ params }: PageProps) {
                 <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
                   {relatedItem.stats.rarity || 'Common'}
                 </span>
-              </Link>
+              </a>
             ))}
         </div>
       </div>

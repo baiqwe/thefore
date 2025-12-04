@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 import itemsData from '@/data/items.json'
-import Link from 'next/link'
+
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SEOHead from '@/components/SEOHead'
 
@@ -70,7 +70,7 @@ export default function LocationsPage() {
             </div>
             <div className="space-y-2">
               {items.map((item) => (
-                <Link
+                <a
                   key={item.slug}
                   href={`/item/${item.slug}`}
                   className="block text-blue-600 hover:text-blue-800 font-medium text-sm"
@@ -79,7 +79,7 @@ export default function LocationsPage() {
                   <span className="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                     {item.stats.rarity || 'Common'}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
+
 import { siteConfig } from '@/config/site'
 import guidesData from '@/data/guides.json'
 
@@ -49,7 +49,7 @@ export default function GuidesPage() {
       {/* Guides Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {guidesData.map((guide) => (
-          <Link
+          <a
             key={guide.slug}
             href={`/guides/${guide.slug}`}
             className="bg-white rounded-lg border border-gray-200 shadow-md hover:shadow-xl transition-all p-6"
@@ -91,7 +91,7 @@ export default function GuidesPage() {
                 </span>
               ))}
             </div>
-          </Link>
+          </a>
         ))}
       </div>
 

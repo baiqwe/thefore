@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { siteConfig } from '@/config/site'
 import oresData from '@/data/ores.json'
-import Link from 'next/link'
+
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
@@ -111,8 +111,8 @@ export default function OresPage() {
           These high-value ores are essential for crafting the best weapons and progressing in the game. Use this guide to plan your mining strategy and maximize your earnings.
         </p>
         <p className="text-gray-600 text-base max-w-3xl mx-auto leading-relaxed">
-          Remember: Higher rarity ores not only sell for more but are also required for crafting <Link href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">masterwork weapons</Link>. 
-          Check our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> to see which race is best for mining, or use our <Link href="/codes" className="text-amber-600 hover:underline font-semibold">codes</Link> to get free rerolls for the perfect mining race.
+          Remember: Higher rarity ores not only sell for more but are also required for crafting <a href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">masterwork weapons</a>. 
+          Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> to see which race is best for mining, or use our <a href="/codes" className="text-amber-600 hover:underline font-semibold">codes</a> to get free rerolls for the perfect mining race.
         </p>
       </div>
 
@@ -230,7 +230,7 @@ export default function OresPage() {
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Best Mining Races</h3>
             <p className="text-gray-700">
               The <strong>Dwarf</strong> race provides +20% mining speed, making it the best choice for dedicated miners. 
-              Check our <Link href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</Link> for more details. 
+              Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> for more details. 
               For combat-focused mining, consider <strong>Demon</strong> or <strong>Dragonborn</strong> races.
             </p>
           </div>
@@ -255,15 +255,15 @@ export default function OresPage() {
       <div className="mt-8 bg-gray-50 p-6 rounded-xl border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Link href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          <a href="/wiki/forging" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Forging Guide (Craft Weapons from Ores)
-          </Link>
-          <Link href="/wiki/races" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/wiki/races" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Best Races for Mining (Dwarf +20% Speed)
-          </Link>
-          <Link href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
+          </a>
+          <a href="/items" className="text-amber-600 hover:text-amber-700 hover:underline font-semibold block p-3 bg-white rounded-lg border border-gray-200 hover:border-amber-300 transition-colors">
             → Pickaxes & Mining Tools
-          </Link>
+          </a>
         </div>
       </div>
     </div>
