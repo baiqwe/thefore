@@ -1,13 +1,15 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-
+import Link from 'next/link'
 import Image from 'next/image'
 import itemsData from '@/data/items.json'
 import guidesData from '@/data/guides.json'
+import craftingRecipesData from '@/data/craftingRecipes.json'
 import { siteConfig } from '@/config/site'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { Hammer, ArrowRight } from 'lucide-react'
 
 // Type 定义
 interface Item {
@@ -75,6 +77,27 @@ export default function ItemPage({ params }: PageProps) {
     }
     return false
   }).slice(0, 2)
+
+  // 配方树逻辑：查找该物品的配方和使用该物品制作的物品
+  const recipes = craftingRecipesData.recipes as Record<string, { ore: string; ingots: number; rawOres: number; depth: string; rarity: string }>
+  const oreUsage = craftingRecipesData.oreUsage as Record<string, string[]>
+  
+  // 查找该物品是否可以被制作（Crafted From）
+  const itemRecipe = recipes[item.name]
+  
+  // 查找使用该物品制作的物品（Used to Craft）
+  const itemsCraftedFromThis: Array<{ name: string; slug: string }> = []
+  if (item.type === 'Resource' || item.type === 'Crafting Material') {
+    // 如果是矿石，查找使用该矿石制作的物品
+    const oreName = item.name.replace(' Ore', '').trim()
+    const usedIn = oreUsage[oreName] || []
+    usedIn.forEach(craftedItemName => {
+      const craftedItem = itemsData.find(i => i.name === craftedItemName)
+      if (craftedItem) {
+        itemsCraftedFromThis.push({ name: craftedItem.name, slug: craftedItem.slug })
+      }
+    })
+  }
 
   const rarity = item.stats.rarity || 'Common'
   const rarityColors: Record<string, string> = {
@@ -214,8 +237,78 @@ export default function ItemPage({ params }: PageProps) {
         )}
       </div>
 
-      {/* 相关配方 (Crafting Recipes) */}
-      {(item as any).craftingRecipe && (
+      {/* 配方树：制作此物品需要什么 (Crafted From) */}
+      {itemRecipe && (
+        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border-l-4 border-purple-500 dark:border-purple-400 rounded-r-lg p-6 mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Hammer className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+            <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Crafted From (制作配方)</h3>
+          </div>
+          <div className="space-y-3">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-purple-800">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Required Materials:</p>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-gray-900 dark:text-gray-100">{itemRecipe.ore} Ingots:</span>
+                  <span className="text-purple-700 dark:text-purple-300 font-bold">{itemRecipe.ingots}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-gray-900 dark:text-gray-100">Raw {itemRecipe.ore} Ore:</span>
+                  <span className="text-purple-700 dark:text-purple-300 font-bold">{itemRecipe.rawOres}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-gray-900 dark:text-gray-100">Mining Depth:</span>
+                  <span className="text-purple-700 dark:text-purple-300 font-bold">{itemRecipe.depth}</span>
+                </div>
+              </div>
+            </div>
+            <Link 
+              href="/tools/forging-calculator"
+              className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold text-sm"
+            >
+              Calculate materials needed <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {/* 配方树：此物品用于制作什么 (Used to Craft) */}
+      {itemsCraftedFromThis.length > 0 && (
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-l-4 border-green-500 dark:border-green-400 rounded-r-lg p-6 mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Hammer className="w-6 h-6 text-green-600 dark:text-green-400" />
+            <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Used to Craft (用于制作)</h3>
+          </div>
+          <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+            This material is used to craft the following items:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {itemsCraftedFromThis.map((craftedItem) => (
+              <Link
+                key={craftedItem.slug}
+                href={`/item/${craftedItem.slug}`}
+                className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-green-200 dark:border-green-800 hover:shadow-md transition-all hover:-translate-y-1 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                    {craftedItem.name}
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-green-600 dark:text-green-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              </Link>
+            ))}
+          </div>
+          <Link 
+            href="/tools/forging-calculator"
+            className="inline-flex items-center gap-2 mt-4 text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold text-sm"
+          >
+            Use Forging Calculator to plan <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      )}
+
+      {/* 旧版相关配方 (保留兼容性) */}
+      {(item as any).craftingRecipe && !itemRecipe && (
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
           <h3 className="text-xl font-bold mb-3 text-purple-900">🔨 Crafting Recipe</h3>
           <p className="text-purple-800">

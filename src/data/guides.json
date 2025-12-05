@@ -206,23 +206,27 @@
     "content": [
       {
         "section": "Quest Overview",
-        "text": "Tomo's Lost Cat is a beginner-friendly side quest that rewards you with coins and experience. The cat is hidden in a specific location that can be tricky to find without guidance. This quest is perfect for new players looking to earn some early-game rewards."
+        "text": "Tomo's Lost Cat is a beginner-friendly side quest that rewards you with coins and experience. The cat is hidden in a specific location that can be tricky to find without guidance. This quest is perfect for new players looking to earn some early-game rewards. **Detailed Rewards:** Completing this quest typically rewards 500-1000 coins and 200-500 experience points, making it an excellent early-game source of currency. The quest is repeatable daily, so you can complete it multiple times for consistent rewards."
       },
       {
         "section": "How to Start the Quest",
-        "text": "Find Tomo NPC in the main spawn area. He will tell you that his cat is missing and ask for your help finding it. Accept the quest to begin your search. The quest marker will guide you in the general direction, but the exact location requires some exploration."
+        "text": "Find Tomo NPC in the main spawn area. He will tell you that his cat is missing and ask for your help finding it. Accept the quest to begin your search. The quest marker will guide you in the general direction, but the exact location requires some exploration. **Expert Tip:** Tomo is typically located near the spawn campfire or in the main town area. Look for an NPC with a quest indicator above their head. The quest is available immediately after starting the game, making it perfect for new players."
       },
       {
-        "section": "Finding the Lost Cat",
-        "text": "The cat is hidden behind a waterfall wall in the Goblin Cave area. To find it: 1) Travel to the Goblin Cave location, 2) Look for a waterfall feature, 3) Search behind the waterfall - there's a hidden passage, 4) The cat will be inside this hidden area. Interact with it to complete the quest."
+        "section": "Finding the Lost Cat - Detailed Location Guide",
+        "text": "The cat is hidden behind a waterfall wall in the Goblin Cave area. **Step-by-Step Process:** 1) From spawn, travel northeast toward the Goblin Cave entrance (you'll see goblin enemies nearby), 2) Enter the Goblin Cave and navigate through the main tunnel, 3) Look for a waterfall feature on the right side of the cave (it's a cascading water wall, not immediately obvious), 4) Walk directly through the waterfall - there's a hidden passage behind it that many players miss, 5) Inside the hidden chamber, you'll find the Lost Cat sitting on a small ledge, 6) Interact with the cat (press E or click) to complete the quest. **Important Note:** The waterfall is semi-transparent, so you can see through it slightly. If you're having trouble, try jumping through the waterfall from different angles. The hidden passage is about 2-3 player widths wide, so you don't need to be perfectly aligned."
       },
       {
-        "section": "Quest Rewards",
-        "text": "Completing the Lost Cat quest rewards you with coins and experience points. While not as valuable as the Arcane Pickaxe quest, this is still a worthwhile early-game quest that helps you get familiar with the game's exploration mechanics."
+        "section": "Quest Rewards & Benefits",
+        "text": "Completing the Lost Cat quest rewards you with 500-1000 coins and 200-500 experience points. While not as valuable as the Arcane Pickaxe quest, this is still a worthwhile early-game quest that helps you get familiar with the game's exploration mechanics. **Strategic Value:** The coins from this quest are enough to purchase your first basic tools or weapons from NPCs. The experience points help you level up early, unlocking new abilities and quests. Additionally, completing this quest teaches you the importance of exploring hidden areas - a skill that will be crucial for finding rare items and completing advanced quests later in the game."
       },
       {
-        "section": "Tips for Finding the Cat",
-        "text": "If you're having trouble finding the waterfall, look for water features near cave entrances. The hidden passage behind the waterfall is not immediately obvious - you may need to walk through the waterfall to discover it. Don't give up if you don't find it immediately - exploration is part of the fun!"
+        "section": "Advanced Tips & Common Mistakes",
+        "text": "**Pro Tips for Success:** 1) Bring a torch or light source - the Goblin Cave can be dark, making it harder to spot the waterfall, 2) Don't rush - take your time exploring the cave walls, the waterfall blends in with the environment, 3) If you see goblin enemies, you're in the right area - the waterfall is usually past the first group of enemies, 4) The cat makes a faint meowing sound - turn up your game audio to help locate it, 5) If you can't find it, try leaving and re-entering the cave - sometimes the cat spawns in slightly different positions. **Common Mistakes to Avoid:** Many players give up too quickly - the waterfall is intentionally hidden to reward exploration. Don't assume the quest marker is pointing to the exact location - it only shows the general area. Also, make sure you've actually accepted the quest from Tomo - you can't find the cat without the quest active."
+      },
+      {
+        "section": "What to Do After Completing the Quest",
+        "text": "After returning the cat to Tomo and claiming your rewards, you should: 1) Use the coins to purchase basic equipment (pickaxe, weapon) if you haven't already, 2) Consider completing the Bard's Lost Guitar quest next - it's the next logical step in the early-game progression, 3) Start mining for basic ores (Coal, Iron) to begin crafting, 4) Explore other areas of the map to discover more quests and hidden items. This quest serves as an excellent introduction to The Forge's exploration-based gameplay, preparing you for more complex quests like the Arcane Pickaxe quest."
       }
     ],
     "tags": ["lost-cat", "quest", "tomo", "beginner", "walkthrough", "guide"]

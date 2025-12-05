@@ -4,7 +4,7 @@
     "name": "Arcane Pickaxe",
     "location": "Fallen Angel's Cave",
     "type": "Tool",
-    "description": "The best mining tool in The Forge Roblox. This S+ tier pickaxe provides 100% luck chance, making it perfect for finding rare ores. Obtained by completing Bard's Lost Guitar quest to get the Unknown Key, then using it to unlock the Fallen Angel's Cave. Essential for gathering rare ores and progressing through the game.",
+    "description": "The best mining tool in The Forge Roblox. This S+ tier pickaxe provides 100% luck chance, making it perfect for finding rare ores. **Detailed Acquisition Process:** Start by finding the Bard NPC at the spawn campfire area. Accept the 'Bard's Lost Guitar' quest. Travel to Stonewake Mine and locate Umut the Brave NPC. Search for a hidden hole in a bush near this NPC (look for a small opening behind the bush, slightly to the left). Enter the hole to find the guitar. Return it to the Bard to receive the Unknown Key. Next, locate the Fallen Angel's Cave entrance (it's a locked door near the spawn area, marked with ancient runes). Use the Unknown Key to unlock the cave. Inside, navigate through the cave (watch out for falling rocks) until you reach the inner chamber. The Arcane Pickaxe is displayed on a pedestal in the center. This pickaxe is essential for mining at depths above 400m and provides a massive advantage for gathering rare ores like Mithril, Demonite, and Luminite.",
     "stats": {
       "rarity": "S+ Tier",
       "power": "75",
@@ -77,7 +77,7 @@
     "name": "Demonite Axe",
     "location": "Forged at Anvil",
     "type": "Weapon",
-    "description": "Legendary weapon crafted from Demonite ore. Extremely powerful weapon with devastating damage. Requires rare Demonite ore found at depths of 600m+. Perfect for challenging the Goblin King and other end-game bosses.",
+    "description": "Legendary weapon crafted from Demonite ore. Extremely powerful weapon with devastating damage. **Detailed Acquisition Process:** First, you must obtain the Arcane Pickaxe (see Arcane Pickaxe guide) as it's required for efficient mining at extreme depths. Travel to the mining area and descend to depths between 600-900 meters. Demonite ore spawns in small clusters, typically 2-3 ores per cluster. You'll need 12 Demonite Ingots to craft this weapon. Mine 12 Demonite Ore (found at 600-900m depth), then smelt them into ingots at the furnace using Coal as fuel. Next, visit the Anvil and select 'Demonite Axe' from the crafting menu. You'll need to complete the 3-step manual forging minigame perfectly to achieve Masterwork quality. The minigame requires precise timing: (1) Heat the metal when the temperature gauge reaches the green zone, (2) Cast when the molten metal reaches optimal viscosity, (3) Hammer at the exact moment the metal glows brightest. Perfect execution yields Masterwork quality with 20-30% stat boost. This weapon is essential for defeating the Goblin King and other end-game bosses.",
     "stats": {
       "rarity": "Legendary",
       "damage": "Extreme",
@@ -89,7 +89,7 @@
     "name": "Colossal Sword",
     "location": "Forged at Anvil - Masterwork",
     "type": "Weapon",
-    "description": "The ultimate weapon in The Forge. A massive sword that requires Masterwork quality forging to create. Only the most skilled players can craft this legendary weapon. Requires rare materials and perfect execution of the forging minigame.",
+    "description": "The ultimate weapon in The Forge. A massive sword that requires Masterwork quality forging to create. Only the most skilled players can craft this legendary weapon. **Detailed Acquisition Process:** This is the most challenging weapon to craft in the game. First, you must have the Arcane Pickaxe and reach maximum mining depth (1000-1200 meters). Luminite ore is extremely rare and only spawns at these extreme depths. You'll need 15 Luminite Ingots total. Mining Luminite requires patience - it spawns in single-ore nodes, so you'll need to mine 15 separate nodes. Each node takes approximately 30-45 seconds to mine even with the Arcane Pickaxe. After gathering 15 Luminite Ore, smelt them into ingots at the furnace. Next, visit the Anvil and select 'Colossal Sword'. The forging minigame for this weapon is the most difficult - you must achieve flawless execution (zero timing error) on all three steps to create the weapon. Practice with cheaper materials first (Iron, Gold) to master the timing. The reward is worth it: this weapon has the highest damage in the game and is required for the 'Forge Master' end-game quest.",
     "stats": {
       "rarity": "Mythical",
       "damage": "Maximum",
@@ -161,7 +161,7 @@
     "name": "Demonite Ore",
     "location": "Mines - 600m to 1000m depth",
     "type": "Resource",
-    "description": "Legendary dark ore found at extreme depths. Demonite is one of the rarest materials in The Forge, used for crafting the most powerful Legendary weapons. Requires the Arcane Pickaxe for efficient mining. Essential for end-game progression.",
+    "description": "Legendary dark ore found at extreme depths. Demonite is one of the rarest materials in The Forge, used for crafting the most powerful Legendary weapons. **Detailed Location & Mining Process:** Demonite ore spawns exclusively at depths between 600-900 meters in the Volcanic Depths area. To mine efficiently, you must have the Arcane Pickaxe (obtained from Fallen Angel's Cave). Without it, mining Demonite with lower-tier pickaxes takes 10x longer. The ore appears as dark purple/black crystalline formations embedded in the walls. Look for clusters of 2-3 ores together - they're easier to spot in well-lit areas. Mining each ore takes approximately 20-30 seconds with the Arcane Pickaxe. Pro tip: Bring extra Coal for smelting, as you'll want to convert ores to ingots immediately to save inventory space. Demonite is essential for crafting the Demonite Axe, one of the most powerful weapons in the game. Plan your mining trip carefully - you'll need at least 12 ores (for one weapon), but we recommend gathering 20-30 for multiple attempts at Masterwork quality.",
     "stats": {
       "rarity": "Legendary",
       "value": "400 coins",

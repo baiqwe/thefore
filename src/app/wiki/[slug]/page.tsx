@@ -119,6 +119,7 @@ export default async function GuidePage({ params }: PageProps) {
           url: `/wiki/${slug}`,
           author: 'The Forge Wiki',
         }}
+        // Video schema removed - add when actual The Forge Roblox gameplay video is available
       />
       {/* Breadcrumbs */}
       <Breadcrumbs
@@ -146,6 +147,10 @@ export default async function GuidePage({ params }: PageProps) {
                   <span>{guide.difficulty}</span>
                 </div>
               </div>
+              
+              {/* Video Embed for Arcane Pickaxe Guide - Removed placeholder video */}
+              {/* Note: Add actual The Forge Roblox gameplay video URL when available */}
+              
               {content}
               <AuthorInfo
                 author={guide.author}

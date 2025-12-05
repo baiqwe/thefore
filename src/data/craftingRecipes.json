@@ -1,0 +1,47 @@
+{
+  "recipes": {
+    "Iron Pickaxe": {
+      "ore": "Iron",
+      "ingots": 5,
+      "rawOres": 5,
+      "depth": "50-150m",
+      "rarity": "Uncommon"
+    },
+    "Golden Sword": {
+      "ore": "Gold",
+      "ingots": 8,
+      "rawOres": 8,
+      "depth": "150-400m",
+      "rarity": "Rare"
+    },
+    "Mithril Blade": {
+      "ore": "Mithril",
+      "ingots": 10,
+      "rawOres": 10,
+      "depth": "400-700m",
+      "rarity": "Epic"
+    },
+    "Demonite Axe": {
+      "ore": "Demonite",
+      "ingots": 12,
+      "rawOres": 12,
+      "depth": "600-900m",
+      "rarity": "Legendary"
+    },
+    "Colossal Sword": {
+      "ore": "Luminite",
+      "ingots": 15,
+      "rawOres": 15,
+      "depth": "1000-1200m",
+      "rarity": "Mythical"
+    }
+  },
+  "oreUsage": {
+    "Iron": ["Iron Pickaxe"],
+    "Gold": ["Golden Sword"],
+    "Mithril": ["Mithril Blade"],
+    "Demonite": ["Demonite Axe"],
+    "Luminite": ["Colossal Sword"]
+  }
+}
+
