@@ -46,9 +46,11 @@ export default function HomePage() {
           Find items, active codes, and crafting recipes instantly.
         </p>
 
-        {/* 核心改动：直接放置搜索栏 */}
-        <div className="max-w-xl mx-auto mb-8 relative z-10">
-          <SearchBar />
+        {/* 核心改动：直接放置搜索栏 - 居中显示 */}
+        <div className="flex justify-center mb-8 relative z-10">
+          <div className="w-full max-w-xl">
+            <SearchBar />
+          </div>
         </div>
 
         {/* 核心改动：高频快捷入口 (Quick Actions) */}
