@@ -4,7 +4,6 @@ import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import CanonicalLink from '@/components/CanonicalLink'
 import { siteConfig } from '@/config/site'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -103,7 +102,6 @@ export default function RootLayout({
             gtag('config', 'G-TDKJYTNZYH');
           `}
         </Script>
-        <CanonicalLink />
         <div className="flex flex-col min-h-screen relative">
           <Navbar />
           <main className="flex-grow">
