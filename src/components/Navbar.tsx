@@ -14,13 +14,13 @@ export default function Navbar() {
             <SearchBar />
           </div>
           <div className="flex items-center space-x-4 lg:space-x-6 flex-shrink-0">
-            {siteConfig.mainNav.slice(0, 5).map((item) => (
+            {siteConfig.mainNav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 target={(item as any).external ? "_blank" : undefined}
                 rel={(item as any).external ? "noopener noreferrer" : undefined}
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors hidden lg:block"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors hidden lg:block whitespace-nowrap"
               >
                 {item.title}
               </a>
