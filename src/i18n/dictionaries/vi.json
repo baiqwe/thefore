@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "Trang chủ",
+        "guides": "Hướng dẫn",
+        "items": "Vật phẩm",
+        "codes": "Mã code",
+        "tools": "Công cụ",
+        "races": "Chủng tộc",
+        "tierList": "Bảng xếp hạng",
+        "blog": "Blog",
+        "help": "Trợ giúp",
+        "about": "Giới thiệu",
+        "contact": "Liên hệ",
+        "privacy": "Quyền riêng tư",
+        "terms": "Điều khoản"
+    },
+    "common": {
+        "readMore": "Đọc thêm",
+        "learnMore": "Tìm hiểu thêm",
+        "getStarted": "Bắt đầu",
+        "search": "Tìm kiếm",
+        "loading": "Đang tải...",
+        "error": "Lỗi",
+        "notFound": "Không tìm thấy",
+        "backToHome": "Về trang chủ",
+        "share": "Chia sẻ",
+        "copy": "Sao chép",
+        "copied": "Đã sao chép!",
+        "close": "Đóng",
+        "menu": "Menu",
+        "language": "Ngôn ngữ"
+    },
+    "footer": {
+        "description": "Wiki & Mã code The Forge Roblox hoàn chỉnh nhất - Hướng dẫn đầy đủ về Chủng tộc, Bảng xếp hạng, Mã code và nhiều hơn nữa!",
+        "quickLinks": "Liên kết nhanh",
+        "resources": "Tài nguyên",
+        "legal": "Pháp lý",
+        "followUs": "Theo dõi chúng tôi",
+        "copyright": "© 2024 The Forge Wiki. Bảo lưu mọi quyền. Không liên kết với Fireatacck hoặc Roblox Corporation."
+    },
+    "seo": {
+        "defaultTitle": "The Forge Wiki - Hướng dẫn trò chơi Roblox đầy đủ",
+        "defaultDescription": "Wiki & Mã code The Forge Roblox hoàn chỉnh nhất - Hướng dẫn đầy đủ về Chủng tộc, Bảng xếp hạng, Mã code và nhiều hơn nữa!"
+    }
+}

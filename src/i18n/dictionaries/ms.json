@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "Laman Utama",
+        "guides": "Panduan",
+        "items": "Item",
+        "codes": "Kod",
+        "tools": "Alatan",
+        "races": "Bangsa",
+        "tierList": "Senarai Tier",
+        "blog": "Blog",
+        "help": "Bantuan",
+        "about": "Tentang",
+        "contact": "Hubungi",
+        "privacy": "Privasi",
+        "terms": "Terma"
+    },
+    "common": {
+        "readMore": "Baca Lagi",
+        "learnMore": "Ketahui Lebih Lanjut",
+        "getStarted": "Mula",
+        "search": "Cari",
+        "loading": "Memuatkan...",
+        "error": "Ralat",
+        "notFound": "Tidak Dijumpai",
+        "backToHome": "Kembali ke Laman Utama",
+        "share": "Kongsi",
+        "copy": "Salin",
+        "copied": "Disalin!",
+        "close": "Tutup",
+        "menu": "Menu",
+        "language": "Bahasa"
+    },
+    "footer": {
+        "description": "Wiki & Kod The Forge Roblox Terlengkap - Panduan lengkap untuk Bangsa, Senarai Tier, Kod, dan banyak lagi!",
+        "quickLinks": "Pautan Pantas",
+        "resources": "Sumber",
+        "legal": "Undang-undang",
+        "followUs": "Ikuti Kami",
+        "copyright": "© 2024 The Forge Wiki. Hak cipta terpelihara. Tidak bersekutu dengan Fireatacck atau Roblox Corporation."
+    },
+    "seo": {
+        "defaultTitle": "The Forge Wiki - Panduan Permainan Roblox Lengkap",
+        "defaultDescription": "Wiki & Kod The Forge Roblox Terlengkap - Panduan lengkap untuk Bangsa, Senarai Tier, Kod, dan banyak lagi!"
+    }
+}

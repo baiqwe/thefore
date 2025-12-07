@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "首页",
+        "guides": "指南",
+        "items": "物品",
+        "codes": "代码",
+        "tools": "工具",
+        "races": "种族",
+        "tierList": "等级列表",
+        "blog": "博客",
+        "help": "帮助",
+        "about": "关于",
+        "contact": "联系",
+        "privacy": "隐私",
+        "terms": "条款"
+    },
+    "common": {
+        "readMore": "阅读更多",
+        "learnMore": "了解更多",
+        "getStarted": "开始",
+        "search": "搜索",
+        "loading": "加载中...",
+        "error": "错误",
+        "notFound": "未找到",
+        "backToHome": "返回首页",
+        "share": "分享",
+        "copy": "复制",
+        "copied": "已复制!",
+        "close": "关闭",
+        "menu": "菜单",
+        "language": "语言"
+    },
+    "footer": {
+        "description": "最全面的 The Forge Roblox 维基和代码 - 完整的种族、等级列表、代码指南等!",
+        "quickLinks": "快速链接",
+        "resources": "资源",
+        "legal": "法律",
+        "followUs": "关注我们",
+        "copyright": "© 2024 The Forge Wiki. 保留所有权利。与 Fireatacck 或 Roblox Corporation 无关。"
+    },
+    "seo": {
+        "defaultTitle": "The Forge Wiki - 完整的 Roblox 游戏指南",
+        "defaultDescription": "最全面的 The Forge Roblox 维基和代码 - 完整的种族、等级列表、代码指南等!"
+    }
+}

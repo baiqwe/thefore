@@ -1,0 +1,62 @@
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { i18n, isValidLocale } from './i18n/config'
+
+export function middleware(request: NextRequest) {
+    const pathname = request.nextUrl.pathname
+
+    // Check if there is any supported locale in the pathname
+    const pathnameIsMissingLocale = i18n.locales.every(
+        (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    )
+
+    // Redirect if there is no locale
+    if (pathnameIsMissingLocale) {
+        // Get locale from cookie or Accept-Language header
+        const locale = getLocale(request)
+
+        // Redirect to the same path with the detected locale
+        return NextResponse.redirect(
+            new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
+        )
+    }
+}
+
+function getLocale(request: NextRequest): string {
+    // 1. Check cookie first
+    const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
+    if (cookieLocale && isValidLocale(cookieLocale)) {
+        return cookieLocale
+    }
+
+    // 2. Check Accept-Language header
+    const acceptLanguage = request.headers.get('accept-language')
+    if (acceptLanguage) {
+        // Parse accept-language header
+        const languages = acceptLanguage
+            .split(',')
+            .map((lang) => {
+                const [code, q = '1'] = lang.trim().split(';q=')
+                return {
+                    code: code.split('-')[0], // Get primary language code (e.g., 'en' from 'en-US')
+                    quality: parseFloat(q),
+                }
+            })
+            .sort((a, b) => b.quality - a.quality)
+
+        // Find first matching supported locale
+        for (const lang of languages) {
+            if (isValidLocale(lang.code)) {
+                return lang.code
+            }
+        }
+    }
+
+    // 3. Default to English
+    return i18n.defaultLocale
+}
+
+export const config = {
+    // Matcher ignoring `/_next/` and `/api/`
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
+}

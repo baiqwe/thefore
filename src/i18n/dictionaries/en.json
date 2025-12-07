@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "guides": "Guides",
+    "items": "Items",
+    "codes": "Codes",
+    "tools": "Tools",
+    "races": "Races",
+    "tierList": "Tier List",
+    "blog": "Blog",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Not Found",
+    "backToHome": "Back to Home",
+    "share": "Share",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "close": "Close",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "footer": {
+    "description": "The Ultimate The Forge Roblox Wiki & Codes - Complete guides for Races, Tier Lists, Codes, and more!",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "legal": "Legal",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 The Forge Wiki. All rights reserved. Not affiliated with Fireatacck or Roblox Corporation."
+  },
+  "seo": {
+    "defaultTitle": "The Forge Wiki - Complete Roblox Game Guide",
+    "defaultDescription": "The Ultimate The Forge Roblox Wiki & Codes - Complete guides for Races, Tier Lists, Codes, and more!"
+  }
+}

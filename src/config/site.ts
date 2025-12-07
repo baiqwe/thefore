@@ -23,5 +23,6 @@ export const siteConfig = {
     { title: "Tools", href: "/tools" },
     { title: "Races", href: "/wiki/races" },
     { title: "Tier List", href: "/wiki/race-tier-list" },
+    { title: "Blog", href: "/blog" },
   ],
 }

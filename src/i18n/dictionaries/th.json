@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "home": "หน้าแรก",
+        "guides": "คู่มือ",
+        "items": "ไอเทม",
+        "codes": "โค้ด",
+        "tools": "เครื่องมือ",
+        "races": "เผ่าพันธุ์",
+        "tierList": "รายการอันดับ",
+        "blog": "บล็อก",
+        "help": "ช่วยเหลือ",
+        "about": "เกี่ยวกับ",
+        "contact": "ติดต่อ",
+        "privacy": "ความเป็นส่วนตัว",
+        "terms": "ข้อกำหนด"
+    },
+    "common": {
+        "readMore": "อ่านเพิ่มเติม",
+        "learnMore": "เรียนรู้เพิ่มเติม",
+        "getStarted": "เริ่มต้น",
+        "search": "ค้นหา",
+        "loading": "กำลังโหลด...",
+        "error": "ข้อผิดพลาด",
+        "notFound": "ไม่พบ",
+        "backToHome": "กลับสู่หน้าแรก",
+        "share": "แชร์",
+        "copy": "คัดลอก",
+        "copied": "คัดลอกแล้ว!",
+        "close": "ปิด",
+        "menu": "เมนู",
+        "language": "ภาษา"
+    },
+    "footer": {
+        "description": "วิกิและโค้ด The Forge Roblox ที่สมบูรณ์ที่สุด - คู่มือครบครันสำหรับเผ่าพันธุ์ รายการอันดับ โค้ด และอื่นๆ อีกมากมาย!",
+        "quickLinks": "ลิงก์ด่วน",
+        "resources": "ทรัพยากร",
+        "legal": "กฎหมาย",
+        "followUs": "ติดตามเรา",
+        "copyright": "© 2024 The Forge Wiki สงวนลิขสิทธิ์ ไม่เกี่ยวข้องกับ Fireatacck หรือ Roblox Corporation"
+    },
+    "seo": {
+        "defaultTitle": "The Forge Wiki - คู่มือเกม Roblox ฉบับสมบูรณ์",
+        "defaultDescription": "วิกิและโค้ด The Forge Roblox ที่สมบูรณ์ที่สุด - คู่มือครบครันสำหรับเผ่าพันธุ์ รายการอันดับ โค้ด และอื่นๆ อีกมากมาย!"
+    }
+}
