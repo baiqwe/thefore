@@ -43,6 +43,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             modifiedTime: post.updatedAt,
             authors: [post.author.name],
             tags: post.tags,
+            url: `/blog/${post.slug}`,
+        },
+        alternates: {
+            canonical: `/blog/${post.slug}`,
         },
     }
 }
