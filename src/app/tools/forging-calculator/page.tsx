@@ -247,7 +247,7 @@ export default function ForgingCalculatorPage() {
         <div className="lg:col-span-2 space-y-6">
           {/* Status Banner */}
           <div className={`p-6 rounded-xl border-2 flex items-center justify-between ${stats.totalCount === 0 ? 'bg-gray-100 border-gray-300' :
-              stats.isMatch ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
+            stats.isMatch ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
             }`}>
             <div>
               <h2 className="text-xl font-bold text-gray-800">
@@ -312,8 +312,8 @@ export default function ForgingCalculatorPage() {
           <div className="space-y-3">
             {stats.warnings.map((w, i) => (
               <div key={i} className={`p-4 rounded-lg flex items-start gap-3 border ${w.level === 'critical' ? 'bg-red-950 border-red-600 text-red-100' :
-                  w.level === 'high' ? 'bg-red-100 border-red-300 text-red-800' :
-                    'bg-amber-50 border-amber-200 text-amber-800'
+                w.level === 'high' ? 'bg-red-100 border-red-300 text-red-800' :
+                  'bg-amber-50 border-amber-200 text-amber-800'
                 }`}>
                 {w.level === 'critical' ? <Skull className="h-6 w-6 shrink-0 animate-pulse text-red-500" /> : <AlertTriangle className="h-5 w-5 shrink-0" />}
                 <div>
@@ -325,6 +325,17 @@ export default function ForgingCalculatorPage() {
               </div>
             ))}
           </div>
+
+          {/* Legacy SEO Content */}
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+            <h3 className="text-lg font-bold text-blue-900 mb-2">Looking for Crafting Recipes?</h3>
+            <p className="text-blue-800 text-sm leading-relaxed">
+              Since the <strong>Winter 2025 Update</strong>, fixed recipes (e.g., &quot;5 Iron Ingots&quot;) no longer exist.
+              The game now uses a <strong>Weight System</strong>. You can use this Weapon Builder to create your own custom recipes.
+              For example, to make a Katana, you simply need to use any combination of <strong>6-15 ores</strong>.
+            </p>
+          </div>
+
 
         </div>
 
