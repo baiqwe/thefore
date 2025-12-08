@@ -25,7 +25,7 @@ Mastering it is the key to ultimate mining efficiency in **The Forge on Roblox**
 
 Arcane Energy is essentially a hidden "bonus multiplier."
 
-It determines your chances of getting **Ultra Rare Drops**—coveted materials like Arcane Dust and Primal Shards. These are vital for [Legendary Crafting](/blog/legendary-arcane-pickaxe-guide).
+It determines your chances of getting **Ultra Rare Drops**—coveted materials like **Darkryte** (Mythical) and **Galaxite** (Divine). These are vital for [Legendary Crafting](/blog/legendary-arcane-pickaxe-guide).
 
 It's not just about what pickaxe you use; it's about *how* you use it.
 
@@ -33,13 +33,13 @@ It's not just about what pickaxe you use; it's about *how* you use it.
 
 ## The "Pickaxe Stance" Bonus
 
-Simply equipping a pickaxe crafted with Arcane Ore gives you a base Arcane Energy level. But there is a deeper trick.
+Simply equipping a pickaxe crafted with **Darkryte** (The Mythical Shadow Ore) gives you a base Arcane Energy level. But there is a deeper trick.
 
 **The Quality Factor:**
 - **Standard Pickaxe:** Base Energy.
-- **Perfect Quality Pickaxe:** **+50% Starting Energy.**
+- **Masterwork Quality Pickaxe:** **+50% Starting Energy.**
 
-I immediately focused on recreating my main pickaxe using my [Anvil Mastery](/blog/anvil-mastery-perfect-strike) techniques to ensure it was Perfect Quality. The difference was instant.
+I immediately focused on recreating my main pickaxe using my [Anvil Mastery](/blog/anvil-mastery-perfect-strike) techniques to ensure it was Masterwork Quality. The difference was instant.
 
 ---
 

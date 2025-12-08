@@ -107,13 +107,13 @@ Your [race choice](/blog/quest-for-dragonborn-bloodline) matters for ranged effi
 
 ## Advanced Tactics: Elemental Arrows
 
-Later in the game, you can craft **Elemental Arrows**.
+Later in the game, you can craft **Elemental Arrows** by including specific ores in your arrowhead mix:
 
-- **Fire Arrows:** Burn damage over time. Great for high-HP bosses.
-- **Ice Arrows:** Slows enemies by 30%. Makes kiting incredibly easy.
-- **Explosive Arrows:** AoE damage. Expensive but clears groups fast.
+- **Fireite Arrows:** Triggers **Ignite** (Burn DoT). Great for high-HP bosses.
+- **Magmaite Arrows:** Triggers **Explosion** (AoE Blast). Clears groups instantly.
+- **Uranium Arrows:** Applies **Radiation** (Poison Aura). Stacks with burn for massive ticking damage.
 
-I save Ice Arrows for [Dungeon Bosses](/blog/dungeon-hidden-bosses-guide). The slow effect is a lifesaver.
+I save Uranium Arrows for [Dungeon Bosses](/blog/dungeon-hidden-bosses-guide). The poison effect persists even while you're kiting.
 
 ---
 

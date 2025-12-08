@@ -1,464 +1,334 @@
 'use client'
 
-import { useState } from 'react'
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Calculator, Hammer, ArrowRight } from 'lucide-react'
+import { useState, useMemo } from 'react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Hammer, Calculator as CalculatorIcon, Trash2, Plus, AlertTriangle, Info, Zap, Skull, CheckCircle } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SEOHead from '@/components/SEOHead'
-import itemsData from '@/data/items.json'
+import oresData from '@/data/ores.json'
 
-// Crafting recipes - mapping items to required materials
-const craftingRecipes: Record<string, { ore: string; ingots: number; depth: string; rarity: string }> = {
-  'Iron Pickaxe': { ore: 'Iron', ingots: 5, depth: '50-150m', rarity: 'Uncommon' },
-  'Golden Sword': { ore: 'Gold', ingots: 8, depth: '150-400m', rarity: 'Rare' },
-  'Mithril Blade': { ore: 'Mithril', ingots: 10, depth: '400-700m', rarity: 'Epic' },
-  'Demonite Axe': { ore: 'Demonite', ingots: 12, depth: '600-900m', rarity: 'Legendary' },
-  'Colossal Sword': { ore: 'Luminite', ingots: 15, depth: '1000-1200m', rarity: 'Mythical' },
+// Type Definitions
+type Ore = typeof oresData[0]
+interface AddedOre {
+  id: string
+  name: string
+  count: number
 }
 
-// Ore to ingot conversion (typically 1 ore = 1 ingot, but some require smelting with coal)
-const oreToIngotRatio: Record<string, number> = {
-  'Iron': 1,
-  'Gold': 1,
-  'Mithril': 1,
-  'Demonite': 1,
-  'Luminite': 1,
-  'Copper': 1,
-  'Silver': 1,
-  'Platinum': 1,
-  'Titanium': 1,
-  'Adamantite': 1,
-}
-
-// Get craftable items from items.json
-const craftableItems = itemsData.filter(item => 
-  item.type === 'Weapon' || item.type === 'Tool'
-).filter(item => 
-  item.stats?.crafting || craftingRecipes[item.name]
-)
+const weaponThresholds = [
+  { type: "Dagger", min: 1, max: 5, stats: "Very Fast / Low Dmg" },
+  { type: "Katana / Rapier / SS", min: 6, max: 15, stats: "Fast / Medium Dmg" },
+  { type: "Great Sword / Axe", min: 16, max: 29, stats: "Slow / High Dmg" },
+  { type: "Colossal Sword", min: 30, max: 999, stats: "Very Slow / Extreme Dmg" }
+];
 
 export default function ForgingCalculatorPage() {
-  const [selectedItem, setSelectedItem] = useState<string>('')
-  const [quantity, setQuantity] = useState<number>(1)
+  const [targetType, setTargetType] = useState<string>(weaponThresholds[1].type)
+  const [selectedOreName, setSelectedOreName] = useState<string>(oresData[0].name)
+  const [amount, setAmount] = useState<number>(1)
+  const [addedOres, setAddedOres] = useState<AddedOre[]>([])
 
-  const selectedItemData = itemsData.find(item => item.name === selectedItem)
-  const recipe = selectedItem ? craftingRecipes[selectedItem] : null
+  // Helper to find ore data
+  const getOreData = (name: string) => oresData.find(o => o.name === name)
 
-  const calculateMaterials = () => {
-    if (!recipe) return null
+  // Add Ore Handler
+  const handleAddOre = () => {
+    if (amount <= 0) return;
+    const existing = addedOres.find(o => o.name === selectedOreName)
+    if (existing) {
+      setAddedOres(addedOres.map(o => o.name === selectedOreName ? { ...o, count: o.count + amount } : o))
+    } else {
+      setAddedOres([...addedOres, { id: Math.random().toString(36).substr(2, 9), name: selectedOreName, count: amount }])
+    }
+  }
 
-    const totalIngots = recipe.ingots * quantity
-    const totalOres = totalIngots * (oreToIngotRatio[recipe.ore] || 1)
-    
+  // Remove Ore Handler
+  const handleRemoveOre = (name: string) => {
+    setAddedOres(addedOres.filter(o => o.name !== name))
+  }
+
+  // Calculations
+  const stats = useMemo(() => {
+    const totalCount = addedOres.reduce((sum, item) => sum + item.count, 0)
+
+    // 1. Determine Actual Weapon Type
+    let actualType = "None"
+    let isMatch = false
+    const match = weaponThresholds.find(t => totalCount >= t.min && totalCount <= t.max)
+
+    if (totalCount > 0 && match) {
+      actualType = match.type
+    }
+
+    const targetThreshold = weaponThresholds.find(t => t.type === targetType)
+    if (targetThreshold && totalCount >= targetThreshold.min && totalCount <= targetThreshold.max) {
+      isMatch = true
+    }
+
+    if (totalCount === 0) return { totalCount, actualType, multiplier: "0.000", activeTraits: [], warnings: [], isMatch, targetThreshold }
+
+    // 2. Calculate Multiplier (Average)
+    // Formula: Sum(Multiplier * Count) / TotalCount
+    const totalMultiplierWeight = addedOres.reduce((sum, item) => {
+      const ore = getOreData(item.name)
+      return sum + ((ore?.multiplier || 0) * item.count)
+    }, 0)
+    const finalMultiplier = totalMultiplierWeight / totalCount
+
+    // 3. Calculate Traits & Warnings
+    const activeTraits: { name: string, source: string, percent: number }[] = []
+    const warnings: { msg: string, level: 'low' | 'high' | 'critical' }[] = []
+
+    // Eye Ore Check
+    const eyeOre = addedOres.find(o => o.name === "Eye Ore")
+    if (eyeOre) {
+      if (eyeOre.count >= 10) {
+        warnings.push({ msg: "INSTANT DEATH WARNING: 10+ Eye Ores = -100% HP. You will die instantly on spawn.", level: 'critical' })
+      } else if (eyeOre.count >= 5) {
+        warnings.push({ msg: `DANGER: -${eyeOre.count * 10}% Max HP. You are extremely fragile.`, level: 'high' })
+      }
+    }
+
+    // Coal Check
+    const coal = addedOres.find(o => o.name === "Coal")
+    if (coal) {
+      warnings.push({ msg: "Warning: Coal is a fuel source (0.4x) and will severely reduce your weapon stats.", level: 'low' })
+    }
+
+    // Trait Activation (10% Rule)
+    addedOres.forEach(item => {
+      const ore = getOreData(item.name)
+      if (!ore?.trait) return;
+
+      const percent = (item.count / totalCount) * 100
+      if (percent >= 10) {
+        activeTraits.push({
+          name: ore.trait, // It's a string now
+          source: ore.name,
+          percent: percent
+        })
+      }
+    })
+
+    // Dilution Check
+    const hasLowTier = addedOres.some(o => ["Stone", "Sandstone", "Copper"].includes(o.name))
+    if (hasLowTier && finalMultiplier > 1.0) {
+      // Only warn if we are trying to make something good
+      warnings.push({ msg: "Efficiency Warning: Low tier ores are diluting your final multiplier.", level: 'low' })
+    }
+
     return {
-      ore: recipe.ore,
-      ingots: totalIngots,
-      ores: totalOres,
-      depth: recipe.depth,
-      rarity: recipe.rarity,
+      totalCount,
+      actualType,
+      multiplier: finalMultiplier.toFixed(3),
+      activeTraits,
+      warnings,
+      isMatch,
+      targetThreshold
     }
-  }
-
-  const materials = calculateMaterials()
-
-  const getRarityColor = (rarity: string) => {
-    switch (rarity) {
-      case 'Common': return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-      case 'Uncommon': return 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
-      case 'Rare': return 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
-      case 'Epic': return 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300'
-      case 'Legendary': return 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
-      case 'Mythical': return 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300'
-      default: return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-    }
-  }
+  }, [addedOres, targetType])
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-10 max-w-6xl">
-      <Breadcrumbs
-        items={[
-          { name: 'Home', url: '/' },
-          { name: 'Tools', url: '/tools' },
-          { name: 'Forging Calculator', url: '/tools/forging-calculator' },
-        ]}
-      />
-
+    <div className="container mx-auto px-4 py-10 max-w-6xl">
       <SEOHead
         breadcrumbs={[
           { name: 'Home', url: '/' },
           { name: 'Tools', url: '/tools' },
           { name: 'Forging Calculator', url: '/tools/forging-calculator' },
         ]}
-        faq={[
-          {
-            question: 'How accurate are the material requirements in this calculator?',
-            answer: 'Our calculator is based on verified crafting recipes tested through extensive gameplay. The material requirements (ingots per item) are accurate for the current version of The Forge. We regularly verify our data against the latest game version to ensure accuracy.',
-          },
-          {
-            question: 'Do I need Coal to smelt ores into ingots?',
-            answer: 'Yes, you need Coal as fuel to smelt ores into ingots at the furnace. The conversion ratio is typically 1 ore = 1 ingot, but you\'ll need Coal for the smelting process. Coal is found at depths of 0-50m, making it easy to obtain early in the game.',
-          },
-          {
-            question: 'What\'s the difference between Normal, Masterwork, and Legendary quality?',
-            answer: 'Normal quality is the baseline - you achieve it by completing all three forging steps correctly. Masterwork quality provides significantly superior stats (typically 20-30% better) and requires perfect timing on all three steps. Legendary quality is extremely rare and provides maximum power, requiring flawless execution.',
-          },
-          {
-            question: 'Can I craft items without the required pickaxe for that depth?',
-            answer: 'Technically yes, but it\'s extremely inefficient. We strongly recommend obtaining the Arcane Pickaxe before attempting to craft Epic-tier or higher items, as it provides +200% mining speed and 100% luck chance.',
-          },
-        ]}
       />
 
       <div className="mb-8">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
-          Forging Calculator
+          The Forge Weapon Builder
         </h1>
-        <p className="text-gray-700 dark:text-gray-300 text-lg">
-          Calculate the exact materials needed to forge weapons and tools in The Forge. Plan your mining trips efficiently!
+        <p className="text-gray-700 text-lg">
+          <strong>Deep Check Version (Winter 2025)</strong>: Plan your build with precision.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {/* Item Selection */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Hammer className="w-5 h-5" />
-              Select Item to Forge
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Item
-                </label>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        {/* LEFT COLUMN: Controls */}
+        <div className="lg:col-span-1 space-y-6">
+
+          {/* Step 1: Target */}
+          <Card className="border-t-4 border-t-blue-500">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg flex items-center gap-2">1. Select Target Weapon</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <select
+                className="w-full p-2 border rounded-lg bg-white mb-2"
+                value={targetType}
+                onChange={(e) => setTargetType(e.target.value)}
+              >
+                {weaponThresholds.map(t => (
+                  <option key={t.type} value={t.type}>{t.type}</option>
+                ))}
+              </select>
+              <div className="text-sm text-blue-700 bg-blue-50 p-2 rounded">
+                Requires: <strong>{weaponThresholds.find(t => t.type === targetType)?.min} - {weaponThresholds.find(t => t.type === targetType)?.max} Ores</strong>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Step 2: Add Ores */}
+          <Card className="border-t-4 border-t-amber-500">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg flex items-center gap-2">
+                2. Add Ores to Mix
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-gray-700">Select Ore</label>
                 <select
-                  value={selectedItem}
-                  onChange={(e) => setSelectedItem(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                  className="w-full p-2 border rounded-lg bg-white"
+                  value={selectedOreName}
+                  onChange={(e) => setSelectedOreName(e.target.value)}
                 >
-                  <option value="">Choose an item...</option>
-                  {craftableItems.map(item => (
-                    <option key={item.slug} value={item.name}>
-                      {item.name} ({item.stats?.rarity || 'Unknown'})
+                  {oresData.map(ore => (
+                    <option key={ore.name} value={ore.name}>
+                      {ore.name} ({ore.multiplier}x)
                     </option>
                   ))}
                 </select>
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Quantity
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="100"
-                  value={quantity}
-                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-                />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Results */}
-        {materials && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calculator className="w-5 h-5" />
-                Required Materials
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className={`p-4 rounded-lg border ${getRarityColor(materials.rarity)}`}>
-                  <h3 className="text-xl font-bold mb-2">{selectedItem}</h3>
-                  <p className="text-sm opacity-80 mb-4">
-                    {selectedItemData?.description || 'Craftable item'}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg">
-                      <span className="font-semibold">Required Ingots:</span>
-                      <span className="text-lg font-bold text-amber-600 dark:text-amber-400">
-                        {materials.ingots} {materials.ore} Ingots
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg">
-                      <span className="font-semibold">Required Ores:</span>
-                      <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
-                        {materials.ores} {materials.ore} Ore
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg">
-                      <span className="font-semibold">Mining Depth:</span>
-                      <span className="text-lg font-bold text-green-600 dark:text-green-400">
-                        {materials.depth}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-                  <p className="text-sm text-amber-800 dark:text-amber-300">
-                    <strong>Tip:</strong> You&apos;ll need to smelt {materials.ores} {materials.ore} ore into ingots at the furnace before forging. 
-                    {materials.rarity === 'Legendary' || materials.rarity === 'Mythical' 
-                      ? ' Make sure you have the Arcane Pickaxe for efficient mining at these depths!' 
-                      : ''}
-                  </p>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-gray-700">Count</label>
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    min="1"
+                    className="w-20 p-2 border rounded-lg text-center"
+                    value={amount}
+                    onChange={(e) => setAmount(parseInt(e.target.value) || 0)}
+                  />
+                  <Button onClick={handleAddOre} className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold">
+                    Add
+                  </Button>
                 </div>
               </div>
             </CardContent>
           </Card>
-        )}
-      </div>
 
-      {/* Crafting Guide */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Forging Process Guide</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">1️⃣</span>
-                  <h3 className="font-bold text-blue-900 dark:text-blue-300">Mine Ores</h3>
+          {/* Current Mix List */}
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg">Current Mix ({stats.totalCount})</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {addedOres.length === 0 ? (
+                <div className="text-center py-4 text-gray-400 text-sm">Empty</div>
+              ) : (
+                <div className="space-y-2 max-h-[300px] overflow-y-auto">
+                  {addedOres.map(ore => (
+                    <div key={ore.name} className="flex justify-between items-center p-2 bg-gray-50 rounded border text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold">{ore.count}x</span>
+                        <span className={getOreData(ore.name)?.color}>{ore.name}</span>
+                      </div>
+                      <button onClick={() => handleRemoveOre(ore.name)} className="text-red-400 hover:text-red-600">
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+                  ))}
+                  <Button variant="ghost" size="sm" onClick={() => setAddedOres([])} className="w-full text-red-600 text-xs">Clear All</Button>
                 </div>
-                <p className="text-sm text-blue-800 dark:text-blue-300">
-                  Use your pickaxe to mine the required ores at the specified depth range.
-                </p>
-              </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
 
-              <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">2️⃣</span>
-                  <h3 className="font-bold text-green-900 dark:text-green-300">Smelt to Ingots</h3>
-                </div>
-                <p className="text-sm text-green-800 dark:text-green-300">
-                  Take your ores to the furnace and smelt them into ingots using Coal as fuel.
-                </p>
-              </div>
-
-              <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">3️⃣</span>
-                  <h3 className="font-bold text-purple-900 dark:text-purple-300">Forge at Anvil</h3>
-                </div>
-                <p className="text-sm text-purple-800 dark:text-purple-300">
-                  Master the 3-step forging minigame at the Anvil to create your item. Aim for Masterwork quality!
-                </p>
-              </div>
+        {/* RIGHT COLUMN: Results */}
+        <div className="lg:col-span-2 space-y-6">
+          {/* Status Banner */}
+          <div className={`p-6 rounded-xl border-2 flex items-center justify-between ${stats.totalCount === 0 ? 'bg-gray-100 border-gray-300' :
+              stats.isMatch ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
+            }`}>
+            <div>
+              <h2 className="text-xl font-bold text-gray-800">
+                {stats.totalCount === 0 ? 'Start Building...' :
+                  stats.isMatch ? 'Build Valid: Target Reached!' : 'Build Invalid: Ore Count Mismatch'}
+              </h2>
+              <p className="text-gray-600">
+                Current: <strong>{stats.actualType}</strong> ({stats.totalCount} Ores)
+                {!stats.isMatch && stats.totalCount > 0 && <span> (Need {stats.targetThreshold?.min}-{stats.targetThreshold?.max})</span>}
+              </p>
             </div>
-
-            <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-              <h4 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Quality Levels</h4>
-              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                <li><strong>Normal:</strong> Baseline stats - achieved by completing all 3 steps</li>
-                <li><strong>Masterwork:</strong> Superior stats - requires perfect timing on all steps</li>
-                <li><strong>Legendary:</strong> Maximum power - extremely rare, requires flawless execution</li>
-              </ul>
-            </div>
+            {stats.isMatch && <CheckCircle className="h-10 w-10 text-green-500" />}
+            {!stats.isMatch && stats.totalCount > 0 && <AlertTriangle className="h-10 w-10 text-red-400" />}
           </div>
-        </CardContent>
-      </Card>
 
-      {/* SEO Content: What, How, FAQ */}
-      <div className="mt-12 space-y-8">
-        {/* What Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">What is The Forge Forging Calculator?</CardTitle>
-          </CardHeader>
-          <CardContent className="prose prose-lg max-w-none">
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              The <strong>Forging Calculator</strong> is an essential planning tool for <strong>The Forge Roblox</strong> players who want to craft weapons and tools efficiently. This calculator helps you determine exactly how many ores and ingots you need to forge any craftable item, saving you time and preventing wasted resources.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              In <strong>The Forge</strong>, crafting requires a multi-step process: mining ores at specific depths, smelting them into ingots at the furnace, and then forging items at the anvil using a manual 3-step minigame. Each item requires different amounts of materials, and planning ahead is crucial for efficient gameplay.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Our calculator is based on verified crafting recipes from extensive gameplay testing. It provides accurate material requirements for all major craftable items, from basic <strong>Iron Pickaxes</strong> to legendary <strong>Colossal Swords</strong>. This tool helps thousands of players optimize their mining and crafting strategies, ensuring they gather the right materials before starting the forging process.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              <strong>Expert Tip:</strong> Our team has tested over 500+ forging attempts across all item tiers. The material requirements shown in this calculator are accurate to the current game version (as of {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}). We regularly verify our data against in-game mechanics and update immediately when game patches change crafting recipes.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              <strong>Authoritative Source:</strong> This calculator is maintained by experienced <strong>The Forge</strong> players who have completed all quests, crafted every weapon type, and achieved Masterwork quality on multiple items. Our data comes from direct in-game testing, not speculation or outdated guides.
-            </p>
-          </CardContent>
-        </Card>
+          {/* Stats Card */}
+          <Card className="bg-slate-900 text-white border-0 shadow-xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <CalculatorIcon className="h-32 w-32 text-white" />
+            </div>
+            <CardContent className="p-8 space-y-8">
 
-        {/* Advanced Forging Mechanics Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Advanced Forging Mechanics & Success Rate Formula</CardTitle>
-          </CardHeader>
-          <CardContent className="prose prose-lg max-w-none">
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Understanding the 3-Step Forging Minigame</h3>
-                <p className="leading-relaxed mb-3">
-                  The Forge uses a unique <strong>manual forging minigame</strong> with three distinct steps: <strong>Heating</strong>, <strong>Casting</strong>, and <strong>Hammering</strong>. Each step requires precise timing and skill. The quality of your final item depends on how well you perform in all three steps.
-                </p>
-                <ul className="list-disc pl-6 space-y-2 mb-3">
-                  <li><strong>Step 1 - Heating:</strong> You must heat the metal to the optimal temperature. The timing window is narrow - too early or too late results in suboptimal quality.</li>
-                  <li><strong>Step 2 - Casting:</strong> Pour the molten metal into the mold at the perfect moment. This step determines the item&apos;s base structure.</li>
-                  <li><strong>Step 3 - Hammering:</strong> Strike the metal at the exact right time to shape and strengthen it. This final step can elevate Normal quality to Masterwork or even Legendary.</li>
-                </ul>
-                <p className="leading-relaxed">
-                  <strong>Success Rate Formula:</strong> Each step has a timing window. If you hit all three steps perfectly (within the &quot;perfect&quot; timing zone), you achieve <strong>Masterwork quality</strong> (20-30% stat boost). If you hit all three steps flawlessly with zero timing error, you have a chance for <strong>Legendary quality</strong> (maximum stats, extremely rare). Normal quality is achieved by completing all steps correctly but outside the perfect timing window.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Success Rate Calculation</h3>
-                <p className="leading-relaxed mb-3">
-                  Based on our extensive testing with 500+ forging attempts, here&apos;s the approximate success rate breakdown:
-                </p>
-                <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-3">
-                  <ul className="space-y-2 text-sm">
-                    <li><strong>Normal Quality:</strong> ~70% chance (completing all 3 steps correctly)</li>
-                    <li><strong>Masterwork Quality:</strong> ~25% chance (perfect timing on all 3 steps)</li>
-                    <li><strong>Legendary Quality:</strong> ~5% chance (flawless execution, zero timing error)</li>
-                  </ul>
-                </div>
-                <p className="leading-relaxed">
-                  <strong>Pro Tip:</strong> Practice the minigame with common materials (Iron, Copper) before attempting rare ores. The timing mechanics are consistent across all items, so mastering the rhythm with cheap materials will improve your success rate with expensive ones. We recommend attempting at least 10 practice forges before using rare materials like Demonite or Luminite.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Material Efficiency & Cost Optimization</h3>
-                <p className="leading-relaxed mb-3">
-                  Understanding material costs is crucial for efficient gameplay. Here&apos;s the material hierarchy from cheapest to most expensive:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
-                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                    <h4 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Common Materials (0-150m depth)</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• Coal (0-50m) - Fuel for smelting</li>
-                      <li>• Iron (50-150m) - Basic crafting</li>
-                      <li>• Copper (50-150m) - Basic crafting</li>
-                    </ul>
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <div className="text-gray-400 text-sm uppercase tracking-widest mb-1">Final Multiplier</div>
+                  <div className="text-4xl md:text-5xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">
+                    {stats.multiplier}x
                   </div>
-                  <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4">
-                    <h4 className="font-bold mb-2 text-gray-900 dark:text-gray-100">Rare Materials (400-900m depth)</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• Mithril (400-700m) - Epic-tier items</li>
-                      <li>• Demonite (600-900m) - Legendary items</li>
-                      <li>• Luminite (1000-1200m) - Mythical items</li>
-                    </ul>
-                  </div>
+                  <div className="text-xs text-gray-500 mt-1">Average of all ore multipliers</div>
                 </div>
-                <p className="leading-relaxed">
-                  <strong>Cost Optimization Strategy:</strong> Always mine extra materials (20-30% more than calculated) to account for failed forging attempts. If you&apos;re aiming for Masterwork quality, plan for 3-4 attempts per item. This calculator shows the minimum requirements - add 30% buffer for safety.
-                </p>
+                <div>
+                  <div className="text-gray-400 text-sm uppercase tracking-widest mb-1">Weapon Type</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">
+                    {stats.actualType}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">{stats.totalCount} Ores inserted</div>
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* How Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">How to Use The Forging Calculator</CardTitle>
-          </CardHeader>
-          <CardContent className="prose prose-lg max-w-none">
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 1: Select Your Item</h3>
-                <p className="leading-relaxed">
-                  Choose the item you want to forge from the dropdown menu. The calculator supports all major craftable items including weapons (Golden Sword, Mithril Blade, Demonite Axe, Colossal Sword) and tools (Iron Pickaxe). Each item shows its rarity tier to help you understand the material requirements.
-                </p>
+              <div className="border-t border-white/10 pt-6">
+                <div className="flex items-center gap-2 text-purple-400 font-bold mb-4 uppercase tracking-wider text-sm">
+                  <Zap className="h-4 w-4" /> Active Traits
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {stats.activeTraits.length === 0 ? (
+                    <div className="text-gray-500 italic text-sm">No traits active (Must be &gt;10% of mix)</div>
+                  ) : (
+                    stats.activeTraits.map((t, idx) => (
+                      <div key={idx} className="bg-purple-900/40 border border-purple-500/30 p-3 rounded flex justify-between items-center">
+                        <span className="text-purple-200 font-medium">{t.name}</span>
+                        <span className="text-xs bg-purple-950 px-2 py-1 rounded text-purple-300">{t.percent.toFixed(0)}%</span>
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 2: Set Quantity</h3>
-                <p className="leading-relaxed">
-                  Enter how many items you want to craft (1-100). The calculator will automatically multiply the material requirements. This is especially useful when planning to craft multiple items or when preparing materials for multiple attempts to achieve Masterwork quality.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 3: Review Material Requirements</h3>
-                <p className="leading-relaxed">
-                  The calculator displays three key pieces of information: (1) <strong>Required Ingots</strong> - the number of ingots needed for forging, (2) <strong>Required Ores</strong> - the total raw ores you need to mine (accounting for the 1:1 ore-to-ingot conversion), and (3) <strong>Mining Depth</strong> - the optimal depth range where you can find the required ore.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 4: Plan Your Mining Trip</h3>
-                <p className="leading-relaxed">
-                  Use the mining depth information with our <a href="/tools/ore-depth-finder" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Ore Depth Finder</a> to plan your mining expedition. For example, if you need 10 Mithril Ingots for a Mithril Blade, you&apos;ll need to mine at 400-700m depth. Make sure you have the appropriate pickaxe (Arcane Pickaxe recommended for depths above 400m).
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Step 5: Execute Your Plan</h3>
-                <p className="leading-relaxed">
-                  Once you have all materials, follow the 3-step forging process: (1) Mine the required ores at the specified depth, (2) Smelt ores into ingots at the furnace using Coal as fuel, (3) Forge your item at the anvil using the manual minigame. Aim for Masterwork quality by perfecting all three steps!
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* FAQ Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Frequently Asked Questions (FAQ)</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">How accurate are the material requirements in this calculator?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Our calculator is based on verified crafting recipes tested through extensive gameplay. The material requirements (ingots per item) are accurate for the current version of <strong>The Forge</strong>. However, note that the actual material costs may vary slightly if the game receives updates. We regularly verify our data against the latest game version to ensure accuracy.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Do I need Coal to smelt ores into ingots?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Yes, you need <strong>Coal</strong> as fuel to smelt ores into ingots at the furnace. The conversion ratio is typically 1 ore = 1 ingot, but you&apos;ll need Coal for the smelting process. Make sure to gather extra Coal when mining, especially if you&apos;re planning to craft multiple items. Coal is found at depths of 0-50m, making it easy to obtain early in the game.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What&apos;s the difference between Normal, Masterwork, and Legendary quality?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong>Normal quality</strong> is the baseline - you achieve it by completing all three forging steps correctly. <strong>Masterwork quality</strong> provides significantly superior stats (typically 20-30% better) and requires perfect timing on all three steps. <strong>Legendary quality</strong> is extremely rare and provides maximum power, requiring flawless execution. The material requirements are the same regardless of quality - the difference is in your forging skill during the minigame.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Can I craft items without the required pickaxe for that depth?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Technically yes, but it&apos;s extremely inefficient. For example, you <em>could</em> mine <strong>Demonite</strong> (600-900m) with an Iron Pickaxe, but it would take 10x longer than with the <strong>Arcane Pickaxe</strong>. We strongly recommend obtaining the <a href="/wiki/arcane-pickaxe-guide" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Arcane Pickaxe</a> before attempting to craft Epic-tier or higher items, as it provides +200% mining speed and 100% luck chance.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">What if I fail the forging minigame?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                If you fail any step of the forging minigame, you&apos;ll still create the item, but it will be <strong>Normal quality</strong> instead of Masterwork or Legendary. The materials are consumed regardless of quality, so practice the minigame with common materials (Iron, Copper) before attempting rare ores. You can always try again with new materials if you want to aim for Masterwork quality.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Should I craft multiple items at once or one at a time?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                It depends on your goals. If you&apos;re aiming for <strong>Masterwork quality</strong>, craft one at a time so you can focus on perfecting each minigame. If you just need functional items (Normal quality is fine), you can gather materials for multiple items and craft them in sequence. Use the quantity feature in this calculator to plan for multiple items efficiently.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-gray-100">Are there any items that can&apos;t be crafted?</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Yes, some items are obtained through quests rather than crafting. For example, the <strong>Arcane Pickaxe</strong> is obtained by completing Bard&apos;s Lost Guitar quest, not through forging. The <strong>Unknown Key</strong> is also a quest reward. This calculator focuses on items that can be forged at the anvil using the manual forging minigame. Check our <a href="/items" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Items database</a> to see which items are craftable vs. quest rewards.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+
+          {/* Warnings Container */}
+          <div className="space-y-3">
+            {stats.warnings.map((w, i) => (
+              <div key={i} className={`p-4 rounded-lg flex items-start gap-3 border ${w.level === 'critical' ? 'bg-red-950 border-red-600 text-red-100' :
+                  w.level === 'high' ? 'bg-red-100 border-red-300 text-red-800' :
+                    'bg-amber-50 border-amber-200 text-amber-800'
+                }`}>
+                {w.level === 'critical' ? <Skull className="h-6 w-6 shrink-0 animate-pulse text-red-500" /> : <AlertTriangle className="h-5 w-5 shrink-0" />}
+                <div>
+                  <span className="font-bold uppercase text-xs tracking-wider block mb-1">
+                    {w.level === 'critical' ? 'CRITICAL ALERT' : w.level === 'high' ? 'HIGH DANGER' : 'WARNING'}
+                  </span>
+                  {w.msg}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </div>
   )
 }
-

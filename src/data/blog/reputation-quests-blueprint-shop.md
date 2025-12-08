@@ -57,16 +57,16 @@ Turning in a boss trophy (like the [Magma Core](/blog/dungeon-hidden-bosses-guid
 
 ---
 
-## The Blueprint Shop
+## The Advanced Mold Shop (Formerly Blueprints)
 
-Located in High Forge City. This is where you spend your points (Reputation is not consumed, it's a requirement).
+Located in High Forge City. This is where you purchase **Specialty Molds** that allow you to craft specific weapon types more efficiently or unlock entirely new categories.
 
-### Must-Buy Blueprints
+### Must-Buy Unlocks
 
-1. **Iron Totem (Tier 2):** Essential for [automation](/blog/strategic-totem-deployment).
-2. **Conveyor Belt (Tier 3):** Connects your totems.
-3. **Smith's Gloves (Tier 3):** Makes [smelting](/blog/furnace-temperature-mastery) easier.
-4. **Arcane Pickaxe (Tier 4):** The endgame goal.
+1.  **Ore Import License (Tier 2):** Allows you to buy [Cobalt and Titanium](/blog/heavy-armor-crafting-for-profit) directly from NPCs.
+2.  **Conveyor Belt (Tier 3):** Essential for automating your ore sorting.
+3.  **Specialty Katana Mold (Tier 3):** Reduces the weight requirement for Katanas by 10%.
+4.  **Masterwork Pickaxe Mold (Tier 4):** The only way to craft the [Arcane Pickaxe](/blog/legendary-arcane-pickaxe-guide).
 
 ---
 

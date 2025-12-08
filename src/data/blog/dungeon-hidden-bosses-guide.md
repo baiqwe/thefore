@@ -85,9 +85,9 @@ Why do we do this? For the shiny things.
 
 | Item | Drop Rate | Dungeon | Value |
 |------|-----------|---------|-------|
-| **Enhancement Stones** | Common | All | Essential |
-| **Rare Blueprints** | 5% | Crypt/Magma | High |
-| **Legendary Weapons** | 0.5% | Magma/Ice | **Priceless** |
+| **Darkryte (Mythical)** | 10% | Magma/Ice | High |
+| **Galaxite (Divine)** | 1% | All Bosses | **Extreme** |
+| **Legendary Weapons** | 0.5% | Magma/Ice | Priceless |
 
 If you get a Legendary drop, check the [Trading Guide](/blog/advanced-trading-secrets) before selling. Don't get scammed.
 

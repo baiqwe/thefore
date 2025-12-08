@@ -26,21 +26,21 @@ My strategy? **Heavy Armor specialization.** It consistently delivers the highes
 I analyzed every craftable item in the game. Heavy Armor wins for one simple reason: **Material Cost vs. Selling Price**.
 
 NPC merchants pay based on two factors:
-1. Equipment rarity
-2. Total materials consumed
+1. Equipment rarity (Tier)
+2. **Total Ore Weight** (Total materials consumed)
 
-Since Heavy Armor uses more ingots than weapons, its base value is significantly higher.
+Since Heavy Armor requires a **High Weight threshold (30+ Ores)** to craft reliably, its base value is significantly higher than lightweight weapons.
 
 ### Profit Comparison Table
 
-| Equipment Type | Materials Needed | Avg. Crafting Time | NPC Sell Price (Rare) | Gold/Hour |
-|----------------|------------------|-------------------|----------------------|-----------|
-| **Heavy Armor** | 8-12 ingots, 6 leather | 15 min | 15,000-25,000g | **60-100k** |
-| Light Armor | 4-6 ingots, 4 leather | 12 min | 8,000-12,000g | 40-60k |
-| Great Sword | 6-8 ingots | 10 min | 10,000-15,000g | 60-90k |
-| Katana | 4-6 ingots | 8 min | 7,000-11,000g | 52-82k |
+| Equipment Type | Weight Requirement | Materials Needed | NPC Sell Price (Rare) | Gold/Hour |
+|----------------|--------------------|------------------|----------------------|-----------|
+| **Heavy Armor** | **30+ Ores** | 30 mixed ores | 15,000-25,000g | **60-100k** |
+| Light Armor | 16-29 Ores | 20 mixed ores | 8,000-12,000g | 40-60k |
+| Great Sword | 16-29 Ores | 16-29 ores | 10,000-15,000g | 60-90k |
+| Katana | 6-15 Ores | 10 ores | 7,000-11,000g | 52-82k |
 
-**The verdict:** Heavy Armor provides the most consistent high returns.
+**The verdict:** Heavy Armor provides the most consistent high returns because you can dump large quantities of mid-tier ores into a single high-value item.
 
 ---
 
@@ -52,38 +52,30 @@ Here is my exact workflow that generates 90,000+ gold per hour.
 
 Don't waste time on rare ores. Volume is king.
 
-- **Target:** Common Ore & Copper Ore
-- **Location:** [Newbie Mine](/blog/my-blacksmith-journey-begins)
+- **Target:** Gold & Platinum (Mid-Tier, High Value)
+- **Location:** [Mines](/blog/my-blacksmith-journey-begins)
 - **Goal:** 100+ ores per 30-minute session
 
-> **Pro Tip:** Use a [Fae or Elf race](/blog/quest-for-dragonborn-bloodline) for faster gathering speeds if you have them.
+> **Pro Tip:** Use a [Dwarf race](/blog/quest-for-dragonborn-bloodline) for the +20% mining speed bonus. This is essential for volume mining.
 
-### Step 2: Perfect Quality Smelting
+### Step 2: Quality Smelting
 
-Quality dramatically affects selling price. A "Perfect" ingot is worth far more than an "Average" one.
+Quality dramatically affects selling price. A "Perfect" smelt is worth far more than an "Average" one.
 
-| Smelting Result | Ingot Quality | Price Multiplier |
-|-----------------|---------------|------------------|
+| Smelting Result | Quality Mod | Price Multiplier |
+|-----------------|-------------|------------------|
 | Slag | Worthless | 0x (Loss) |
 | Dross | Poor | 0.5x |
 | Average | Standard | 1.0x |
 | Perfect | High | **1.8-2.2x** |
 
-**My Rule:** Never rush smelting. Use [temperature mastery techniques](/blog/furnace-temperature-mastery) to hit the Golden Zone every time.
+**My Rule:** never rush smelting. Use [temperature mastery techniques](/blog/furnace-temperature-mastery) to hit the Golden Zone every time.
 
-### Step 3: The High Forge City Run
+### Step 3: The High Value Craft
 
-Not all merchants pay the same prices.
+Not all merchants pay the same prices. Prioritize selling to the **Royal Armory** if you have the reputation, otherwise the standard Guild Merchant is fine. Also, remember that **Gold Ore** itself sells for 20g and **Platinum** for 12g, but crafting them into armor multiplies that value.
 
-| Merchant Location | Markup | Travel Time | Verdict |
-|-------------------|--------|-------------|---------|
-| Newbie Village | 1.0x | 0 min | Emergency only |
-| Iron Town | 1.3x | 3 min | Okay |
-| **High Forge City** | **1.8x** | 8 min | **Essential** |
-
-I always travel to **High Forge City**. On a full inventory of 10 armor pieces, that 8-minute trip earns me an extra 50,000 gold.
-
-Need help getting there? Check my [Portal & Exploration Guide](/blog/portal-adventure-forgotten-kingdom).
+I typically use a mix of **Obsidian** (for value) and filler ores to hit the 30+ weight requirement without breaking the bank.
 
 ---
 
@@ -93,12 +85,12 @@ Here are the actual numbers from my last Saturday session:
 
 **Inputs:**
 - Time: 2 hours (45m mining, 75m crafting)
-- Materials: 95 Common Ore, 68 Copper Ore
+- Materials: 50 Obsidian, 100 Gold Ore
 - Fuel Cost: 3,000 gold
 
 **Outputs:**
-- 10 pieces of Uncommon/Rare Heavy Armor
-- Sold at High Forge City
+- 5 pieces of Rare Heavy Armor (using ~30 ores each)
+- Sold at Guild Merchant
 
 **Total Profit:** 182,000 Gold
 **Hourly Rate:** **91,000 Gold/Hour**

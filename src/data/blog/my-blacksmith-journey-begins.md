@@ -86,18 +86,27 @@ For mastery techniques, read the [Temperature Mastery Guide](/blog/furnace-tempe
 
 Perfect smelting isn't just 10% better. The quality compounds when using multiple ingots. A sword crafted from three perfect ingots is **30-40% stronger** than one made from average ingots. Always aim for perfect quality.
 
-## Forging Your First Weapon
+## Forging Your First Weapon (The Weight System)
 
-Place ingots on the anvil and choose what to craft. **Recommendation:** Craft a better pickaxe first, as it directly improves mining efficiency.
+Place ingots on the anvil. **Note:** The game now uses a **Weight System**. The number of ores you use determines the weapon type.
 
-### The Forging Process
+### Understanding Weight Thresholds
+
+- **1-5 Ores:** Dagger (Very Fast)
+- **6-15 Ores:** Katana / Rapier (Fast)
+- **16-29 Ores:** Greatsword / Axe (Heavy)
+- **30+ Ores:** Colossal Sword (Massive Damage)
+
+**Recommendation:** Start with a **Katana (6-10 ores)**. It's the best balance of speed and cost for beginners.
+
+### The Forging Minigame
 
 You'll see two circles on screen:
 
 - One shrinking circle (moving target)
 - One fixed circle (stationary goal)
 
-Click when they perfectly overlap. Each "Perfect Strike" improves the final quality score.
+Click when they perfectly overlap. Each "Perfect Strike" upgrades the weapon's final Tier.
 
 ### Quality Tiers
 

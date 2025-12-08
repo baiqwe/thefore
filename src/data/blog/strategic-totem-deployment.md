@@ -50,7 +50,7 @@ Don't place totems randomly. Use the **Flower Pattern** for maximum efficiency.
 
 This setup ensures totems never stop working because their internal storage fills up. They dump into the large chest instead.
 
-> **Note:** You need to unlock [Blueprint Shop](/blog/reputation-quests-blueprint-shop) items to build advanced storage.
+> **Note:** You need to unlock items from the [Advanced Mold Shop](/blog/reputation-quests-blueprint-shop) to build advanced storage.
 
 ---
 
@@ -59,7 +59,7 @@ This setup ensures totems never stop working because their internal storage fill
 Totems are an investment.
 
 **Iron Totem Cost:**
-- 50 Iron Ingots
+- 50 Iron Ores (Refined)
 - 10 Electronics
 - **Total Value:** ~2,000 Gold
 

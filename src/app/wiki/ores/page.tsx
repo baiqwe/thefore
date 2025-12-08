@@ -103,15 +103,15 @@ export default function OresPage() {
           </h1>
         </div>
         <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-4">
-          Mining is one of the core mechanics in <strong>The Forge Roblox</strong>. Understanding which ores to mine and where to find them is crucial for maximizing your profits and crafting powerful weapons. 
+          Mining is one of the core mechanics in <strong>The Forge Roblox</strong>. Understanding which ores to mine and where to find them is crucial for maximizing your profits and crafting powerful weapons.
           This complete ores database includes all 12 ores available in the game, from common <strong>Stone</strong> to the legendary <strong>Luminite</strong>.
         </p>
         <p className="text-gray-600 text-base max-w-3xl mx-auto leading-relaxed mb-4">
-          The deeper you mine, the more valuable ores you&apos;ll find. <strong>Mythical ores</strong> like <strong>Adamantite</strong> (worth 1,200 coins) and <strong>Godly Luminite</strong> (worth 2,500 coins) are extremely rare and can only be found at depths of 900m+ and 1000m+ respectively. 
+          The deeper you mine, the more valuable ores you&apos;ll find. <strong>Mythical ores</strong> like <strong>Adamantite</strong> (worth 1,200 coins) and <strong>Godly Luminite</strong> (worth 2,500 coins) are extremely rare and can only be found at depths of 900m+ and 1000m+ respectively.
           These high-value ores are essential for crafting the best weapons and progressing in the game. Use this guide to plan your mining strategy and maximize your earnings.
         </p>
         <p className="text-gray-600 text-base max-w-3xl mx-auto leading-relaxed">
-          Remember: Higher rarity ores not only sell for more but are also required for crafting <a href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">masterwork weapons</a>. 
+          Remember: Higher rarity ores not only sell for more but are also required for crafting <a href="/wiki/forging" className="text-amber-600 hover:underline font-semibold">masterwork weapons</a>.
           Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> to see which race is best for mining, or use our <a href="/codes" className="text-amber-600 hover:underline font-semibold">codes</a> to get free rerolls for the perfect mining race.
         </p>
       </div>
@@ -229,22 +229,22 @@ export default function OresPage() {
           <div>
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Best Mining Races</h3>
             <p className="text-gray-700">
-              The <strong>Dwarf</strong> race provides +20% mining speed, making it the best choice for dedicated miners. 
-              Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> for more details. 
+              The <strong>Dwarf</strong> race provides +20% mining speed, making it the best choice for dedicated miners.
+              Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> for more details.
               For combat-focused mining, consider <strong>Demon</strong> or <strong>Dragonborn</strong> races.
             </p>
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Depth Strategy</h3>
             <p className="text-gray-700">
-              Start mining at shallow depths (0-100m) to collect common ores like Stone and Coal. 
+              Start mining at shallow depths (0-100m) to collect common ores like Stone and Coal.
               As you progress, venture deeper to find rare ores. Mythical and Godly ores require reaching depths of 900m+.
             </p>
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Profit Optimization</h3>
             <p className="text-gray-700">
-              Focus on mining <strong>Gold</strong> (60 coins) and <strong>Platinum</strong> (100 coins) at mid-depths for consistent profits. 
+              Focus on mining <strong>Gold</strong> (60 coins) and <strong>Platinum</strong> (100 coins) at mid-depths for consistent profits.
               Save your best picks for deep mining expeditions to find <strong>Demonite</strong> (400 coins), <strong>Titanium</strong> (700 coins), and <strong>Adamantite</strong> (1,200 coins).
             </p>
           </div>
@@ -266,7 +266,7 @@ export default function OresPage() {
           </a>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
