@@ -1,4 +1,5 @@
-import { Metadata } from "next"
+import { siteConfig } from "@/config/site"
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,7 +11,7 @@ const date = new Date()
 const currentMonth = date.toLocaleString('default', { month: 'long' })
 const currentYear = date.getFullYear()
 
-export const metadata: Metadata = {
+export const metadata = generateSEOMetadata({
     title: `The Forge Best Builds & Meta Recipes (${currentMonth} ${currentYear})`,
     description: `Top-tier weapon builds for The Forge Roblox Winter 2025. Discover "The Flash" Katana, "The World Ender" Colossal Sword, and more.`,
     keywords: [
@@ -20,9 +21,48 @@ export const metadata: Metadata = {
         "The Forge Speed Build",
         "The Forge Tank Build",
     ],
-}
+    canonicalUrl: `${siteConfig.url}/wiki/best-builds`,
+    type: 'article'
+})
 
 export default function BestBuildsPage() {
+    const itemListSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'The Flash (Speed Build)',
+                description: 'The Ultimate Speed Katana build using Lightite and Diamond.'
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'The World Ender (AoE Build)',
+                description: 'Colossal Sword build using Magmaite, Fireite, Galaxite, and Darkryte.'
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Glass Cannon Assassin (DPS Build)',
+                description: 'Dagger build using Eye Ore and Diamond for max burst damage.'
+            },
+            {
+                '@type': 'ListItem',
+                position: 4,
+                name: 'Poor Man\'s Legendary (Starter Build)',
+                description: 'Budget build using 80% Diamond and 20% Eye Ore.'
+            },
+            {
+                '@type': 'ListItem',
+                position: 5,
+                name: 'The Wall (Tank Build)',
+                description: 'Immortal tank build using Obsidian, Platinum, and Titanium.'
+            }
+        ]
+    }
+
     return (
         <div className="container mx-auto px-4 py-10 max-w-5xl">
             <Breadcrumbs
@@ -39,6 +79,7 @@ export default function BestBuildsPage() {
                     { name: 'Wiki', url: '/wiki' },
                     { name: 'Best Builds', url: '/wiki/best-builds' },
                 ]}
+                schema={itemListSchema}
             />
 
             <div className="mb-12 text-center">

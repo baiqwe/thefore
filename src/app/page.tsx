@@ -62,8 +62,8 @@ export default function HomePage() {
           <a href="/wiki/races" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
             🏆 S-Tier Races
           </a>
-          <a href="/tools/reroll-simulator" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/30">
-            PF Reroll Sim
+          <a href="/wiki/best-builds" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/30">
+            🔥 Best Builds
           </a>
         </div>
       </div>
@@ -102,15 +102,16 @@ export default function HomePage() {
           </a>
 
           {/* Reroll Simulator Card */}
-          <a href="/tools/reroll-simulator" className="bg-white dark:bg-gray-800 border-l-4 border-purple-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 group">
+          {/* Best Builds Card */}
+          <a href="/wiki/best-builds" className="bg-white dark:bg-gray-800 border-l-4 border-purple-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 group">
             <div className="flex items-center justify-between mb-3">
-              <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs font-bold rounded-full">TOOL</span>
+              <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs font-bold rounded-full">META</span>
             </div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-purple-600 transition-colors">
-              Reroll Simulator
+              Strongest Weapon Builds
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-              Simulate 100+ rerolls for free. Test your luck before spending Robux.
+              Discover the &quot;Poor Man&apos;s Legendary&quot; and &quot;World Ender&quot; recipes for Winter 2025.
             </p>
           </a>
         </div>

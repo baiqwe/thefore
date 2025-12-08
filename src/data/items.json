@@ -253,6 +253,150 @@
     }
   },
   {
+    "slug": "cobalt-ore",
+    "name": "Cobalt Ore",
+    "location": "Forgotten Kingdom",
+    "type": "Resource",
+    "description": "Uncommon ore found in the Forgotten Kingdom. Used for strengthening weapons.",
+    "stats": {
+      "rarity": "Uncommon",
+      "value": "15 coins",
+      "depth": "Forgotten Kingdom"
+    }
+  },
+  {
+    "slug": "diamond",
+    "name": "Diamond",
+    "location": "Deep Mines",
+    "type": "Resource",
+    "description": "Rare gem used as a high-multiplier filler for crafting powerful weapons.",
+    "stats": {
+      "rarity": "Rare",
+      "value": "100 coins",
+      "depth": "Deep Mines"
+    }
+  },
+  {
+    "slug": "obsidian-ore",
+    "name": "Obsidian",
+    "location": "Volcanic",
+    "type": "Resource",
+    "description": "Dense, dark volcanic glass. Adds significant defense properties to forged equipment.",
+    "stats": {
+      "rarity": "Rare",
+      "value": "350 coins",
+      "depth": "Volcanic"
+    }
+  },
+  {
+    "slug": "emerald",
+    "name": "Emerald",
+    "location": "Mines",
+    "type": "Resource",
+    "description": "Vibrant green gem known for its magical conductivity. High value.",
+    "stats": {
+      "rarity": "Epic",
+      "value": "250 coins",
+      "depth": "Mines"
+    }
+  },
+  {
+    "slug": "uranium-ore",
+    "name": "Uranium",
+    "location": "Toxic Caves",
+    "type": "Resource",
+    "description": "Dangerous radioactive ore. Weapons forged with Uranium inflict poison DoT.",
+    "stats": {
+      "rarity": "Epic",
+      "value": "400 coins",
+      "depth": "Toxic Caves"
+    }
+  },
+  {
+    "slug": "rivalite-ore",
+    "name": "Rivalite",
+    "location": "Basalt Vein",
+    "type": "Resource",
+    "description": "Legendary ore that sharply increases critical hit chance.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "333 coins",
+      "depth": "Basalt Vein"
+    }
+  },
+  {
+    "slug": "eye-ore",
+    "name": "Eye Ore",
+    "location": "Basalt Vein",
+    "type": "Resource",
+    "description": "A disturbing, organic-looking ore. Grants massive power ('Glass Cannon') at the cost of the wielder's life force.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "400 coins",
+      "depth": "Basalt Vein"
+    }
+  },
+  {
+    "slug": "fireite-ore",
+    "name": "Fireite",
+    "location": "Volcanic Rock",
+    "type": "Resource",
+    "description": "Burning ore that imbues weapons with the power to ignite enemies.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "450 coins",
+      "depth": "Volcanic Rock"
+    }
+  },
+  {
+    "slug": "lightite-ore",
+    "name": "Lightite",
+    "location": "Basalt Vein",
+    "type": "Resource",
+    "description": "Mythical ore that feels weightless. Grants immense speed ('Velocity') to the wielder.",
+    "stats": {
+      "rarity": "Mythical",
+      "value": "1000 coins",
+      "depth": "Basalt Vein"
+    }
+  },
+  {
+    "slug": "magmaite-ore",
+    "name": "Magmaite",
+    "location": "Volcanic Rock",
+    "type": "Resource",
+    "description": "Legendary ore pulsing with heat. Causes explosive AoE blasts on weapon impact.",
+    "stats": {
+      "rarity": "Legendary",
+      "value": "500 coins",
+      "depth": "Volcanic Rock"
+    }
+  },
+  {
+    "slug": "darkryte-ore",
+    "name": "Darkryte",
+    "location": "Rare Volcanic Drop",
+    "type": "Resource",
+    "description": "Mythical shadow ore. Allows the wielder to slip into shadow, evading attacks.",
+    "stats": {
+      "rarity": "Mythical",
+      "value": "630 coins",
+      "depth": "Rare Volcanic Drop"
+    }
+  },
+  {
+    "slug": "galaxite-ore",
+    "name": "Galaxite",
+    "location": "Boss Drop",
+    "type": "Resource",
+    "description": "Divine ore containing the cosmos. Offers the highest possible scaling for weapons.",
+    "stats": {
+      "rarity": "Divine",
+      "value": "5000 coins",
+      "depth": "Boss Drop"
+    }
+  },
+  {
     "slug": "stonewake-pickaxe",
     "name": "Stonewake's Pickaxe",
     "location": "World 1 Inner Cave",

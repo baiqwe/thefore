@@ -327,14 +327,14 @@ export default function ForgingCalculatorPage() {
           </div>
 
           {/* Legacy SEO Content */}
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+          <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
             <h3 className="text-lg font-bold text-blue-900 mb-2">Looking for Crafting Recipes?</h3>
             <p className="text-blue-800 text-sm leading-relaxed">
               Since the <strong>Winter 2025 Update</strong>, fixed recipes (e.g., &quot;5 Iron Ingots&quot;) no longer exist.
               The game now uses a <strong>Weight System</strong>. You can use this Weapon Builder to create your own custom recipes.
               For example, to make a Katana, you simply need to use any combination of <strong>6-15 ores</strong>.
             </p>
-          </div>
+          </section>
 
 
         </div>

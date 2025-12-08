@@ -44,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      // [High Priority] New Meta Page
+      url: `${baseUrl}/wiki/best-builds`,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/wiki/races`,
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -58,11 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/wiki/best-builds`,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
+
     {
       url: `${baseUrl}/quests`,
       changeFrequency: 'weekly',

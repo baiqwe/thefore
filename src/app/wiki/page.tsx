@@ -82,7 +82,7 @@ export default function WikiPage() {
       <div className="mb-12">
         <Link href="/wiki/best-builds" className="block relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 p-8 shadow-lg hover:shadow-xl transition-all hover:scale-[1.01]">
           <div className="relative z-10">
-            <h2 className="text-3xl font-bold text-white mb-2">🔥 Winter 2025 Meta Builds</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">🔥 Winter 2025 Meta Recipes & Builds</h2>
             <p className="text-purple-100 text-lg">
               Discover the strongest weapon recipes: The Flash, World Ender, and Immortal Tank builds.
             </p>
@@ -123,12 +123,12 @@ export default function WikiPage() {
                     <Badge variant="secondary">{guide.category}</Badge>
                     <span
                       className={`px-2.5 py-0.5 text-xs font-semibold rounded-full ${guide.difficulty === "Beginner"
-                          ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
-                          : guide.difficulty === "Expert"
-                            ? "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
-                            : guide.difficulty === "Intermediate"
-                              ? "bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300"
-                              : "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"
+                        ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
+                        : guide.difficulty === "Expert"
+                          ? "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
+                          : guide.difficulty === "Intermediate"
+                            ? "bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300"
+                            : "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"
                         }`}
                     >
                       {guide.difficulty}

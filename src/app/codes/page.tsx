@@ -38,10 +38,10 @@ export default function CodesPage() {
   // 获取当前日期（用于新鲜度信号）
   const today = new Date()
   const lastVerifiedDate = today.toISOString()
-  const lastVerifiedDisplay = today.toLocaleDateString('en-US', { 
-    month: 'long', 
-    day: 'numeric', 
-    year: 'numeric' 
+  const lastVerifiedDisplay = today.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
   })
 
   // 2. FAQ Schema for Google Rich Snippets with dateModified
@@ -104,7 +104,7 @@ export default function CodesPage() {
           The Forge Codes ({currentMonth} {currentYear})
         </h1>
         <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place. 
+          Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place.
           We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
         </p>
         {/* 强化显示最后验证时间 - 新鲜度信号 */}
@@ -138,15 +138,15 @@ export default function CodesPage() {
           </p>
         </a>
 
-        <a href="/tools/reroll-simulator" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        <a href="/wiki/best-builds" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
             <Dice5 className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
           <h3 className="text-lg sm:text-xl font-bold mb-2 flex items-center gap-2">
-            Test Your Luck First <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            Winter 2025 Meta Builds <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </h3>
           <p className="text-blue-100 text-xs sm:text-sm font-medium">
-            Use our <strong>Reroll Simulator</strong> to check your drop chances for Angel &amp; Demon races.
+            Don&apos;t waste ores! Check the <strong>Best Weapon Recipes</strong> guide to craft Godly gear efficiently.
           </p>
         </a>
       </div>
@@ -163,7 +163,7 @@ export default function CodesPage() {
             {activeCodes.length} Working
           </span>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {activeCodes.map((code, index) => (
             <div key={index} className="bg-white dark:bg-gray-800 border-l-4 border-amber-500 dark:border-amber-400 shadow-md rounded-lg p-4 sm:p-5 hover:shadow-lg transition-all hover:border-amber-600 dark:hover:border-amber-300">
@@ -187,11 +187,11 @@ export default function CodesPage() {
       <div className="prose prose-lg max-w-none bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 mb-12">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">How to Get More Free Rerolls in The Forge</h2>
         <p className="text-gray-700 dark:text-gray-300">
-          Besides using the codes listed above, players can earn free race rerolls by completing daily quests and finding hidden chests in the <strong className="text-gray-900 dark:text-gray-100">Volcanic Depths</strong>. 
+          Besides using the codes listed above, players can earn free race rerolls by completing daily quests and finding hidden chests in the <strong className="text-gray-900 dark:text-gray-100">Volcanic Depths</strong>.
           If you are looking to get a Legendary race like the <strong className="text-gray-900 dark:text-gray-100">Dragonborn</strong> or <strong className="text-gray-900 dark:text-gray-100">Angel</strong>, make sure to save up your Gems.
         </p>
         <p className="text-gray-700 dark:text-gray-300">
-          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race you should aim for before using your rerolls! 
+          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race you should aim for before using your rerolls!
           You can also visit our <a href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</a> for detailed stats, or use our <a href="/tools/reroll-simulator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Reroll Simulator</a> to test your luck.
         </p>
 
