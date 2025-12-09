@@ -4,6 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { X } from 'lucide-react'
 
+declare global {
+    interface Window {
+        gtag: (...args: any[]) => void;
+    }
+}
+
 export default function CookieConsent() {
     const [isVisible, setIsVisible] = useState(false)
 
@@ -14,12 +20,29 @@ export default function CookieConsent() {
             // Show banner after a short delay
             const timer = setTimeout(() => setIsVisible(true), 1000)
             return () => clearTimeout(timer)
+        } else if (consent === 'accepted') {
+            // Check if user previously consented, and re-apply consent on load
+            if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('consent', 'update', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted'
+                });
+            }
         }
     }, [])
 
     const acceptCookies = () => {
         localStorage.setItem('cookie-consent', 'accepted')
         setIsVisible(false)
+
+        // Active notification to Google Analytics that user has consented
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            console.log('GA Consent Granted');
+        }
     }
 
     const declineCookies = () => {

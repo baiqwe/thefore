@@ -93,6 +93,13 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            
+            // 1. Set default consent state (denied, waiting for user input)
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+
             gtag('js', new Date());
             gtag('config', 'G-TDKJYTNZYH');
           `}
