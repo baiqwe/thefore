@@ -97,6 +97,14 @@ export default function RootLayout({
             gtag('config', 'G-TDKJYTNZYH');
           `}
         </Script>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
         <div className="flex flex-col min-h-screen relative">
           <Navbar />
           <main className="flex-grow">
