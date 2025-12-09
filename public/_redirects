@@ -1,18 +1,25 @@
-# Cloudflare Pages 重定向规则
-# 确保 URL 一致性，避免重复内容问题
+# === 紧急修复：语言路径重定向 ===
+# 将 /en/xxx 这种旧链接指引到新的 /xxx 页面
 
-# 强制 HTTPS（Cloudflare 会自动处理，但这里明确说明）
-# https://www.theforgewiki.com/*  https://www.theforgewiki.com/:splat  301
+# 1. 首页重定向
+/en/  /  301
+/zh/  /  301
+/id/  /  301
+/ms/  /  301
+/th/  /  301
+/vi/  /  301
 
-# 移除尾部斜杠（与 trailingSlash: false 保持一致）
-# 注意：Cloudflare Pages 默认会处理，但明确配置更安全
-# /codes/  /codes  301
-# /wiki/  /wiki  301
-# /items/  /items  301
+# 2. 内页重定向 (使用通配符 :splat)
+# 例如: /en/codes -> /codes
+/en/* /:splat  301
+/zh/* /:splat  301
+/id/* /:splat  301
+/ms/* /:splat  301
+/th/* /:splat  301
+/vi/* /:splat  301
 
-# 如果将来需要添加其他重定向，可以在这里添加
-# 例如：旧 URL 重定向到新 URL
-# /old-page  /new-page  301
-
+# === 其他规则 ===
+# 强制 HTTPS (可选，Cloudflare 通常默认开启)
+# https://www.theforgewiki.com/* https://www.theforgewiki.com/:splat  301
 
 
