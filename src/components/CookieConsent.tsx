@@ -25,7 +25,9 @@ export default function CookieConsent() {
             if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('consent', 'update', {
                     'analytics_storage': 'granted',
-                    'ad_storage': 'granted'
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
                 });
             }
         }
@@ -39,7 +41,9 @@ export default function CookieConsent() {
         if (typeof window !== 'undefined' && window.gtag) {
             window.gtag('consent', 'update', {
                 'analytics_storage': 'granted',
-                'ad_storage': 'granted'
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted'
             });
             console.log('GA Consent Granted');
         }

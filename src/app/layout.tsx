@@ -97,7 +97,9 @@ export default function RootLayout({
             // 1. Set default consent state (denied, waiting for user input)
             gtag('consent', 'default', {
               'ad_storage': 'denied',
-              'analytics_storage': 'denied'
+              'analytics_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied'
             });
 
             gtag('js', new Date());
