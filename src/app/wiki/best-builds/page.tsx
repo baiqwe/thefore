@@ -265,7 +265,7 @@ export default function BestBuildsPage() {
 
             </div>
 
-            {/* 新增的 Armor Section - 已修复引号转义 */}
+            {/* Armor Section - FIXED: Replaced " with &quot; */}
             <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-slate-100 rounded-lg">
@@ -290,7 +290,9 @@ export default function BestBuildsPage() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="text-gray-600 mb-2"><strong>How to craft:</strong> Use at least <strong>30 ores total</strong> to guarantee the &quot;Heavy Armor&quot; base type. This mix ensures you hit the defense cap while maintaining enough durability for long dungeon runs.</p>
+                                <p className="text-gray-600 mb-2">
+                                    <strong>How to craft:</strong> Use at least <strong>30 ores total</strong> to guarantee the &quot;Heavy Armor&quot; base type. This mix ensures you hit the defense cap while maintaining enough durability for long dungeon runs.
+                                </p>
                                 <div className="flex gap-2 mt-4">
                                     <Badge variant="outline">Weight: 30+</Badge>
                                     <Badge variant="outline">Type: Heavy</Badge>
