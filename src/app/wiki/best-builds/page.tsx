@@ -286,7 +286,7 @@ export default function BestBuildsPage() {
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-slate-50 p-4 rounded-lg">
                                 <h4 className="font-bold text-slate-900 mb-2">Recipe Ratio (Total 30+ Ores):</h4>
-                                <ul className="space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm text-gray-700">
                                     <li className="flex justify-between"><span>• 50% Obsidian</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Defense</span></li>
                                     <li className="flex justify-between"><span>• 30% Platinum</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Durability</span></li>
                                     <li className="flex justify-between"><span>• 20% Titanium</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Hardness</span></li>

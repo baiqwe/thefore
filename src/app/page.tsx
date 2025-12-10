@@ -65,9 +65,9 @@ export default function HomePage() {
           <a href="/wiki/best-builds" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/30">
             🔥 Best Builds
           </a>
-          {/* 新增按钮 */}
+          {/* 新增按钮：高亮 "Best" */}
           <a href="/tools/forging-calculator" className="flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30">
-            🧮 Crafting Calculator
+            🧮 Best Calculator
           </a>
         </div>
       </div>

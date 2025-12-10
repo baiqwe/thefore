@@ -30,19 +30,20 @@ export default function ForgingCalculatorPage() {
   const [amount, setAmount] = useState<number>(1)
   const [addedOres, setAddedOres] = useState<AddedOre[]>([])
 
-  // 新增：软件应用结构化数据
+  // 新增：软件应用结构化数据 (告诉 Google 这是一个好用的工具)
   const appSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'The Forge Crafting Calculator',
+    name: 'The Forge Ultimate Calculator',
     applicationCategory: 'GameApplication',
-    operatingSystem: 'Web',
+    operatingSystem: 'Any',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD'
     },
-    description: 'Advanced weapon crafting calculator for The Forge Roblox. Calculate damage multipliers and active traits.'
+    featureList: 'Weight System Calculation, Ore Multiplier Check, Trait Analysis',
+    description: 'The most accurate weapon crafting calculator for The Forge Roblox.'
   }
 
   // Helper to find ore data
@@ -161,8 +162,8 @@ export default function ForgingCalculatorPage() {
           The Forge Weapon Builder
         </h1>
         <p className="text-gray-700 text-lg">
-          <strong>Better than Squareweb?</strong> Yes. This is the only calculator updated for the <strong>Winter 2025 Weight System</strong>.
-          Calculate exact multipliers, verify ore counts, and check active traits instantly.
+          <strong>The #1 Calculator for Winter 2025.</strong> Plan your dream weapon with the new Weight System.
+          Get exact multipliers, verify ore counts, and unlock hidden traits.
         </p>
       </div>
 
@@ -343,33 +344,19 @@ export default function ForgingCalculatorPage() {
             ))}
           </div>
 
-          {/* Legacy SEO Content */}
-          <section className="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
-            <h3 className="text-lg font-bold text-blue-900 mb-2">Looking for Crafting Recipes?</h3>
-            <p className="text-blue-800 text-sm leading-relaxed">
-              Since the <strong>Winter 2025 Update</strong>, fixed recipes (e.g., &quot;5 Iron Ingots&quot;) no longer exist.
-              The game now uses a <strong>Weight System</strong>. You can use this Weapon Builder to create your own custom recipes.
-              For example, to make a Katana, you simply need to use any combination of <strong>6-15 ores</strong>.
-            </p>
-          </section>
-
-          <Card>
+          <Card className="mt-8 bg-slate-50 border-slate-200">
             <CardHeader>
-              <CardTitle className="text-xl">How to use this Crafting Calculator</CardTitle>
+              <CardTitle className="text-xl">Why use this Calculator?</CardTitle>
             </CardHeader>
-            <CardContent className="prose prose-sm max-w-none text-gray-600">
-              <p>
-                Unlike basic lists found on <strong>Squareweb</strong> or the Trello, this dynamic tool calculates real-time stats based on the new <strong>Weight System</strong>.
-              </p>
-              <ul>
-                <li><strong>Select Weapon Type:</strong> Choose from Dagger (1-5 ores) to Colossal Sword (30+ ores).</li>
-                <li><strong>Mix Ores:</strong> Add high-tier ores like <em>Lightite</em> or <em>Darkryte</em> to boost your multiplier.</li>
-                <li><strong>Check Traits:</strong> Ensure your trait ores (like Eye Ore) make up at least 10% of the total mix to activate their effects.</li>
+            <CardContent className="text-gray-600 space-y-2">
+              <p>The <strong>Winter 2025 Update</strong> changed everything. Fixed recipes are gone. This tool helps you master the new <strong>Weight System</strong>.</p>
+              <ul className="list-disc pl-5">
+                <li><strong>Precision:</strong> Calculates the exact multiplier average to 3 decimal places.</li>
+                <li><strong>Safety:</strong> Warns you about &quot;Glass Cannon&quot; (Eye Ore) HP penalties before you craft.</li>
+                <li><strong>Optimization:</strong> Helps you balance high-tier ores like <em>Galaxite</em> with fillers to maximize stats.</li>
               </ul>
             </CardContent>
           </Card>
-
-
         </div>
 
       </div>

@@ -51,7 +51,7 @@ export default function QuestsPage() {
           The Forge Quest Guides: Bard&apos;s Guitar & Goblin King
         </h1>
         <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Complete walkthroughs for all major <strong>The Forge Roblox quests</strong>. Learn how to get the 
+          Complete walkthroughs for all major <strong>The Forge Roblox quests</strong>. Learn how to get the
           <strong> Unknown Key</strong> from Bard&apos;s quest, unlock the <strong>Arcane Pickaxe</strong>, and defeat the <strong>Goblin King</strong>.
         </p>
       </div>
@@ -82,19 +82,19 @@ export default function QuestsPage() {
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-2">Quest Objective</h3>
             <p className="text-gray-700">
-              The Bard has lost his guitar and needs your help finding it. This quest is crucial because the reward is the 
+              The Bard has lost his guitar and needs your help finding it. This quest is crucial because the reward is the
               <strong> Unknown Key</strong>, which is used to open the <strong>Fallen Angel&apos;s Cave</strong>.
             </p>
           </div>
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-2">Guitar Location</h3>
             <p className="text-gray-700 mb-2">
-              The guitar is hidden in a <strong>hidden hole in a bush</strong> near the NPC <strong>&quot;Umut the Brave&quot;</strong> inside the 
+              The guitar is hidden in a <strong>hidden hole in a bush</strong> near the NPC <strong>&quot;Umut the Brave&quot;</strong> inside the
               <strong> Stonewake Mine</strong>.
             </p>
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
               <p className="text-sm text-gray-700">
-                <strong>Important:</strong> Look carefully around Umut the Brave. The hole is in a bush, so it&apos;s easy to miss. 
+                <strong>Important:</strong> Look carefully around Umut the Brave. The hole is in a bush, so it&apos;s easy to miss.
                 Once you find it, return to the Bard to complete the quest.
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function QuestsPage() {
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-2">Reward: Unknown Key</h3>
             <p className="text-gray-700">
-              The <strong>Unknown Key</strong> is used to open the <strong>Fallen Angel&apos;s Cave</strong>, where you can obtain the 
+              The <strong>Unknown Key</strong> is used to open the <strong>Fallen Angel&apos;s Cave</strong>, where you can obtain the
               <strong> Arcane Pickaxe</strong> - one of the best mining tools in <strong>The Forge Roblox</strong>!
             </p>
           </div>
@@ -147,14 +147,14 @@ export default function QuestsPage() {
           </div>
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
             <p className="text-sm text-gray-700">
-              <strong>Strategy:</strong> Make sure you have enough resources before starting this quest. The tributes get progressively more expensive, 
+              <strong>Strategy:</strong> Make sure you have enough resources before starting this quest. The tributes get progressively more expensive,
               so plan your mining and resource gathering accordingly.
             </p>
           </div>
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-2">Reward</h3>
             <p className="text-gray-700">
-              Defeating the <strong>Goblin King</strong> grants significant rewards and is essential for progressing through 
+              Defeating the <strong>Goblin King</strong> grants significant rewards and is essential for progressing through
               <strong> The Forge Roblox</strong> end-game content.
             </p>
           </div>
@@ -185,14 +185,24 @@ export default function QuestsPage() {
             </p>
           </div>
           <div>
-            <h3 className="font-bold text-lg text-gray-800 mb-2">Cat Location</h3>
-            <p className="text-gray-700 mb-2">
-              The lost cat is located <strong>behind a waterfall wall</strong> in the <strong>Goblin Cave</strong>.
-            </p>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">Cat Location (Visual Hint)</h3>
+
+            {/* Visual Hint Card (CSS Only) */}
+            <div className="bg-blue-50 border-2 border-blue-200 border-dashed rounded-xl p-6 flex flex-col items-center text-center my-3">
+              <div className="bg-white p-3 rounded-full shadow-sm mb-3">
+                <Cat className="w-8 h-8 text-blue-500" />
+              </div>
+              <h4 className="font-bold text-blue-900 text-lg mb-1">Behind the Waterfall</h4>
+              <p className="text-blue-700 text-sm max-w-md">
+                Go to <strong>Goblin Cave</strong>. Look for the water cascading down the right wall.
+                <br />
+                <span className="underline decoration-wavy">Walk THROUGH the water</span> to find the secret room.
+              </p>
+            </div>
+
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
               <p className="text-sm text-gray-700">
-                <strong>How to Find:</strong> Look for a waterfall in the Goblin Cave area. The cat is hidden behind the waterfall wall - 
-                you may need to walk through the waterfall to find it.
+                <strong>Important:</strong> The entrance is invisible from the outside. You must trust the map and walk directly into the falling water.
               </p>
             </div>
           </div>
@@ -217,7 +227,7 @@ export default function QuestsPage() {
           <li>Inside the cave, you&apos;ll find the <strong>Arcane Pickaxe</strong>.</li>
         </ol>
         <p className="text-gray-700 mt-4">
-          The <strong>Arcane Pickaxe</strong> significantly improves your mining speed and efficiency, making it essential for 
+          The <strong>Arcane Pickaxe</strong> significantly improves your mining speed and efficiency, making it essential for
           gathering resources in <strong>The Forge Roblox</strong>.
         </p>
       </div>

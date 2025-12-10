@@ -7,18 +7,19 @@ import codesData from '@/data/codes.json'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { ArrowRight, Trophy, Dice5, Clock, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, Trophy, Dice5 } from 'lucide-react'
 import CopyButton from '@/components/CopyButton'
+import LastUpdated from '@/components/LastUpdated'
 
-// 1. Dynamic Date Logic for SEO Titles
+// 1. Dynamic Date Logic for SEO Titles (Static for build)
 const date = new Date();
 const currentMonth = date.toLocaleString('default', { month: 'long' });
 const currentYear = date.getFullYear();
 
-// 2. 使用 SEO 工具函数生成 Metadata
+// 2. SEO Metadata
 export const metadata: Metadata = generateSEOMetadata({
   title: `The Forge Codes (${currentMonth} ${currentYear}) - Roblox Promo Codes & Rewards`,
-  description: `[Updated Today] Active The Forge codes for ${currentMonth} ${currentYear}. Redeem these OP codes for Free Gems, Race Rerolls, and Totems.`,
+  description: `Active The Forge codes for ${currentMonth} ${currentYear}. The most up-to-date list. Redeem these OP codes for Free Gems, Race Rerolls, and Totems.`,
   keywords: [
     'The Forge Codes',
     'The Forge Roblox Codes',
@@ -35,16 +36,10 @@ export default function CodesPage() {
   const activeCodes = codesData.filter((code) => code.status === 'Active')
   const expiredCodes = codesData.filter((code) => code.status === 'Expired')
 
-  // 获取当前日期（用于新鲜度信号）
   const today = new Date()
   const lastVerifiedDate = today.toISOString()
-  const lastVerifiedDisplay = today.toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  })
 
-  // 2. FAQ Schema for Google Rich Snippets with dateModified
+  // FAQ Schema
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -103,33 +98,19 @@ export default function CodesPage() {
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-orange-600">
           The Forge Codes ({currentMonth} {currentYear})
         </h1>
-        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong> to get free <span className="font-semibold text-amber-700 dark:text-amber-400">Race Rerolls</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Gems</span>? You are in the right place.
-          We update this page daily to ensure you never miss a reward for this popular Roblox RPG.
-        </p>
-        {/* 强化显示最后验证时间 - 新鲜度信号 */}
-        <div className="flex items-center justify-center gap-3 mt-6">
-          <div className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-400 dark:border-green-600 rounded-xl px-6 py-3 shadow-md">
-            <div className="relative">
-              {/* 新增 ping 动画红点 */}
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-              <Clock className="w-5 h-5 text-green-600 dark:text-green-400 relative z-10" />
-            </div>
-            <div className="text-center">
-              <span className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wide block mb-1">
-                Last Verified
-              </span>
-              <span className="text-lg font-bold text-green-900 dark:text-green-100">
-                Today - {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-              </span>
-            </div>
-            <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
-          </div>
+
+        {/* Dynamic Date Component */}
+        <div className="flex justify-center mb-6">
+          <LastUpdated />
         </div>
+
+        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          Looking for the latest <strong className="text-gray-900 dark:text-gray-100">The Forge codes</strong>?
+          We monitor the official Discord daily to bring you the best rewards.
+        </p>
       </div>
 
-      {/* --- 新增：强引导模块 (在 Active Codes 标题上方插入) --- */}
+      {/* Internal Linking / CTA Modules */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
         <a href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -196,8 +177,7 @@ export default function CodesPage() {
           If you are looking to get a Legendary race like the <strong className="text-gray-900 dark:text-gray-100">Dragonborn</strong> or <strong className="text-gray-900 dark:text-gray-100">Angel</strong>, make sure to save up your Gems.
         </p>
         <p className="text-gray-700 dark:text-gray-300">
-          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race you should aim for before using your rerolls!
-          You can also visit our <a href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</a> for detailed stats, or use our <a href="/tools/reroll-simulator" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Reroll Simulator</a> to test your luck.
+          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race is best for mining, or visit our <a href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</a> for detailed stats.
         </p>
 
         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>
