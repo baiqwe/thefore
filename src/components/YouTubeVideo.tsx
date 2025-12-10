@@ -24,7 +24,7 @@ export default function YouTubeVideo({ videoId, title, thumbnail }: YouTubeVideo
 
   const finalVideoId = extractVideoId(videoId)
   const embedUrl = `https://www.youtube.com/embed/${finalVideoId}`
-  const thumbnailUrl = thumbnail || `https://img.youtube.com/vi/${finalVideoId}/maxresdefault.jpg`
+  const thumbnailUrl = thumbnail || `https://img.youtube.com/vi/${finalVideoId}/hqdefault.jpg`
 
   return (
     <div className="relative w-full aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg">
@@ -34,8 +34,8 @@ export default function YouTubeVideo({ videoId, title, thumbnail }: YouTubeVideo
             src={thumbnailUrl}
             alt={`${title} - Click to play video`}
             className="w-full h-full object-cover opacity-50"
-            width={1280}
-            height={720}
+            width={480}
+            height={360}
             unoptimized
           />
           <button
