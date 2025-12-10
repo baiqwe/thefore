@@ -40,7 +40,7 @@ export default function HomePage() {
       {/* Hero Section 改版：以搜索和核心入口为中心 */}
       <div className="text-center mb-12 py-10 bg-gradient-to-b from-amber-50 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl border border-amber-100 dark:border-gray-800">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-          The Forge Wiki
+          The Forge Wiki - Codes, Races & Crafting Guide
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
           Find items, active codes, and crafting recipes instantly.

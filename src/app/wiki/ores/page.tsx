@@ -78,7 +78,6 @@ export default function OresPage() {
         ]}
       />
 
-      {/* SEO Head with Schema */}
       <SEOHead
         breadcrumbs={[
           { name: 'Home', url: '/' },
@@ -92,6 +91,12 @@ export default function OresPage() {
           name: 'The Forge Ores & Price List',
           description: 'Complete database of all ores in The Forge Roblox with sell prices, rarity, and depth locations',
         }}
+        faq={[
+          {
+            question: "How to get Stone in The Forge?",
+            answer: "Stone is the most common material found at <strong>Depth 0-10m</strong> (Surface Level). Simply use your starting pickaxe to mine any grey rocks in the spawn area or the entrance of the mine. It has a 100% drop rate from grey nodes."
+          }
+        ]}
       />
 
       {/* SEO Intro Content */}
@@ -256,12 +261,12 @@ export default function OresPage() {
           <CardTitle className="text-2xl">Common Mining Questions</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div itemScope itemType="https://schema.org/Question">
-            <h3 itemProp="name" className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">
               How to get Stone in The Forge?
             </h3>
-            <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-              <p itemProp="text" className="text-gray-700 dark:text-gray-300">
+            <div>
+              <p className="text-gray-700 dark:text-gray-300">
                 Stone is the most common material found at <strong>Depth 0-10m</strong> (Surface Level).
                 Simply use your starting pickaxe to mine any grey rocks in the spawn area or the entrance of the mine.
                 It has a 100% drop rate from grey nodes.
