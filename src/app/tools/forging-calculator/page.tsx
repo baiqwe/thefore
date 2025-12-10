@@ -30,6 +30,21 @@ export default function ForgingCalculatorPage() {
   const [amount, setAmount] = useState<number>(1)
   const [addedOres, setAddedOres] = useState<AddedOre[]>([])
 
+  // 新增：软件应用结构化数据
+  const appSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'The Forge Crafting Calculator',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    description: 'Advanced weapon crafting calculator for The Forge Roblox. Calculate damage multipliers and active traits.'
+  }
+
   // Helper to find ore data
   const getOreData = (name: string) => oresData.find(o => o.name === name)
 
@@ -138,6 +153,7 @@ export default function ForgingCalculatorPage() {
           { name: 'Tools', url: '/tools' },
           { name: 'Forging Calculator', url: '/tools/forging-calculator' },
         ]}
+        schema={appSchema}
       />
 
       <div className="mb-8">
@@ -145,7 +161,8 @@ export default function ForgingCalculatorPage() {
           The Forge Weapon Builder
         </h1>
         <p className="text-gray-700 text-lg">
-          <strong>Deep Check Version (Winter 2025)</strong>: Plan your build with precision.
+          <strong>Better than Squareweb?</strong> Yes. This is the only calculator updated for the <strong>Winter 2025 Weight System</strong>.
+          Calculate exact multipliers, verify ore counts, and check active traits instantly.
         </p>
       </div>
 
@@ -335,6 +352,22 @@ export default function ForgingCalculatorPage() {
               For example, to make a Katana, you simply need to use any combination of <strong>6-15 ores</strong>.
             </p>
           </section>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">How to use this Crafting Calculator</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-gray-600">
+              <p>
+                Unlike basic lists found on <strong>Squareweb</strong> or the Trello, this dynamic tool calculates real-time stats based on the new <strong>Weight System</strong>.
+              </p>
+              <ul>
+                <li><strong>Select Weapon Type:</strong> Choose from Dagger (1-5 ores) to Colossal Sword (30+ ores).</li>
+                <li><strong>Mix Ores:</strong> Add high-tier ores like <em>Lightite</em> or <em>Darkryte</em> to boost your multiplier.</li>
+                <li><strong>Check Traits:</strong> Ensure your trait ores (like Eye Ore) make up at least 10% of the total mix to activate their effects.</li>
+              </ul>
+            </CardContent>
+          </Card>
 
 
         </div>

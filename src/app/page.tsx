@@ -65,6 +65,86 @@ export default function HomePage() {
           <a href="/wiki/best-builds" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/30">
             🔥 Best Builds
           </a>
+          {/* 新增按钮 */}
+          <a href="/tools/forging-calculator" className="flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30">
+            🧮 Crafting Calculator
+          </a>
+        </div>
+      </div>
+
+      {/* WINTER 2025 META RECIPES - 核心新增区域 */}
+      <div className="mb-16">
+        <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
+          <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg shadow-lg">
+            <Sword className="h-6 w-6 text-white" />
+          </div>
+          <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+            Winter 2025 Meta Recipes
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* The Flash Recipe */}
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900/10 dark:to-amber-900/10 border-2 border-yellow-400 dark:border-yellow-600 rounded-xl p-6 relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1">
+            <div className="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
+              SPEED META
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">The Flash (Katana)</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+              Maximum movement speed build for quick farming.
+            </p>
+            <div className="bg-white/80 dark:bg-black/20 rounded-lg p-3 mb-4 backdrop-blur-sm">
+              <div className="flex justify-between items-center mb-1 text-sm font-bold text-gray-800 dark:text-gray-200">
+                <span>Recipe:</span>
+                <span>10 Ores Total</span>
+              </div>
+              <ul className="text-sm space-y-1">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
+                  <span className="font-semibold">4x Lightite</span>
+                  <span className="text-gray-500 text-xs">(Velocity)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                  <span className="font-semibold">6x Diamond</span>
+                  <span className="text-gray-500 text-xs">(Damage Base)</span>
+                </li>
+              </ul>
+            </div>
+            <a href="/wiki/best-builds" className="block w-full text-center py-2 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold rounded-lg transition-colors">
+              View Stats & Details
+            </a>
+          </div>
+
+          {/* World Ender Recipe */}
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/10 dark:to-orange-900/10 border-2 border-red-500 dark:border-red-700 rounded-xl p-6 relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1">
+            <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+              AOE / XP META
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">The World Ender</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+              Colossal Sword that wipes entire screens. Best for XP.
+            </p>
+            <div className="bg-white/80 dark:bg-black/20 rounded-lg p-3 mb-4 backdrop-blur-sm">
+              <div className="flex justify-between items-center mb-1 text-sm font-bold text-gray-800 dark:text-gray-200">
+                <span>Recipe:</span>
+                <span>40 Ores Total</span>
+              </div>
+              <ul className="text-sm space-y-1">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+                  <span className="font-semibold">10x Magmaite + 10x Fireite</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                  <span className="font-semibold">10x Galaxite + 10x Darkryte</span>
+                </li>
+              </ul>
+            </div>
+            <a href="/wiki/best-builds" className="block w-full text-center py-2 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-colors">
+              View Full Guide
+            </a>
+          </div>
         </div>
       </div>
 

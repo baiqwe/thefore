@@ -1,63 +1,51 @@
 [
   {
+    "code": "FREESPINS",
+    "reward": "8x Race Rerolls, 1x Luck Totem",
+    "status": "Active",
+    "description": "Latest compensation code. Mostly used for race rerolls."
+  },
+  {
+    "code": "PEAK!",
+    "reward": "10x Rerolls",
+    "status": "Expired",
+    "description": "Might work in some new servers, but generally considered expired."
+  },
+  {
+    "code": "SORRYFORSHUTDOWN",
+    "reward": "5x Rerolls",
+    "status": "Expired",
+    "description": "Compensation code for shutdown. Likely expired."
+  },
+  {
+    "code": "400K!",
+    "reward": "Unknown",
+    "status": "Expired",
+    "description": "Milestone code."
+  },
+  {
     "code": "300K!",
     "reward": "5x Race Rerolls, 1x Luck Totem",
-    "status": "Active",
-    "description": "Latest milestone celebration code. Grants 5 race rerolls and a luck totem to boost your mining luck."
+    "status": "Expired",
+    "description": "Milestone celebration code."
   },
   {
     "code": "200K!",
     "reward": "5 Race Rerolls",
-    "status": "Active",
-    "description": "Milestone celebration code. Grants 5 free race rerolls."
+    "status": "Expired",
+    "description": "Milestone celebration code."
   },
   {
     "code": "100KLIKES",
     "reward": "10x Race Rerolls",
-    "status": "Active",
-    "description": "Major milestone reward. Grants 10 race rerolls for better chances at getting rare races."
+    "status": "Expired",
+    "description": "Major milestone reward."
   },
   {
     "code": "100K!",
     "reward": "3 Race Rerolls",
-    "status": "Active",
-    "description": "Celebration code for 100k likes. Grants free race rerolls."
-  },
-  {
-    "code": "40KLIKES",
-    "reward": "5 Race Rerolls",
-    "status": "Active",
-    "description": "Major milestone reward. Best code for new players."
-  },
-  {
-    "code": "20KLIKES",
-    "reward": "2 Race Rerolls",
-    "status": "Active",
-    "description": "Grants additional chances to get a Legendary race."
-  },
-  {
-    "code": "15KLIKES",
-    "reward": "2 Race Rerolls",
-    "status": "Active",
-    "description": "Milestone reward for race rerolls."
-  },
-  {
-    "code": "10KLIKES",
-    "reward": "2 Race Rerolls + 1 Luck Totem",
-    "status": "Active",
-    "description": "Boost your luck for mining and crafting."
-  },
-  {
-    "code": "5KLIKES",
-    "reward": "2 Race Rerolls + 1 Miner Totem",
-    "status": "Active",
-    "description": "Increases mining speed."
-  },
-  {
-    "code": "RELEASE",
-    "reward": "500 Gems",
     "status": "Expired",
-    "description": "Original release code."
+    "description": "Celebration code for 100k likes."
   },
   {
     "code": "BETARELEASE!",
@@ -66,9 +54,39 @@
     "description": "Welcome reward for the beta launch."
   },
   {
-    "code": "POSTRELEASEQNA",
-    "reward": "Unknown",
+    "code": "RELEASE",
+    "reward": "500 Gems",
     "status": "Expired",
-    "description": "Post-release Q&A event code."
+    "description": "Original release code."
+  },
+  {
+    "code": "40KLIKES",
+    "reward": "5 Race Rerolls",
+    "status": "Expired",
+    "description": "Major milestone reward."
+  },
+  {
+    "code": "20KLIKES",
+    "reward": "2 Race Rerolls",
+    "status": "Expired",
+    "description": "Grants additional chances to get a Legendary race."
+  },
+  {
+    "code": "15KLIKES",
+    "reward": "2 Race Rerolls",
+    "status": "Expired",
+    "description": "Milestone reward for race rerolls."
+  },
+  {
+    "code": "10KLIKES",
+    "reward": "2 Race Rerolls + 1 Luck Totem",
+    "status": "Expired",
+    "description": "Boost your luck for mining and crafting."
+  },
+  {
+    "code": "5KLIKES",
+    "reward": "2 Race Rerolls + 1 Miner Totem",
+    "status": "Expired",
+    "description": "Increases mining speed."
   }
 ]

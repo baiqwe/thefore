@@ -251,6 +251,26 @@ export default function OresPage() {
         </CardContent>
       </Card>
 
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle className="text-2xl">Common Mining Questions</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div itemScope itemType="https://schema.org/Question">
+            <h3 itemProp="name" className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">
+              How to get Stone in The Forge?
+            </h3>
+            <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+              <p itemProp="text" className="text-gray-700 dark:text-gray-300">
+                Stone is the most common material found at <strong>Depth 0-10m</strong> (Surface Level).
+                Simply use your starting pickaxe to mine any grey rocks in the spawn area or the entrance of the mine.
+                It has a 100% drop rate from grey nodes.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Related Links */}
       <div className="mt-8 bg-gray-50 p-6 rounded-xl border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Related Guides</h2>

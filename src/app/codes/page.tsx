@@ -17,8 +17,8 @@ const currentYear = date.getFullYear();
 
 // 2. 使用 SEO 工具函数生成 Metadata
 export const metadata: Metadata = generateSEOMetadata({
-  title: `The Forge Codes (${currentMonth} ${currentYear}) - Free Gems & Rerolls`,
-  description: `[Updated] Active The Forge codes for ${currentMonth} ${currentYear}. Redeem these OP codes for Free Gems, Race Rerolls, and Totems. No expired codes listed.`,
+  title: `The Forge Codes (${currentMonth} ${currentYear}) - Roblox Promo Codes & Rewards`,
+  description: `[Updated Today] Active The Forge codes for ${currentMonth} ${currentYear}. Redeem these OP codes for Free Gems, Race Rerolls, and Totems.`,
   keywords: [
     'The Forge Codes',
     'The Forge Roblox Codes',
@@ -110,7 +110,12 @@ export default function CodesPage() {
         {/* 强化显示最后验证时间 - 新鲜度信号 */}
         <div className="flex items-center justify-center gap-3 mt-6">
           <div className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border-2 border-green-400 dark:border-green-600 rounded-xl px-6 py-3 shadow-md">
-            <Clock className="w-5 h-5 text-green-600 dark:text-green-400" />
+            <div className="relative">
+              {/* 新增 ping 动画红点 */}
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+              <Clock className="w-5 h-5 text-green-600 dark:text-green-400 relative z-10" />
+            </div>
             <div className="text-center">
               <span className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wide block mb-1">
                 Last Verified

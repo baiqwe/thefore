@@ -58,6 +58,30 @@ const weaponThresholds = [
 export default function ForgingPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-5xl">
+      {/* UPDATE WARNING */}
+      <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded-r-lg shadow-sm">
+        <div className="flex items-start">
+          <div className="flex-shrink-0">
+            <Flame className="h-5 w-5 text-red-600" aria-hidden="true" />
+          </div>
+          <div className="ml-3">
+            <h3 className="text-sm font-bold text-red-800">
+              ⚠️ Winter 2025 Update Warning
+            </h3>
+            <div className="mt-2 text-sm text-red-700">
+              <p>
+                The crafting system has changed! <strong>Weapon types are now determined by WEIGHT (Ore Count)</strong>, not just the recipe order.
+                Old recipes may no longer work as expected.
+              </p>
+              <p className="mt-2">
+                <a href="#weight-system" className="font-bold underline hover:text-red-900">
+                  Jump to Weight System Guide ↓
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

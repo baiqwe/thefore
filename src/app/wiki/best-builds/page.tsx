@@ -83,11 +83,15 @@ export default function BestBuildsPage() {
             />
 
             <div className="mb-12 text-center">
+                <div className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-wider text-white uppercase bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full shadow-lg animate-pulse">
+                    Winter 2025 Updated
+                </div>
                 <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
                     The Forge Meta Builds Tier List
                 </h1>
                 <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-                    The <strong>Winter 2025 Update</strong> completely changed the meta.
+                    The <strong>Winter 2025 Update</strong> completely changed the meta with the new <strong>Weight System</strong>.
+                    <br />
                     Use these optimized ore combinations to dominate raids and PVP.
                 </p>
             </div>
@@ -263,6 +267,41 @@ export default function BestBuildsPage() {
                     </CardContent>
                 </Card>
 
+            </div>
+
+            <div className="mt-12 mb-8">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-slate-100 rounded-lg">
+                        <Shield className="h-6 w-6 text-slate-700" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Best Armor Recipes (Heavy Meta)</h2>
+                </div>
+
+                <Card className="border-t-4 border-t-slate-600 shadow-lg">
+                    <CardHeader>
+                        <CardTitle>The Juggernaut (PvE Tank)</CardTitle>
+                        <CardDescription>Highest Defense & Durability Recipe</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div className="bg-slate-50 p-4 rounded-lg">
+                                <h4 className="font-bold text-slate-900 mb-2">Recipe Ratio (Total 30+ Ores):</h4>
+                                <ul className="space-y-2 text-sm">
+                                    <li className="flex justify-between"><span>• 50% Obsidian</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Defense</span></li>
+                                    <li className="flex justify-between"><span>• 30% Platinum</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Durability</span></li>
+                                    <li className="flex justify-between"><span>• 20% Titanium</span> <span className="text-xs bg-slate-200 px-2 py-1 rounded">Hardness</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-gray-600 mb-2"><strong>How to craft:</strong> Use at least <strong>30 ores total</strong> to guarantee the "Heavy Armor" base type. This mix ensures you hit the defense cap while maintaining enough durability for long dungeon runs.</p>
+                                <div className="flex gap-2 mt-4">
+                                    <Badge variant="outline">Weight: 30+</Badge>
+                                    <Badge variant="outline">Type: Heavy</Badge>
+                                </div>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
 
             <div className="mt-12 text-center">
