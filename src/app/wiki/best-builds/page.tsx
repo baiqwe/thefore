@@ -83,11 +83,15 @@ export default function BestBuildsPage() {
             />
 
             <div className="mb-12 text-center">
+                <div className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-wider text-white uppercase bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full shadow-lg animate-pulse">
+                    Winter 2025 Updated
+                </div>
                 <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
                     The Forge Meta Builds Tier List
                 </h1>
                 <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-                    The <strong>Winter 2025 Update</strong> completely changed the meta.
+                    The <strong>Winter 2025 Update</strong> completely changed the meta with the new <strong>Weight System</strong>.
+                    <br />
                     Use these optimized ore combinations to dominate raids and PVP.
                 </p>
             </div>
