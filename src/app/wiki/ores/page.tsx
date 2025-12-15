@@ -57,6 +57,14 @@ export default function OresPage() {
     return filtered
   }, [searchQuery, sortOrder])
 
+  // Pagination for performance
+  const [displayLimit, setDisplayLimit] = useState(20)
+  const visibleOres = filteredAndSortedOres.slice(0, displayLimit)
+
+  const handleShowMore = () => {
+    setDisplayLimit((prev) => prev + 20)
+  }
+
   const handleSort = () => {
     if (sortOrder === null) {
       setSortOrder('desc')
@@ -182,7 +190,7 @@ export default function OresPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {filteredAndSortedOres.map((ore) => (
+                {visibleOres.map((ore) => (
                   <tr
                     key={ore.name}
                     className="hover:bg-gray-50 transition-colors"
@@ -222,6 +230,18 @@ export default function OresPage() {
               </tbody>
             </table>
           </div>
+
+          {/* Load More Button */}
+          {displayLimit < filteredAndSortedOres.length && (
+            <div className="flex justify-center p-6 border-t border-gray-100">
+              <button
+                onClick={handleShowMore}
+                className="px-6 py-2 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition-colors border border-amber-200"
+              >
+                Show More Ores ({filteredAndSortedOres.length - displayLimit} remaining)
+              </button>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -290,7 +310,7 @@ export default function OresPage() {
         <p className="text-gray-700 mt-4">
           The <strong>Double Ore</strong> chance alone pays off the investment in about 2 hours of mining at Depth 500m+.
         </p>
-      </div>
+      </div >
 
       <Card className="mt-8">
         <CardHeader>

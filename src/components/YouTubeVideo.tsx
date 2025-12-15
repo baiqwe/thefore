@@ -14,7 +14,7 @@ interface YouTubeVideoProps {
  * 使用懒加载优化性能
  */
 export default function YouTubeVideo({ videoId, title, thumbnail }: YouTubeVideoProps) {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
 
   // 从 YouTube URL 提取 video ID
   const extractVideoId = (url: string): string => {
@@ -23,46 +23,46 @@ export default function YouTubeVideo({ videoId, title, thumbnail }: YouTubeVideo
   }
 
   const finalVideoId = extractVideoId(videoId)
-  const embedUrl = `https://www.youtube.com/embed/${finalVideoId}`
   const thumbnailUrl = thumbnail || `https://img.youtube.com/vi/${finalVideoId}/hqdefault.jpg`
 
-  return (
-    <div className="relative w-full aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg">
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-          <Image
-            src={thumbnailUrl}
-            alt={`${title} - Click to play video`}
-            className="w-full h-full object-cover opacity-50"
-            width={480}
-            height={360}
-            unoptimized
-          />
-          <button
-            onClick={() => setIsLoaded(true)}
-            className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors"
-            aria-label={`Play ${title}`}
-          >
-            <svg
-              className="w-16 h-16 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+  if (!showVideo) {
+    return (
+      <div
+        className="relative w-full aspect-video bg-gray-900 rounded-lg cursor-pointer group overflow-hidden shadow-lg border border-gray-800"
+        onClick={() => setShowVideo(true)}
+      >
+        {/* 显示封面图 - 极轻量 */}
+        <Image
+          src={thumbnailUrl}
+          alt={`Play ${title}`}
+          fill
+          className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          unoptimized
+        />
+        {/* 播放按钮图标 */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+            <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
-          </button>
+          </div>
         </div>
-      )}
-      {isLoaded && (
-        <iframe
-          src={`${embedUrl}?autoplay=1`}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="w-full h-full"
-          loading="lazy"
-        />
-      )}
+      </div>
+    )
+  }
+
+  return (
+    <div className="w-full aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        width="100%"
+        height="100%"
+        src={`https://www.youtube.com/embed/${finalVideoId}?autoplay=1`}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      />
     </div>
   )
 }
