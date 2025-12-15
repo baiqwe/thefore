@@ -178,7 +178,7 @@ export default function CodesPage() {
           This economy guide will teach you the mathematical best way to use the codes strictly for progression.
         </p>
 
-        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">1. The Reroll Strategy (Don't Gamble!)</h3>
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">1. The Reroll Strategy (Don&apos;t Gamble!)</h3>
         <p className="text-gray-700 dark:text-gray-300">
           The codes above provide a limited number of <strong>Race Rerolls</strong>. Only use them if:
         </p>
@@ -192,7 +192,7 @@ export default function CodesPage() {
           It is mathematically better to keep the Dwarf (25% Mining Speed) than to risk it all for a Dragonborn unless you have 50+ rerolls banked.
         </p>
 
-        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">2. Gem Spending: The "Noob Trap"</h3>
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">2. Gem Spending: The &quot;Noob Trap&quot;</h3>
         <p className="text-gray-700 dark:text-gray-300">
           Many players use codes to get 500-1000 Gems and immediately buy Gold. <strong>This is a massive waste.</strong>
         </p>
@@ -215,12 +215,12 @@ export default function CodesPage() {
 
         <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">3. Troubleshooting Code Errors</h3>
         <p className="text-gray-700 dark:text-gray-300">
-          If you see "Invalid Code", check these three things:
+          If you see &quot;Invalid Code&quot;, check these three things:
         </p>
         <ol className="list-decimal pl-5 space-y-2 text-gray-700 dark:text-gray-300">
           <li><strong>Case Sensitivity:</strong> <code>winter2025</code> is NOT the same as <code>WINTER2025</code>. Roblox codes are strict.</li>
           <li><strong>Server Lag:</strong> Sometimes the server is outdated. Try joining a new server (Server Hop).</li>
-          <li><strong>Platform:</strong> Some codes are "Xbox Only" or "PC Only", though this is rare in The Forge.</li>
+          <li><strong>Platform:</strong> Some codes are &quot;Xbox Only&quot; or &quot;PC Only&quot;, though this is rare in The Forge.</li>
         </ol>
       </div>
 

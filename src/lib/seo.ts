@@ -17,6 +17,10 @@ export interface SEOOptions {
   author?: string
   canonicalUrl?: string
   noindex?: boolean
+  robots?: {
+    index: boolean
+    follow: boolean
+  }
 }
 
 /**
@@ -37,11 +41,11 @@ export function generateMetaDescription(
       .replace(/<[^>]*>/g, '')
       .replace(/\s+/g, ' ')
       .trim()
-    
+
     // 尝试在句号处截断
     const sentences = cleanContent.match(/[^.!?]+[.!?]+/g) || []
     let result = ''
-    
+
     for (const sentence of sentences) {
       if ((result + sentence).length <= 160) {
         result += sentence
@@ -49,11 +53,11 @@ export function generateMetaDescription(
         break
       }
     }
-    
+
     if (result) {
       return result.trim()
     }
-    
+
     // 如果无法在句号处截断，直接截取
     return cleanContent.slice(0, 157) + '...'
   }
@@ -69,12 +73,12 @@ export function generateTitle(title: string): string {
   const baseTitle = title.includes('Codes')
     ? `${title} - Latest Codes & Rewards`
     : title
-  
+
   // 确保标题不超过 60 个字符（SEO 最佳实践）
   if (baseTitle.length > 60) {
     return baseTitle.slice(0, 57) + '...'
   }
-  
+
   return baseTitle
 }
 
@@ -84,7 +88,7 @@ export function generateTitle(title: string): string {
 export function generateMetadata(options: SEOOptions): Metadata {
   const title = generateTitle(options.title)
   const description = generateMetaDescription(options.description)
-  
+
   // 修复 canonical URL 逻辑：确保所有 URL 都是绝对路径
   let canonicalUrl = options.canonicalUrl || ''
   if (canonicalUrl && !canonicalUrl.startsWith('http')) {
@@ -94,7 +98,7 @@ export function generateMetadata(options: SEOOptions): Metadata {
   } else if (!canonicalUrl) {
     canonicalUrl = siteConfig.url
   }
-  
+
   const ogImage = options.image || siteConfig.ogImage
 
   return {
@@ -144,6 +148,9 @@ export function generateMetadata(options: SEOOptions): Metadata {
         index: false,
         follow: false,
       },
+    }),
+    ...(options.robots && {
+      robots: options.robots,
     }),
   }
 }

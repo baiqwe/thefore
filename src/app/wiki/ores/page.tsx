@@ -230,7 +230,7 @@ export default function OresPage() {
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Mining Deep Guide: From Surface to 1000m</h2>
 
         <p className="text-gray-700 mb-6">
-          Many players ask: <em>"What is the best depth for money?"</em> or <em>"Is the Arcane Pickaxe worth it?"</em>.
+          Many players ask: <em>&quot;What is the best depth for money?&quot;</em> or <em>&quot;Is the Arcane Pickaxe worth it?&quot;</em>.
           This comprehensive guide condenses everything we know about mining efficiency in The Forge.
         </p>
 
