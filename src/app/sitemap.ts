@@ -131,16 +131,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // 动态页面：Items - 只使用数据源中的真实 lastUpdated
-  const itemPages: MetadataRoute.Sitemap = itemsData.map((item) => {
-    const lastUpdated = (item as any).lastUpdated
-    return {
-      url: `${baseUrl}/item/${item.slug}`,
-      // 只有数据源中有 lastUpdated 时才设置，否则不设置让 Google 自己判断
-      ...(lastUpdated ? { lastModified: new Date(lastUpdated).toISOString() } : {}),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }
-  })
+  // Strategic Blocking: Clean Sitemap
+  const itemPages: MetadataRoute.Sitemap = itemsData
+    .filter(item => {
+      const isLowValue =
+        ['Common', 'Uncommon'].includes(item.stats.rarity || 'Common') ||
+        (item.description || "").length < 150;
+      return !isLowValue;
+    })
+    .map((item) => {
+      const lastUpdated = (item as any).lastUpdated
+      return {
+        url: `${baseUrl}/item/${item.slug}`,
+        // 只有数据源中有 lastUpdated 时才设置，否则不设置让 Google 自己判断
+        ...(lastUpdated ? { lastModified: new Date(lastUpdated).toISOString() } : {}),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }
+    })
 
   // 动态页面：Guides - 使用数据源中的真实 lastUpdated
   const guidePages: MetadataRoute.Sitemap = guidesData.map((guide) => {

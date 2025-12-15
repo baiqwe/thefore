@@ -225,36 +225,72 @@ export default function OresPage() {
         </CardContent>
       </Card>
 
-      {/* Mining Tips Section */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle className="text-2xl">Mining Tips & Strategy</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-lg mb-2 text-gray-800">Best Mining Races</h3>
-            <p className="text-gray-700">
-              The <strong>Dwarf</strong> race provides +20% mining speed, making it the best choice for dedicated miners.
-              Check our <a href="/wiki/races" className="text-amber-600 hover:underline font-semibold">Race Tier List</a> for more details.
-              For combat-focused mining, consider <strong>Demon</strong> or <strong>Dragonborn</strong> races.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg mb-2 text-gray-800">Depth Strategy</h3>
-            <p className="text-gray-700">
-              Start mining at shallow depths (0-100m) to collect common ores like Stone and Coal.
-              As you progress, venture deeper to find rare ores. Mythical and Godly ores require reaching depths of 900m+.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg mb-2 text-gray-800">Profit Optimization</h3>
-            <p className="text-gray-700">
-              Focus on mining <strong>Gold</strong> (60 coins) and <strong>Platinum</strong> (100 coins) at mid-depths for consistent profits.
-              Save your best picks for deep mining expeditions to find <strong>Demonite</strong> (400 coins), <strong>Titanium</strong> (700 coins), and <strong>Adamantite</strong> (1,200 coins).
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Mining Deep Guide (Aggregation Strategy) */}
+      <div className="prose prose-lg max-w-none bg-white p-8 rounded-xl border border-gray-200 mt-8 mb-8">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Mining Deep Guide: From Surface to 1000m</h2>
+
+        <p className="text-gray-700 mb-6">
+          Many players ask: <em>"What is the best depth for money?"</em> or <em>"Is the Arcane Pickaxe worth it?"</em>.
+          This comprehensive guide condenses everything we know about mining efficiency in The Forge.
+        </p>
+
+        <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Speed Mining (0-100m Strategy)</h3>
+        <p className="text-gray-700">
+          The fastest way to level up your mining skill early on is NOT to hunt for Gold.
+          Instead, focus on <strong>Surface Stripping</strong> (Depth 0-50m).
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700 mt-2">
+          <li><strong>Target:</strong> Stone & Coal.</li>
+          <li><strong>Why:</strong> They break instantly with a Bronze Pickaxe. You gain XP per block broken, not per ore value.</li>
+          <li><strong>Speed:</strong> You can break 60-100 blocks per minute here vs 10 blocks at 500m.</li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Finding the Fallen Angel&apos;s Cave</h3>
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded my-4">
+          <p className="font-bold text-blue-900">
+            Location Hint: Depth 350m - 400m
+          </p>
+        </div>
+        <p className="text-gray-700">
+          The <strong>Fallen Angel&apos;s Cave</strong> is a secret biome that contains unique loot.
+          Look for a distinct change in wall texture (white/marble veins) around the 375m mark.
+          You will need the <strong>Unknown Key</strong> from the Bard&apos;s Quest to enter.
+          <em>(See our <a href="/quests" className="text-blue-600 underline">Quests Guide</a> for the Key).</em>
+        </p>
+
+        <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Is the Arcane Pickaxe Worth It?</h3>
+        <p className="text-gray-700">
+          <strong>Short Answer: YES.</strong>
+        </p>
+        <p className="text-gray-700 mt-2">
+          Many players hesitate because crafting it costs 5,000 Coins and requires rare materials.
+          However, the math supports the investment:
+        </p>
+        <table className="w-full mt-4 text-sm md:text-base">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="p-2 text-left">Pickaxe</th>
+              <th className="p-2 text-left">Mining Speed</th>
+              <th className="p-2 text-left">Special Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">Iron Pickaxe</td>
+              <td className="p-2">1.5s / block</td>
+              <td className="p-2">None</td>
+            </tr>
+            <tr className="bg-amber-50">
+              <td className="p-2 font-bold text-amber-700">Arcane Pickaxe</td>
+              <td className="p-2 text-amber-900">0.4s / block</td>
+              <td className="p-2 text-amber-900">Chance to double ore drops</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="text-gray-700 mt-4">
+          The <strong>Double Ore</strong> chance alone pays off the investment in about 2 hours of mining at Depth 500m+.
+        </p>
+      </div>
 
       <Card className="mt-8">
         <CardHeader>

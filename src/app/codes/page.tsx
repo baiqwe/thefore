@@ -171,21 +171,57 @@ export default function CodesPage() {
 
       {/* SEO Guide Section (Text Heavy for Google) */}
       <div className="prose prose-lg max-w-none bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">How to Get More Free Rerolls in The Forge</h2>
-        <p className="text-gray-700 dark:text-gray-300">
-          Besides using the codes listed above, players can earn free race rerolls by completing daily quests and finding hidden chests in the <strong className="text-gray-900 dark:text-gray-100">Volcanic Depths</strong>.
-          If you are looking to get a Legendary race like the <strong className="text-gray-900 dark:text-gray-100">Dragonborn</strong> or <strong className="text-gray-900 dark:text-gray-100">Angel</strong>, make sure to save up your Gems.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300">
-          Don&apos;t forget to check our <a href="/wiki/race-tier-list" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Race Tier List</a> to see which race is best for mining, or visit our <a href="/wiki/races" className="text-amber-600 dark:text-amber-400 hover:underline font-semibold">Races Guide</a> for detailed stats.
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">The Forge Economy Guide: How to Spend Smart (2025 Strategy)</h2>
+
+        <p className="lead text-xl text-gray-700 dark:text-gray-300 mb-6">
+          The number one mistake new players make in <strong>The Forge</strong> is wasting their free Gems and Rerolls early on.
+          This economy guide will teach you the mathematical best way to use the codes strictly for progression.
         </p>
 
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mt-6 mb-3">Troubleshooting: Why Codes Might Not Work</h3>
-        <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
-          <li><strong className="text-gray-900 dark:text-gray-100">Case Sensitivity:</strong> Roblox codes are often case-sensitive. Make sure &apos;BETA&apos; is capitalized.</li>
-          <li><strong className="text-gray-900 dark:text-gray-100">Expired:</strong> Codes like &apos;RELEASE&apos; have expired as of {currentMonth} {currentYear}.</li>
-          <li><strong className="text-gray-900 dark:text-gray-100">Typo:</strong> Ensure there are no spaces before or after the code.</li>
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">1. The Reroll Strategy (Don't Gamble!)</h3>
+        <p className="text-gray-700 dark:text-gray-300">
+          The codes above provide a limited number of <strong>Race Rerolls</strong>. Only use them if:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+          <li>You are currently a <span className="font-semibold text-gray-500">Human</span> or <span className="font-semibold text-green-600">Goblin</span> (Tier D/F).</li>
+          <li>You have not yet reached mining depth 500m (where racial bonuses matter less).</li>
         </ul>
+        <p className="text-gray-700 dark:text-gray-300">
+          <strong>Pro Tip:</strong> If you roll a <strong>Dwarf</strong> (Tier A for Mining), <em className="italic">STOP REROLLING</em>.
+          The chance of getting a Legendary race like <strong>Dragonborn</strong> is only 0.5%.
+          It is mathematically better to keep the Dwarf (25% Mining Speed) than to risk it all for a Dragonborn unless you have 50+ rerolls banked.
+        </p>
+
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">2. Gem Spending: The "Noob Trap"</h3>
+        <p className="text-gray-700 dark:text-gray-300">
+          Many players use codes to get 500-1000 Gems and immediately buy Gold. <strong>This is a massive waste.</strong>
+        </p>
+        <div className="bg-amber-100 dark:bg-amber-900/30 p-4 rounded-l-4 border-l-4 border-amber-500 my-4">
+          <p className="font-bold text-amber-900 dark:text-amber-100">
+            ⛔ NEVER BUY GOLD WITH GEMS.
+          </p>
+          <p className="text-sm text-amber-800 dark:text-amber-200 mt-1">
+            Gold is easily farmable by mining Coal/Iron for 10 minutes. Gems are premium currency.
+          </p>
+        </div>
+        <p className="text-gray-700 dark:text-gray-300">
+          <strong>Best Gem Investments:</strong>
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+          <li><strong>Starter Pack (499 Gems):</strong> Best value. Gives you a decent pickaxe to skip the early grind.</li>
+          <li><strong>Storage Expansion:</strong> Essential for late game when you need to stockpile <em>Adamantite</em> and <em>Luminite</em>.</li>
+          <li><strong>Race Rerolls:</strong> Only buy these if you are desperate to fix a bad race roll.</li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-8 mb-4">3. Troubleshooting Code Errors</h3>
+        <p className="text-gray-700 dark:text-gray-300">
+          If you see "Invalid Code", check these three things:
+        </p>
+        <ol className="list-decimal pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+          <li><strong>Case Sensitivity:</strong> <code>winter2025</code> is NOT the same as <code>WINTER2025</code>. Roblox codes are strict.</li>
+          <li><strong>Server Lag:</strong> Sometimes the server is outdated. Try joining a new server (Server Hop).</li>
+          <li><strong>Platform:</strong> Some codes are "Xbox Only" or "PC Only", though this is rare in The Forge.</li>
+        </ol>
       </div>
 
       {/* Expired Codes (SEO Food - Keep them but visually muted) */}

@@ -357,6 +357,49 @@ export default function ForgingCalculatorPage() {
               </ul>
             </CardContent>
           </Card>
+
+          {/* New Content: The Weight System Guide (High Value Content for SEO) */}
+          <div className="prose prose-lg max-w-none bg-white p-8 rounded-xl border border-gray-200 mt-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Mastering the Forging Weight System</h2>
+
+            <p className="text-gray-700 mb-4">
+              Gone are the days of simple &quot;3 Iron + 2 Coal&quot; recipes. The new <strong>Weight System</strong> (introduced in Winter 2025) calculates weapon stats based on the <strong>average multiplier</strong> of all ores used.
+            </p>
+
+            <h3 className="text-xl font-bold text-amber-800 mb-2">1. How Multipliers Work</h3>
+            <p className="text-gray-700 mb-4">
+              Every ore has a hidden &quot;Multiplier&quot; value.
+              <br />
+              <code>Iron (1.1x)</code> is better than <code>Stone (1.0x)</code>.
+              <br />
+              <code>Galaxite (18.5x)</code> is the current meta king.
+            </p>
+            <p className="text-gray-700 mb-4">
+              <strong>The Math:</strong> If you mix 1 Galaxite (18.5x) with 9 Stone (1.0x), your weapon will NOT be god-tier.
+              The Stones &quot;dilute&quot; the pool, dragging the average down.
+              <br />
+              <em>This is why filling empty slots with Coal (0.4x) ruins your weapon damage.</em>
+            </p>
+
+            <h3 className="text-xl font-bold text-red-800 mb-2">2. The Eye Ore Trap (Instant Death)</h3>
+            <p className="text-gray-700 mb-4">
+              <strong>Eye Ore</strong> has a massive 25.0x multiplier, making it tempting. However, it carries a curse:
+              <br />
+              <span className="font-mono bg-red-100 text-red-800 px-2 py-1 rounded">-10% Max HP per ore.</span>
+            </p>
+            <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-6">
+              <li><strong>1-4 Ores:</strong> Safe, but you are squishy.</li>
+              <li><strong>5-9 Ores:</strong> Risky. One hit might kill you.</li>
+              <li><strong>10+ Ores:</strong> <span className="font-bold text-red-600">INSTANT DEATH.</span> You will spawn with 0 HP and die forever loop. Do not do this.</li>
+            </ul>
+
+            <h3 className="text-xl font-bold text-blue-800 mb-2">3. Recommended Strategy</h3>
+            <p className="text-gray-700">
+              For the best results, use <strong>Pure Forging</strong>. Don&apos;t mix tiers unless you are activating specific traits.
+              For example, a Full Titanium Sword is better than a Titanium + Stone mix.
+              Use this calculator to find the &quot;Break Point&quot; where adding one more high-tier ore doesn&apos;t significantly boost your stats.
+            </p>
+          </div>
         </div>
 
       </div>

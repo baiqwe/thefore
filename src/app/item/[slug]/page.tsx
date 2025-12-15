@@ -31,7 +31,12 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const item = itemsData.find((i) => i.slug === params.slug)
   if (!item) return {}
-  
+
+  // Definition of "Low Value Content" for AdSense/SEO
+  const isLowValue =
+    ['Common', 'Uncommon'].includes(item.stats.rarity || 'Common') ||
+    (item.description || "").length < 150;
+
   return generateSEOMetadata({
     title: `${item.name} Location & Guide`,
     description: `Find ${item.name} in ${siteConfig.name}. Location: ${item.location}. ${item.description}`,
@@ -45,6 +50,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     canonicalUrl: `${siteConfig.url}/item/${item.slug}`,
     type: 'article',
+    // Strategic Blocking: Prevent indexing of low-value pages
+    robots: {
+      index: !isLowValue,
+      follow: true,
+    }
   })
 }
 
@@ -81,10 +91,10 @@ export default function ItemPage({ params }: PageProps) {
   // 配方树逻辑：查找该物品的配方和使用该物品制作的物品
   const recipes = craftingRecipesData.recipes as Record<string, { ore: string; ingots: number; rawOres: number; depth: string; rarity: string }>
   const oreUsage = craftingRecipesData.oreUsage as Record<string, string[]>
-  
+
   // 查找该物品是否可以被制作（Crafted From）
   const itemRecipe = recipes[item.name]
-  
+
   // 查找使用该物品制作的物品（Used to Craft）
   const itemsCraftedFromThis: Array<{ name: string; slug: string }> = []
   if (item.type === 'Resource' || item.type === 'Crafting Material') {
@@ -181,7 +191,7 @@ export default function ItemPage({ params }: PageProps) {
           <div className="prose max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">{item.description}</p>
           </div>
-          
+
           {/* 物品图片 - 使用 Next.js Image 组件优化 */}
           <div className="mt-6 aspect-video relative bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-200">
             {/* 如果有真实图片 URL，使用 Image 组件；否则显示占位符 */}
@@ -222,13 +232,13 @@ export default function ItemPage({ params }: PageProps) {
       <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
         <h3 className="text-xl font-bold mb-3 text-green-900">⚙️ Usage & Purpose</h3>
         <p className="text-green-800 mb-2">
-          {(item as any).usage || (item.type === 'Key Item' 
+          {(item as any).usage || (item.type === 'Key Item'
             ? `${item.name} is used to unlock restricted areas and access new locations in The Forge. Essential for progression.`
             : item.type === 'Weapon'
-            ? `${item.name} can be used for combat and defense. Equip it to increase your combat effectiveness.`
-            : item.type === 'Consumable'
-            ? `${item.name} can be consumed to restore health, stamina, or provide temporary buffs. Use strategically.`
-            : `${item.name} is useful for various purposes in The Forge. Make sure to keep it in your inventory.`)}
+              ? `${item.name} can be used for combat and defense. Equip it to increase your combat effectiveness.`
+              : item.type === 'Consumable'
+                ? `${item.name} can be consumed to restore health, stamina, or provide temporary buffs. Use strategically.`
+                : `${item.name} is useful for various purposes in The Forge. Make sure to keep it in your inventory.`)}
         </p>
         {(item as any).sellPrice && (
           <p className="text-green-800">
@@ -262,7 +272,7 @@ export default function ItemPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
-            <Link 
+            <Link
               href="/tools/forging-calculator"
               className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold text-sm"
             >
@@ -298,7 +308,7 @@ export default function ItemPage({ params }: PageProps) {
               </Link>
             ))}
           </div>
-          <Link 
+          <Link
             href="/tools/forging-calculator"
             className="inline-flex items-center gap-2 mt-4 text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold text-sm"
           >
@@ -321,13 +331,13 @@ export default function ItemPage({ params }: PageProps) {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
         <h3 className="text-xl font-bold mb-3 text-blue-900">💡 Pro Tip</h3>
         <p className="text-blue-800">
-          {item.type === 'Key Item' 
+          {item.type === 'Key Item'
             ? `This is a key item essential for progression. Make sure to prioritize finding ${item.name} at ${item.location}.`
             : item.type === 'Weapon'
-            ? `This weapon can be used for both offense and defense. Keep it in good condition and use it wisely.`
-            : item.type === 'Consumable'
-            ? `Use this item strategically. Don't waste it on minor situations - save it for when you really need it.`
-            : `This item is valuable for your survival. Make sure to check ${item.location} when you're in that area.`}
+              ? `This weapon can be used for both offense and defense. Keep it in good condition and use it wisely.`
+              : item.type === 'Consumable'
+                ? `Use this item strategically. Don't waste it on minor situations - save it for when you really need it.`
+                : `This item is valuable for your survival. Make sure to check ${item.location} when you're in that area.`}
         </p>
       </div>
 
