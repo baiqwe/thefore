@@ -132,6 +132,9 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p className="mb-2 text-xs text-gray-400 dark:text-gray-500 max-w-2xl mx-auto">
+              The Forge Wiki is a fan-made website and is not affiliated with, endorsed, sponsored, or specifically approved by the developers of The Forge or Roblox Corporation. All game images and trademarks belong to their respective owners.
+            </p>
             <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           </div>
         </div>
