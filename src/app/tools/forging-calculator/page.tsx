@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge'
 import { Hammer, Calculator as CalculatorIcon, Trash2, Plus, AlertTriangle, Info, Zap, Skull, CheckCircle } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SEOHead from '@/components/SEOHead'
-import AdSenseUnit from '@/components/AdSenseUnit'
 import oresData from '@/data/ores.json'
 
 // Type Definitions
@@ -359,8 +358,6 @@ export default function ForgingCalculatorPage() {
             </CardContent>
           </Card>
 
-          {/* Manual Ad Unit */}
-          <AdSenseUnit slotId="123456789" />
 
           {/* New Content: The Weight System Guide (High Value Content for SEO) */}
           <div className="prose prose-lg max-w-none bg-white p-8 rounded-xl border border-gray-200 mt-8">
