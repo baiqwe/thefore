@@ -10,6 +10,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowRight, Trophy, Dice5 } from 'lucide-react'
 import CopyButton from '@/components/CopyButton'
 import LastUpdated from '@/components/LastUpdated'
+import AdSenseUnit from '@/components/AdSenseUnit'
 
 // 1. Dynamic Date Logic for SEO Titles (Static for build)
 const date = new Date();
@@ -109,6 +110,9 @@ export default function CodesPage() {
           We monitor the official Discord daily to bring you the best rewards.
         </p>
       </div>
+
+      {/* Manual Ad Unit */}
+      <AdSenseUnit slotId="123456789" />
 
       {/* Internal Linking / CTA Modules */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">

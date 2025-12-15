@@ -9,6 +9,7 @@ import oresData from '@/data/ores.json'
 
 import SEOHead from '@/components/SEOHead'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import AdSenseUnit from '@/components/AdSenseUnit'
 
 type SortOrder = 'asc' | 'desc' | null
 
@@ -244,6 +245,9 @@ export default function OresPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Manual Ad Unit */}
+      <AdSenseUnit slotId="123456789" />
 
       {/* Mining Deep Guide (Aggregation Strategy) */}
       <div className="prose prose-lg max-w-none bg-white p-8 rounded-xl border border-gray-200 mt-8 mb-8">

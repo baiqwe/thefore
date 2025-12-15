@@ -40,6 +40,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  other: {
+    'google-adsense-account': 'ca-pub-2499950673294937',
+  },
   manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
@@ -111,7 +114,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
 
         <div className="flex flex-col min-h-screen relative">
