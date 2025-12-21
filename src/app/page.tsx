@@ -7,6 +7,7 @@ import guidesData from '@/data/guides.json'
 import questsData from '@/data/quests.json'
 import { Sword, Hammer, Scroll, Key, Shield, Play } from 'lucide-react'
 import YouTubeVideo from '@/components/YouTubeVideo'
+import AdsterraNative from '@/components/ads/AdsterraNative'
 
 export default function HomePage() {
   // 视频结构化数据
@@ -241,6 +242,11 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Adsterra Native Banner Ad #1 */}
+      <div className="mb-16">
+        <AdsterraNative />
+      </div>
+
       {/* Popular Guides Section - 前置 */}
       <div className="mb-16">
         <div className="flex justify-between items-center mb-6">
@@ -311,6 +317,11 @@ export default function HomePage() {
             />
           </div>
         </div>
+      </div>
+
+      {/* Adsterra Native Banner Ad #2 */}
+      <div className="mb-16">
+        <AdsterraNative />
       </div>
 
       {/* Featured Items Section - 后置 */}

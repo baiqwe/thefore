@@ -121,17 +121,7 @@ export default function TermsPage() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">7. Advertising</h2>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Our website uses Google AdSense to display advertisements. These advertisements are provided by Google and are subject to Google&apos;s advertising policies. We do not control the content of these advertisements.
-          </p>
-          <p className="text-gray-700 dark:text-gray-300">
-            By using our website, you acknowledge that you may see advertisements and that we may receive compensation for displaying these ads. You can opt out of personalized advertising through <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Google&apos;s Ad Settings</a>.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">8. Disclaimer of Warranties</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">7. Disclaimer of Warranties</h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
             THE WEBSITE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
           </p>

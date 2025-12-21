@@ -6,7 +6,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Privacy Policy - The Forge Wiki',
-  description: 'Privacy Policy for The Forge Wiki. Learn how we collect, use, and protect your personal information, including our use of cookies and Google AdSense.',
+  description: 'Privacy Policy for The Forge Wiki. Learn how we collect, use, and protect your personal information, including our use of cookies and analytics.',
   keywords: ['Privacy Policy', 'The Forge Wiki', 'Cookie Policy', 'Data Protection'],
   canonicalUrl: '/privacy',
 })
@@ -91,22 +91,6 @@ export default function PrivacyPage() {
               We use Google Analytics to understand how visitors interact with our website. This helps us improve content and user experience.
             </p>
           </div>
-
-          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-4">
-            <h4 className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Advertising Cookies (Google AdSense)</h4>
-            <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-              <strong>Important:</strong> We use Google AdSense to display advertisements on our website. Google AdSense uses cookies, including the DoubleClick cookie, to:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300 text-sm">
-              <li>Serve ads based on your previous visits to our website and other websites</li>
-              <li>Measure the effectiveness of advertisements</li>
-              <li>Provide personalized advertising content</li>
-              <li>Prevent fraud and abuse</li>
-            </ul>
-            <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
-              These cookies are set by Google and are subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Google&apos;s Privacy Policy</a>.
-            </p>
-          </div>
         </section>
 
         <section className="mb-8">
@@ -118,7 +102,6 @@ export default function PrivacyPage() {
             <li><strong>Website Operation:</strong> To maintain and improve website functionality</li>
             <li><strong>Content Improvement:</strong> To analyze user behavior and enhance our guides and resources</li>
             <li><strong>Communication:</strong> To respond to your inquiries and provide support</li>
-            <li><strong>Advertising:</strong> To display relevant advertisements through Google AdSense</li>
             <li><strong>Security:</strong> To detect and prevent fraud, abuse, and security threats</li>
             <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
           </ul>
@@ -131,7 +114,6 @@ export default function PrivacyPage() {
             Our website uses several Google services:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li><strong>Google AdSense:</strong> For advertising services. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">View Google&apos;s Privacy Policy</a></li>
             <li><strong>Google Analytics:</strong> For website analytics. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">View Google Analytics Privacy Policy</a></li>
           </ul>
         </section>
@@ -143,7 +125,6 @@ export default function PrivacyPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
             <li><strong>Cookie Preferences:</strong> You can control cookies through your browser settings. Note that disabling cookies may affect website functionality.</li>
-            <li><strong>Opt-Out of Personalized Ads:</strong> Visit <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Google&apos;s Ad Settings</a> to opt out of personalized advertising.</li>
             <li><strong>Data Access:</strong> Request access to your personal data by contacting us at <a href="mailto:developwebtheforge@2925.com" className="text-blue-600 dark:text-blue-400 hover:underline">developwebtheforge@2925.com</a></li>
             <li><strong>Data Deletion:</strong> Request deletion of your personal data (subject to legal requirements)</li>
           </ul>
@@ -184,8 +165,8 @@ export default function PrivacyPage() {
             </p>
           </div>
         </section>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
