@@ -79,11 +79,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     ]}
                 />
 
-                {/* Adsterra 728x90 Banner Ad */}
-                <div className="mb-8 hidden md:block">
-                    <AdsterraBanner728x90 />
-                </div>
-
                 {/* Back Link */}
                 <Link
                     href="/blog"
@@ -156,6 +151,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         </div>
                     )}
                 </header>
+
+                {/* Adsterra 728x90 Banner Ad - After Article Header */}
+                <div className="mb-8 hidden md:block">
+                    <div className="text-center text-xs text-gray-500 dark:text-gray-400 mb-2">Advertisement</div>
+                    <AdsterraBanner728x90 />
+                </div>
 
                 {/* Article Content */}
                 <div className="prose prose-lg dark:prose-invert max-w-none
