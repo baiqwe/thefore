@@ -1,5 +1,26 @@
 [
   {
+    "code": "XMAS!",
+    "reward": "5x Race Rerolls",
+    "status": "Active",
+    "isNew": true,
+    "description": "NEW! Christmas 2025 code. Essential for getting the Archangel race (0.1% drop rate)."
+  },
+  {
+    "code": "SORRYFORDELAY",
+    "reward": "5x Race Rerolls",
+    "status": "Active",
+    "isNew": true,
+    "description": "NEW! Compensation for Winter Update delay. Use for Archangel rerolls."
+  },
+  {
+    "code": "HEART",
+    "reward": "10x Race Rerolls, 1x Luck Totem",
+    "status": "Active",
+    "isUnstable": true,
+    "description": "UNSTABLE - May expire within 24 hours. Redeem immediately!"
+  },
+  {
     "code": "FREESPINS",
     "reward": "8x Race Rerolls, 1x Luck Totem",
     "status": "Active",

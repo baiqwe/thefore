@@ -178,5 +178,25 @@
     "location": "Boss Drop",
     "value": 5000,
     "color": "text-indigo-500"
+  },
+  {
+    "name": "Snowite",
+    "rarity": "Legendary",
+    "multiplier": 8.0,
+    "tier": 5,
+    "trait": "Snow: 30% chance to slow enemy speed by 15%",
+    "location": "Frostspire Expanse",
+    "value": 150,
+    "color": "text-cyan-100"
+  },
+  {
+    "name": "Iceite",
+    "rarity": "Mythical",
+    "multiplier": 10.5,
+    "tier": 6,
+    "trait": "Ice: 25% chance to Freeze enemies for 2s",
+    "location": "Frostspire Expanse",
+    "value": 8000,
+    "color": "text-blue-200"
   }
 ]

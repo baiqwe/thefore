@@ -6,7 +6,9 @@
     "dropRate": "Default",
     "description": "The default race. No special bonuses.",
     "passives": [],
-    "abilities": ["No buffs"],
+    "abilities": [
+      "No buffs"
+    ],
     "special": "Starting race, no special abilities"
   },
   {
@@ -19,7 +21,10 @@
       "Gifted Miner: +15% Mining Damage, +5% Forging Quality",
       "Heavy Short: Smaller size, reduced movement speed"
     ],
-    "abilities": ["+15% Mining Damage", "+5% Forging Quality"],
+    "abilities": [
+      "+15% Mining Damage",
+      "+5% Forging Quality"
+    ],
     "special": "Best for mining and resource gathering"
   },
   {
@@ -32,7 +37,10 @@
       "Tank: +20% HP, Larger Hitbox",
       "Bull's Fury: Enrage at <50% HP (Increased Dmg/Speed)"
     ],
-    "abilities": ["+20% HP", "Enrage at <50% HP"],
+    "abilities": [
+      "+20% HP",
+      "Enrage at <50% HP"
+    ],
     "special": "Excellent tank race with berserk mechanics"
   },
   {
@@ -46,7 +54,13 @@
       "Smite: 50% chance to summon lightning on hit",
       "Mighty Clover: +25% Luck"
     ],
-    "abilities": ["+50% Dash Distance", "-20% Dash CD", "+25% Jump Height", "+25% Luck", "Smite chance"],
+    "abilities": [
+      "+50% Dash Distance",
+      "-20% Dash CD",
+      "+25% Jump Height",
+      "+25% Luck",
+      "Smite chance"
+    ],
     "special": "The ultimate balanced race, perfect for any playstyle"
   },
   {
@@ -60,7 +74,35 @@
       "Demonic Powers: +20% Speed, Attack Speed, and Damage",
       "Devil's Finger: Dash leaves a trail of hellfire"
     ],
-    "abilities": ["+20% Speed", "+20% Attack Speed", "+20% Damage", "Burn on hit", "Hellfire trail"],
+    "abilities": [
+      "+20% Speed",
+      "+20% Attack Speed",
+      "+20% Damage",
+      "Burn on hit",
+      "Hellfire trail"
+    ],
     "special": "Top tier for combat-focused builds, highest DPS potential"
+  },
+  {
+    "name": "Archangel",
+    "tier": "S+",
+    "rarity": "Secret",
+    "dropRate": "0.1%",
+    "description": "The strongest race introduced in the Winter Update. A fusion of Angel and Demon.",
+    "passives": [
+      "Wings: +75% Dash Distance, -25% Dash CD, +30% Jump Height, I-Frames on Dash",
+      "Divine Beam: 33% chance to smite enemies with holy light",
+      "Holy Circle: Area DoT that damages enemies within range",
+      "Hybrid Stats: Combines Demon damage scaling with Angel mobility"
+    ],
+    "abilities": [
+      "+75% Dash Distance",
+      "-25% Dash CD",
+      "+30% Jump Height",
+      "I-Frame Dash",
+      "Divine Beam",
+      "Holy Circle AoE"
+    ],
+    "special": "Overpowered hybrid race combining the best aspects of Angel and Demon. Requires significant Race Rerolls to obtain."
   }
 ]

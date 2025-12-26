@@ -462,6 +462,33 @@
     }
   },
   {
+    "slug": "snow-pickaxe",
+    "name": "Snow Pickaxe",
+    "location": "Winter Merchant - Frostspire Expanse",
+    "type": "Tool",
+    "description": "Essential pickaxe for the Winter Expansion. Required to break the ice barrier protecting the Prismatic Pickaxe. Has sufficient Mining Power (320+) to pass the stat check.",
+    "stats": {
+      "rarity": "A Tier",
+      "power": "320",
+      "luck": "45%",
+      "acquisition": "Winter Merchant ($750,000)"
+    }
+  },
+  {
+    "slug": "prismatic-pickaxe",
+    "name": "Prismatic Pickaxe",
+    "location": "Frostspire Expanse - Mosasaurus Chamber",
+    "type": "Tool",
+    "description": "The best mining tool in The Forge Roblox (Winter Expansion). This S+ tier pickaxe provides 72% luck and 4 rune slots, making it perfect for finding rare ores like Iceite and Snowite. **Detailed Acquisition Process - SOLVING THE 'MELTING THE GEYSER' PUZZLE:** Many players get stuck searching for fire or a geyser, but this is misleading. The ice block is NOT a puzzle - it's a STAT CHECK. You need at least 320 Mining Power to break the ice. If your pickaxe has less, it will show '0 Damage'. **SOLUTION:** First, purchase the Snow Pickaxe from the Winter Merchant for 750,000 Gold (it has 320+ power). **STEP-BY-STEP LOCATION:** (1) Travel to Frostspire Expanse (new winter biome). (2) Find Bjorn's House (NPC near village center). (3) Go directly behind Bjorn's house to the Frozen Lake. (4) Jump into the hole in the center of the lake and swim down. (5) Find the Mosasaurus (massive frozen creature at the bottom). (6) Use your 320+ power pickaxe to break the ice casing near its mouth. (7) Purchase the Prismatic Pickaxe for 2,000,000 Gold. **WHY IT'S BEST IN SLOT:** 650 Mining Power (melts all ores), 72% Luck (crucial for Iceite and Archangel rerolls), and 4 Rune Slots (only tool with 4 slots, allows massive customization with Miner Shards). This pickaxe is essential for late-game Winter Expansion content.",
+    "stats": {
+      "rarity": "S+ Tier",
+      "power": "650",
+      "luck": "72%",
+      "runeSlots": "4",
+      "acquisition": "Frostspire Expanse - Mosasaurus Chamber ($2,000,000, requires 320+ Mining Power to unlock)"
+    }
+  },
+  {
     "slug": "rune-miner-shard",
     "name": "Miner Shard",
     "location": "Delver Zombie Drop",
