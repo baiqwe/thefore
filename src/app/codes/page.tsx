@@ -38,14 +38,15 @@ export default function CodesPage() {
   const activeCodes = codesData.filter((code) => code.status === 'Active')
   const expiredCodes = codesData.filter((code) => code.status === 'Expired')
 
-  const today = new Date()
-  const lastVerifiedDate = today.toISOString()
+  // Static date - update this manually when codes are actually updated
+  // Last updated: December 26, 2025 (Winter Expansion codes added)
+  const lastVerifiedDate = "2025-12-26T12:00:00.000Z"
 
   // FAQ Schema
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    dateModified: lastVerifiedDate, // 总是使用当前日期，向 Google 发送新鲜度信号
+    dateModified: lastVerifiedDate, // Honest date reflecting actual content update
     mainEntity: [
       {
         '@type': 'Question',
@@ -116,27 +117,29 @@ export default function CodesPage() {
 
       {/* Internal Linking / CTA Modules */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
-        <a href="/wiki/race-tier-list" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        {/* Link 1: Archangel Race (NEW for Winter Expansion) */}
+        <a href="/blog/winter-expansion-update-2025" className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-orange-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
             <Trophy className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
           <h3 className="text-lg sm:text-xl font-bold mb-2 flex items-center gap-2">
-            Don&apos;t Waste Your Rerolls! <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            New Archangel Race (0.1%) <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </h3>
           <p className="text-red-100 text-xs sm:text-sm font-medium">
-            Check the <strong>S-Tier Race List</strong> before you use these codes. See which Mythical race is best.
+            Got the <strong>XMAS!</strong> rerolls? See why Archangel is the new S+ Tier meta race.
           </p>
         </a>
 
-        <a href="/wiki/best-builds" className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        {/* Link 2: Prismatic Pickaxe Guide (HIGH VALUE - Solves #1 pain point) */}
+        <a href="/blog/prismatic-pickaxe-melting-geyser-guide" className="group relative overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-5 sm:p-6 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
           <div className="absolute top-0 right-0 p-3 sm:p-4 opacity-10 group-hover:opacity-20 transition-opacity">
             <Dice5 className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
           <h3 className="text-lg sm:text-xl font-bold mb-2 flex items-center gap-2">
-            Winter 2025 Meta Builds <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            Can&apos;t Melt the Geyser? <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </h3>
           <p className="text-blue-100 text-xs sm:text-sm font-medium">
-            Don&apos;t waste ores! Check the <strong>Best Weapon Recipes</strong> guide to craft Godly gear efficiently.
+            Stuck at the ice block? Don&apos;t use fire! <strong>Click here for the Prismatic Pickaxe solution.</strong>
           </p>
         </a>
       </div>
